@@ -424,14 +424,16 @@ document.write(`
 <p>a.  <span class="math notranslate nohighlight">\(y'=t-y, \ \ (0\leq t \leq 4)\)</span> with the initial condition <span class="math notranslate nohighlight">\(y(0)=1\)</span>, <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution <span class="math notranslate nohighlight">\(y(t)=2e^{-t}+t-1.\)</span> The Lipschitz constant is determined on  <span class="math notranslate nohighlight">\(D=\{(t,y);0\leq t \leq 4, y\in \rm I\!R \}.\)</span></p>
 <p>b.   <span class="math notranslate nohighlight">\(y'=y-t, \ \ (0\leq t \leq 2) \)</span> with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span> <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution   <span class="math notranslate nohighlight">\(y(t)=e^{t}+t+1\)</span>. The Lipschitz constant is determined on  <span class="math notranslate nohighlight">\( D=\{(t,y);0\leq t \leq 2, y\in \rm I\!R \}. \)</span></p>
 </li>
-<li><p>Apply the Taylor method to approximate the solution of initial value problem</p></li>
+<li><p>Apply the 2nd Order Taylor method using <span class="math notranslate nohighlight">\(N=4\)</span> steps to approximate the solution of initial value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-61180314-a2b1-41eb-a3cd-08d4fa3c0849">
-<span class="eqno">(143)<a class="headerlink" href="#equation-61180314-a2b1-41eb-a3cd-08d4fa3c0849" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
-<p>using <span class="math notranslate nohighlight">\(N=4\)</span> steps.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cba28e36-ce5f-4c90-8388-755fa0125b27">
+<span class="eqno">(143)<a class="headerlink" href="#equation-cba28e36-ce5f-4c90-8388-755fa0125b27" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
+<ol class="arabic" start="4">
+<li><p>Apply 2nd Order Taylor Method to approximate the solution of the given initial value problems using the indicated number of time steps.</p>
+<p>a. <span class="math notranslate nohighlight">\(y'=0.2y-0.01y^2, \ \ (2000\leq t \leq 2002)\)</span> with the initial condition <span class="math notranslate nohighlight">\(y(2000)=6,\)</span> and <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
+<p>b. <span class="math notranslate nohighlight">\(y'=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000\leq t \leq 2002)\)</span>with the initial condition <span class="math notranslate nohighlight">\(y(2000)=6,\)</span> and <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
+</li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </section>

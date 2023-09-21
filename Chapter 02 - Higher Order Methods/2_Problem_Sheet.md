@@ -15,10 +15,13 @@
 
 
 
-3. Apply the Taylor method to approximate the solution of initial value problem
-\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}
-using $N=4$ steps.
+3. Apply the 2nd Order Taylor method using $N=4$ steps to approximate the solution of initial value problem
+\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}.
 
-```python
 
-```
+4. Apply 2nd Order Taylor Method to approximate the solution of the given initial value problems using the indicated number of time steps.
+
+    a. $y'=0.2y-0.01y^2, \ \ (2000\leq t \leq 2002)$ with the initial condition $y(2000)=6,$ and $h=0.5$.
+    
+    b. $y'=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000\leq t \leq 2002)$with the initial condition $y(2000)=6,$ and $h=0.5$.
+
