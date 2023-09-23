@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Sheet 2 Question 3 - 2nd Order Taylor &#8212; Numerical and Machine Learning Methods</title>
+    <title>Problem Sheet 2 Question 5 - 2nd Order Taylor &#8212; Numerical and Machine Learning Methods</title>
   
   
   
@@ -60,12 +60,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 02 - Higher Order Methods/2_Problem_Sheet/203_Problem_Sheet';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 02 - Higher Order Methods/2_Problem_Sheet/205_Problem_Sheet';</script>
     <link rel="shortcut icon" href="../../_static/logo.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Problem Sheet 2 Question 5 - 2nd Order Taylor" href="205_Problem_Sheet.html" />
-    <link rel="prev" title="Problem Sheet 2 Question 2b - 3rd Order Taylor" href="202b_Problem_Sheet.html" />
+    <link rel="next" title="Example 4th order Runge Kutta" href="../../Chapter%2003%20-%20Runge%20Kutta/302_4th%20Order%20Runge%20Kutta.html" />
+    <link rel="prev" title="Problem Sheet 2 Question 3 - 2nd Order Taylor" href="203_Problem_Sheet.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -180,8 +180,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="201b_Problem_Sheet.html">Problem Sheet 2 Question 1b - 2nd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="205_Problem_Sheet.html">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
 </ul>
 </li>
 </ul>
@@ -319,7 +319,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/Chapter 02 - Higher Order Methods/2_Problem_Sheet/203_Problem_Sheet.ipynb" target="_blank"
+      <li><a href="../../_sources/Chapter 02 - Higher Order Methods/2_Problem_Sheet/205_Problem_Sheet.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Sheet 2 Question 3 - 2nd Order Taylor</h1>
+    <h1>Problem Sheet 2 Question 5 - 2nd Order Taylor</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -426,14 +426,14 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <p><a href="https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem%20Sheet/02_PS%20Question%203.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
-<section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-2-question-3-2nd-order-taylor">
-<h1>Problem Sheet 2 Question 3 - 2nd Order Taylor<a class="headerlink" href="#problem-sheet-2-question-3-2nd-order-taylor" title="Permalink to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-2-question-5-2nd-order-taylor">
+<h1>Problem Sheet 2 Question 5 - 2nd Order Taylor<a class="headerlink" href="#problem-sheet-2-question-5-2nd-order-taylor" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-447add27-6b00-4086-bae6-57af06ea1b0a">
-<span class="eqno">(266)<a class="headerlink" href="#equation-447add27-6b00-4086-bae6-57af06ea1b0a" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=ty-ty^2, \ \ (0 \leq t \leq 2)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-914e135c-c0d2-4d92-95e5-0e2d7c1af007">
+<span class="eqno">(276)<a class="headerlink" href="#equation-914e135c-c0d2-4d92-95e5-0e2d7c1af007" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=f(t,y), \ \ (a \leq t \leq b)\end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab98efa4-5723-45c4-a085-456656447b3e">
-<span class="eqno">(267)<a class="headerlink" href="#equation-ab98efa4-5723-45c4-a085-456656447b3e" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=\frac{1}{2}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-591538d7-c4b2-40a2-9f5a-ad0e2d7e1fd2">
+<span class="eqno">(277)<a class="headerlink" href="#equation-591538d7-c4b2-40a2-9f5a-ad0e2d7e1fd2" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=A .\end{equation}\]</div>
 <p>Apply <strong>2nd Order Taylor</strong> to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution, and compare the actual error with the theoretical error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -455,20 +455,20 @@ document.write(`
 <section id="general-discrete-interval">
 <h2>General Discrete Interval<a class="headerlink" href="#general-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d8f6fbb-1c6f-4e96-b47b-983da887f33d">
-<span class="eqno">(268)<a class="headerlink" href="#equation-7d8f6fbb-1c6f-4e96-b47b-983da887f33d" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{b-a}{N}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d3ccd506-821f-492c-abc0-f7a7107683bc">
+<span class="eqno">(278)<a class="headerlink" href="#equation-d3ccd506-821f-492c-abc0-f7a7107683bc" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{b-a}{N}.\end{equation}\]</div>
 </section>
 <section id="specific-discrete-interval">
 <h2>Specific Discrete Interval<a class="headerlink" href="#specific-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span> with <span class="math notranslate nohighlight">\(N=4\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1345687-0e23-42b1-bb25-9bc22fd34078">
-<span class="eqno">(269)<a class="headerlink" href="#equation-d1345687-0e23-42b1-bb25-9bc22fd34078" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{2-0}{4}=0.5.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3fb32fa3-fdb3-4b71-856c-9d5c6952bbb9">
+<span class="eqno">(279)<a class="headerlink" href="#equation-3fb32fa3-fdb3-4b71-856c-9d5c6952bbb9" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{2-0}{4}=0.5.\end{equation}\]</div>
 <p>This gives the 5 discrete points with stepsize h=0.5:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1d652f74-167c-44a3-9d57-30a7f0075f3c">
-<span class="eqno">(270)<a class="headerlink" href="#equation-1d652f74-167c-44a3-9d57-30a7f0075f3c" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_0=0, \ t_1=0.5, \ ... t_{4}=2. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-013bcd61-5a6b-44fd-8369-1c96dc94dae2">
+<span class="eqno">(280)<a class="headerlink" href="#equation-013bcd61-5a6b-44fd-8369-1c96dc94dae2" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_0=0, \ t_1=0.5, \ ... t_{4}=2. \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-48ecc920-7147-434a-b42b-3d3f8a8d08e7">
-<span class="eqno">(271)<a class="headerlink" href="#equation-48ecc920-7147-434a-b42b-3d3f8a8d08e7" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_i=0+i0.5, \ \ \ i=0,1,...,4.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a79e39b5-739b-4ec0-bba2-ecca0ea6569f">
+<span class="eqno">(281)<a class="headerlink" href="#equation-a79e39b5-739b-4ec0-bba2-ecca0ea6569f" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_i=0+i0.5, \ \ \ i=0,1,...,4.\end{equation}\]</div>
 <p>The plot below illustrates the discrete time steps from 0 to 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -496,20 +496,20 @@ document.write(`
 <section id="nd-order-taylor-solution">
 <h2>2nd Order Taylor Solution<a class="headerlink" href="#nd-order-taylor-solution" title="Permalink to this heading">#</a></h2>
 <p>The 2nd Order Taylor difference equation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c1a748d-0710-4bcd-894b-270cce791313">
-<span class="eqno">(272)<a class="headerlink" href="#equation-7c1a748d-0710-4bcd-894b-270cce791313" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0f060022-3b2f-45d6-b6e3-7c294be0df9d">
+<span class="eqno">(282)<a class="headerlink" href="#equation-0f060022-3b2f-45d6-b6e3-7c294be0df9d" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5424eae2-37a0-4ce8-a701-2c560a15490b">
-<span class="eqno">(273)<a class="headerlink" href="#equation-5424eae2-37a0-4ce8-a701-2c560a15490b" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=t_iw_i-t_iw_i^2,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7cad7d27-d1d0-4919-b910-22b897eb7092">
+<span class="eqno">(283)<a class="headerlink" href="#equation-7cad7d27-d1d0-4919-b910-22b897eb7092" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=????,\end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b2b0e10f-0e5f-4eec-9d11-4e0769b116af">
-<span class="eqno">(274)<a class="headerlink" href="#equation-b2b0e10f-0e5f-4eec-9d11-4e0769b116af" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2)),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8521c13f-27dc-4d9b-9ef9-3f83055b57ae">
+<span class="eqno">(284)<a class="headerlink" href="#equation-8521c13f-27dc-4d9b-9ef9-3f83055b57ae" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=???,\end{equation}\]</div>
 <p>which gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-867e7a43-8fbc-4405-9976-1aa0dbe80f13">
-<span class="eqno">(275)<a class="headerlink" href="#equation-867e7a43-8fbc-4405-9976-1aa0dbe80f13" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_iw_i-t_iw_i^2)+\frac{h^2}{2}(w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2))),\end{equation}\]</div>
-<p>for <span class="math notranslate nohighlight">\(i=0,1,2,3\)</span>
+<div class="amsmath math notranslate nohighlight" id="equation-ca76afb9-67f5-4935-bacd-0f57a66b5613">
+<span class="eqno">(285)<a class="headerlink" href="#equation-ca76afb9-67f5-4935-bacd-0f57a66b5613" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h????,\end{equation}\]</div>
+<p>for <span class="math notranslate nohighlight">\(i=0,1,2,N-1\)</span>
 with
-<span class="math notranslate nohighlight">\(w_0=0.5\)</span></p>
+<span class="math notranslate nohighlight">\(w_0=A\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IC</span><span class="o">=</span><span class="mf">0.5</span>
@@ -517,10 +517,17 @@ with
 <span class="n">e</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
 <span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">IC</span>
 
-<span class="c1">#e[0]=IC</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-  <span class="c1">#  e[i+1]=e[i]+h*(t[i]*e[i]-t[i]*e[i]*e[i])</span>
-    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="o">-</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span>
+    <span class="c1">###</span>
+<span class="c1">##    w[i+1]=w[i]+h*(????)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/1r/rb8x65yn57q68x042jv2vgx80000gn/T/ipykernel_80247/1336265521.py&quot;</span><span class="gt">, line </span><span class="mi">8</span>
+    <span class="c1">##    w[i+1]=w[i]+h*(????)</span>
+                              <span class="o">^</span>
+<span class="ne">SyntaxError</span>: unexpected EOF while parsing
 </pre></div>
 </div>
 </div>
@@ -532,7 +539,6 @@ with
 <span class="c1">#ax = fig.add_subplot(1,4,1)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">e</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
 
 
 <span class="c1">#ax.legend(loc=&#39;best&#39;)</span>
@@ -542,12 +548,26 @@ with
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b2e842d5668aeb5d70a1d8148c6f6f48486cb3c0c1b3e5987315e2a63d9cd2ef.png" src="../../_images/b2e842d5668aeb5d70a1d8148c6f6f48486cb3c0c1b3e5987315e2a63d9cd2ef.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_80247</span><span class="o">/</span><span class="mf">3144700355.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="c1"># --- left hand plot</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1">#ax = fig.add_subplot(1,4,1)</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+
+<span class="ne">NameError</span>: name &#39;w&#39; is not defined
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 400x500 with 0 Axes&gt;
+</pre></div>
+</div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>    <span class="s1">&#39;Euler (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">,</span>    <span class="s1">&#39;Taylor (w_i) &#39;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span>    <span class="s1">&#39;Exact Error( |y_i-w_i|) &#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">w</span><span class="p">)}</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>      <span class="s1">&#39;Taylor (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
 <span class="n">df</span>
 </pre></div>
@@ -556,12 +576,12 @@ with
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_80238</span><span class="o">/</span><span class="mf">869357318.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>    <span class="s1">&#39;Euler (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">,</span>    <span class="s1">&#39;Taylor (w_i) &#39;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span>    <span class="s1">&#39;Exact Error( |y_i-w_i|) &#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">w</span><span class="p">)}</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_80247</span><span class="o">/</span><span class="mf">3734270711.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>      <span class="s1">&#39;Taylor (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">}</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span>
 
-<span class="ne">NameError</span>: name &#39;y&#39; is not defined
+<span class="ne">NameError</span>: name &#39;w&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -601,20 +621,20 @@ with
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="202b_Problem_Sheet.html"
+       href="203_Problem_Sheet.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Problem Sheet 2 Question 2b - 3rd Order Taylor</p>
+        <p class="prev-next-title">Problem Sheet 2 Question 3 - 2nd Order Taylor</p>
       </div>
     </a>
     <a class="right-next"
-       href="205_Problem_Sheet.html"
+       href="../../Chapter%2003%20-%20Runge%20Kutta/302_4th%20Order%20Runge%20Kutta.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Problem Sheet 2 Question 5 - 2nd Order Taylor</p>
+        <p class="prev-next-title">Example 4th order Runge Kutta</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
