@@ -16,7 +16,7 @@ In order to build the book locally, you will need to do the following:
 2. Clean the book
 
 
-`jupyter-book clean NM_and_ML_for_DEs_Book/'
+`jupyter-book clean NM_ML_DE/'
 
 3. First build of the book
 
@@ -39,6 +39,7 @@ In order to build the book locally, you will need to do the following:
 ` cd NM_and_ML_for_DEs_Book/`
 
 8. Push to GIT using Desktop
+
 https://github.com/john-s-butler-dit/Numerical-and-Machine-Learning-Methods-for-Differential-Equations/tree/master
 
 

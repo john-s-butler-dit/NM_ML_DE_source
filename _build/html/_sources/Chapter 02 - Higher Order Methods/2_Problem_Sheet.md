@@ -25,3 +25,9 @@
     
     b. $y'=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000\leq t \leq 2002)$with the initial condition $y(2000)=6,$ and $h=0.5$.
 
+5. Adapt the Python code for the 2nd Order Taylor method provided to approximate solution of the integrate and fire differential equation:
+   \begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}
+    where $E_L = -75$, $\tau_m = 10$,
+    $R_m = 10$ and $I(t)=0.01t$
+    and the initial condition
+    $V(0) = -75$ using a stepsize of $h=0.5$.

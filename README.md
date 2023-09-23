@@ -19,7 +19,7 @@ Numerical Analysis; Finite-differencing techniques; Stability analysis; Explicit
 Machine Learning: Non-linear shooting method, Newton Raphson method; Gradient Descent; Loss functions; Norms, Forward and Back Propagation; Neural Network, The Universal Approximation Theorem for Neural Networks.
 
 
-This is the old [JupyterBook for the code](https://john-s-butler-dit.github.io/NumericalAnalysisBook/)
+This is the old [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_ML_DE/)
 
 
 ## Part 1 Numerical Solutions to Ordinary Differential Equations 
@@ -106,6 +106,8 @@ Brunton, S. L., Proctor, J. L., & Kutz, J. N. (2016). Discovering governing equa
 Cybenko, G. (1989). Approximation by superpositions of a sigmoidal function. Mathematics of control, signals and systems, 2(4), 303-314.
 
 Dufera, T. T. (2021). Deep neural network for system of ordinary differential equations: Vectorized algorithm and simulation. Machine Learning with Applications, 5, 100058. https://doi.org/10.1016/j.mlwa.2021.100058
+
+t Hart, B., Achakulvisut, T., Adeyemi, A., Akrami, A., Alicea, B., Alonso-Andres, A., ... & Vishne, G. (2022). Neuromatch Academy: a 3-week, online summer school in computational neuroscience. Journal of Open Source Education, 5(49), 118.
 
 Lagaris, I. E., Likas, A., & Fotiadis, D. I. (1998). Artificial Neural Networks for Solving Ordinary and Partial Differential Equations. IEEE Transactions on Neural Networks, 9(5), 987–1000. https://doi.org/10.1109/72.712178
 

@@ -9,6 +9,7 @@ parts:
       sections:
       - file: Chapter 01 - Euler Methods/1_Problem_Sheet/102a_Problem_Sheet
       - file: Chapter 01 - Euler Methods/1_Problem_Sheet/102b_Problem_Sheet
+      - file: Chapter 01 - Euler Methods/1_Problem_Sheet/106_Problem_Sheet
   - caption: Taylor Method
     chapters:
     - file: Chapter 02 - Higher Order Methods/201_3rd Order Taylor_Population_growth
@@ -20,16 +21,16 @@ parts:
       - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/202a_Problem_Sheet
       - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/202b_Problem_Sheet
       - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/203_Problem_Sheet
+      - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/205_Problem_Sheet
   - caption: Runge Kutta
     chapters:
-    - file:  Chapter 03 - Runge Kutta/302_4th Order Runge Kutta
+    - file: Chapter 03 - Runge Kutta/302_4th Order Runge Kutta
+    - file: Chapter 03 - Runge Kutta/301_2nd Order Runge Kutta Population Equations
+    - file: Chapter 03 - Runge Kutta/3_Problem_Sheet
       sections:
-      - file: Chapter 03 - Runge Kutta/301_2nd Order Runge Kutta Population Equations
-      - file: Chapter 03 - Runge Kutta/3_Problem_Sheet
-        sections:
-        - file: Chapter 03 - Runge Kutta/3_Problem_Sheet/302a_Problem_Sheet
-        - file: Chapter 03 - Runge Kutta/3_Problem_Sheet/302b_Problem_Sheet
-        - file: Chapter 03 - Runge Kutta/3_Problem_Sheet/307b_Problem_Sheet
+      - file: Chapter 03 - Runge Kutta/3_Problem_Sheet/302a_Problem_Sheet
+      - file: Chapter 03 - Runge Kutta/3_Problem_Sheet/302b_Problem_Sheet
+      - file: Chapter 03 - Runge Kutta/3_Problem_Sheet/307b_Problem_Sheet
   - caption: Multistep Methods
     chapters:
     - file: Chapter 04 - Multistep Methods/401_Adams Bashforth Example
@@ -48,10 +49,10 @@ parts:
   - caption: Consistency, Convergence and Stability
     chapters:
     - file: Chapter 05 - IVP Consistent Convergence Stability/501_Consistent
+    - file: Chapter 05 - IVP Consistent Convergence Stability/502_Convergent
+    - file: Chapter 05 - IVP Consistent Convergence Stability/503_Stability
+    - file: Chapter 05 - IVP Consistent Convergence Stability/504_Futher Notes on Stability
       sections:
-      - file: Chapter 05 - IVP Consistent Convergence Stability/502_Convergent
-      - file: Chapter 05 - IVP Consistent Convergence Stability/503_Stability
-      - file: Chapter 05 - IVP Consistent Convergence Stability/504_Futher Notes on Stability
       - file: Chapter 05 - IVP Consistent Convergence Stability/5_Problem_Sheet
   - caption: Initial Value Problems Review Questions
     chapters:
