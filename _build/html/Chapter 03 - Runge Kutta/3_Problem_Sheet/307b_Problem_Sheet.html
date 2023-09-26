@@ -429,34 +429,34 @@ document.write(`
 <section id="problem-sheet-3-question-7b">
 <h1>Problem Sheet 3 Question 7b<a class="headerlink" href="#problem-sheet-3-question-7b" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4aab6c5e-e034-4819-af35-a1111162d75d">
-<span class="eqno">(363)<a class="headerlink" href="#equation-4aab6c5e-e034-4819-af35-a1111162d75d" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}-y+x=0, \ \ (0 \leq x \leq 1) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-06c61cab-0828-4c8f-9a66-c79f76ac0b80">
+<span class="eqno">(363)<a class="headerlink" href="#equation-06c61cab-0828-4c8f-9a66-c79f76ac0b80" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}-y+x=0, \ \ (0 \leq x \leq 1) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f15771b-532f-4ab2-95a2-0fb7ad325d37">
-<span class="eqno">(364)<a class="headerlink" href="#equation-1f15771b-532f-4ab2-95a2-0fb7ad325d37" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-135503ea-a5ef-4877-a31c-c7602ed6d7d9">
+<span class="eqno">(364)<a class="headerlink" href="#equation-135503ea-a5ef-4877-a31c-c7602ed6d7d9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=0\end{equation}\]</div>
 <p>For h=0.2.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="midpoint-method-solution">
 <h1>Midpoint method Solution<a class="headerlink" href="#midpoint-method-solution" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-785db2bc-5b57-4f1f-9c41-e568eabadbc2">
-<span class="eqno">(365)<a class="headerlink" href="#equation-785db2bc-5b57-4f1f-9c41-e568eabadbc2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-48b13496-f65a-4c9a-999a-014dace36e8a">
+<span class="eqno">(365)<a class="headerlink" href="#equation-48b13496-f65a-4c9a-999a-014dace36e8a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{w_{i+1}-w_i}{h}=f(x_i+\frac{h}{2},w_i+\frac{h}{2}f(x_i,w_i))
 \end{equation}\]</div>
 <p>Rearranging</p>
-<div class="amsmath math notranslate nohighlight" id="equation-edc5f40d-9b22-47ce-b1bb-b95372c73ccc">
-<span class="eqno">(366)<a class="headerlink" href="#equation-edc5f40d-9b22-47ce-b1bb-b95372c73ccc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e44fa0af-2908-491e-8aa7-c24ccb99a90c">
+<span class="eqno">(366)<a class="headerlink" href="#equation-e44fa0af-2908-491e-8aa7-c24ccb99a90c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+hf(x_i+\frac{h}{2},w_i+\frac{h}{2}f(x_i,w_i))
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d9de4335-eb06-4af7-9c2c-0c5b7c6e7446">
-<span class="eqno">(367)<a class="headerlink" href="#equation-d9de4335-eb06-4af7-9c2c-0c5b7c6e7446" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03e4390d-40ec-4c3d-95dd-a25fe6539619">
+<span class="eqno">(367)<a class="headerlink" href="#equation-03e4390d-40ec-4c3d-95dd-a25fe6539619" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(k_2)
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1c460bb4-d7a6-4709-a443-e303109995db">
-<span class="eqno">(368)<a class="headerlink" href="#equation-1c460bb4-d7a6-4709-a443-e303109995db" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-44d179fa-a10b-47e9-864f-b1a1c8fad56c">
+<span class="eqno">(368)<a class="headerlink" href="#equation-44d179fa-a10b-47e9-864f-b1a1c8fad56c" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_1=w_i-x_i+2
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-3336671f-8d67-4b38-a3ce-8184a7ac0cf4">
-<span class="eqno">(369)<a class="headerlink" href="#equation-3336671f-8d67-4b38-a3ce-8184a7ac0cf4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ca478c16-7c78-45a9-9df5-19f7f0d258a2">
+<span class="eqno">(369)<a class="headerlink" href="#equation-ca478c16-7c78-45a9-9df5-19f7f0d258a2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_2=w_i+\frac{h}{2}k_1-(x_i+\frac{h}{2})+2)
 \end{equation}\]</div>
 <div class="cell docutils container">

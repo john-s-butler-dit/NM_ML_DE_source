@@ -429,24 +429,24 @@ document.write(`
 <section id="problem-sheet-question-2a">
 <h1>Problem Sheet Question 2a<a class="headerlink" href="#problem-sheet-question-2a" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-89ea8a98-75d5-4855-b4de-8b589695dc99">
-<span class="eqno">(518)<a class="headerlink" href="#equation-89ea8a98-75d5-4855-b4de-8b589695dc99" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c840b306-2e6d-4f0b-a159-a7bfcb583127">
+<span class="eqno">(518)<a class="headerlink" href="#equation-c840b306-2e6d-4f0b-a159-a7bfcb583127" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f7e4201-4a88-4547-beb7-86af9db2dea9">
-<span class="eqno">(519)<a class="headerlink" href="#equation-1f7e4201-4a88-4547-beb7-86af9db2dea9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-caf3dce4-2a94-49ec-9446-3db60e62bbc0">
+<span class="eqno">(519)<a class="headerlink" href="#equation-caf3dce4-2a94-49ec-9446-3db60e62bbc0" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2.\end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de67703a-e0d5-41ae-bf89-a9a43b85d564">
-<span class="eqno">(520)<a class="headerlink" href="#equation-de67703a-e0d5-41ae-bf89-a9a43b85d564" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-460e8f31-8da5-4fcb-a023-8ebfdccdf07d">
+<span class="eqno">(520)<a class="headerlink" href="#equation-460e8f31-8da5-4fcb-a023-8ebfdccdf07d" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-adams-bashforth">
 <h1>3-step Adams Bashforth<a class="headerlink" href="#step-adams-bashforth" title="Permalink to this heading">#</a></h1>
 <p>The 3-step Adams Bashforth difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16b11daa-67af-4d5a-9999-ec2b57089485">
-<span class="eqno">(521)<a class="headerlink" href="#equation-16b11daa-67af-4d5a-9999-ec2b57089485" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(23f(t_i,w_i)-16f(t_{i-1},w_{i-1})+5f(t_{i-2},w_{i-2})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a0d7d878-93c1-4ac1-9220-49926a109897">
+<span class="eqno">(521)<a class="headerlink" href="#equation-a0d7d878-93c1-4ac1-9220-49926a109897" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(23f(t_i,w_i)-16f(t_{i-1},w_{i-1})+5f(t_{i-2},w_{i-2})) \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9dc22bb-5e67-4740-b46c-fad74502d6c1">
-<span class="eqno">(522)<a class="headerlink" href="#equation-d9dc22bb-5e67-4740-b46c-fad74502d6c1" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(23(w_i-t_i)-(w_{i-1}-t_{i-1})+5(w_{i-2}-t_{i-2})). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0fc0aef0-10e6-4a99-8ed9-ada7674551f2">
+<span class="eqno">(522)<a class="headerlink" href="#equation-0fc0aef0-10e6-4a99-8ed9-ada7674551f2" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(23(w_i-t_i)-(w_{i-1}-t_{i-1})+5(w_{i-2}-t_{i-2})). \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
