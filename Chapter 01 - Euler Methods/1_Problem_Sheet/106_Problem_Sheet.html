@@ -414,7 +414,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-method">Euler method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-interval">Discrete Interval</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-condition">Initial Condition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation-of-an-initial-value-problem">Numerical approximation of an Initial Value Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation-of-population-growth">Numerical approximation of Population growth</a></li>
 </ul>
             </nav>
         </div>
@@ -426,11 +426,12 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="blank-euler-method">
+  <p><a href="https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="blank-euler-method">
 <h1>Blank Euler Method<a class="headerlink" href="#blank-euler-method" title="Permalink to this heading">#</a></h1>
 <p>The more general form of a first order Ordinary Differential Equation is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de7c5b52-807a-4202-91a6-cf8665c10c97">
-<span class="eqno">(116)<a class="headerlink" href="#equation-de7c5b52-807a-4202-91a6-cf8665c10c97" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-bddc7aba-f415-4f67-bb21-2815766b49e5">
+<span class="eqno">(117)<a class="headerlink" href="#equation-bddc7aba-f415-4f67-bb21-2815766b49e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'}=f(t,y).
 \end{equation}\]</div>
 <p>This can be solved analytically by integrating both sides but this is not straight forward for most problems.
@@ -439,24 +440,24 @@ Numerical methods can be used to approximate the solution at discrete points.</p
 <h2>Euler method<a class="headerlink" href="#euler-method" title="Permalink to this heading">#</a></h2>
 <p>The simplest one step numerical method is the Euler Method named after the most prolific of mathematicians <a class="reference external" href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> (15 April 1707 – 18 September 1783) .</p>
 <p>The general Euler formula for the first order differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6870fa53-ef5e-41d5-be03-289f1ce702dd">
-<span class="eqno">(117)<a class="headerlink" href="#equation-6870fa53-ef5e-41d5-be03-289f1ce702dd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c3cbdc05-ab1c-456f-8296-24a631cbc654">
+<span class="eqno">(118)<a class="headerlink" href="#equation-c3cbdc05-ab1c-456f-8296-24a631cbc654" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'} = f(t,y), 
 \end{equation}\]</div>
 <p>approximates the derivative at time point <span class="math notranslate nohighlight">\(t_i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3662048a-3b18-4d7b-83ca-de522a272cb9">
-<span class="eqno">(118)<a class="headerlink" href="#equation-3662048a-3b18-4d7b-83ca-de522a272cb9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b1900107-137f-4172-b55f-050e27f2f995">
+<span class="eqno">(119)<a class="headerlink" href="#equation-b1900107-137f-4172-b55f-050e27f2f995" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'}(t_i) \approx \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(w_i\)</span> is the approximate solution of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>.</p>
 <p>This substitution changes the differential equation  into a <strong>difference</strong> equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7e375c92-26da-4b14-a1d4-b77e957685ff">
-<span class="eqno">(119)<a class="headerlink" href="#equation-7e375c92-26da-4b14-a1d4-b77e957685ff" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2d1c57ef-3dc4-4c4f-8812-0fc625a56abf">
+<span class="eqno">(120)<a class="headerlink" href="#equation-2d1c57ef-3dc4-4c4f-8812-0fc625a56abf" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}}=f(t_i,w_i). 
 \end{equation}\]</div>
 <p>Assuming uniform stepsize <span class="math notranslate nohighlight">\(t_{i+1}-t_{i}\)</span> is replaced by <span class="math notranslate nohighlight">\(h\)</span>, re-arranging the equation gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3470a62-b09c-4429-a595-042ac972cec1">
-<span class="eqno">(120)<a class="headerlink" href="#equation-c3470a62-b09c-4429-a595-042ac972cec1" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-2858645b-dffe-4f3f-9de2-86dcca7eedcf">
+<span class="eqno">(121)<a class="headerlink" href="#equation-2858645b-dffe-4f3f-9de2-86dcca7eedcf" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 w_{i+1}=w_i+hf(t_i,w_i).
 \end{equation}\]</div>
 <p>This can be read as the future <span class="math notranslate nohighlight">\(w_{i+1}\)</span> can be approximated by the present <span class="math notranslate nohighlight">\(w_i\)</span> and the addition of the input to the system <span class="math notranslate nohighlight">\(f(t,y)\)</span> times the time step.</p>
@@ -479,25 +480,24 @@ w_{i+1}=w_i+hf(t_i,w_i).
 </section>
 <section id="discrete-interval">
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
-<p>T## Discrete Interval
-The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised with stepsize <span class="math notranslate nohighlight">\(h\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-16beb8a9-4335-4956-8d73-5cbd4dad55ca">
-<span class="eqno">(121)<a class="headerlink" href="#equation-16beb8a9-4335-4956-8d73-5cbd4dad55ca" title="Permalink to this equation">#</a></span>\[\begin{equation} 
-N=\frac{b-a}{h}.
+<p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c4d37bf3-47e2-4e83-be04-c41c3e01994c">
+<span class="eqno">(122)<a class="headerlink" href="#equation-c4d37bf3-47e2-4e83-be04-c41c3e01994c" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+h=\frac{b-a}{N}.
 \end{equation}\]</div>
-<p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span>  with stepsize <span class="math notranslate nohighlight">\(h=0.1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-b691cd31-e20f-41ba-b1e4-bb6705fa0aae">
-<span class="eqno">(122)<a class="headerlink" href="#equation-b691cd31-e20f-41ba-b1e4-bb6705fa0aae" title="Permalink to this equation">#</a></span>\[\begin{equation}
- N=\frac{2-0}{0.1}=20,
+<p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-5174e6d4-7629-47e7-a893-879ae030c14e">
+<span class="eqno">(123)<a class="headerlink" href="#equation-5174e6d4-7629-47e7-a893-879ae030c14e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ h=\frac{2-0}{20}=0.1,
 \end{equation}\]</div>
 <p>this gives the 21 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a82ad662-2f15-4233-8680-90e5a2923b30">
-<span class="eqno">(123)<a class="headerlink" href="#equation-a82ad662-2f15-4233-8680-90e5a2923b30" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9fa34530-199c-471d-806b-686f9d72f2f7">
+<span class="eqno">(124)<a class="headerlink" href="#equation-9fa34530-199c-471d-806b-686f9d72f2f7" title="Permalink to this equation">#</a></span>\[\begin{equation}
  t_0=0, \ t_1=0.1, \ ... t_{20}=2. 
 \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c56e1d6-fe5a-46c5-8624-04f63bb32734">
-<span class="eqno">(124)<a class="headerlink" href="#equation-7c56e1d6-fe5a-46c5-8624-04f63bb32734" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1bc84bb9-8e92-4745-8097-a36f8da16fa6">
+<span class="eqno">(125)<a class="headerlink" href="#equation-1bc84bb9-8e92-4745-8097-a36f8da16fa6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t_i=0+i0.1, \ \ \ i=0,1,...,20.
 \end{equation}\]</div>
 <p>The plot below shows the discrete time steps.</p>
@@ -506,10 +506,10 @@ t_i=0+i0.1, \ \ \ i=0,1,...,20.
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Setting up time</span>
 <span class="n">a</span><span class="o">=</span><span class="mi">0</span>
 <span class="n">b</span><span class="o">=</span><span class="mf">2.0</span>
-<span class="n">h</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20</span>
 
 
-<span class="n">N</span><span class="o">=</span><span class="nb">int</span><span class="p">((</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">b</span><span class="o">-</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
 <span class="n">time</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">time</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
@@ -527,59 +527,35 @@ t_i=0+i0.1, \ \ \ i=0,1,...,20.
 <section id="initial-condition">
 <h2>Initial Condition<a class="headerlink" href="#initial-condition" title="Permalink to this heading">#</a></h2>
 <p>To get a specify solution to a first order initial value problem, an <strong>initial condition</strong> is required.</p>
-<p>The general initial condition is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9397fd5c-db92-45c2-9d9b-bfe81fc9d022">
-<span class="eqno">(125)<a class="headerlink" href="#equation-9397fd5c-db92-45c2-9d9b-bfe81fc9d022" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<p>For our population problem the intial condition is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-665980b8-67d1-4160-abd4-4f26be5a6c33">
+<span class="eqno">(126)<a class="headerlink" href="#equation-665980b8-67d1-4160-abd4-4f26be5a6c33" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y(a)=A.
 \end{equation}\]</div>
 </section>
-<section id="numerical-approximation-of-an-initial-value-problem">
-<h2>Numerical approximation of an Initial Value Problem<a class="headerlink" href="#numerical-approximation-of-an-initial-value-problem" title="Permalink to this heading">#</a></h2>
+<section id="numerical-approximation-of-population-growth">
+<h2>Numerical approximation of Population growth<a class="headerlink" href="#numerical-approximation-of-population-growth" title="Permalink to this heading">#</a></h2>
 <p>The differential equation is transformed using the Euler method into a difference equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-131b5e10-b542-4dbe-8dcd-d9c88e9bf4fa">
-<span class="eqno">(126)<a class="headerlink" href="#equation-131b5e10-b542-4dbe-8dcd-d9c88e9bf4fa" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h f(t_i,w_i). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-45ad16b1-0600-4554-9600-ac7568a5a467">
+<span class="eqno">(127)<a class="headerlink" href="#equation-45ad16b1-0600-4554-9600-ac7568a5a467" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h f(t_i,w_i). \end{equation}\]</div>
 <p>This approximates a series of of values <span class="math notranslate nohighlight">\(w_0, \ w_1, \ ..., w_{N}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span><span class="c1">## INITIAL CONDITION</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-<span class="c1">## ADD EQUATION DYNAMICS TO EQUATION   </span>
-<span class="c1">## w[i+1]=w[i]+h</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">A</span> <span class="c1">## INITIAL CONDITION</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+<span class="c1">## ADD EQUATION DYNAMICS TO EQUATION</span>
+<span class="c1">##    w[i+1]=w[i]+h*</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/1r/rb8x65yn57q68x042jv2vgx80000gn/T/ipykernel_4904/1060597621.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
-    <span class="c1">## w[i+1]=w[i]+h</span>
-                    <span class="o">^</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/1r/rb8x65yn57q68x042jv2vgx80000gn/T/ipykernel_81484/967930414.py&quot;</span><span class="gt">, line </span><span class="mi">5</span>
+    <span class="c1">##    w[i+1]=w[i]+h*</span>
+                        <span class="o">^</span>
 <span class="ne">SyntaxError</span>: unexpected EOF while parsing
 </pre></div>
 </div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-<span class="c1"># --- left hand plot</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">)</span>
-
-<span class="c1">#ax.legend(loc=&#39;best&#39;)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Numerical Solution (w) h=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../../_images/352559ca6f3bb32b8e8ecfe08709ffb911ade6cfe2fcf69ed8c151f9451953a9.png" src="../../_images/352559ca6f3bb32b8e8ecfe08709ffb911ade6cfe2fcf69ed8c151f9451953a9.png" />
 </div>
 </div>
 </section>
@@ -655,7 +631,7 @@ y(a)=A.
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-method">Euler method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-interval">Discrete Interval</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-condition">Initial Condition</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation-of-an-initial-value-problem">Numerical approximation of an Initial Value Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation-of-population-growth">Numerical approximation of Population growth</a></li>
 </ul>
   </nav></div>
 

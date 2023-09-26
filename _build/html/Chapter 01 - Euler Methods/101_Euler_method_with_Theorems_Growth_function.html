@@ -1,0 +1,1119 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>First Order Initial Value Problem &#8212; Numerical and Machine Learning Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 01 - Euler Methods/101_Euler_method_with_Theorems_Growth_function';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Euler Method with Theorems Applied to Non-Linear Population Equations" href="102_Euler_method_with_Theorems_nonlinear_Growth_function.html" />
+    <link rel="prev" title="Numerical Methods and Machine Learning for Differential Equations with Applications in Python" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Numerical Methods and Machine Learning for Differential Equations with Applications in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Euler Method</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">First Order Initial Value Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Taylor Method</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/201_3rd%20Order%20Taylor_Population_growth.html">Taylor Method</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet.html">Problem Sheet 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/202_Taylor%20Method%20Error%20Example.html">1st vs 2nd order Taylor methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/201a_Problem_Sheet.html">Problem Sheet 2 Question 1a - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/201b_Problem_Sheet.html">Problem Sheet 2 Question 1b - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/205_Problem_Sheet.html">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Runge Kutta</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/302_4th%20Order%20Runge%20Kutta.html">Example 4th order Runge Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/307b_Problem_Sheet.html">Problem Sheet 3 Question 7b</a></li>
+
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multistep Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/401_Adams%20Bashforth%20Example.html">Adams Bashforth</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/402_Adams%20Bashforth%20Population%20Equations.html">2 Step Adam Bashforth</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/403_Adams%20Moulton%20Example.html">Adams Moulton</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/404_Adams%20Moulton%20Population%20Equations.html">1 Step Adams Moulton</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/405_Adams%20Predictor%20Corrector%20Example.html">Adams Predictor Corrector</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet.html">Problem Sheet 4 - Multistep Methods</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/401a_Problem_Sheet.html">Problem Sheet Question 1a</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/401b_Problem_Sheet.html">Problem Sheet Question 1b</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/402a_Problem_Sheet.html">Problem Sheet Question 2a</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406b_Problem_Sheet.html">Problem Sheet Question 6b</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Consistency, Convergence and Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/501_Consistent.html">Consistency of a Multistep method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/502_Convergent.html">Convergence of a Multistep Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/503_Stability.html">Stability of a Multistep method</a></li>
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.html">Further Notes on Stability</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/5_Problem_Sheet.html">Problem Sheet 5 - Consistency, Convergence and Stability</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Initial Value Problems Review Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/IVP_Problems.html">Initial Value Problem Review Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary Value Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/601_Linear%20Shooting%20Method.html">Linear Shooting Method</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/602_Non-Linear%20Shooting%20Method.html">Non-Linear Shooting Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/603_Boundary%20Value%20Problem.html">Finite Difference Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/6_Problem_Sheet.html">Problem Sheet 6 - Boundary Value Problems</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/john-s-butler-dit/Numerical-Methods-and-Machine-Learning-for-DE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter 01 - Euler Methods/101_Euler_method_with_Theorems_Growth_function.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>First Order Initial Value Problem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-method">Euler method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-growth">Population growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-interval">Discrete Interval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-condition">Initial Condition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#growth-rate">Growth rate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation-of-population-growth">Numerical approximation of Population growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-error">Numerical Error</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-euler-local-truncation-error">Derivation of  Euler Local truncation error</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-euler-local-truncation-error-for-the-population-growth">Derivation of  Euler Local truncation error for the Population Growth</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-error">Global Error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-global-error">Euler Global Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems-about-ordinary-differential-equations">Theorems about Ordinary Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-truncation-error-for-the-population-equation">Global truncation error for the population equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="first-order-initial-value-problem">
+<h1>First Order Initial Value Problem<a class="headerlink" href="#first-order-initial-value-problem" title="Permalink to this heading">#</a></h1>
+<p>The more general form of a first order Ordinary Differential Equation is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9197d971-e942-4be6-88c9-71b44b538178">
+<span class="eqno">(1)<a class="headerlink" href="#equation-9197d971-e942-4be6-88c9-71b44b538178" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y^{'}=f(t,y).
+\end{equation}\]</div>
+<p>This can be solved analytically by integrating both sides but this is not straight forward for most problems.
+Numerical methods can be used to approximate the solution at discrete points.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/AvQgGQAq4vI?si=5UCKUuSDliEI88Jg&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/johnbutler/opt/anaconda3/lib/python3.8/site-packages/IPython/core/display.py:724: UserWarning: Consider using IPython.display.IFrame instead
+  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
+</pre></div>
+</div>
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/AvQgGQAq4vI?si=5UCKUuSDliEI88Jg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+</div>
+<section id="euler-method">
+<h2>Euler method<a class="headerlink" href="#euler-method" title="Permalink to this heading">#</a></h2>
+<p>The simplest one step numerical method is the Euler Method named after the most prolific of mathematicians <a class="reference external" href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> (15 April 1707 – 18 September 1783) .</p>
+<p>The general Euler formula for the first order differential equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-81da548b-9a80-4a24-a3f3-c8977b65fd2d">
+<span class="eqno">(2)<a class="headerlink" href="#equation-81da548b-9a80-4a24-a3f3-c8977b65fd2d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y^{'} = f(t,y), 
+\end{equation}\]</div>
+<p>approximates the derivative at time point <span class="math notranslate nohighlight">\(t_i\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-102b6217-0b37-462c-af22-0c0f94fff770">
+<span class="eqno">(3)<a class="headerlink" href="#equation-102b6217-0b37-462c-af22-0c0f94fff770" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y^{'}(t_i) \approx \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}},
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_i\)</span> is the approximate solution of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>.</p>
+<p>This substitution changes the differential equation  into a <strong>difference</strong> equation of the form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-75f34f2a-3294-4251-8ff5-b6fee5d054cc">
+<span class="eqno">(4)<a class="headerlink" href="#equation-75f34f2a-3294-4251-8ff5-b6fee5d054cc" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\frac{w_{i+1}-w_i}{t_{i+1}-t_{i}}=f(t_i,w_i). 
+\end{equation}\]</div>
+<p>Assuming uniform stepsize <span class="math notranslate nohighlight">\(t_{i+1}-t_{i}\)</span> is replaced by <span class="math notranslate nohighlight">\(h\)</span>, re-arranging the equation gives</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d2b7950e-5b81-4ac7-81b5-906e09e7bdca">
+<span class="eqno">(5)<a class="headerlink" href="#equation-d2b7950e-5b81-4ac7-81b5-906e09e7bdca" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+w_{i+1}=w_i+hf(t_i,w_i).
+\end{equation}\]</div>
+<p>This can be read as the future <span class="math notranslate nohighlight">\(w_{i+1}\)</span> can be approximated by the present <span class="math notranslate nohighlight">\(w_i\)</span> and the addition of the input to the system <span class="math notranslate nohighlight">\(f(t,y)\)</span> times the time step.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Library</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># side-stepping mpl backend</span>
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span> <span class="c1"># subplots</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="population-growth">
+<h2>Population growth<a class="headerlink" href="#population-growth" title="Permalink to this heading">#</a></h2>
+<p>The general form of the population growth differential equation is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d9c6c9e6-36f7-48a6-aad2-92e907cd6c94">
+<span class="eqno">(6)<a class="headerlink" href="#equation-d9c6c9e6-36f7-48a6-aad2-92e907cd6c94" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+y^{'}=\epsilon y 
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\epsilon\)</span> is the growth rate. The initial population at time <span class="math notranslate nohighlight">\(a\)</span> is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-018f83d6-8777-46fa-9261-c440f318392e">
+<span class="eqno">(7)<a class="headerlink" href="#equation-018f83d6-8777-46fa-9261-c440f318392e" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+y(a)=A,
+ \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-90a3a870-c019-45b5-a9a5-5219c832d0b0">
+<span class="eqno">(8)<a class="headerlink" href="#equation-90a3a870-c019-45b5-a9a5-5219c832d0b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ a\leq t \leq b. 
+\end{equation}\]</div>
+<p>Integrating gives  the general analytic (exact) solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1a5f94a7-d1ac-4ed7-b5d6-43a0ec9ddc49">
+<span class="eqno">(9)<a class="headerlink" href="#equation-1a5f94a7-d1ac-4ed7-b5d6-43a0ec9ddc49" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ y=Ae^{\epsilon t}. 
+\end{equation}\]</div>
+<p>We will use this equation to illustrate the application of the Euler method.</p>
+</section>
+<section id="discrete-interval">
+<h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
+<p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3760a459-1f13-4518-bf6e-5a087864bb8c">
+<span class="eqno">(10)<a class="headerlink" href="#equation-3760a459-1f13-4518-bf6e-5a087864bb8c" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+h=\frac{b-a}{N}.
+\end{equation}\]</div>
+<p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8549539d-bbce-41ff-a118-d13df275ac6b">
+<span class="eqno">(11)<a class="headerlink" href="#equation-8549539d-bbce-41ff-a118-d13df275ac6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ h=\frac{2-0}{20}=0.1,
+\end{equation}\]</div>
+<p>this gives the 21 discrete points:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-1ec57c29-6ccb-473a-a1e5-e7947767dd4f">
+<span class="eqno">(12)<a class="headerlink" href="#equation-1ec57c29-6ccb-473a-a1e5-e7947767dd4f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ t_0=0, \ t_1=0.1, \ ... t_{20}=2. 
+\end{equation}\]</div>
+<p>This is generalised to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-57a42b23-2106-431b-94f0-c2726f888924">
+<span class="eqno">(13)<a class="headerlink" href="#equation-57a42b23-2106-431b-94f0-c2726f888924" title="Permalink to this equation">#</a></span>\[\begin{equation}
+t_i=0+i0.1, \ \ \ i=0,1,...,20.
+\end{equation}\]</div>
+<p>The plot below shows the discrete time steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Setting up time</span>
+<span class="n">t_end</span><span class="o">=</span><span class="mf">2.0</span>
+<span class="n">t_start</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">h</span><span class="o">=</span><span class="p">(</span><span class="n">t_end</span><span class="o">-</span><span class="n">t_start</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+<span class="n">time</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span><span class="n">t_end</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">time</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Illustration of discrete time points for h=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/faf2071c155aea8715f9a0bc29fcb3816c1bb0b17f7b7eaa1d7f01bc1afd93c8.png" src="../_images/faf2071c155aea8715f9a0bc29fcb3816c1bb0b17f7b7eaa1d7f01bc1afd93c8.png" />
+</div>
+</div>
+</section>
+<section id="initial-condition">
+<h2>Initial Condition<a class="headerlink" href="#initial-condition" title="Permalink to this heading">#</a></h2>
+<p>To get a specify solution to a first order initial value problem, an <strong>initial condition</strong> is required.</p>
+<p>For our population problem the intial condition is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-eea59323-171b-4bc2-aba8-f59d80797f3b">
+<span class="eqno">(14)<a class="headerlink" href="#equation-eea59323-171b-4bc2-aba8-f59d80797f3b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y(0)=10.
+\end{equation}\]</div>
+<p>This gives the analytic solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-91231b02-baf9-48ec-aa24-c2d363f3cc1a">
+<span class="eqno">(15)<a class="headerlink" href="#equation-91231b02-baf9-48ec-aa24-c2d363f3cc1a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y=10e^{\epsilon t}.
+\end{equation}\]</div>
+<section id="growth-rate">
+<h3>Growth rate<a class="headerlink" href="#growth-rate" title="Permalink to this heading">#</a></h3>
+<p>Let the growth rate</p>
+<div class="amsmath math notranslate nohighlight" id="equation-807d8730-6f69-4d12-86bd-5f95be1a4206">
+<span class="eqno">(16)<a class="headerlink" href="#equation-807d8730-6f69-4d12-86bd-5f95be1a4206" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\epsilon=0.5
+\end{equation}\]</div>
+<p>giving the analytic solution.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f21d963a-e851-44d5-80c1-e639143f0b0d">
+<span class="eqno">(17)<a class="headerlink" href="#equation-f21d963a-e851-44d5-80c1-e639143f0b0d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y=10e^{0.5 t}.
+\end{equation}\]</div>
+<p>The plot below shows the exact solution on the discrete time steps.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Analytic Solution y</span>
+<span class="n">y</span><span class="o">=</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">time</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Analytic (Exact) solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/01796c97c9bc021d34d69d9741c0495b72525ffd7c3e7cd7b0e997b6e410908f.png" src="../_images/01796c97c9bc021d34d69d9741c0495b72525ffd7c3e7cd7b0e997b6e410908f.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="numerical-approximation-of-population-growth">
+<h2>Numerical approximation of Population growth<a class="headerlink" href="#numerical-approximation-of-population-growth" title="Permalink to this heading">#</a></h2>
+<p>The differential equation is transformed using the Euler method into a difference equation of the form</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f833f07c-5bcd-40dc-afc8-68646175844b">
+<span class="eqno">(18)<a class="headerlink" href="#equation-f833f07c-5bcd-40dc-afc8-68646175844b" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h \epsilon w_i. \end{equation}\]</div>
+<p>This approximates a series of of values <span class="math notranslate nohighlight">\(w_0, \ w_1, \ ..., w_{N}\)</span>.
+For the specific example of the population equation the difference equation is
+\begin{equation} w_{i+1}=w_{i}+h 0.5 w_i. \end{equation}
+where <span class="math notranslate nohighlight">\(w_0=10\)</span>. From this initial condition the series is approximated.
+The plot below shows the exact solution <span class="math notranslate nohighlight">\(y\)</span> in black circles and Euler approximation <span class="math notranslate nohighlight">\(w\)</span> in blue squares.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;s:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Euler&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Analytic and Euler solution&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6bb7f99dd703396f424fa02c7fde59b4568830449ae65650a2aa0a98993fad13.png" src="../_images/6bb7f99dd703396f424fa02c7fde59b4568830449ae65650a2aa0a98993fad13.png" />
+</div>
+</div>
+</section>
+<section id="numerical-error">
+<h2>Numerical Error<a class="headerlink" href="#numerical-error" title="Permalink to this heading">#</a></h2>
+<p>With a numerical solution there are two types of error:</p>
+<ul class="simple">
+<li><p>local truncation error at one time step;</p></li>
+<li><p>global error which is the propagation of local error.</p></li>
+</ul>
+<section id="derivation-of-euler-local-truncation-error">
+<h3>Derivation of  Euler Local truncation error<a class="headerlink" href="#derivation-of-euler-local-truncation-error" title="Permalink to this heading">#</a></h3>
+<p>The left hand side of a initial value problem <span class="math notranslate nohighlight">\(\frac{dy}{dt}\)</span> is approximated by <strong>Taylors theorem</strong> expand about a point <span class="math notranslate nohighlight">\(t_0\)</span> giving:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c6f75e71-05fd-4f0e-8f9c-c2ed66c2cdad">
+<span class="eqno">(19)<a class="headerlink" href="#equation-c6f75e71-05fd-4f0e-8f9c-c2ed66c2cdad" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y(t_1) = y(t_0)+(t_1-t_0)y^{'}(t_0) + \frac{(t_1-t_0)^2}{2!}y^{''}(\xi), \ \ \ \ \ \ \xi \in [t_0,t_1]. 
+\end{equation}\]</div>
+<p>Rearranging and letting <span class="math notranslate nohighlight">\(h=t_1-t_0\)</span> the equation becomes</p>
+<div class="amsmath math notranslate nohighlight" id="equation-4e6c5203-c412-4619-a4d8-52dcb0563758">
+<span class="eqno">(20)<a class="headerlink" href="#equation-4e6c5203-c412-4619-a4d8-52dcb0563758" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y^{'}(t_0)=\frac{y(t_1)-y(t_0)}{h}-\frac{h}{2}y^{''}(\xi). 
+\end{equation}\]</div>
+<p>From this the local truncation error is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9fc79803-9afd-46ae-9c46-152f520de509">
+<span class="eqno">(21)<a class="headerlink" href="#equation-9fc79803-9afd-46ae-9c46-152f520de509" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\tau y^{'}(t_0)\leq \frac{h}{2}M  
+\end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(y^{''}(t) \leq M \)</span>.</p>
+<section id="derivation-of-euler-local-truncation-error-for-the-population-growth">
+<h4>Derivation of  Euler Local truncation error for the Population Growth<a class="headerlink" href="#derivation-of-euler-local-truncation-error-for-the-population-growth" title="Permalink to this heading">#</a></h4>
+<p>In most cases <span class="math notranslate nohighlight">\(y\)</span> is unknown but in our example problem there is an exact solution which can be used to estimate the local truncation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-765e3ca5-bd84-46f7-a1f3-4130a7d881a4">
+<span class="eqno">(22)<a class="headerlink" href="#equation-765e3ca5-bd84-46f7-a1f3-4130a7d881a4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y'(t)=5e^{0.5 t},
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-244014dc-c61f-42bd-82ec-686a3953bb4a">
+<span class="eqno">(23)<a class="headerlink" href="#equation-244014dc-c61f-42bd-82ec-686a3953bb4a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y''(t)=2.5e^{0.5 t}.
+\end{equation}\]</div>
+<p>From this a maximum upper limit can be calculated for <span class="math notranslate nohighlight">\(y^{''} \)</span> on the interval <span class="math notranslate nohighlight">\([t_0,t_1]=[0,0.1]\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-2f926820-c0ea-421d-a7b1-0bc67e5f7cd5">
+<span class="eqno">(24)<a class="headerlink" href="#equation-2f926820-c0ea-421d-a7b1-0bc67e5f7cd5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y''(0.1)=2.5e^{0.1\times 0.5}=2.63=M,
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a4d45fda-7632-46fd-ac44-9760b473a213">
+<span class="eqno">(25)<a class="headerlink" href="#equation-a4d45fda-7632-46fd-ac44-9760b473a213" title="Permalink to this equation">#</a></span>\[\begin{equation}
+\tau=\frac{h}{2}2.63=0.1315. 
+\end{equation}\]</div>
+<p>The plot below shows the exact local truncation error <span class="math notranslate nohighlight">\(|y-w|\)</span> (red triangle) and the upper limit of the Truncation error (black v) for the first two time points <span class="math notranslate nohighlight">\(t_0\)</span> and <span class="math notranslate nohighlight">\(t_1\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]),</span><span class="s1">&#39;^:&#39;</span>
+         <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Error |y-w|&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">],</span><span class="mf">0.1</span><span class="o">*</span><span class="mf">2.63</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span><span class="s1">&#39;v:&#39;</span>
+         <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Upper Local Truncation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mf">.15</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Local Truncation Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d0024517b316515d65d41f20f8ba0b43db8bcf1ae8a5e54d6abf2fcc0cf1e13d.png" src="../_images/d0024517b316515d65d41f20f8ba0b43db8bcf1ae8a5e54d6abf2fcc0cf1e13d.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="global-error">
+<h2>Global Error<a class="headerlink" href="#global-error" title="Permalink to this heading">#</a></h2>
+<p>The error does not stay constant accross the time this is illustrated in the figure below for the population growth equation. The actual error (red triangles) increases over time while the local truncation error (black v) remains constant.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="n">y</span><span class="p">),</span><span class="s1">&#39;^:&#39;</span>
+         <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Error |y-w|&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="mf">0.1</span><span class="o">*</span><span class="mf">2.63</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;v:&#39;</span>
+         <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Upper Local Truncation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Why Local Truncation does not extend to global&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/187ac9233fdfa1163b27fcb32bbd3c2c640bf7cfa079f5f9ba14edcd9b035b9e.png" src="../_images/187ac9233fdfa1163b27fcb32bbd3c2c640bf7cfa079f5f9ba14edcd9b035b9e.png" />
+</div>
+</div>
+</section>
+<section id="theorems">
+<h2>Theorems<a class="headerlink" href="#theorems" title="Permalink to this heading">#</a></h2>
+<p>To theorem below proves an upper limit of the global truncation error.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/9ZIx7y2s11k?si=yymAEzoxWp9pvWTN&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/9ZIx7y2s11k?si=yymAEzoxWp9pvWTN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div></div>
+</div>
+<section id="euler-global-error">
+<h3>Euler Global Error<a class="headerlink" href="#euler-global-error" title="Permalink to this heading">#</a></h3>
+<p><strong>Theorem Global Error</strong></p>
+<p>Suppose <span class="math notranslate nohighlight">\(f\)</span> is continuous and satisfies a Lipschitz Condition with constant
+L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that a constant M
+exists with the property that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-444a87e2-885e-4d22-b445-3259ff80e294">
+<span class="eqno">(26)<a class="headerlink" href="#equation-444a87e2-885e-4d22-b445-3259ff80e294" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|y^{''}(t)|\leq M. 
+\end{equation}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fb96a6bf-8a88-46fd-bc44-7143f00527c9">
+<span class="eqno">(27)<a class="headerlink" href="#equation-fb96a6bf-8a88-46fd-bc44-7143f00527c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y^{'}=f(t,y) \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, 
+\end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Euler method for some
+positive integer N.  Then for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-158a855f-29a9-4a48-a7d3-e5cb39e92822">
+<span class="eqno">(28)<a class="headerlink" href="#equation-158a855f-29a9-4a48-a7d3-e5cb39e92822" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|y(t_i)-w_i| \leq \frac{Mh}{2L}|e^{L(t_i-a)}-1|. 
+\end{equation}\]</div>
+</section>
+<section id="theorems-about-ordinary-differential-equations">
+<h3>Theorems about Ordinary Differential Equations<a class="headerlink" href="#theorems-about-ordinary-differential-equations" title="Permalink to this heading">#</a></h3>
+<p><strong>Definition</strong></p>
+<p>A function <span class="math notranslate nohighlight">\(f(t,y)\)</span> is said to satisfy a <strong>Lipschitz Condition</strong> in the variable <span class="math notranslate nohighlight">\(y\)</span> on
+the set <span class="math notranslate nohighlight">\(D \subset R^2\)</span> if a constant <span class="math notranslate nohighlight">\(L&gt;0\)</span> exist with the property that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a3d553ce-99ba-4d52-b66f-04521fc1c88c">
+<span class="eqno">(29)<a class="headerlink" href="#equation-a3d553ce-99ba-4d52-b66f-04521fc1c88c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+|f(t,y_1)-f(t,y_2)| &lt; L|y_1-y_2| 
+\end{equation}\]</div>
+<p>whenever <span class="math notranslate nohighlight">\((t,y_1),(t,y_2) \in D\)</span>.  The constant L is call the Lipschitz Condition
+of <span class="math notranslate nohighlight">\(f\)</span>.</p>
+<p><strong>Theorem</strong>
+Suppose <span class="math notranslate nohighlight">\(f(t,y)\)</span> is defined on a convex set <span class="math notranslate nohighlight">\(D \subset R^2\)</span>. If a constant
+<span class="math notranslate nohighlight">\(L&gt;0\)</span> exists with</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9519b676-c80c-448f-af92-9cdb45ddc7ec">
+<span class="eqno">(30)<a class="headerlink" href="#equation-9519b676-c80c-448f-af92-9cdb45ddc7ec" title="Permalink to this equation">#</a></span>\[\begin{equation}
+L\leq \left|\frac{\partial f(t,y)}{\partial y}\right|,
+\end{equation}\]</div>
+<p>then <span class="math notranslate nohighlight">\(f\)</span> satisfies a Lipschitz Condition an <span class="math notranslate nohighlight">\(D\)</span> in the variable <span class="math notranslate nohighlight">\(y\)</span> with
+Lipschitz constant L.</p>
+</section>
+<section id="global-truncation-error-for-the-population-equation">
+<h3>Global truncation error for the population equation<a class="headerlink" href="#global-truncation-error-for-the-population-equation" title="Permalink to this heading">#</a></h3>
+<p>For the population equation specific values <span class="math notranslate nohighlight">\(L\)</span> and <span class="math notranslate nohighlight">\(M\)</span> can be calculated.</p>
+<p>In this case <span class="math notranslate nohighlight">\(f(t,y)=\epsilon y\)</span> is continuous and satisfies a Lipschitz Condition with constant
+L\leq \begin{equation} \left|\frac{\partial f(t,y)}{\partial y}\right|, \end{equation}</p>
+<div class="amsmath math notranslate nohighlight" id="equation-86d56122-8831-4478-9bd9-85865baea0ca">
+<span class="eqno">(31)<a class="headerlink" href="#equation-86d56122-8831-4478-9bd9-85865baea0ca" title="Permalink to this equation">#</a></span>\[\begin{equation} \left|\frac{\partial \epsilon y}{\partial y}\right|= \epsilon=0.5=L, \end{equation}\]</div>
+<p>on <span class="math notranslate nohighlight">\(D=\{(t,y)|0\leq t \leq 2, 10 &lt; y &lt; 30 \}\)</span> and that a constant <span class="math notranslate nohighlight">\(M\)</span>
+exists with the property that</p>
+<div class="amsmath math notranslate nohighlight" id="equation-46411206-a728-4db5-a4fc-03bf0ccedb29">
+<span class="eqno">(32)<a class="headerlink" href="#equation-46411206-a728-4db5-a4fc-03bf0ccedb29" title="Permalink to this equation">#</a></span>\[\begin{equation} |y^{''}(t)|\leq M. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2d7911e7-dce0-4358-900d-a362c1833f01">
+<span class="eqno">(33)<a class="headerlink" href="#equation-2d7911e7-dce0-4358-900d-a362c1833f01" title="Permalink to this equation">#</a></span>\[\begin{equation} |y^{''}(t)|=2.5e^{0.5\times 2} \leq 2.5 e=6.8. \end{equation}\]</div>
+<p><strong>Specific Theorem Global Error</strong></p>
+<p>Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3112479c-ecae-423f-8394-b25f22f3b7e4">
+<span class="eqno">(34)<a class="headerlink" href="#equation-3112479c-ecae-423f-8394-b25f22f3b7e4" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.5 y \ \ \ 0\leq t \leq 10 \ \ \ y(0)=10 \end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Euler method for some
+positive integer N.  Then for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-d590dd3c-65e2-4137-bed1-b1d2d487e5d6">
+<span class="eqno">(35)<a class="headerlink" href="#equation-d590dd3c-65e2-4137-bed1-b1d2d487e5d6" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{6.8 h}{2\times 0.5}|e^{0.5(t_i-0)}-1| \end{equation}\]</div>
+<p>The figure below shows the exact error <span class="math notranslate nohighlight">\(y-w\)</span> in red triangles and the upper global error in black x’s.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="n">y</span><span class="p">),</span><span class="s1">&#39;^:&#39;</span>
+         <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Error |y-w|&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="mf">0.1</span><span class="o">*</span><span class="mf">6.8</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">time</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;x:&#39;</span>
+         <span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Upper Global Truncation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Global Truncation Error&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ba1d596eaccc4f6866ba0aa9c3aa707dbf17066aa23bd631de11b04efffd00a8.png" src="../_images/ba1d596eaccc4f6866ba0aa9c3aa707dbf17066aa23bd631de11b04efffd00a8.png" />
+</div>
+</div>
+</section>
+<section id="table">
+<h3>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h3>
+<p>The table below shows the iteration <span class="math notranslate nohighlight">\(i\)</span>, the discrete time point t[i], the Euler approximation w[i] of the solution <span class="math notranslate nohighlight">\(y\)</span>, the exact error <span class="math notranslate nohighlight">\(|y-w|\)</span> and the upper limit of the global error for the linear population equation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span>    <span class="s1">&#39;Euler (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span><span class="s1">&#39;Exact (y)&#39;</span><span class="p">:</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">],</span><span class="s1">&#39;Exact Error (|y_i-w_i|)&#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]</span><span class="o">-</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">]),</span><span class="mi">10</span><span class="p">),</span><span class="sa">r</span><span class="s1">&#39;Global Error &#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="mf">6.8</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">time</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="mi">20</span><span class="p">)}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time t_i</th>
+      <th>Euler (w_i)</th>
+      <th>Exact (y)</th>
+      <th>Exact Error (|y_i-w_i|)</th>
+      <th>Global Error</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>10.000000</td>
+      <td>10.000000</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.1</td>
+      <td>10.500000</td>
+      <td>10.512711</td>
+      <td>0.012711</td>
+      <td>0.034864</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.2</td>
+      <td>11.025000</td>
+      <td>11.051709</td>
+      <td>0.026709</td>
+      <td>0.071516</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.3</td>
+      <td>11.576250</td>
+      <td>11.618342</td>
+      <td>0.042092</td>
+      <td>0.110047</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.4</td>
+      <td>12.155062</td>
+      <td>12.214028</td>
+      <td>0.058965</td>
+      <td>0.150554</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.5</td>
+      <td>12.762816</td>
+      <td>12.840254</td>
+      <td>0.077439</td>
+      <td>0.193137</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0.6</td>
+      <td>13.400956</td>
+      <td>13.498588</td>
+      <td>0.097632</td>
+      <td>0.237904</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.7</td>
+      <td>14.071004</td>
+      <td>14.190675</td>
+      <td>0.119671</td>
+      <td>0.284966</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.8</td>
+      <td>14.774554</td>
+      <td>14.918247</td>
+      <td>0.143693</td>
+      <td>0.334441</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.9</td>
+      <td>15.513282</td>
+      <td>15.683122</td>
+      <td>0.169840</td>
+      <td>0.386452</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter 01 - Euler Methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Numerical Methods and Machine Learning for Differential Equations with Applications in Python</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="102_Euler_method_with_Theorems_nonlinear_Growth_function.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Euler Method with Theorems Applied to Non-Linear Population Equations</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-method">Euler method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#population-growth">Population growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-interval">Discrete Interval</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-condition">Initial Condition</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#growth-rate">Growth rate</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation-of-population-growth">Numerical approximation of Population growth</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-error">Numerical Error</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-euler-local-truncation-error">Derivation of  Euler Local truncation error</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#derivation-of-euler-local-truncation-error-for-the-population-growth">Derivation of  Euler Local truncation error for the Population Growth</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-error">Global Error</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems">Theorems</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-global-error">Euler Global Error</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#theorems-about-ordinary-differential-equations">Theorems about Ordinary Differential Equations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#global-truncation-error-for-the-population-equation">Global truncation error for the population equation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John S Butler
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

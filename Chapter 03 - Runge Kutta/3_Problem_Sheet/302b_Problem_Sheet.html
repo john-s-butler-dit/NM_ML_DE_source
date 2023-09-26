@@ -429,30 +429,30 @@ document.write(`
 <section id="problem-sheet-3-question-2b">
 <h1>Problem Sheet 3 Question 2b<a class="headerlink" href="#problem-sheet-3-question-2b" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c53b078c-b6a9-4836-87e6-99ea5b5f6fed">
-<span class="eqno">(355)<a class="headerlink" href="#equation-c53b078c-b6a9-4836-87e6-99ea5b5f6fed" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a4c2099c-9523-4a8e-bf60-63e26d27828d">
+<span class="eqno">(356)<a class="headerlink" href="#equation-a4c2099c-9523-4a8e-bf60-63e26d27828d" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6842776-327e-4656-8112-2bd6fea56f58">
-<span class="eqno">(356)<a class="headerlink" href="#equation-a6842776-327e-4656-8112-2bd6fea56f58" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-243b42e1-5b5f-4894-a9bd-8446992bc77f">
+<span class="eqno">(357)<a class="headerlink" href="#equation-243b42e1-5b5f-4894-a9bd-8446992bc77f" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2\end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9a1118e9-0931-4ed4-803a-ff4785d900a9">
-<span class="eqno">(357)<a class="headerlink" href="#equation-9a1118e9-0931-4ed4-803a-ff4785d900a9" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-12aa8798-e46d-4203-8b53-72430131effa">
+<span class="eqno">(358)<a class="headerlink" href="#equation-12aa8798-e46d-4203-8b53-72430131effa" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="runge-kutta-solution">
 <h1>Runge Kutta Solution<a class="headerlink" href="#runge-kutta-solution" title="Permalink to this heading">#</a></h1>
 <p>The Runge Kutta difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2358116b-27be-4a62-8915-b3908fbfbfea">
-<span class="eqno">(358)<a class="headerlink" href="#equation-2358116b-27be-4a62-8915-b3908fbfbfea" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{1}{6}(k_1+2k_2+2k_3+k_4) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4f304f75-6be5-44bb-904d-b41bb786351e">
+<span class="eqno">(359)<a class="headerlink" href="#equation-4f304f75-6be5-44bb-904d-b41bb786351e" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{1}{6}(k_1+2k_2+2k_3+k_4) \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c55b6ef2-fb63-42af-be94-a74f6915929c">
-<span class="eqno">(359)<a class="headerlink" href="#equation-c55b6ef2-fb63-42af-be94-a74f6915929c" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=h(w_i-t_i)\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c86407eb-dfd0-43f8-b366-5e726c667d77">
-<span class="eqno">(360)<a class="headerlink" href="#equation-c86407eb-dfd0-43f8-b366-5e726c667d77" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=h((w_i+\frac{1}{2}k_1)-(t_i+\frac{h}{2}))\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-49496205-855b-4723-a4ab-7dfb290659d5">
-<span class="eqno">(361)<a class="headerlink" href="#equation-49496205-855b-4723-a4ab-7dfb290659d5" title="Permalink to this equation">#</a></span>\[\begin{equation}k_3=h((w_i+\frac{1}{2}k_2)-(t_i+\frac{h}{2}))\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-45091eaa-9c20-4cbb-88ba-474f67b1bd00">
-<span class="eqno">(362)<a class="headerlink" href="#equation-45091eaa-9c20-4cbb-88ba-474f67b1bd00" title="Permalink to this equation">#</a></span>\[\begin{equation}k_4=h((w_i+k_3)-(t_i+h))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-dd614412-61aa-4d0b-9740-fc0b50a66b47">
+<span class="eqno">(360)<a class="headerlink" href="#equation-dd614412-61aa-4d0b-9740-fc0b50a66b47" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=h(w_i-t_i)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6e993698-550a-47f8-90a0-1b942a51b4f8">
+<span class="eqno">(361)<a class="headerlink" href="#equation-6e993698-550a-47f8-90a0-1b942a51b4f8" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=h((w_i+\frac{1}{2}k_1)-(t_i+\frac{h}{2}))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3e130800-ed48-4968-8605-4ea84d0f3ef2">
+<span class="eqno">(362)<a class="headerlink" href="#equation-3e130800-ed48-4968-8605-4ea84d0f3ef2" title="Permalink to this equation">#</a></span>\[\begin{equation}k_3=h((w_i+\frac{1}{2}k_2)-(t_i+\frac{h}{2}))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2759edc9-252d-47a8-a501-a337397ebf7f">
+<span class="eqno">(363)<a class="headerlink" href="#equation-2759edc9-252d-47a8-a501-a337397ebf7f" title="Permalink to this equation">#</a></span>\[\begin{equation}k_4=h((w_i+k_3)-(t_i+h))\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

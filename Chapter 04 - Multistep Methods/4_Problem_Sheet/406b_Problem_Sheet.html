@@ -428,28 +428,28 @@ document.write(`
 <section id="problem-sheet-question-6b">
 <h1>Problem Sheet Question 6b<a class="headerlink" href="#problem-sheet-question-6b" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eebb4218-ae75-4e86-90c7-3e7d6bc9baa8">
-<span class="eqno">(523)<a class="headerlink" href="#equation-eebb4218-ae75-4e86-90c7-3e7d6bc9baa8" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=ty^3-y, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4213b99a-b68c-4e45-8b24-b956cd034b00">
+<span class="eqno">(524)<a class="headerlink" href="#equation-4213b99a-b68c-4e45-8b24-b956cd034b00" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=ty^3-y, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c9c088fe-d868-4fc8-9428-ef36e7671f9f">
-<span class="eqno">(524)<a class="headerlink" href="#equation-c9c088fe-d868-4fc8-9428-ef36e7671f9f" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e169493d-ccd9-4fa6-a3e3-57304cac6642">
+<span class="eqno">(525)<a class="headerlink" href="#equation-e169493d-ccd9-4fa6-a3e3-57304cac6642" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1.\end{equation}\]</div>
 <p>For N=4</p>
-<div class="amsmath math notranslate nohighlight" id="equation-65905ea1-7955-4321-87c5-c6a321d77b3a">
-<span class="eqno">(525)<a class="headerlink" href="#equation-65905ea1-7955-4321-87c5-c6a321d77b3a" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_1)= 0.5.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c8a7c195-9663-420c-8d84-4541c0bdaca5">
+<span class="eqno">(526)<a class="headerlink" href="#equation-c8a7c195-9663-420c-8d84-4541c0bdaca5" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_1)= 0.5.\end{equation}\]</div>
 <section id="step-adams-bashforth">
 <h2>2-step Adams Bashforth<a class="headerlink" href="#step-adams-bashforth" title="Permalink to this heading">#</a></h2>
 <p>The 2-step Adams Bashforth difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ab178056-ea9a-4c71-a4b5-8dbbc9d65a24">
-<span class="eqno">(526)<a class="headerlink" href="#equation-ab178056-ea9a-4c71-a4b5-8dbbc9d65a24" title="Permalink to this equation">#</a></span>\[\begin{equation}w^{0}_{i+1} = w_{i} + \frac{h}{2}(3f(t_i,w_i)-f(t_{i-1},w_{i-1})) \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-02cc2a3c-6297-4891-858e-4399aae0baaa">
-<span class="eqno">(527)<a class="headerlink" href="#equation-02cc2a3c-6297-4891-858e-4399aae0baaa" title="Permalink to this equation">#</a></span>\[\begin{equation}w^{0}_{i+1} = w_{i} + \frac{h}{2}(3(t_iw_i^3-w_i)-(t_{i-1}w_{i-1}^3-w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-47d6c208-5fcf-4295-95d6-0c52835b279e">
+<span class="eqno">(527)<a class="headerlink" href="#equation-47d6c208-5fcf-4295-95d6-0c52835b279e" title="Permalink to this equation">#</a></span>\[\begin{equation}w^{0}_{i+1} = w_{i} + \frac{h}{2}(3f(t_i,w_i)-f(t_{i-1},w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e680968b-bdbd-4471-a46f-a2d6aa3368ba">
+<span class="eqno">(528)<a class="headerlink" href="#equation-e680968b-bdbd-4471-a46f-a2d6aa3368ba" title="Permalink to this equation">#</a></span>\[\begin{equation}w^{0}_{i+1} = w_{i} + \frac{h}{2}(3(t_iw_i^3-w_i)-(t_{i-1}w_{i-1}^3-w_{i-1})) \end{equation}\]</div>
 </section>
 <section id="step-adams-moulton">
 <h2>3-step Adams Moulton<a class="headerlink" href="#step-adams-moulton" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-ef3f9143-60f5-4881-a403-6eeed0b24c4b">
-<span class="eqno">(528)<a class="headerlink" href="#equation-ef3f9143-60f5-4881-a403-6eeed0b24c4b" title="Permalink to this equation">#</a></span>\[\begin{equation}w^{1}_{i+1} = w_{i} + \frac{h}{12}(5f(t_{i+1},w^{0}_{i+1})+8f(t_{i},w_{i})-f(t_{i-1},w_{i-1})) \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-bbfa80a5-e960-4546-91a7-197ef8812121">
-<span class="eqno">(529)<a class="headerlink" href="#equation-bbfa80a5-e960-4546-91a7-197ef8812121" title="Permalink to this equation">#</a></span>\[\begin{equation} w^{1}_{i+1} = w_{i} + \frac{h}{12}(5(t_{i+1}(w^0_{i+1})^3-w^0_{i+1})+8(t_{i}w_{i}^3-w_{i})-(t_{i-1}w_{i-1}^3-w_{i-1})). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c1175098-1aa8-41f3-b265-f900a962d054">
+<span class="eqno">(529)<a class="headerlink" href="#equation-c1175098-1aa8-41f3-b265-f900a962d054" title="Permalink to this equation">#</a></span>\[\begin{equation}w^{1}_{i+1} = w_{i} + \frac{h}{12}(5f(t_{i+1},w^{0}_{i+1})+8f(t_{i},w_{i})-f(t_{i-1},w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6a57314f-7daa-4d8d-a899-f67efc67a20d">
+<span class="eqno">(530)<a class="headerlink" href="#equation-6a57314f-7daa-4d8d-a899-f67efc67a20d" title="Permalink to this equation">#</a></span>\[\begin{equation} w^{1}_{i+1} = w_{i} + \frac{h}{12}(5(t_{i+1}(w^0_{i+1})^3-w^0_{i+1})+8(t_{i}w_{i}^3-w_{i})-(t_{i-1}w_{i-1}^3-w_{i-1})). \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
