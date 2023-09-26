@@ -53,4 +53,4 @@
     where $E_L = -75$, $\tau_m = 10$,
     $R_m = 10$ and $I(t)=0.01t$
     and the initial condition
-    $V(0) = -75$ using a stepsize of $h=0.5$.
+    $V(-50) = -75$ using a stepsize of $h=0.5$.
