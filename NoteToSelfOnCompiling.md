@@ -20,15 +20,15 @@ In order to build the book locally, you will need to do the following:
 
 3. First build of the book
 
-`jupyter-book build --all Numerical-and-Machine-Learning-Methods-for-Differential-Equations_orig/`
+`jupyter-book build --all NM_ML_DE_source/`
 
 4. Subsequent builds of the book
 
-`jupyter-book build Numerical-and-Machine-Learning-Methods-for-Differential-Equations_orig/`
+`jupyter-book build NM_ML_DE_source/`
 
 5. Now copy contents to webpage folder
 
-`cp -R Numerical-and-Machine-Learning-Methods-for-Differential-Equations_orig/ NM_ML_DE/`
+`cp -R NM_ML_DE_source/ NM_ML_DE/`
 
 6. Install github pages
 
@@ -40,12 +40,12 @@ In order to build the book locally, you will need to do the following:
 
 8. Push to GIT using Desktop
 
-https://github.com/john-s-butler-dit/Numerical-and-Machine-Learning-Methods-for-Differential-Equations/tree/master
+https://github.com/john-s-butler-dit/NNM_ML_DE/tree/master
 `ghp-import -n -p -f _build/html`
 
 
 Now enjoy:
-[https://john-s-butler-dit.github.io/Numerical-and-Machine-Learning-Methods-for-Differential-Equations/index.html]
+[https://john-s-butler-dit.github.io/NM_ML_DE/index.html]
 <!-- #endregion -->
 
 ```python
