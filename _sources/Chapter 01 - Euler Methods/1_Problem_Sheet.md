@@ -23,11 +23,11 @@
 
 4. Describe in your own words the theorem below and its proof:
 
-    Suppose $f$ is continuous and satisfies a {Lipschitz Condition} with constant
+    Suppose $f$ is continuous and satisfies a Lipschitz Condition with constant
     L on $D=\{(t,y)|a\leq t \leq b, -\infty < y < \infty \}$ and that a constant $M$
     exists with the property that 
     $ |y^{''}(t)|\leq M. $
-    Let $y(t)$ denote the unique solution of the {Initial Value Problem}
+    Let $y(t)$ denote the unique solution of the Initial Value Problem
     
    \begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}
    
@@ -38,19 +38,19 @@
 
 
 5.  Describe in your own words the Lipschitz Condition and why it is important.
-    A function $f(t,y)$ is said to satisfy a \textbf{{Lipschitz Condition}} in the variable $y$ on 
+    A function $f(t,y)$ is said to satisfy a Lipschitz Condition in the variable $y$ on 
     the set $D \subset R^2$ if a constant $L>0$ exist with the property that
 
     \begin{equation}
     |f(t,y_1)-f(t,y_2)| < L|y_1-y_2|, \end{equation}
 
-    whenever $(t,y_1),(t,y_2) \in D$.  The constant L is call the {Lipschitz Condition}
+    whenever $(t,y_1),(t,y_2) \in D$.  The constant L is call the Lipschitz Condition
     of $f$.
 
-    6. Adapt the Python code for the Euler method provided to approximate solution of the integrate and fire differential equation:
+6. Adapt the Python code for the Euler method provided to approximate solution of the integrate and fire differential equation:
     \begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}
 
     where $E_L = -75$, $\tau_m = 10$,
     $R_m = 10$ and $I(t)=0.01t$
     and the initial condition
-    $V(0) = -75$ using a stepsize of $h=0.5$.
+    $V(-50) = -75$ using a stepsize of $h=0.5$.

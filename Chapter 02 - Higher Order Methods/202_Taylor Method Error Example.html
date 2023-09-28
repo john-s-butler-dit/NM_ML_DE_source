@@ -36,6 +36,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,6 +61,25 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -166,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -181,7 +212,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/205_Problem_Sheet.html">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/206_Problem_Sheet.html">Problem Sheet 2 Question 6 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/206_Problem_Sheet_Solution.html">Problem Sheet 2 Question 6 - 2nd Order Taylor Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -191,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge-Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
 
@@ -293,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/john-s-butler-dit/Numerical-Methods-and-Machine-Learning-for-DE" target="_blank"
+<a href="https://github.com/john-s-butler-dit/NM_ML_DE" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -430,37 +462,37 @@ document.write(`
 <section id="intial-value-poblem">
 <h2>Intial Value Poblem<a class="headerlink" href="#intial-value-poblem" title="Permalink to this heading">#</a></h2>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4a3fdc5-33d5-46ff-83df-0253e6aa4079">
-<span class="eqno">(160)<a class="headerlink" href="#equation-c4a3fdc5-33d5-46ff-83df-0253e6aa4079" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0bad1767-2bdc-45e7-a038-57563bde214f">
+<span class="eqno">(177)<a class="headerlink" href="#equation-0bad1767-2bdc-45e7-a038-57563bde214f" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4353cf79-0fb5-4ef8-8948-cad7317ca026">
-<span class="eqno">(161)<a class="headerlink" href="#equation-4353cf79-0fb5-4ef8-8948-cad7317ca026" title="Permalink to this equation">#</a></span>\[\begin{equation}x(0)=1, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-63b85f7d-792b-48f4-889e-bcd162235b07">
+<span class="eqno">(178)<a class="headerlink" href="#equation-63b85f7d-792b-48f4-889e-bcd162235b07" title="Permalink to this equation">#</a></span>\[\begin{equation}x(0)=1, \end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50c4f381-1f65-4519-95c9-bc3fc579dbc1">
-<span class="eqno">(162)<a class="headerlink" href="#equation-50c4f381-1f65-4519-95c9-bc3fc579dbc1" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a8e7653d-bd3b-4bea-9412-9ce148e74ed9">
+<span class="eqno">(179)<a class="headerlink" href="#equation-a8e7653d-bd3b-4bea-9412-9ce148e74ed9" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1. \end{equation}\]</div>
 </section>
 <section id="taylor-solution">
 <h2>Taylor Solution<a class="headerlink" href="#taylor-solution" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-2a423406-b5f1-4b6e-aeb3-d03aac09d104">
-<span class="eqno">(163)<a class="headerlink" href="#equation-2a423406-b5f1-4b6e-aeb3-d03aac09d104" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t,y)=t-y,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2ed5ac1a-8c1e-404e-a642-44d44556023e">
+<span class="eqno">(180)<a class="headerlink" href="#equation-2ed5ac1a-8c1e-404e-a642-44d44556023e" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t,y)=t-y,  \end{equation}\]</div>
 <p>differentiate with respect to <span class="math notranslate nohighlight">\(t\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c4202a3-bf4f-450d-bbfb-d51b65c4f6f3">
-<span class="eqno">(164)<a class="headerlink" href="#equation-5c4202a3-bf4f-450d-bbfb-d51b65c4f6f3" title="Permalink to this equation">#</a></span>\[\begin{equation} f'(t,y)=1-y'=1-t+y,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ef7eeb0d-06e8-4c0a-a5d0-486fc565b8fc">
+<span class="eqno">(181)<a class="headerlink" href="#equation-ef7eeb0d-06e8-4c0a-a5d0-486fc565b8fc" title="Permalink to this equation">#</a></span>\[\begin{equation} f'(t,y)=1-y'=1-t+y,  \end{equation}\]</div>
 <p>This gives the first order Taylor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c9b7125-37dc-4b12-bfe4-2a0236c8a50a">
-<span class="eqno">(165)<a class="headerlink" href="#equation-4c9b7125-37dc-4b12-bfe4-2a0236c8a50a" title="Permalink to this equation">#</a></span>\[\begin{equation}T^1(t_i,w,i)=f(t_i,w_i)=t_i-w_i, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-05c94345-fdbb-498e-93be-152ca7cf941d">
+<span class="eqno">(182)<a class="headerlink" href="#equation-05c94345-fdbb-498e-93be-152ca7cf941d" title="Permalink to this equation">#</a></span>\[\begin{equation}T^1(t_i,w,i)=f(t_i,w_i)=t_i-w_i, \end{equation}\]</div>
 <p>and the second order Taylor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0dd4f3ad-103b-42f8-a547-f12c0ed6127d">
-<span class="eqno">(166)<a class="headerlink" href="#equation-0dd4f3ad-103b-42f8-a547-f12c0ed6127d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-20d330b8-10ab-41f3-99a0-90e77ba3b595">
+<span class="eqno">(183)<a class="headerlink" href="#equation-20d330b8-10ab-41f3-99a0-90e77ba3b595" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^2(t_i,w,i)=f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)=t_i-w_i+\frac{h}{2}(1-t_i+w_i).\end{equation}\]</div>
 <p>The first order Taylor difference equation, which is identical to the Euler method, is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df631872-04ce-49b6-baf2-69d1627fdb23">
-<span class="eqno">(167)<a class="headerlink" href="#equation-df631872-04ce-49b6-baf2-69d1627fdb23" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b05899d4-e2af-4e54-b8b9-3f26399f1be1">
+<span class="eqno">(184)<a class="headerlink" href="#equation-b05899d4-e2af-4e54-b8b9-3f26399f1be1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(t_i-w_i).  \end{equation}\]</div>
 <p>The second order Taylor difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d6c1115-b99f-431f-a2d7-a76400db28fa">
-<span class="eqno">(168)<a class="headerlink" href="#equation-8d6c1115-b99f-431f-a2d7-a76400db28fa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08f69ceb-b346-4fe5-8ceb-d693e71995df">
+<span class="eqno">(185)<a class="headerlink" href="#equation-08f69ceb-b346-4fe5-8ceb-d693e71995df" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(t_i-w_i+\frac{h}{2}(1-t_i+w_i)).  \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

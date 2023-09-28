@@ -36,6 +36,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,6 +61,25 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -166,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -181,7 +212,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/205_Problem_Sheet.html">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/206_Problem_Sheet.html">Problem Sheet 2 Question 6 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="2_Problem_Sheet/206_Problem_Sheet_Solution.html">Problem Sheet 2 Question 6 - 2nd Order Taylor Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -191,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge-Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
 
@@ -293,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/john-s-butler-dit/Numerical-Methods-and-Machine-Learning-for-DE" target="_blank"
+<a href="https://github.com/john-s-butler-dit/NM_ML_DE" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -426,20 +458,41 @@ document.write(`
 </li>
 <li><p>Apply the 2nd Order Taylor method using <span class="math notranslate nohighlight">\(N=4\)</span> steps to approximate the solution of initial value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-2f1e678b-053c-476e-a416-06cb50d5a276">
-<span class="eqno">(158)<a class="headerlink" href="#equation-2f1e678b-053c-476e-a416-06cb50d5a276" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-30588603-13a4-4d67-af5c-21461016950f">
+<span class="eqno">(172)<a class="headerlink" href="#equation-30588603-13a4-4d67-af5c-21461016950f" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
 <ol class="arabic" start="4">
 <li><p>Apply 2nd Order Taylor Method to approximate the solution of the given initial value problems using the indicated number of time steps.</p>
 <p>a. <span class="math notranslate nohighlight">\(y'=0.2y-0.01y^2, \ \ (2000\leq t \leq 2002)\)</span> with the initial condition <span class="math notranslate nohighlight">\(y(2000)=6,\)</span> and <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
 <p>b. <span class="math notranslate nohighlight">\(y'=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000\leq t \leq 2002)\)</span>with the initial condition <span class="math notranslate nohighlight">\(y(2000)=6,\)</span> and <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
 </li>
+<li><p>a.  Describe in your own words the statement below and its proof:
+Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-18ebf69a-6d0e-48c2-a45c-988e791d1a4c">
+<span class="eqno">(173)<a class="headerlink" href="#equation-18ebf69a-6d0e-48c2-a45c-988e791d1a4c" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
+<p>Explain how that if <span class="math notranslate nohighlight">\(y \in C^{n+1}[a,b]\)</span> the general local error for the Taylor Method is:
+[\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i))\tilda O(h^n), ]
+where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.</p>
+<p>b.  Describe in your own words the theorem below and its proof:
+Assume that the Taylor method satisfies the Lipschitz condition with constant
+L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that the local truncation error is of the form:
+[\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i))\tilda O(h^n), ]
+where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.
+Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5662b9fd-bf1f-453e-8f6f-d5eb99a24bff">
+<span class="eqno">(174)<a class="headerlink" href="#equation-5662b9fd-bf1f-453e-8f6f-d5eb99a24bff" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Taylor methods for some
+positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-1146f8cf-daed-45f2-a4c9-27dcd0856ccc">
+<span class="eqno">(175)<a class="headerlink" href="#equation-1146f8cf-daed-45f2-a4c9-27dcd0856ccc" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant.</p>
+</li>
 <li><p>Adapt the Python code for the 2nd Order Taylor method provided to approximate solution of the integrate and fire differential equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4a5d73c-ced0-4907-a4d0-f0a56c29c629">
-<span class="eqno">(159)<a class="headerlink" href="#equation-c4a5d73c-ced0-4907-a4d0-f0a56c29c629" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-72da9eba-dc74-4ba0-8028-84d309e90405">
+<span class="eqno">(176)<a class="headerlink" href="#equation-72da9eba-dc74-4ba0-8028-84d309e90405" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
-<span class="math notranslate nohighlight">\(V(0) = -75\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
+<span class="math notranslate nohighlight">\(V(-50) = -75\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
 </li>
 </ol>
 <div class="toctree-wrapper compound">
