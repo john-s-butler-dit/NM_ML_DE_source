@@ -1,5 +1,8 @@
 <!-- #region -->
 # Problem Sheet 3 - Runge-Kutta
+
+## Question 1
+
 1. 
     a. Apply the Midpoint Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:
     \begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}
@@ -14,7 +17,7 @@
     Let $N=4$, with the exact solution
     \begin{equation}y(t)=e^{t}+t+1.\end{equation}
 
-
+## Question 2
 
 2. 
     a. Apply the 4th Order Runge-Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution
@@ -30,7 +33,7 @@
     $N=4$, with the exact solution
     \begin{equation}y(t)=e^{t}+t+1.\end{equation}
 
-
+## Question 3
 
 3. Derive the difference equation for the Midpoint Runge-Kutta method
     \begin{equation} w_{n+1}=w_n+k_2,\end{equation}
@@ -46,11 +49,16 @@
     \begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1),\end{equation}
     and $a$, $b$, $\alpha$ and $\beta$ are constants are determined. Prove that $a+b=1$ and $b\alpha=b\beta=\frac{1}{2}$ and choose appropriate values to give the Midpoint Runge-Kutta method.
 
+## Question 4
+
 4. For the Runge-Kutta methods describe in your own words the concepts:
 
     a. Consistency;
 
     b. Convergence.
+
+## Question 5
+
 
 5. Describe in your own words the theorem below and its proof:
     Assume that the Runge-Kutta method satisfies the Lipschitz Condition. Then
@@ -66,6 +74,8 @@
     where
     \begin{equation}\delta(h) = \max_{a \leq x \leq b}|f(x,y)-F(x,y;h;f)|. \end{equation}
 
+
+## Question 6
 
 6. Adapt the Python code for the Heun’s second order Runge-Kutta method provided to approximate solution of the integrate and fire differential equation:
     \begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}

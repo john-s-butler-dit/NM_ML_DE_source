@@ -79,25 +79,14 @@ a. Define in your own words the terms strongly stable, weakly stable and unstabl
 b. Show that the two step Adams-Bashforth method is strongly stable.
 
 ## Question 8
-Apply the Predictor-Corrector method to numerically approximate the solution at $x=1.0$ of the Initial Value Problem
+
+8. Apply the Predictor-Corrector method to numerically approximate the solution at $x=1.0$ of the Initial Value Problem
 \begin{equation}\frac{dy}{dx}=-y+x^2, \ \  0\leq x \leq 1,  \ \ \ y(0) = 1, \ \ \ y(0.25)=0.65, \end{equation}
 using the two step Adams-Bashforth method and the one step Adams-Moulton method
 \begin{equation} w_{i+1}=w_i + \frac{h}{2}[f(x_{i+1},w_{i+1})+f(x_{i},w_{i})], \end{equation}
 with a step size of $h=0.25$.
 
-## Question 9
+## Question 9 
 
+9.  Describe in your own words how the predictor-corrector technique can be used for error-control.
 
-9.  In your own words discuss the following concepts and their relevance for the
-Adams-Bashforth and Adams-Moulton methods for approximating the solution
-to initial value problems:
-
-a. implicit and explicit numerical methods;
-
-b. consistency of the numerical methods; 
-
-c. convergence of the numerical methods; 
-
-d. stability of the numerical methods. 
-
-Illustrate your answers by stating conditions which are required.
