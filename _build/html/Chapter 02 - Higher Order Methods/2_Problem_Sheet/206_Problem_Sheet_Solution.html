@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Problem 6 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -461,11 +461,11 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-2-question-6-2nd-order-taylor-solution">
 <h1>Problem Sheet 2 Question 6 - 2nd Order Taylor Solution<a class="headerlink" href="#problem-sheet-2-question-6-2nd-order-taylor-solution" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a9622371-6331-472e-8ae8-1c1a3d61b654">
-<span class="eqno">(303)<a class="headerlink" href="#equation-a9622371-6331-472e-8ae8-1c1a3d61b654" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=f(t,y), \ \ (a \leq t \leq b)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cf199fe3-79b8-404e-bb55-83bd0d88e2e9">
+<span class="eqno">(303)<a class="headerlink" href="#equation-cf199fe3-79b8-404e-bb55-83bd0d88e2e9" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=f(t,y), \ \ (a \leq t \leq b)\end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d64f38f0-24b3-4371-abf9-3f99220fa6cb">
-<span class="eqno">(304)<a class="headerlink" href="#equation-d64f38f0-24b3-4371-abf9-3f99220fa6cb" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=A .\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0f476a08-709b-48b9-aa3f-fb674a35e166">
+<span class="eqno">(304)<a class="headerlink" href="#equation-0f476a08-709b-48b9-aa3f-fb674a35e166" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=A .\end{equation}\]</div>
 <p>Apply <strong>2nd Order Taylor</strong> to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution, and compare the actual error with the theoretical error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -486,8 +486,8 @@ document.write(`
 </div>
 <section id="the-equation">
 <h2>The Equation<a class="headerlink" href="#the-equation" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-3bf070d1-0d8c-446c-977f-94b785835297">
-<span class="eqno">(305)<a class="headerlink" href="#equation-3bf070d1-0d8c-446c-977f-94b785835297" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b4307aa0-0379-460d-a3c3-e425cdd4a2ca">
+<span class="eqno">(305)<a class="headerlink" href="#equation-b4307aa0-0379-460d-a3c3-e425cdd4a2ca" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
@@ -496,23 +496,23 @@ and the initial condition
 <section id="discrete-interval">
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised with stepsize <span class="math notranslate nohighlight">\(h=0.5\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c21eb703-a405-450d-b03d-53f8fb0d5a0b">
-<span class="eqno">(306)<a class="headerlink" href="#equation-c21eb703-a405-450d-b03d-53f8fb0d5a0b" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-9a108f5c-83e5-472d-9d99-e808f6fd83e4">
+<span class="eqno">(306)<a class="headerlink" href="#equation-9a108f5c-83e5-472d-9d99-e808f6fd83e4" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 N=\frac{b-a}{h}.
 \end{equation}\]</div>
 <p>Here the N is <span class="math notranslate nohighlight">\(-50\leq t \leq 400\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7bf8fc3b-08a9-45d2-8e57-6373f425e2d5">
-<span class="eqno">(307)<a class="headerlink" href="#equation-7bf8fc3b-08a9-45d2-8e57-6373f425e2d5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-03ec72ee-5e8c-4495-bf0e-99508778229a">
+<span class="eqno">(307)<a class="headerlink" href="#equation-03ec72ee-5e8c-4495-bf0e-99508778229a" title="Permalink to this equation">#</a></span>\[\begin{equation}
  N=\frac{400--50}{0.5}=900,
 \end{equation}\]</div>
 <p>this gives the 901 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2334bbc-7339-4b20-bcec-5adaa0eee11e">
-<span class="eqno">(308)<a class="headerlink" href="#equation-c2334bbc-7339-4b20-bcec-5adaa0eee11e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9f9e7b33-1973-414a-b069-59f7faf8932b">
+<span class="eqno">(308)<a class="headerlink" href="#equation-9f9e7b33-1973-414a-b069-59f7faf8932b" title="Permalink to this equation">#</a></span>\[\begin{equation}
  t_0=-400, \ t_1=-399.5, \ ... t_{900}=400. 
 \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c06227c-e0dc-421f-b2ff-d97d996e600d">
-<span class="eqno">(309)<a class="headerlink" href="#equation-4c06227c-e0dc-421f-b2ff-d97d996e600d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a6985043-b990-4e6e-9893-81bc7b076781">
+<span class="eqno">(309)<a class="headerlink" href="#equation-a6985043-b990-4e6e-9893-81bc7b076781" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 \end{equation}\]</div>
 <p>The plot below shows the discrete time steps.</p>
@@ -542,25 +542,25 @@ t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 <section id="nd-order-taylor-solution">
 <h2>2nd Order Taylor Solution<a class="headerlink" href="#nd-order-taylor-solution" title="Permalink to this heading">#</a></h2>
 <p>The 2nd Order Taylor difference equation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-baa91445-2dfb-4a66-8f92-9e2149f517f6">
-<span class="eqno">(310)<a class="headerlink" href="#equation-baa91445-2dfb-4a66-8f92-9e2149f517f6" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-99812bcc-f203-4a63-8d9e-e3287c3fa7d0">
+<span class="eqno">(310)<a class="headerlink" href="#equation-99812bcc-f203-4a63-8d9e-e3287c3fa7d0" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dbd89adf-12af-4e60-9b00-09297950ae5e">
-<span class="eqno">(311)<a class="headerlink" href="#equation-dbd89adf-12af-4e60-9b00-09297950ae5e" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1926e151-e6c5-4e86-bd23-6578ae143d88">
+<span class="eqno">(311)<a class="headerlink" href="#equation-1926e151-e6c5-4e86-bd23-6578ae143d88" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m},\end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56152cec-bf58-4d54-95b2-c8b3c4cde431">
-<span class="eqno">(312)<a class="headerlink" href="#equation-56152cec-bf58-4d54-95b2-c8b3c4cde431" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=\frac{-\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m}+0.1}{\tau_m},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-02b869f0-f084-48a3-934c-b748b540b933">
+<span class="eqno">(312)<a class="headerlink" href="#equation-02b869f0-f084-48a3-934c-b748b540b933" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=\frac{-\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m}+0.1}{\tau_m},\end{equation}\]</div>
 <p>which gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1babcfd8-7e83-4888-98d5-7f474f65db24">
-<span class="eqno">(313)<a class="headerlink" href="#equation-1babcfd8-7e83-4888-98d5-7f474f65db24" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2dd223e9-328b-4350-8e98-a5a1ee63372c">
+<span class="eqno">(313)<a class="headerlink" href="#equation-2dd223e9-328b-4350-8e98-a5a1ee63372c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h,\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,...,899\)</span> and
 where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t_i)=0.01t_i\)</span>
 and the initial condition
 <span class="math notranslate nohighlight">\(V(t_0=-50) = -75\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.5\)</span>.
 Putting in the values the difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-034550be-4344-4e88-b768-1480b2f03542">
-<span class="eqno">(314)<a class="headerlink" href="#equation-034550be-4344-4e88-b768-1480b2f03542" title="Permalink to this equation">#</a></span>\[\begin{equation} w[i+1]=w[i]+0.5\big[-(w[i]--75) + 10*0.01*time[i]\big]/10+\frac{0.5^2}{2}\big[-\big(-(w[i]--75) + 10*0.01*time[i])/10\big)/10+0.1/10\big] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-bb2ab0a9-d9d4-4a48-865a-4d2d6933d44c">
+<span class="eqno">(314)<a class="headerlink" href="#equation-bb2ab0a9-d9d4-4a48-865a-4d2d6933d44c" title="Permalink to this equation">#</a></span>\[\begin{equation} w[i+1]=w[i]+0.5\big[-(w[i]--75) + 10*0.01*time[i]\big]/10+\frac{0.5^2}{2}\big[-\big(-(w[i]--75) + 10*0.01*time[i])/10\big)/10+0.1/10\big] \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IC</span><span class="o">=-</span><span class="mi">75</span>

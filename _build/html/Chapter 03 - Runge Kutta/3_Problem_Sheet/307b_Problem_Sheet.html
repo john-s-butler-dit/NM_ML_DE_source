@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Problem 6 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -461,34 +461,34 @@ document.write(`
 <section id="problem-sheet-3-question-7b">
 <h1>Problem Sheet 3 Question 7b<a class="headerlink" href="#problem-sheet-3-question-7b" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7f0849d7-b276-4528-8bdd-1c40836602f6">
-<span class="eqno">(400)<a class="headerlink" href="#equation-7f0849d7-b276-4528-8bdd-1c40836602f6" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}-y+x=0, \ \ (0 \leq x \leq 1) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4b1aeaa1-eff6-4dd0-842f-1cee3c9ea458">
+<span class="eqno">(400)<a class="headerlink" href="#equation-4b1aeaa1-eff6-4dd0-842f-1cee3c9ea458" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}-y+x=0, \ \ (0 \leq x \leq 1) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0672f80a-cc70-4e27-b4cb-8bd2ce5dd1d9">
-<span class="eqno">(401)<a class="headerlink" href="#equation-0672f80a-cc70-4e27-b4cb-8bd2ce5dd1d9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2168b906-490e-41a7-9d21-9b68f3fe34aa">
+<span class="eqno">(401)<a class="headerlink" href="#equation-2168b906-490e-41a7-9d21-9b68f3fe34aa" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=0\end{equation}\]</div>
 <p>For h=0.2.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="midpoint-method-solution">
 <h1>Midpoint method Solution<a class="headerlink" href="#midpoint-method-solution" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-11d66d06-aebf-4515-914e-2bcc38b1e2b0">
-<span class="eqno">(402)<a class="headerlink" href="#equation-11d66d06-aebf-4515-914e-2bcc38b1e2b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9706ac29-609b-42a8-a66e-8a75ffda42aa">
+<span class="eqno">(402)<a class="headerlink" href="#equation-9706ac29-609b-42a8-a66e-8a75ffda42aa" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{w_{i+1}-w_i}{h}=f(x_i+\frac{h}{2},w_i+\frac{h}{2}f(x_i,w_i))
 \end{equation}\]</div>
 <p>Rearranging</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2d633e00-7702-4db5-ae5f-01f00408ea7a">
-<span class="eqno">(403)<a class="headerlink" href="#equation-2d633e00-7702-4db5-ae5f-01f00408ea7a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-46654eac-eb7e-4304-b3ff-08321c5e6053">
+<span class="eqno">(403)<a class="headerlink" href="#equation-46654eac-eb7e-4304-b3ff-08321c5e6053" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+hf(x_i+\frac{h}{2},w_i+\frac{h}{2}f(x_i,w_i))
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ae78ee6a-7537-4d67-a845-12372d61033e">
-<span class="eqno">(404)<a class="headerlink" href="#equation-ae78ee6a-7537-4d67-a845-12372d61033e" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-17744be3-738a-4765-aca2-1d3a42af7810">
+<span class="eqno">(404)<a class="headerlink" href="#equation-17744be3-738a-4765-aca2-1d3a42af7810" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(k_2)
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-2881ba42-c432-4270-94a9-b0e25af02e24">
-<span class="eqno">(405)<a class="headerlink" href="#equation-2881ba42-c432-4270-94a9-b0e25af02e24" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e00b7bb3-48bd-4c06-a333-546b84aa9443">
+<span class="eqno">(405)<a class="headerlink" href="#equation-e00b7bb3-48bd-4c06-a333-546b84aa9443" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_1=w_i-x_i+2
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1fd51511-e753-404b-8585-373c741fa7cd">
-<span class="eqno">(406)<a class="headerlink" href="#equation-1fd51511-e753-404b-8585-373c741fa7cd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2fac63f6-33e6-4019-a90d-da8619876681">
+<span class="eqno">(406)<a class="headerlink" href="#equation-2fac63f6-33e6-4019-a90d-da8619876681" title="Permalink to this equation">#</a></span>\[\begin{equation}
 k_2=w_i+\frac{h}{2}k_1-(x_i+\frac{h}{2})+2)
 \end{equation}\]</div>
 <div class="cell docutils container">

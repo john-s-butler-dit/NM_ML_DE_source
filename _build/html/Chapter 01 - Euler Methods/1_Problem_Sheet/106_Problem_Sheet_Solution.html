@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Blank Euler Method &#8212; Numerical and Machine Learning Methods</title>
+    <title>Problem 6 Solution &#8212; Numerical and Machine Learning Methods</title>
   
   
   
@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="106_Problem_Sheet.html">Blank Euler Method</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Blank Euler Method</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem 6 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -433,7 +433,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Blank Euler Method</h1>
+    <h1>Problem 6 Solution</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -461,11 +461,11 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="blank-euler-method">
-<h1>Blank Euler Method<a class="headerlink" href="#blank-euler-method" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-6-solution">
+<h1>Problem 6 Solution<a class="headerlink" href="#problem-6-solution" title="Permalink to this heading">#</a></h1>
 <p>The more general form of a first order Ordinary Differential Equation is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-772b7aae-53d5-4bfc-b9ab-0af9af37286d">
-<span class="eqno">(127)<a class="headerlink" href="#equation-772b7aae-53d5-4bfc-b9ab-0af9af37286d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2ee438bf-915d-4666-8d3a-a1343feba613">
+<span class="eqno">(127)<a class="headerlink" href="#equation-2ee438bf-915d-4666-8d3a-a1343feba613" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'}=f(t,y).
 \end{equation}\]</div>
 <p>This can be solved analytically by integrating both sides but this is not straight forward for most problems.
@@ -474,24 +474,24 @@ Numerical methods can be used to approximate the solution at discrete points.</p
 <h2>Euler method<a class="headerlink" href="#euler-method" title="Permalink to this heading">#</a></h2>
 <p>The simplest one step numerical method is the Euler Method named after the most prolific of mathematicians <a class="reference external" href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> (15 April 1707 – 18 September 1783) .</p>
 <p>The general Euler formula for the first order differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad39017b-4690-496a-997f-119f0187bd73">
-<span class="eqno">(128)<a class="headerlink" href="#equation-ad39017b-4690-496a-997f-119f0187bd73" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0d63cc0d-1680-4c88-bdaa-85b00813f0db">
+<span class="eqno">(128)<a class="headerlink" href="#equation-0d63cc0d-1680-4c88-bdaa-85b00813f0db" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'} = f(t,y), 
 \end{equation}\]</div>
 <p>approximates the derivative at time point <span class="math notranslate nohighlight">\(t_i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-350d1a84-968b-40c1-b712-dcdf64a14d21">
-<span class="eqno">(129)<a class="headerlink" href="#equation-350d1a84-968b-40c1-b712-dcdf64a14d21" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3f9e6972-8292-4d49-a660-ad84db365466">
+<span class="eqno">(129)<a class="headerlink" href="#equation-3f9e6972-8292-4d49-a660-ad84db365466" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'}(t_i) \approx \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(w_i\)</span> is the approximate solution of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>.</p>
 <p>This substitution changes the differential equation  into a <strong>difference</strong> equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fc51b979-3597-488f-a5d3-635d3d61bb7b">
-<span class="eqno">(130)<a class="headerlink" href="#equation-fc51b979-3597-488f-a5d3-635d3d61bb7b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-73265b6d-c053-4417-a757-a252bbaa08e1">
+<span class="eqno">(130)<a class="headerlink" href="#equation-73265b6d-c053-4417-a757-a252bbaa08e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}}=f(t_i,w_i). 
 \end{equation}\]</div>
 <p>Assuming uniform stepsize <span class="math notranslate nohighlight">\(t_{i+1}-t_{i}\)</span> is replaced by <span class="math notranslate nohighlight">\(h\)</span>, re-arranging the equation gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2bb4202-1513-4724-b810-18b8c26d3f8f">
-<span class="eqno">(131)<a class="headerlink" href="#equation-c2bb4202-1513-4724-b810-18b8c26d3f8f" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-54a20225-6ca2-4abd-8cbf-073568a3e722">
+<span class="eqno">(131)<a class="headerlink" href="#equation-54a20225-6ca2-4abd-8cbf-073568a3e722" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 w_{i+1}=w_i+hf(t_i,w_i).
 \end{equation}\]</div>
 <p>This can be read as the future <span class="math notranslate nohighlight">\(w_{i+1}\)</span> can be approximated by the present <span class="math notranslate nohighlight">\(w_i\)</span> and the addition of the input to the system <span class="math notranslate nohighlight">\(f(t,y)\)</span> times the time step.</p>
@@ -514,8 +514,8 @@ w_{i+1}=w_i+hf(t_i,w_i).
 </section>
 <section id="the-equation">
 <h2>The Equation<a class="headerlink" href="#the-equation" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-d39e96a2-fdd9-43f7-b6c3-8d7015040309">
-<span class="eqno">(132)<a class="headerlink" href="#equation-d39e96a2-fdd9-43f7-b6c3-8d7015040309" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-81c9c286-cd45-4721-a2e3-af53d3f07640">
+<span class="eqno">(132)<a class="headerlink" href="#equation-81c9c286-cd45-4721-a2e3-af53d3f07640" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
@@ -524,23 +524,23 @@ and the initial condition
 <section id="discrete-interval">
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised with stepsize <span class="math notranslate nohighlight">\(h=0.5\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ae1ac75-7da9-470e-8634-d5b20ba16847">
-<span class="eqno">(133)<a class="headerlink" href="#equation-1ae1ac75-7da9-470e-8634-d5b20ba16847" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-51882bb4-18f6-444c-864f-0af759b00ee7">
+<span class="eqno">(133)<a class="headerlink" href="#equation-51882bb4-18f6-444c-864f-0af759b00ee7" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 N=\frac{b-a}{h}.
 \end{equation}\]</div>
 <p>Here the N is <span class="math notranslate nohighlight">\(-50\leq t \leq 400\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-27b32353-fb1d-4474-88cd-9a59005da7b3">
-<span class="eqno">(134)<a class="headerlink" href="#equation-27b32353-fb1d-4474-88cd-9a59005da7b3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-591fde5c-cc00-4b44-8586-3f7003584551">
+<span class="eqno">(134)<a class="headerlink" href="#equation-591fde5c-cc00-4b44-8586-3f7003584551" title="Permalink to this equation">#</a></span>\[\begin{equation}
  N=\frac{400--50}{0.5}=900,
 \end{equation}\]</div>
 <p>this gives the 901 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5c76f962-a8db-41c3-adea-fe8020dadda7">
-<span class="eqno">(135)<a class="headerlink" href="#equation-5c76f962-a8db-41c3-adea-fe8020dadda7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-51917dbd-9d28-4ecc-8a9e-de778565a15d">
+<span class="eqno">(135)<a class="headerlink" href="#equation-51917dbd-9d28-4ecc-8a9e-de778565a15d" title="Permalink to this equation">#</a></span>\[\begin{equation}
  t_0=-400, \ t_1=-399.5, \ ... t_{900}=400. 
 \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-922836eb-b335-423d-af8d-316112ea35b2">
-<span class="eqno">(136)<a class="headerlink" href="#equation-922836eb-b335-423d-af8d-316112ea35b2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-0532f89d-6774-4693-90a0-b22225d9a19a">
+<span class="eqno">(136)<a class="headerlink" href="#equation-0532f89d-6774-4693-90a0-b22225d9a19a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 \end{equation}\]</div>
 <p>The plot below shows the discrete time steps.</p>
@@ -571,8 +571,8 @@ t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 <h2>Initial Condition<a class="headerlink" href="#initial-condition" title="Permalink to this heading">#</a></h2>
 <p>To get a specify solution to a first order initial value problem, an <strong>initial condition</strong> is required.</p>
 <p>The general intial condition is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66c26a67-cd92-45de-b5ee-8b021553c97d">
-<span class="eqno">(137)<a class="headerlink" href="#equation-66c26a67-cd92-45de-b5ee-8b021553c97d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-969bcc6c-0033-45e4-abb2-cb36edca24b6">
+<span class="eqno">(137)<a class="headerlink" href="#equation-969bcc6c-0033-45e4-abb2-cb36edca24b6" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y(a)=A.
 \end{equation}\]</div>
 </section>
@@ -587,25 +587,25 @@ y(-50)=-75.
 <section id="numerical-approximation-of-an-initial-value-problem">
 <h2>Numerical approximation of an Initial Value Problem<a class="headerlink" href="#numerical-approximation-of-an-initial-value-problem" title="Permalink to this heading">#</a></h2>
 <p>The differential equation is transformed using the Euler method into a difference equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6254cc7d-c82b-4c3a-82cd-7185c204c9cb">
-<span class="eqno">(138)<a class="headerlink" href="#equation-6254cc7d-c82b-4c3a-82cd-7185c204c9cb" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h f(t_i,w_i). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ac40061a-e365-4caf-b840-dcc0ccf69b94">
+<span class="eqno">(138)<a class="headerlink" href="#equation-ac40061a-e365-4caf-b840-dcc0ccf69b94" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h f(t_i,w_i). \end{equation}\]</div>
 <p>This approximates a series of of values <span class="math notranslate nohighlight">\(w_0, \ w_1, \ ..., w_{N}\)</span>.</p>
 </section>
 <section id="numerical-approximation-of-our-initial-value-problem">
 <h2>Numerical approximation of our Initial Value Problem<a class="headerlink" href="#numerical-approximation-of-our-initial-value-problem" title="Permalink to this heading">#</a></h2>
 <p>The Integrate and fire differential equation is transformed using the Euler method into a difference equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-881f2c02-c4e8-4c1c-becf-2ff295127c69">
-<span class="eqno">(139)<a class="headerlink" href="#equation-881f2c02-c4e8-4c1c-becf-2ff295127c69" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h\big[\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m}\big] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-edc836fb-d564-4c55-9bcb-99b66e677063">
+<span class="eqno">(139)<a class="headerlink" href="#equation-edc836fb-d564-4c55-9bcb-99b66e677063" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h\big[\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m}\big] \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,...,899\)</span> and
 where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t_i)=0.01t_i\)</span>
 and the initial condition
 <span class="math notranslate nohighlight">\(V(t_0=-50) = -75\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.5\)</span>.
 Putting in the values the difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7044d483-c84d-422e-8afe-acae07d9bfd3">
-<span class="eqno">(140)<a class="headerlink" href="#equation-7044d483-c84d-422e-8afe-acae07d9bfd3" title="Permalink to this equation">#</a></span>\[\begin{equation} w[i+1]=w[i]+0.5\big[-(w[i]--75) + 10*0.01*time[i]\big]/10 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-409adedc-8c70-4a64-a0e1-ffa7c79962cb">
-<span class="eqno">(141)<a class="headerlink" href="#equation-409adedc-8c70-4a64-a0e1-ffa7c79962cb" title="Permalink to this equation">#</a></span>\[\begin{equation} \color{red}{w[i+1]}=\color{green}{w[i]}+0.5\big(-(\color{red}{w[i]}+75) + 0.1*time[i]\big)/10 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-40edff40-be2e-4d6f-a940-82d4aecdef54">
+<span class="eqno">(140)<a class="headerlink" href="#equation-40edff40-be2e-4d6f-a940-82d4aecdef54" title="Permalink to this equation">#</a></span>\[\begin{equation} w[i+1]=w[i]+0.5\big[-(w[i]--75) + 10*0.01*time[i]\big]/10 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ce9baeb1-5be1-454f-bf39-5255c3bc6e46">
+<span class="eqno">(141)<a class="headerlink" href="#equation-ce9baeb1-5be1-454f-bf39-5255c3bc6e46" title="Permalink to this equation">#</a></span>\[\begin{equation} \color{red}{w[i+1]}=\color{green}{w[i]}+0.5\big(-(\color{red}{w[i]}+75) + 0.1*time[i]\big)/10 \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
