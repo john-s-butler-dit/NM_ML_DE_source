@@ -1,0 +1,1386 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>1 Step Adams Moulton &#8212; Numerical and Machine Learning Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 04 - Multistep Methods/404_Adams Moulton Population Equations';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Adams Predictor Corrector" href="405_Adams%20Predictor%20Corrector%20Example.html" />
+    <link rel="prev" title="Adams Moulton" href="403_Adams%20Moulton%20Example.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Numerical Methods and Machine Learning for Differential Equations with Applications in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Euler Method</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.html">First Order Initial Value Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Taylor Method</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/201_3rd%20Order%20Taylor_Population_growth.html">Taylor Method</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet.html">Problem Sheet 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/202_Taylor%20Method%20Error%20Example.html">1st vs 2nd order Taylor methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/201a_Problem_Sheet.html">Problem Sheet 2 Question 1a - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/201b_Problem_Sheet.html">Problem Sheet 2 Question 1b - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Runge Kutta</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/302_4th%20Order%20Runge%20Kutta.html">Example 4th order Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/307b_Problem_Sheet.html">Problem Sheet 3 Question 7b</a></li>
+
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multistep Methods</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="401_Adams%20Bashforth%20Example.html">Adams Bashforth</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="402_Adams%20Bashforth%20Population%20Equations.html">2 Step Adam Bashforth</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="403_Adams%20Moulton%20Example.html">Adams Moulton</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">1 Step Adams Moulton</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="405_Adams%20Predictor%20Corrector%20Example.html">Adams Predictor Corrector</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="4_Problem_Sheet.html">Problem Sheet 4 - Multistep Methods</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="4_Problem_Sheet/401a_Problem_Sheet.html">Problem Sheet Question 1a</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="4_Problem_Sheet/401b_Problem_Sheet.html">Problem Sheet Question 1b</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="4_Problem_Sheet/402a_Problem_Sheet.html">Problem Sheet Question 2a</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="4_Problem_Sheet/406b_Problem_Sheet.html">Problem Sheet Question 6b</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Consistency, Convergence and Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/501_Consistent.html">Consistency of a Multistep method</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/502_Convergent.html">Convergence of a Multistep Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/503_Stability.html">Stability of a Multistep method</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.html">Further Notes on Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/5_Problem_Sheet.html">Problem Sheet 5 - Consistency, Convergence and Stability</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Initial Value Problems Review Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/IVP_Problems.html">Initial Value Problem Review Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary Value Problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/601_Linear%20Shooting%20Method.html">Linear Shooting Method</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/602_Non-Linear%20Shooting%20Method.html">Non-Linear Shooting Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/603_Boundary%20Value%20Problem.html">Finite Difference Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/6_Problem_Sheet.html">Problem Sheet 6 - Boundary Value Problems</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/john-s-butler-dit/Numerical-Methods-and-Machine-Learning-for-DE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter 04 - Multistep Methods/404_Adams Moulton Population Equations.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>1 Step Adams Moulton</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1 Step Adams Moulton</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#john-s-butler">John S Butler</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula">Formula</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear">1. Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-population-equation">2. Non-Linear Population Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-population-equation-with-an-oscillation">3. Non-Linear Population Equation with an oscillation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-libraries">Setting up Libraries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-interval">Discrete Interval</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-population-equation">1. Linear Population Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution">Exact Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-1-step-adams-moulton">Specific 1 step Adams Moulton</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-results">Plotting Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. Non-Linear Population Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-1-step-adams-moutlon-method-for-the-non-linear-population-equation">Specific 1 step Adams-Moutlon method for the Non-Linear Population Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-population-equation-with-an-oscilation">3. Non-Linear Population Equation with an oscilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-2-step-adams-moulton-for-the-non-linear-population-equation-with-an-oscilation">Specific 2 Step Adams Moulton for the Non-Linear Population Equation with an oscilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Table</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/404_Adams%20Moulton%20Population%20Equations.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="step-adams-moulton">
+<h1>1 Step Adams Moulton<a class="headerlink" href="#step-adams-moulton" title="Permalink to this heading">#</a></h1>
+<section id="john-s-butler">
+<h2>John S Butler<a class="headerlink" href="#john-s-butler" title="Permalink to this heading">#</a></h2>
+<p>john.s.butler&#64;tudublin.ie<br />
+<a class="reference external" href="https://johnsbutler.netlify.com/files/Teaching/Numerical_Analysis_for_Differential_Equations.pdf">Course Notes</a>    <a class="reference external" href="https://github.com/john-s-butler-dit/Numerical-Analysis-Python">Github</a></p>
+<p>This notebook implements the 1 step Adams Moulton method for three different population intial value problems.</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="formula">
+<h1>Formula<a class="headerlink" href="#formula" title="Permalink to this heading">#</a></h1>
+<p>The general 1 step Adams-Moulton method for the first order differential equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-af74ebb8-65dd-4779-a55a-9472e0b41e73">
+<span class="eqno">(407)<a class="headerlink" href="#equation-af74ebb8-65dd-4779-a55a-9472e0b41e73" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'} = f(t,y) \end{equation}\]</div>
+<p>numerical approximates <span class="math notranslate nohighlight">\(y\)</span> the at time point <span class="math notranslate nohighlight">\(t_i\)</span> as <span class="math notranslate nohighlight">\(w_i\)</span>
+with the  formula:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-266a604c-fac2-4b11-9cef-fb01d93acfce">
+<span class="eqno">(408)<a class="headerlink" href="#equation-266a604c-fac2-4b11-9cef-fb01d93acfce" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[f(t_{i+1},w_{i+1})+f(t_{i},w_{i})\big],\end{equation}\]</div>
+<p>for <span class="math notranslate nohighlight">\(i=0,...,N-1\)</span>, where</p>
+<p>and <span class="math notranslate nohighlight">\(h\)</span> is the stepsize.</p>
+<p>To illustrate the method we will apply it to three intial value problems:</p>
+<section id="linear">
+<h2>1. Linear<a class="headerlink" href="#linear" title="Permalink to this heading">#</a></h2>
+<p>Consider the linear population Differential Equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b309b146-9c3a-4023-bb4e-be7c30f1c239">
+<span class="eqno">(409)<a class="headerlink" href="#equation-b309b146-9c3a-4023-bb4e-be7c30f1c239" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.1y, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<p>with the initial condition,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7dbacb88-6f9c-4b12-a8a6-ef30a3eb44b5">
+<span class="eqno">(410)<a class="headerlink" href="#equation-7dbacb88-6f9c-4b12-a8a6-ef30a3eb44b5" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+</section>
+<section id="non-linear-population-equation">
+<h2>2. Non-Linear Population Equation<a class="headerlink" href="#non-linear-population-equation" title="Permalink to this heading">#</a></h2>
+<p>Consider the non-linear population Differential Equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-585ca577-c72d-4d64-b438-c6b1ab6ef36e">
+<span class="eqno">(411)<a class="headerlink" href="#equation-585ca577-c72d-4d64-b438-c6b1ab6ef36e" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<p>with the initial condition,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c4efbcf5-cdf1-4863-a9bf-35412fab0dc9">
+<span class="eqno">(412)<a class="headerlink" href="#equation-c4efbcf5-cdf1-4863-a9bf-35412fab0dc9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+</section>
+<section id="non-linear-population-equation-with-an-oscillation">
+<h2>3. Non-Linear Population Equation with an oscillation<a class="headerlink" href="#non-linear-population-equation-with-an-oscillation" title="Permalink to this heading">#</a></h2>
+<p>Consider the non-linear population Differential Equation with an oscillation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-098db354-0479-4170-8ded-cf2f685d261d">
+<span class="eqno">(413)<a class="headerlink" href="#equation-098db354-0479-4170-8ded-cf2f685d261d" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<p>with the initial condition,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-77bbd5f5-b393-4c32-ad0a-4245057188ce">
+<span class="eqno">(414)<a class="headerlink" href="#equation-77bbd5f5-b393-4c32-ad0a-4245057188ce" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<section id="setting-up-libraries">
+<h3>Setting up Libraries<a class="headerlink" href="#setting-up-libraries" title="Permalink to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Library</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span> 
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># side-stepping mpl backend</span>
+<span class="kn">import</span> <span class="nn">matplotlib.gridspec</span> <span class="k">as</span> <span class="nn">gridspec</span> <span class="c1"># subplots</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="discrete-interval">
+<h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
+<p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
+<div class="amsmath math notranslate nohighlight" id="equation-97bec255-248b-4d82-91b9-2476569e0a00">
+<span class="eqno">(415)<a class="headerlink" href="#equation-97bec255-248b-4d82-91b9-2476569e0a00" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{b-a}{N}.\end{equation}\]</div>
+<p>Here the interval is <span class="math notranslate nohighlight">\(2000\leq t \leq 2020,\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-8303e284-5354-4f9f-8fbc-4b9e04d21e52">
+<span class="eqno">(416)<a class="headerlink" href="#equation-8303e284-5354-4f9f-8fbc-4b9e04d21e52" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{2020-2000}{200}=0.1.\end{equation}\]</div>
+<p>This gives the 201 discrete points:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8426a28f-ff65-4178-8e98-2d99d9020b13">
+<span class="eqno">(417)<a class="headerlink" href="#equation-8426a28f-ff65-4178-8e98-2d99d9020b13" title="Permalink to this equation">#</a></span>\[\begin{equation} t_0=2000, \ t_1=2000.1, \ ... t_{200}=2020. \end{equation}\]</div>
+<p>This is generalised to</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d862cbb8-899c-44bd-9b0a-19d19d391291">
+<span class="eqno">(418)<a class="headerlink" href="#equation-d862cbb8-899c-44bd-9b0a-19d19d391291" title="Permalink to this equation">#</a></span>\[\begin{equation} t_i=2000+i0.1, \ \ \ i=0,1,...,200.\end{equation}\]</div>
+<p>The plot below shows the discrete time steps:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### DISCRETE TIME</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">20</span>
+<span class="n">t_end</span><span class="o">=</span><span class="mf">2020.0</span>
+<span class="n">t_start</span><span class="o">=</span><span class="mf">2000.0</span>
+<span class="n">h</span><span class="o">=</span><span class="p">((</span><span class="n">t_end</span><span class="o">-</span><span class="n">t_start</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">)</span>
+<span class="n">t</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t_start</span><span class="p">,</span><span class="n">t_end</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+
+<span class="c1">## PLOTS TIME</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">t</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Illustration of discrete time points for h=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/17c54b7d8b7b3ae02c8280ee2f692197d33894ae9803cc70f9127fde5c15d84c.png" src="../_images/17c54b7d8b7b3ae02c8280ee2f692197d33894ae9803cc70f9127fde5c15d84c.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="linear-population-equation">
+<h1>1. Linear Population Equation<a class="headerlink" href="#linear-population-equation" title="Permalink to this heading">#</a></h1>
+<section id="exact-solution">
+<h2>Exact Solution<a class="headerlink" href="#exact-solution" title="Permalink to this heading">#</a></h2>
+<p>The linear population equation</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fe4c758e-f015-4146-a63d-2f60db5d85b9">
+<span class="eqno">(419)<a class="headerlink" href="#equation-fe4c758e-f015-4146-a63d-2f60db5d85b9" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.1y, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<p>with the initial condition,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c2201b0f-b80d-47ab-b012-e25a7447861f">
+<span class="eqno">(420)<a class="headerlink" href="#equation-c2201b0f-b80d-47ab-b012-e25a7447861f" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<p>has a known exact (analytic) solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6381f881-7acb-43be-ba1e-840f3f581112">
+<span class="eqno">(421)<a class="headerlink" href="#equation-6381f881-7acb-43be-ba1e-840f3f581112" title="Permalink to this equation">#</a></span>\[\begin{equation} y(t)=6e^{0.1(t-2000)}. \end{equation}\]</div>
+</section>
+<section id="specific-1-step-adams-moulton">
+<h2>Specific 1 step Adams Moulton<a class="headerlink" href="#specific-1-step-adams-moulton" title="Permalink to this heading">#</a></h2>
+<p>The specific 1 step Adams Moulton for the linear population equation is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-473d915b-4ec3-4ae7-90b0-2180c5bcc1be">
+<span class="eqno">(422)<a class="headerlink" href="#equation-473d915b-4ec3-4ae7-90b0-2180c5bcc1be" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[0.1w_{i+1}+0.1w_i\big] \end{equation}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c6aeae7a-af88-4ab2-944d-6f342b5c22a1">
+<span class="eqno">(423)<a class="headerlink" href="#equation-c6aeae7a-af88-4ab2-944d-6f342b5c22a1" title="Permalink to this equation">#</a></span>\[\begin{equation}f(t,y)=0.1y,\end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## THIS IS THE RIGHT HANDSIDE OF THE LINEAR POPULATION DIFFERENTIAL </span>
+<span class="c1">## EQUATION</span>
+<span class="k">def</span> <span class="nf">linfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+    <span class="n">ftw</span><span class="o">=</span><span class="mf">0.1</span><span class="o">*</span><span class="n">w</span>
+    <span class="k">return</span> <span class="n">ftw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>re-arranging,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-753521fa-327d-4dc6-a62c-93c2592c576d">
+<span class="eqno">(424)<a class="headerlink" href="#equation-753521fa-327d-4dc6-a62c-93c2592c576d" title="Permalink to this equation">#</a></span>\[\begin{equation} \big(1-\frac{h}{2}(0.1)\big)w_{i+1}=w_i+\frac{h}{2}\big[0.1w_i\big], \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b767a154-eb05-4fef-89b1-861af3c37d5c">
+<span class="eqno">(425)<a class="headerlink" href="#equation-b767a154-eb05-4fef-89b1-861af3c37d5c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=\frac{w_i+\frac{h}{2}\big[0.1w_i\big]}{\big(1-\frac{h}{2}(0.1)\big)}. \end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSERT METHOD HERE</span>
+<span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># a list of 2000+1 zeros</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">6</span> <span class="c1"># INITIAL CONDITION</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">linfun</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">])))</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.1</span><span class="o">*</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="plotting-results">
+<h2>Plotting Results<a class="headerlink" href="#plotting-results" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## PLOTTING METHOD</span>
+<span class="n">y</span><span class="o">=</span><span class="mi">6</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.1</span><span class="o">*</span><span class="p">(</span><span class="n">t</span><span class="o">-</span><span class="mi">2000</span><span class="p">))</span> <span class="c1"># EXACT SOLUTION</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Taylor&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">&#39;s:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Exact&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/56bee6b50cb6bf8ed5f8503879d4c94579e3e03e04a1303b3ce8b601072f9234.png" src="../_images/56bee6b50cb6bf8ed5f8503879d4c94579e3e03e04a1303b3ce8b601072f9234.png" />
+</div>
+</div>
+</section>
+<section id="table">
+<h2>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h2>
+<p>The table below shows the time, the numerical approximation, <span class="math notranslate nohighlight">\(w\)</span>,  the exact solution, <span class="math notranslate nohighlight">\(y\)</span>, and the exact error <span class="math notranslate nohighlight">\(|y(t_i)-w_i|\)</span> for the linear population equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;Adams Approx w&#39;</span><span class="p">:</span> <span class="n">w</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time t_i</th>
+      <th>Adams Approx w</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000.0</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2001.0</td>
+      <td>6.631579</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2002.0</td>
+      <td>7.329640</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2003.0</td>
+      <td>8.101181</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2004.0</td>
+      <td>8.953937</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2005.0</td>
+      <td>9.896456</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2006.0</td>
+      <td>10.938189</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2007.0</td>
+      <td>12.089577</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2008.0</td>
+      <td>13.362164</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2009.0</td>
+      <td>14.768708</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010.0</td>
+      <td>16.323308</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2011.0</td>
+      <td>18.041551</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2012.0</td>
+      <td>19.940662</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2013.0</td>
+      <td>22.039679</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2014.0</td>
+      <td>24.359645</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2015.0</td>
+      <td>26.923819</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2016.0</td>
+      <td>29.757905</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2017.0</td>
+      <td>32.890316</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2018.0</td>
+      <td>36.352454</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2019.0</td>
+      <td>40.179029</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2020.0</td>
+      <td>44.408400</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="id1">
+<h2>2. Non-Linear Population Equation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-1035e608-f4be-4ff2-b9c6-7dea0c62a3be">
+<span class="eqno">(426)<a class="headerlink" href="#equation-1035e608-f4be-4ff2-b9c6-7dea0c62a3be" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<p>with the initial condition,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-87897dbd-6d7b-41a8-bfa4-176189305b23">
+<span class="eqno">(427)<a class="headerlink" href="#equation-87897dbd-6d7b-41a8-bfa4-176189305b23" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+</section>
+<section id="specific-1-step-adams-moutlon-method-for-the-non-linear-population-equation">
+<h2>Specific 1 step Adams-Moutlon method for the Non-Linear Population Equation<a class="headerlink" href="#specific-1-step-adams-moutlon-method-for-the-non-linear-population-equation" title="Permalink to this heading">#</a></h2>
+<p>The specific Adams-Moulton difference equation for the non-linear population equations is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b5035b39-4605-4f3b-bc5b-d758e365c68e">
+<span class="eqno">(428)<a class="headerlink" href="#equation-b5035b39-4605-4f3b-bc5b-d758e365c68e" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}-0.01 w_{i+1}^2 
+                                + 0.2 w_i-0.01 w_i^2\big] \end{equation}\]</div>
+<p>re-arranging</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a0f547af-2648-4274-8f6e-1df4e8581801">
+<span class="eqno">(429)<a class="headerlink" href="#equation-a0f547af-2648-4274-8f6e-1df4e8581801" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}-\frac{h}{2}\big( 0.2 w_{i+1}-0.01 w_{i+1}^2 \big)=w_{i}+\frac{h}{2}
+                                \big[ 0.2 w_i-0.01 w_i^2\big] \end{equation}\]</div>
+<p>for <span class="math notranslate nohighlight">\(i=0,...,199\)</span>, where <span class="math notranslate nohighlight">\(w_i\)</span> is the numerical approximation of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>, with step size <span class="math notranslate nohighlight">\(h\)</span> and the initial condition</p>
+<div class="amsmath math notranslate nohighlight" id="equation-678ad4d1-9d23-472f-b896-93ac2b1079b0">
+<span class="eqno">(430)<a class="headerlink" href="#equation-678ad4d1-9d23-472f-b896-93ac2b1079b0" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=6.\end{equation}\]</div>
+<p>PROBLEM WE CANNOT MOVE THE SQUARED (NON-LINEAR TERM) TO THE RIGHT HAND SIDE SO WE CAN SOLVE FOR w[i+1].
+For this reason we will use a predictor-corrector method,
+The predictor will be the 2-step Adams Bashforth</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a6bbe513-8817-4e9f-931c-bc55bc0225c8">
+<span class="eqno">(431)<a class="headerlink" href="#equation-a6bbe513-8817-4e9f-931c-bc55bc0225c8" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}^{p}=w_{i}+\frac{h}{2}\big[ 3(0.2 w_{i}-0.01 w_{i}^2) 
+                                - (0.2 w_{i-1}-0.01 w_{i-1}^2) \big], \end{equation}\]</div>
+<p>with the corrector being the 1-step Adams Moulton,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b0dc2afd-7106-4d18-8982-d1cf16f32b60">
+<span class="eqno">(432)<a class="headerlink" href="#equation-b0dc2afd-7106-4d18-8982-d1cf16f32b60" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}^p-0.01 (w^p_{i+1})^2 
+                                + 0.2 w_i-0.01 w_i^2\big], \end{equation}\]</div>
+<p>for i=1,…200.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nonlinfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+    <span class="n">ftw</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">w</span>
+    <span class="k">return</span> <span class="n">ftw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSERT METHOD HERE</span>
+<span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">w_p</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">6.084</span> <span class="c1"># FROM THE THE TAYLOR METHOD</span>
+<span class="n">w_p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">w_p</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">6.084</span> <span class="c1"># FROM THE THE TAYLOR METHOD</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="c1">## Predictor</span>
+    <span class="n">w_p</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">nonlinfun</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="p">])</span><span class="o">-</span>
+                       <span class="n">nonlinfun</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+    <span class="c1">## Corrector</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">nonlinfun</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">],</span><span class="n">w_p</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">])</span><span class="o">+</span>
+                       <span class="n">nonlinfun</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span><span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
+<p>The plot below shows the numerical approximation, <span class="math notranslate nohighlight">\(w\)</span> (circles) for the non-linear population equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;-.&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Correcter &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w_p</span><span class="p">,</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Predictor &#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Non Linear Population Equation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (yrs)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population in billions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">w</span><span class="o">-</span><span class="n">w_p</span><span class="p">),</span><span class="s1">&#39;:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;|w-w_p| &#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Comparison of Predictor and Corrector&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (yrs)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population in billions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d56d9d2640e44fbc27eff704dc849d3a693bc7588ff04a2bc2d026403781c4f2.png" src="../_images/d56d9d2640e44fbc27eff704dc849d3a693bc7588ff04a2bc2d026403781c4f2.png" />
+<img alt="../_images/90686d0fb616a5d80a03526cb557f432e99d810c476836c5efef13d2f00afd99.png" src="../_images/90686d0fb616a5d80a03526cb557f432e99d810c476836c5efef13d2f00afd99.png" />
+</div>
+</div>
+</section>
+<section id="id2">
+<h2>Table<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>The table below shows the time and the numerical approximation, <span class="math notranslate nohighlight">\(w\)</span>,  for the non-linear population equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;Adams Approx w&#39;</span><span class="p">:</span> <span class="n">w</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time t_i</th>
+      <th>Adams Approx w</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000.0</td>
+      <td>6.000000</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2001.0</td>
+      <td>6.084000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2002.0</td>
+      <td>6.960322</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2003.0</td>
+      <td>7.892040</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2004.0</td>
+      <td>8.863456</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2005.0</td>
+      <td>9.856908</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2006.0</td>
+      <td>10.853082</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2007.0</td>
+      <td>11.832473</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2008.0</td>
+      <td>12.776881</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2009.0</td>
+      <td>13.670688</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010.0</td>
+      <td>14.501747</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2011.0</td>
+      <td>15.261810</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2012.0</td>
+      <td>15.946493</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2013.0</td>
+      <td>16.554881</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2014.0</td>
+      <td>17.088907</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2015.0</td>
+      <td>17.552635</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2016.0</td>
+      <td>17.951549</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2017.0</td>
+      <td>18.291930</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2018.0</td>
+      <td>18.580348</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2019.0</td>
+      <td>18.823293</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2020.0</td>
+      <td>19.026909</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="non-linear-population-equation-with-an-oscilation">
+<h2>3. Non-Linear Population Equation with an oscilation<a class="headerlink" href="#non-linear-population-equation-with-an-oscilation" title="Permalink to this heading">#</a></h2>
+<div class="amsmath math notranslate nohighlight" id="equation-997f21b0-6332-4cd7-a99d-5f6c91b18fe8">
+<span class="eqno">(433)<a class="headerlink" href="#equation-997f21b0-6332-4cd7-a99d-5f6c91b18fe8" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<p>with the initial condition,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0d9e4af9-8be0-4b4c-a9fd-e61e012ec4cd">
+<span class="eqno">(434)<a class="headerlink" href="#equation-0d9e4af9-8be0-4b4c-a9fd-e61e012ec4cd" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+</section>
+<section id="specific-2-step-adams-moulton-for-the-non-linear-population-equation-with-an-oscilation">
+<h2>Specific 2 Step Adams Moulton for the Non-Linear Population Equation with an oscilation<a class="headerlink" href="#specific-2-step-adams-moulton-for-the-non-linear-population-equation-with-an-oscilation" title="Permalink to this heading">#</a></h2>
+<p>The specific Adams-Moulton difference equation for the non-linear population equations is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-5a089545-c6c3-445e-87c9-6651772fca43">
+<span class="eqno">(435)<a class="headerlink" href="#equation-5a089545-c6c3-445e-87c9-6651772fca43" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}-0.01 w_{i+1}^2 +\sin(2\pi t_{i+1})
+                                + 0.2 w_i-0.01 w_i^2+\sin(2\pi t_{i})\big] \end{equation}\]</div>
+<p>for <span class="math notranslate nohighlight">\(i=1,...,199\)</span>, where <span class="math notranslate nohighlight">\(w_i\)</span> is the numerical approximation of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>, with step size <span class="math notranslate nohighlight">\(h\)</span> and the initial condition</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2d8f57d7-484c-43e2-a9c5-03e1d7e73bd8">
+<span class="eqno">(436)<a class="headerlink" href="#equation-2d8f57d7-484c-43e2-a9c5-03e1d7e73bd8" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=6.\end{equation}\]</div>
+<p>As <span class="math notranslate nohighlight">\(w_1\)</span> is required for the method but unknown we will use the numerical solution of a one step method to approximate the value. Here, we use the 2nd order Runge Kutta approximation (see <a class="reference external" href="https://github.com/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2003%20-%20Runge%20Kutta/01_2nd%20Order%20Runge%20Kutta%20Population%20Equations.ipynb">Runge Kutta notebook</a> )</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d8c1ebb4-1ed2-4c99-9c81-8e73e919df3a">
+<span class="eqno">(437)<a class="headerlink" href="#equation-d8c1ebb4-1ed2-4c99-9c81-8e73e919df3a" title="Permalink to this equation">#</a></span>\[\begin{equation}w_1=6.11.\end{equation}\]</div>
+<p>PROBLEM WE CANNOT MOVE THE SQUARED (NON-LINEAR TERM) TO THE RIGHT HAND SIDE SO WE CAN SOLVE FOR w[i+1].
+For this reason we will use a predictor-corrector method,
+The predictor will be the 2-step Adams Bashforth</p>
+<div class="amsmath math notranslate nohighlight" id="equation-da74904c-7eac-4fe7-82fe-44f67622a9a4">
+<span class="eqno">(438)<a class="headerlink" href="#equation-da74904c-7eac-4fe7-82fe-44f67622a9a4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}^{p}=w_{i}+\frac{h}{2}\big[ 3(0.2 w_{i}-0.01 w_{i}^2+\sin(2\pi t_{i}) 
+                                - (0.2 w_{i-1}-0.01 w_{i-1}^2+\sin(2\pi t_{i-1}) \big] \end{equation}\]</div>
+<p>with the corrector being the 1-step Adams Moulton,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-3dd99fa5-4387-4025-899d-0108c693ef8e">
+<span class="eqno">(439)<a class="headerlink" href="#equation-3dd99fa5-4387-4025-899d-0108c693ef8e" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}^p-0.01 (w^p_{i+1})^2 +\sin(2\pi t_{i+1}
+                                + 0.2 w_i-0.01 w_i^2+\sin(2\pi t_{i}\big], \end{equation}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">nonlin_oscfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">):</span>
+    <span class="n">ftw</span><span class="o">=</span><span class="mf">0.2</span><span class="o">*</span><span class="n">w</span><span class="o">-</span><span class="mf">0.01</span><span class="o">*</span><span class="n">w</span><span class="o">*</span><span class="n">w</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ftw</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## INSERT METHOD HERE</span>
+<span class="n">w</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">6</span>
+<span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mf">6.11</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+    <span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">w</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id3">
+<h2>Results<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>The plot below shows the  numerical approximation, <span class="math notranslate nohighlight">\(w\)</span> (circles) for the non-linear population equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;purple&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;Adams-Moulton&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Population Equation with seasonal oscilation&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;time (yrs)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Population in Billions&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2e3ba84c89215cf7d4d9c84034826415e3aa97c41a1809c96ce1defd831f70df.png" src="../_images/2e3ba84c89215cf7d4d9c84034826415e3aa97c41a1809c96ce1defd831f70df.png" />
+</div>
+</div>
+</section>
+<section id="id4">
+<h2>Table<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
+<p>The table below shows the time and the numerical approximation, <span class="math notranslate nohighlight">\(w\)</span>,  for the non-linear population equation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;Adams Approx w&#39;</span><span class="p">:</span> <span class="n">w</span><span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>time t_i</th>
+      <th>Adams Approx w</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2000.0</td>
+      <td>6.00</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2001.0</td>
+      <td>6.11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2002.0</td>
+      <td>6.61</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2003.0</td>
+      <td>7.11</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2004.0</td>
+      <td>7.61</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>2005.0</td>
+      <td>8.11</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>2006.0</td>
+      <td>8.61</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2007.0</td>
+      <td>9.11</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2008.0</td>
+      <td>9.61</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>2009.0</td>
+      <td>10.11</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>2010.0</td>
+      <td>10.61</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>2011.0</td>
+      <td>11.11</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>2012.0</td>
+      <td>11.61</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>2013.0</td>
+      <td>12.11</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>2014.0</td>
+      <td>12.61</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>2015.0</td>
+      <td>13.11</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>2016.0</td>
+      <td>13.61</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2017.0</td>
+      <td>14.11</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>2018.0</td>
+      <td>14.61</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>2019.0</td>
+      <td>15.11</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>2020.0</td>
+      <td>15.61</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter 04 - Multistep Methods"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="403_Adams%20Moulton%20Example.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Adams Moulton</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="405_Adams%20Predictor%20Corrector%20Example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Adams Predictor Corrector</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">1 Step Adams Moulton</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#john-s-butler">John S Butler</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#formula">Formula</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#linear">1. Linear</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-population-equation">2. Non-Linear Population Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-population-equation-with-an-oscillation">3. Non-Linear Population Equation with an oscillation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-libraries">Setting up Libraries</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-interval">Discrete Interval</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#linear-population-equation">1. Linear Population Equation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exact-solution">Exact Solution</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-1-step-adams-moulton">Specific 1 step Adams Moulton</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-results">Plotting Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#table">Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">2. Non-Linear Population Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-1-step-adams-moutlon-method-for-the-non-linear-population-equation">Specific 1 step Adams-Moutlon method for the Non-Linear Population Equation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Table</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#non-linear-population-equation-with-an-oscilation">3. Non-Linear Population Equation with an oscilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#specific-2-step-adams-moulton-for-the-non-linear-population-equation-with-an-oscilation">Specific 2 Step Adams Moulton for the Non-Linear Population Equation with an oscilation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">Table</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John S Butler
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

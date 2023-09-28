@@ -1,0 +1,857 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Non-Linear Shooting Method &#8212; Numerical and Machine Learning Methods</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 06 - Boundary Value Problems/602_Non-Linear Shooting Method';</script>
+    <link rel="shortcut icon" href="../_static/logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Finite Difference Method" href="603_Boundary%20Value%20Problem.html" />
+    <link rel="prev" title="Linear Shooting Method" href="601_Linear%20Shooting%20Method.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Numerical Methods and Machine Learning for Differential Equations with Applications in Python
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Euler Method</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.html">First Order Initial Value Problem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Taylor Method</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/201_3rd%20Order%20Taylor_Population_growth.html">Taylor Method</a></li>
+
+
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet.html">Problem Sheet 2</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/202_Taylor%20Method%20Error%20Example.html">1st vs 2nd order Taylor methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/201a_Problem_Sheet.html">Problem Sheet 2 Question 1a - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/201b_Problem_Sheet.html">Problem Sheet 2 Question 1b - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Runge Kutta</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/302_4th%20Order%20Runge%20Kutta.html">Example 4th order Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
+
+
+<li class="toctree-l2 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
+
+<li class="toctree-l3"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/307b_Problem_Sheet.html">Problem Sheet 3 Question 7b</a></li>
+
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Multistep Methods</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/401_Adams%20Bashforth%20Example.html">Adams Bashforth</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/402_Adams%20Bashforth%20Population%20Equations.html">2 Step Adam Bashforth</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/403_Adams%20Moulton%20Example.html">Adams Moulton</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/404_Adams%20Moulton%20Population%20Equations.html">1 Step Adams Moulton</a></li>
+
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/405_Adams%20Predictor%20Corrector%20Example.html">Adams Predictor Corrector</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet.html">Problem Sheet 4 - Multistep Methods</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/401a_Problem_Sheet.html">Problem Sheet Question 1a</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/401b_Problem_Sheet.html">Problem Sheet Question 1b</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/402a_Problem_Sheet.html">Problem Sheet Question 2a</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406b_Problem_Sheet.html">Problem Sheet Question 6b</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Consistency, Convergence and Stability</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/501_Consistent.html">Consistency of a Multistep method</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/502_Convergent.html">Convergence of a Multistep Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/503_Stability.html">Stability of a Multistep method</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.html">Further Notes on Stability</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/5_Problem_Sheet.html">Problem Sheet 5 - Consistency, Convergence and Stability</a></li>
+</ul>
+</li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Initial Value Problems Review Questions</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/IVP_Problems.html">Initial Value Problem Review Questions</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary Value Problems</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="601_Linear%20Shooting%20Method.html">Linear Shooting Method</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Non-Linear Shooting Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="603_Boundary%20Value%20Problem.html">Finite Difference Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6_Problem_Sheet.html">Problem Sheet 6 - Boundary Value Problems</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/john-s-butler-dit/Numerical-Methods-and-Machine-Learning-for-DE" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/Chapter 06 - Boundary Value Problems/602_Non-Linear Shooting Method.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Non-Linear Shooting Method</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#john-s-butler-john-s-butler-tudublin-ie-course-notes-github">John S Butler john.s.butler@tudublin.ie   Course Notes    Github</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-non-linear-boundary-value-problem">Example Non-linear Boundary Value Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-axis">Discrete Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-method">Numerical method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-iteration"><span class="math notranslate nohighlight">\(\lambda\)</span> Iteration</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <p><a href="https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/602_Non-Linear%20Shooting%20Method.ipynb" target="_parent"><img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg" /></a></p>
+<section class="tex2jax_ignore mathjax_ignore" id="non-linear-shooting-method">
+<h1>Non-Linear Shooting Method<a class="headerlink" href="#non-linear-shooting-method" title="Permalink to this heading">#</a></h1>
+<section id="john-s-butler-john-s-butler-tudublin-ie-course-notes-github">
+<h2>John S Butler john.s.butler&#64;tudublin.ie   <a class="reference external" href="https://johnsbutler.netlify.com/files/Teaching/Numerical_Analysis_for_Differential_Equations.pdf">Course Notes</a>    <a class="reference external" href="https://github.com/john-s-butler-dit/Numerical-Analysis-Python">Github</a><a class="headerlink" href="#john-s-butler-john-s-butler-tudublin-ie-course-notes-github" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
+<p>This notebook illustates the implentation of a the non-linear shooting method to a non-linear boundary value problem.</p>
+<p>The non-linear shooting method is a bit like the game Angry Birds to make a first guess and then you refine.
+The video below walks through the code.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">HTML</span>
+<span class="n">HTML</span><span class="p">(</span><span class="s1">&#39;&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/B7MQe09lDC4&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen&gt;&lt;/iframe&gt;&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/johnbutler/opt/anaconda3/lib/python3.8/site-packages/IPython/core/display.py:724: UserWarning: Consider using IPython.display.IFrame instead
+  warnings.warn(&quot;Consider using IPython.display.IFrame instead&quot;)
+</pre></div>
+</div>
+<div class="output text_html"><iframe width="560" height="315" src="https://www.youtube.com/embed/B7MQe09lDC4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div></div>
+</div>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>To numerically approximate the non-linear Boundary Value Problem</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a1e079fd-dee8-4ef9-9d1e-a3d617a3eb90">
+<span class="eqno">(652)<a class="headerlink" href="#equation-a1e079fd-dee8-4ef9-9d1e-a3d617a3eb90" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y^{''}=f(x,y,y^{'}), \ \ \ a &lt; x &lt; b, \end{equation}\]</div>
+<p>with the boundary conditions$$y(a)=\alpha,\end{equation} and</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ca847ed7-722a-4291-a6a1-21b6ebe48451">
+<span class="eqno">(653)<a class="headerlink" href="#equation-ca847ed7-722a-4291-a6a1-21b6ebe48451" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta,\end{equation}\]</div>
+<p>using the non-linear shooting method, the Boundary Value Problem is divided into two Initial Value Problems:</p>
+<ol class="arabic simple">
+<li><p>The first 2nd order non-linear Initial Value Problem is the same as the original Boundary Value Problem with an extra initial condtion <span class="math notranslate nohighlight">\(y_1^{'}(a)=\lambda_0\)</span>.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-7279a176-c076-4c06-b19d-51edf284e7d7">
+<span class="eqno">(654)<a class="headerlink" href="#equation-7279a176-c076-4c06-b19d-51edf284e7d7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+ y^{''}_1=f(x,y,y^{'}), \ \    y_1(a)=\alpha, \ \ \color{red}{y^{'}_1(a)=\lambda_0},\\
+\end{equation}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>The second 2nd order Initial Value Problem is with respect to <span class="math notranslate nohighlight">\(z=\frac{\partial y}{\partial \lambda}\)</span>  with the initial condtions <span class="math notranslate nohighlight">\(z(a)=0\)</span> and <span class="math notranslate nohighlight">\(z^{'}(a)=1\)</span>.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-c81774b2-8acd-43ed-812f-397eefee4914">
+<span class="eqno">(655)<a class="headerlink" href="#equation-c81774b2-8acd-43ed-812f-397eefee4914" title="Permalink to this equation">#</a></span>\[\begin{equation}
+z^{''}=\frac{\partial f}{\partial y^{'}}z^{'}(x,\lambda)+\frac{\partial f}{\partial y}z(x,\lambda), \ \ \color{green}{z(a)=0, \ \ z^{'}(a)=1}.
+\end{equation}\]</div>
+<p>combining these results together to get the unique solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0e6e60a5-03f8-4e3c-bfb4-b62db9353d21">
+<span class="eqno">(656)<a class="headerlink" href="#equation-0e6e60a5-03f8-4e3c-bfb4-b62db9353d21" title="Permalink to this equation">#</a></span>\[\begin{equation}
+y(x)=y_1(x).
+\end{equation}\]</div>
+<p>Unlike the linear method, the non-linear shooting method is iterative to get the value of <span class="math notranslate nohighlight">\(\lambda\)</span> that results in the same solution as the Boundary Value Problem.</p>
+<p>The first choice of <span class="math notranslate nohighlight">\(\lambda_0\)</span> is a guess, then after the first iteration a Newton Raphson method is used to update <span class="math notranslate nohighlight">\(\lambda,\)</span></p>
+<p>\begin{equation}\lambda_k=\lambda_{k-1}-\frac{y_1(b,\lambda_{k-1})-\beta}{\frac{dy}{d \lambda}(b,\lambda_{k-1})},$<span class="math notranslate nohighlight">\(
+which can be re-written as,
+\begin{equation}\lambda_k=\lambda_{k-1}-\frac{y_1(b,\lambda_{k-1})-\beta}{z(b,\lambda_{k-1})},\)</span>$</p>
+<p>until <span class="math notranslate nohighlight">\(|\lambda_{k}-\lambda_{k-1}|&lt;tol\)</span>.</p>
+<p>The introduction of <span class="math notranslate nohighlight">\(\lambda\)</span> is the introduction of a new variable that motivates the second 2nd order Initial Value Problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="example-non-linear-boundary-value-problem">
+<h2>Example Non-linear Boundary Value Problem<a class="headerlink" href="#example-non-linear-boundary-value-problem" title="Permalink to this heading">#</a></h2>
+<p>To illustrate the shooting method we shall apply it to the non-linear Boundary Value Problem:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-35cd0ea4-2ca7-4173-ac37-20c2940b809f">
+<span class="eqno">(657)<a class="headerlink" href="#equation-35cd0ea4-2ca7-4173-ac37-20c2940b809f" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{''}=-2yy^{'}, \end{equation}\]</div>
+<p>with boundary conditions</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d8a90e9f-02de-424d-b2e1-90186f413102">
+<span class="eqno">(658)<a class="headerlink" href="#equation-d8a90e9f-02de-424d-b2e1-90186f413102" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0) = -2.5, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6144669f-c6b2-4a1e-a7e7-883cf945b63a">
+<span class="eqno">(659)<a class="headerlink" href="#equation-6144669f-c6b2-4a1e-a7e7-883cf945b63a" title="Permalink to this equation">#</a></span>\[\begin{equation}y(1) = 3. \end{equation}\]</div>
+<p>The <strong>boundary value problem</strong> is broken into two second order <strong>Initial Value Problems:</strong></p>
+<ol class="arabic simple">
+<li><p>The first 2nd order Initial Value Problem is the same as the original Boundary Value Problem with an extra initial condtion <span class="math notranslate nohighlight">\(y^{'}(0)=\lambda_0\)</span>.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-047aa952-478a-437e-be65-043d9268be52">
+<span class="eqno">(660)<a class="headerlink" href="#equation-047aa952-478a-437e-be65-043d9268be52" title="Permalink to this equation">#</a></span>\[\begin{equation}
+u^{''} =-2uu', \ \ \ \ u(0)=-2.5, \ \ \ \color{green}{u^{'}(0)=\lambda_0},
+\end{equation}\]</div>
+<p>which can be written a two first order initial value problems</p>
+<div class="amsmath math notranslate nohighlight" id="equation-48944f2d-500d-4b7e-a1df-cdeef5082a64">
+<span class="eqno">(661)<a class="headerlink" href="#equation-48944f2d-500d-4b7e-a1df-cdeef5082a64" title="Permalink to this equation">#</a></span>\[\begin{equation}
+u_1^{'} =u_2, \ \ \ \ u_1(0)=-2.5,
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-53d857f2-8406-4222-b52b-24e781da05f3">
+<span class="eqno">(662)<a class="headerlink" href="#equation-53d857f2-8406-4222-b52b-24e781da05f3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+u_2^{'} =-2u_1u_2, \ \ \ \ \color{green}{u_2^{'}(0)=\lambda_0}.
+\end{equation}\]</div>
+<ol class="arabic simple" start="2">
+<li><p>The second 2nd order Initial Value Problem  <span class="math notranslate nohighlight">\(z=\frac{\partial y}{\partial \lambda}\)</span>  with the initial condtions <span class="math notranslate nohighlight">\(z(a)=0\)</span> and <span class="math notranslate nohighlight">\(z^{'}(a)=1\)</span>.with the initial condtions <span class="math notranslate nohighlight">\(z^{'}(0)=0\)</span> and <span class="math notranslate nohighlight">\(z^{'}(0)=1\)</span>.</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-0a30cd7e-4030-43d5-9fce-fa9d867901eb">
+<span class="eqno">(663)<a class="headerlink" href="#equation-0a30cd7e-4030-43d5-9fce-fa9d867901eb" title="Permalink to this equation">#</a></span>\[\begin{equation}
+z^{''} =-2y^{'}z-2yz^{'}, \ \ \ \ \color{green}{z(0)=0}, \ \ \ \color{green}{z^{'}(0)=1}
+\end{equation}\]</div>
+<p>which can be written a two first order initial value problems</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2724bb3b-8462-4c4e-b0c4-8b14a694471f">
+<span class="eqno">(664)<a class="headerlink" href="#equation-2724bb3b-8462-4c4e-b0c4-8b14a694471f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+z_1^{'} =z_2, \ \ \ \ z_1(0)=0,
+\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a1ddcc19-0a01-4170-b8b5-0bdf3b358fe2">
+<span class="eqno">(665)<a class="headerlink" href="#equation-a1ddcc19-0a01-4170-b8b5-0bdf3b358fe2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+z_2^{'} =-2u_2z_1-2u_1z_2, \ \ \ \ \color{green}{z_2^{'}(0)=1}.
+\end{equation}\]</div>
+<p>The first choice of <span class="math notranslate nohighlight">\(\lambda\)</span> we guess <span class="math notranslate nohighlight">\(\lambda_0=0.2\)</span>. Then after the first iteration a Newton Raphson method is used to update <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="amsmath math notranslate nohighlight" id="equation-e4675fea-98e9-4e8d-a67f-d50f7e48ea29">
+<span class="eqno">(666)<a class="headerlink" href="#equation-e4675fea-98e9-4e8d-a67f-d50f7e48ea29" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{u_1(1,\lambda_{k-1})-3}{z_1(1,\lambda_{k-1})}\end{equation}\]</div>
+<p>until <span class="math notranslate nohighlight">\(\lambda_{k}-\lambda_{k-1}&lt;0.001\)</span>.</p>
+</section>
+<section id="discrete-axis">
+<h2>Discrete Axis<a class="headerlink" href="#discrete-axis" title="Permalink to this heading">#</a></h2>
+<p>The stepsize is defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c8457acb-1509-481f-bc41-fa9705c2506c">
+<span class="eqno">(667)<a class="headerlink" href="#equation-c8457acb-1509-481f-bc41-fa9705c2506c" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}\end{equation}\]</div>
+<p>here it is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-641c635d-5533-49cc-881e-e5ead3bfef7f">
+<span class="eqno">(668)<a class="headerlink" href="#equation-641c635d-5533-49cc-881e-e5ead3bfef7f" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}\end{equation}\]</div>
+<p>giving</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ebaea2f3-9435-49f4-bb6e-2ae5c809a028">
+<span class="eqno">(669)<a class="headerlink" href="#equation-ebaea2f3-9435-49f4-bb6e-2ae5c809a028" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i\end{equation}\]</div>
+<p>for <span class="math notranslate nohighlight">\(i=0,1,...10.\)</span>
+The plot shows the discrete time intervals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## BVP</span>
+<span class="n">N</span><span class="o">=</span><span class="mi">10</span>
+<span class="n">h</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">N</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">0</span><span class="o">*</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;o:&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Illustration of discrete time points for h=</span><span class="si">%s</span><span class="s1">&#39;</span><span class="o">%</span><span class="p">(</span><span class="n">h</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f5fa173646eb78f5c2d704f442afa8f3d036bf2bbc1149dc3e38f598f91c4790.png" src="../_images/f5fa173646eb78f5c2d704f442afa8f3d036bf2bbc1149dc3e38f598f91c4790.png" />
+</div>
+</div>
+</section>
+<section id="initial-conditions">
+<h2>Initial conditions<a class="headerlink" href="#initial-conditions" title="Permalink to this heading">#</a></h2>
+<p>The initial conditions for the discrete equations are:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-185eff72-44ca-44d6-9c17-b21c5d274f25">
+<span class="eqno">(670)<a class="headerlink" href="#equation-185eff72-44ca-44d6-9c17-b21c5d274f25" title="Permalink to this equation">#</a></span>\[\begin{equation} u_1[0]=-2.5\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8bb712d2-4c32-4c20-8e80-fc1d5aa3d315">
+<span class="eqno">(671)<a class="headerlink" href="#equation-8bb712d2-4c32-4c20-8e80-fc1d5aa3d315" title="Permalink to this equation">#</a></span>\[\begin{equation} u_2[0]=\lambda_0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7dbc4ead-9a9d-4086-a98e-baab4ffae213">
+<span class="eqno">(672)<a class="headerlink" href="#equation-7dbc4ead-9a9d-4086-a98e-baab4ffae213" title="Permalink to this equation">#</a></span>\[\begin{equation} z_1[0]=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e0cbc352-f8a9-492f-9a99-4abec737a751">
+<span class="eqno">(673)<a class="headerlink" href="#equation-e0cbc352-f8a9-492f-9a99-4abec737a751" title="Permalink to this equation">#</a></span>\[\begin{equation} z_2[0]=1\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-14e23827-2f93-41ba-bad6-bf11fde5776f">
+<span class="eqno">(674)<a class="headerlink" href="#equation-14e23827-2f93-41ba-bad6-bf11fde5776f" title="Permalink to this equation">#</a></span>\[\begin{equation}\beta=3\end{equation}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\lambda_0=0.2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">U1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">U2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Z1</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">Z2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">lambda_app</span><span class="o">=</span><span class="p">[</span><span class="mf">0.2</span><span class="p">]</span>
+<span class="n">U1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=-</span><span class="mf">2.5</span>
+<span class="n">U2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">lambda_app</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">Z1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">Z2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">beta</span><span class="o">=</span><span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="numerical-method">
+<h2>Numerical method<a class="headerlink" href="#numerical-method" title="Permalink to this heading">#</a></h2>
+<p>The Euler method is applied to numerically approximate the solution of the system of the two second order non-linear initial value problems they are converted in to two pairs of two first order non-linear initial value problems:</p>
+<ol class="arabic simple">
+<li><p>Discrete form of Equation 1</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-4ffc2403-d6f3-48d9-9f55-592b0af2e3ac">
+<span class="eqno">(675)<a class="headerlink" href="#equation-4ffc2403-d6f3-48d9-9f55-592b0af2e3ac" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{1 }[i+1]=u_{1}[i] + h u_{2 }[i]\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cfcd8af0-3a53-45fa-a1a1-6af42ada5829">
+<span class="eqno">(676)<a class="headerlink" href="#equation-cfcd8af0-3a53-45fa-a1a1-6af42ada5829" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{2 }[i+1]=u_{2 }[i] + h (-2u_{1}[i]u_{2 }[i])\end{equation}\]</div>
+<p>with the initial conditions <span class="math notranslate nohighlight">\(u_{1}[0]=-2.5\)</span> and <span class="math notranslate nohighlight">\(u_{2}[0]=\lambda_0.\)</span></p>
+<ol class="arabic simple" start="2">
+<li><p>Discrete form of Equation 2</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-577d2f38-eef8-4029-8ef9-327e58bd7e0d">
+<span class="eqno">(677)<a class="headerlink" href="#equation-577d2f38-eef8-4029-8ef9-327e58bd7e0d" title="Permalink to this equation">#</a></span>\[\begin{equation}z_{1}[i+1]=z_{1 }[i] + h z_{2 }[i]\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6742c34c-0632-4d99-998b-08ca46b6dbef">
+<span class="eqno">(678)<a class="headerlink" href="#equation-6742c34c-0632-4d99-998b-08ca46b6dbef" title="Permalink to this equation">#</a></span>\[\begin{equation}z_{2}[i+1]=z_{2 }[i] + h (-2z_{2}[i]y_{1 }[i]-2z_{1 }[i] y_{2 }[i])\end{equation}\]</div>
+<p>with the initial conditions <span class="math notranslate nohighlight">\(z_{1}[0]=0\)</span> and <span class="math notranslate nohighlight">\(z_{2}[0]=1\)</span>.</p>
+<p>At the end of each iteration</p>
+<div class="amsmath math notranslate nohighlight" id="equation-d9b5d1a5-3aa0-4ad7-b6c4-94bd3efcd3ed">
+<span class="eqno">(679)<a class="headerlink" href="#equation-d9b5d1a5-3aa0-4ad7-b6c4-94bd3efcd3ed" title="Permalink to this equation">#</a></span>\[\begin{equation} u_1[i] \approx y(x_i).\end{equation}\]</div>
+<p>The initial choice of <span class="math notranslate nohighlight">\(\lambda_0=0.2\)</span> is up to the user then for each iteration of the system <span class="math notranslate nohighlight">\(\lambda\)</span> is updated using the formula:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-cf9b2f2f-b7d2-4e22-99a4-e953c1391de3">
+<span class="eqno">(680)<a class="headerlink" href="#equation-cf9b2f2f-b7d2-4e22-99a4-e953c1391de3" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{u_1[10]-3}{z_1[10]}.\end{equation}\]</div>
+<p>The plot below shows the numerical approximation of the solution to the non-linear Boundary Value Problem for each iteration.</p>
+<p>The stopping criteria for the iterative process is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0a359ec4-1353-4af9-9602-900ff39366b7">
+<span class="eqno">(681)<a class="headerlink" href="#equation-0a359ec4-1353-4af9-9602-900ff39366b7" title="Permalink to this equation">#</a></span>\[\begin{equation}|\lambda_k-\lambda_{k-1}|&lt;tol,\end{equation}\]</div>
+<p>with <span class="math notranslate nohighlight">\(tol=0.0001.\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tol</span><span class="o">=</span><span class="mf">0.0001</span>
+<span class="n">k</span><span class="o">=</span><span class="mi">0</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">while</span>  <span class="n">k</span><span class="o">&lt;</span><span class="mi">20</span><span class="p">:</span>
+    <span class="n">k</span><span class="o">=</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">U1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">U1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">U2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">U2</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">U2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">U2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">U1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    
+        <span class="n">Z1</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">Z1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="n">Z2</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">Z2</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="n">Z2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">h</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">U2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">Z1</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">Z2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">U1</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="n">lambda_app</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">lambda_app</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="p">(</span><span class="n">U1</span><span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="o">-</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">Z1</span><span class="p">[</span><span class="n">N</span><span class="p">])</span>
+   
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">U1</span><span class="p">,</span><span class="s1">&#39;:o&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;$\lambda$ </span><span class="si">%s</span><span class="s2">&quot;</span><span class="o">%</span><span class="p">(</span><span class="n">k</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;U1&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+    <span class="n">U2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="n">lambda_app</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">lambda_app</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">-</span><span class="n">lambda_app</span><span class="p">[</span><span class="n">k</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span><span class="o">&lt;</span><span class="n">tol</span><span class="p">:</span>
+        <span class="k">break</span>
+        
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;Iterations of $\lambda_k$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/77309326406f059e225f6e20e7d969596c25842e90db3a921891530d2951ebfe.png" src="../_images/77309326406f059e225f6e20e7d969596c25842e90db3a921891530d2951ebfe.png" />
+</div>
+</div>
+</section>
+<section id="results">
+<h2>Results<a class="headerlink" href="#results" title="Permalink to this heading">#</a></h2>
+<p>The plot below shows the final iteration of the numerical approximation for the non-linear boundary value problem.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">U1</span><span class="p">,</span><span class="s1">&#39;b:o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Numerical Approximation of the non-linear Boundary Value Problem&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;u_1$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/207e8bf6e620118e7b1671a5fd726d4bee061c59f9a8f1692f067f52133ec1d0.png" src="../_images/207e8bf6e620118e7b1671a5fd726d4bee061c59f9a8f1692f067f52133ec1d0.png" />
+</div>
+</div>
+</section>
+<section id="lambda-iteration">
+<h2><span class="math notranslate nohighlight">\(\lambda\)</span> Iteration<a class="headerlink" href="#lambda-iteration" title="Permalink to this heading">#</a></h2>
+<p>The plot below shows the iterations of <span class="math notranslate nohighlight">\(\lambda_k\)</span>, after <span class="math notranslate nohighlight">\(4\)</span> iterations the value of <span class="math notranslate nohighlight">\(\lambda\)</span> stabilies.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">lambda_app</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="c1">#plt.title(&quot;Values of $\lambda$ for each interation &quot;,fontsize=32)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Iterations (k)&#39;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;lambda&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/36f1b913e630ab58849b3545ab2b7c7c955c56870eea8b941129d5460b3349f0.png" src="../_images/36f1b913e630ab58849b3545ab2b7c7c955c56870eea8b941129d5460b3349f0.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./Chapter 06 - Boundary Value Problems"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="601_Linear%20Shooting%20Method.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Linear Shooting Method</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="603_Boundary%20Value%20Problem.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Finite Difference Method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#john-s-butler-john-s-butler-tudublin-ie-course-notes-github">John S Butler john.s.butler@tudublin.ie   Course Notes    Github</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview">Overview</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-non-linear-boundary-value-problem">Example Non-linear Boundary Value Problem</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-axis">Discrete Axis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#initial-conditions">Initial conditions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-method">Numerical method</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#results">Results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-iteration"><span class="math notranslate nohighlight">\(\lambda\)</span> Iteration</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By John S Butler
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
