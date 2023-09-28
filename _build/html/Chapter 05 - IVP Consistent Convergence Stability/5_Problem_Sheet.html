@@ -192,11 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Problem 6 Solution</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -254,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/402a_Problem_Sheet.html">Problem Sheet Question 2a</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406_Problem_Blank.html">Problem Sheet Question 6 Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406_Problem_Blank.html">Problem Sheet Question 6 Blank</a></li>
 
 
 
@@ -471,26 +467,26 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Determine whether the 2-step Adams-Bashforth Method is consistent, convergent and stable</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f7c0ea58-a98e-4116-8457-38e5cb88b606">
-<span class="eqno">(687)<a class="headerlink" href="#equation-f7c0ea58-a98e-4116-8457-38e5cb88b606" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4e7239c5-fe44-4b33-92b3-774f8fbe51d1">
+<span class="eqno">(622)<a class="headerlink" href="#equation-4e7239c5-fe44-4b33-92b3-774f8fbe51d1" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})).\end{equation}\]</div>
 </section>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="2">
 <li><p>Determine whether the 2-step Adams-Moulton Method is  consistent, convergent and stable</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f2a5eaff-5dee-4eb7-8bde-be83a2981c06">
-<span class="eqno">(688)<a class="headerlink" href="#equation-f2a5eaff-5dee-4eb7-8bde-be83a2981c06" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{n+1}=w_n+\frac{5}{12}hf(t_{n+1},w_{n+1})+\frac{8}{12}hf(t_{n},w_{n})-\frac{1}{12}hf(t_{n-1},w_{n-1}).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a6693ca0-83b9-479e-b124-233a88f59c4e">
+<span class="eqno">(623)<a class="headerlink" href="#equation-a6693ca0-83b9-479e-b124-233a88f59c4e" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{n+1}=w_n+\frac{5}{12}hf(t_{n+1},w_{n+1})+\frac{8}{12}hf(t_{n},w_{n})-\frac{1}{12}hf(t_{n-1},w_{n-1}).\end{equation}\]</div>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="3">
 <li><p>Determine whether the linear multistep following methods are consistent, convergent and stable:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-785c3bc9-8f42-4702-901b-8f977fa91351">
-<span class="eqno">(689)<a class="headerlink" href="#equation-785c3bc9-8f42-4702-901b-8f977fa91351" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_{n-1}+\frac{1}{3}h[f(t_{n+1},w_{n+1})+4f(t_n,w_n)+f(t_{n-1},w_{n-1})].\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-c7b3ee38-2a46-487f-962d-cb4f0a260a03">
-<span class="eqno">(690)<a class="headerlink" href="#equation-c7b3ee38-2a46-487f-962d-cb4f0a260a03" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=\frac{4}{3}w_{n}-\frac{1}{3}w_{n-1}+\frac{2}{3}h[f(t_{n+1},w_{n+1})]. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-509b00d8-b3ba-4729-9674-9bbfd8cfee15">
+<span class="eqno">(624)<a class="headerlink" href="#equation-509b00d8-b3ba-4729-9674-9bbfd8cfee15" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_{n-1}+\frac{1}{3}h[f(t_{n+1},w_{n+1})+4f(t_n,w_n)+f(t_{n-1},w_{n-1})].\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-28638242-9f1a-45a1-b16f-5d449a52a051">
+<span class="eqno">(625)<a class="headerlink" href="#equation-28638242-9f1a-45a1-b16f-5d449a52a051" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=\frac{4}{3}w_{n}-\frac{1}{3}w_{n-1}+\frac{2}{3}h[f(t_{n+1},w_{n+1})]. \end{equation}\]</div>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>

@@ -15,7 +15,8 @@ using a stepsize h = 0.25, giving the approximate value of the solution at t = 2
 2. Use the  Euler method to estimate the solution of the Lorenz system of first order initial value problems, 
 \begin{align} \frac{dx}{dt}=\sigma(y-x),& \ \ \ x(0)=1,\\
  \frac{dy}{dt}=x(\rho-z)-y, &\ \ \ y(0)=1,\\
- \frac{dz}{dt}=xy-\beta z,& \ \ \ z(0)=1,\begin{end}
+ \frac{dz}{dt}=xy-\beta z,& \ \ \ z(0)=1,\end{align}
+ 
 where $\sigma=8$, $\rho=2$ and $\beta=\frac{7}{3}$,  and
 using $h=0.25$, estimate the value of the solution at $t=1.0$.
 

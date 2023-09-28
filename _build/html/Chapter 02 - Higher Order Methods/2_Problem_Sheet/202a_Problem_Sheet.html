@@ -192,11 +192,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Problem 6 Solution</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
 </ul>
 </li>
 </ul>
@@ -254,7 +250,7 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/402a_Problem_Sheet.html">Problem Sheet Question 2a</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406_Problem_Blank.html">Problem Sheet Question 6 Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406_Problem_Blank.html">Problem Sheet Question 6 Blank</a></li>
 
 
 
@@ -472,15 +468,15 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-2-question-2a-3rd-order-taylor">
 <h1>Problem Sheet 2 Question 2a - 3rd Order Taylor<a class="headerlink" href="#problem-sheet-2-question-2a-3rd-order-taylor" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2155025c-cff5-4b6d-be24-7f7652ce747e">
-<span class="eqno">(233)<a class="headerlink" href="#equation-2155025c-cff5-4b6d-be24-7f7652ce747e" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=t-y, \ \ (0 \leq t \leq 4),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-526e6f01-ff85-48df-9a60-2dd6c17f0fcb">
+<span class="eqno">(168)<a class="headerlink" href="#equation-526e6f01-ff85-48df-9a60-2dd6c17f0fcb" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=t-y, \ \ (0 \leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c485905-2020-42cd-9a90-75bcc94a0899">
-<span class="eqno">(234)<a class="headerlink" href="#equation-3c485905-2020-42cd-9a90-75bcc94a0899" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e49be7a7-f6f8-4dc8-9e26-7f18a3b572c9">
+<span class="eqno">(169)<a class="headerlink" href="#equation-e49be7a7-f6f8-4dc8-9e26-7f18a3b572c9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1.\end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-316d8a08-9c62-4cd9-841d-ed3e5d8689fd">
-<span class="eqno">(235)<a class="headerlink" href="#equation-316d8a08-9c62-4cd9-841d-ed3e5d8689fd" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3a94a17b-8d01-43aa-bf6e-9aa294553e24">
+<span class="eqno">(170)<a class="headerlink" href="#equation-3a94a17b-8d01-43aa-bf6e-9aa294553e24" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1.\end{equation}\]</div>
 <p>Apply <strong>3rd Order Taylor Method</strong> to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution, and compare the actual error with the theoretical error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -502,20 +498,20 @@ with the analytic (exact) solution</p>
 <section id="general-discrete-interval">
 <h2>General Discrete Interval<a class="headerlink" href="#general-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-df433145-8e9a-4de9-a4a2-e0e850e1d3ae">
-<span class="eqno">(236)<a class="headerlink" href="#equation-df433145-8e9a-4de9-a4a2-e0e850e1d3ae" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{b-a}{N}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-67a736d5-4cf1-4554-8530-4167c0d0ccb9">
+<span class="eqno">(171)<a class="headerlink" href="#equation-67a736d5-4cf1-4554-8530-4167c0d0ccb9" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{b-a}{N}.\end{equation}\]</div>
 </section>
 <section id="specific-discrete-interval">
 <h2>Specific Discrete Interval<a class="headerlink" href="#specific-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 4\)</span> with <span class="math notranslate nohighlight">\(N=4\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-15d6d79d-d726-4abf-9447-165705dfc7e8">
-<span class="eqno">(237)<a class="headerlink" href="#equation-15d6d79d-d726-4abf-9447-165705dfc7e8" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{4-0}{4}=1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b3581685-4c59-4085-9556-8d0cc75acc8b">
+<span class="eqno">(172)<a class="headerlink" href="#equation-b3581685-4c59-4085-9556-8d0cc75acc8b" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{4-0}{4}=1.\end{equation}\]</div>
 <p>This gives the 5 discrete points with stepsize h=1:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21d590dc-9475-4d13-b5d0-2505394f88d8">
-<span class="eqno">(238)<a class="headerlink" href="#equation-21d590dc-9475-4d13-b5d0-2505394f88d8" title="Permalink to this equation">#</a></span>\[\begin{equation} t_0=0, \ t_1=1, \ ... t_{4}=4. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8f56b6e6-4a29-466b-8f71-42b0d91bc71b">
+<span class="eqno">(173)<a class="headerlink" href="#equation-8f56b6e6-4a29-466b-8f71-42b0d91bc71b" title="Permalink to this equation">#</a></span>\[\begin{equation} t_0=0, \ t_1=1, \ ... t_{4}=4. \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b1b656e3-7cce-4e84-9cb7-fc3af0bcf560">
-<span class="eqno">(239)<a class="headerlink" href="#equation-b1b656e3-7cce-4e84-9cb7-fc3af0bcf560" title="Permalink to this equation">#</a></span>\[\begin{equation} t_i=0+i1, \ \ \ i=0,1,...,4.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2435f250-f1c4-4a2b-a06a-dd1b8396324a">
+<span class="eqno">(174)<a class="headerlink" href="#equation-2435f250-f1c4-4a2b-a06a-dd1b8396324a" title="Permalink to this equation">#</a></span>\[\begin{equation} t_i=0+i1, \ \ \ i=0,1,...,4.\end{equation}\]</div>
 <p>The plot below illustrates the discrete time steps from 0 to 4.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -543,22 +539,22 @@ with the analytic (exact) solution</p>
 <section id="rd-order-taylor-solution">
 <h2>3rd Order Taylor Solution<a class="headerlink" href="#rd-order-taylor-solution" title="Permalink to this heading">#</a></h2>
 <p>The 3rd Order Taylor difference equation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b923eefc-cbbb-4535-baef-f3770d7b1d39">
-<span class="eqno">(240)<a class="headerlink" href="#equation-b923eefc-cbbb-4535-baef-f3770d7b1d39" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)+\frac{h^2}{6}f''(t_i,w_i)\right],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f2108cb3-23d2-41ed-960f-b4a9ebd90c4d">
+<span class="eqno">(175)<a class="headerlink" href="#equation-f2108cb3-23d2-41ed-960f-b4a9ebd90c4d" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)+\frac{h^2}{6}f''(t_i,w_i)\right],\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-225a45c3-a29c-4d08-8d7d-e21d6b446dfd">
-<span class="eqno">(241)<a class="headerlink" href="#equation-225a45c3-a29c-4d08-8d7d-e21d6b446dfd" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t_i,w_i)=t_i-w_i,\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ff64100f-8eb0-4b1a-be50-aad9cde4ecab">
-<span class="eqno">(242)<a class="headerlink" href="#equation-ff64100f-8eb0-4b1a-be50-aad9cde4ecab" title="Permalink to this equation">#</a></span>\[\begin{equation}f'(t_i,w_i)=1-t_i+w_i,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c34814a0-aca5-4346-998d-202d95bec958">
+<span class="eqno">(176)<a class="headerlink" href="#equation-c34814a0-aca5-4346-998d-202d95bec958" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t_i,w_i)=t_i-w_i,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a71567ca-7a7b-43ea-9987-dca8a2b1838a">
+<span class="eqno">(177)<a class="headerlink" href="#equation-a71567ca-7a7b-43ea-9987-dca8a2b1838a" title="Permalink to this equation">#</a></span>\[\begin{equation}f'(t_i,w_i)=1-t_i+w_i,\end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-802591db-90dd-4911-9060-3caa9fed2f87">
-<span class="eqno">(243)<a class="headerlink" href="#equation-802591db-90dd-4911-9060-3caa9fed2f87" title="Permalink to this equation">#</a></span>\[\begin{equation} f''(t_i,w_i)=-1+t_i-w_i,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-353217a8-3e2a-4729-a8ac-d59f955ecff6">
+<span class="eqno">(178)<a class="headerlink" href="#equation-353217a8-3e2a-4729-a8ac-d59f955ecff6" title="Permalink to this equation">#</a></span>\[\begin{equation} f''(t_i,w_i)=-1+t_i-w_i,\end{equation}\]</div>
 <p>which gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9701c374-bd77-461f-847a-9d814a9608bf">
-<span class="eqno">(244)<a class="headerlink" href="#equation-9701c374-bd77-461f-847a-9d814a9608bf" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_i-w_i)+\frac{h^2}{2}(1-t_i+w_i)+\frac{h^3}{6}(-1+t_i-w_i), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4b31dfdb-04be-4532-9d01-022551f1ac26">
+<span class="eqno">(179)<a class="headerlink" href="#equation-4b31dfdb-04be-4532-9d01-022551f1ac26" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_i-w_i)+\frac{h^2}{2}(1-t_i+w_i)+\frac{h^3}{6}(-1+t_i-w_i), \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,2,3\)</span> with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-31924a68-a11a-42c2-b0e8-3f1fb9403a2c">
-<span class="eqno">(245)<a class="headerlink" href="#equation-31924a68-a11a-42c2-b0e8-3f1fb9403a2c" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-17370ea4-e206-44eb-b8ca-d445f42a1a68">
+<span class="eqno">(180)<a class="headerlink" href="#equation-17370ea4-e206-44eb-b8ca-d445f42a1a68" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=1.\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">IC</span><span class="o">=</span><span class="mi">1</span>
@@ -583,8 +579,8 @@ with the analytic (exact) solution</p>
 <section id="global-error">
 <h2>Global Error<a class="headerlink" href="#global-error" title="Permalink to this heading">#</a></h2>
 <p>The upper bound of the global error is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a0bb97d-a5b9-464b-beab-af1bdb227803">
-<span class="eqno">(246)<a class="headerlink" href="#equation-0a0bb97d-a5b9-464b-beab-af1bdb227803" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i|\leq\frac{Mh^3}{24}\frac{1}{L} |e^{Lt_i}-1| \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d1c3e798-abe5-470c-b88e-f6cc45f4752a">
+<span class="eqno">(181)<a class="headerlink" href="#equation-d1c3e798-abe5-470c-b88e-f6cc45f4752a" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i|\leq\frac{Mh^3}{24}\frac{1}{L} |e^{Lt_i}-1| \end{equation}\]</div>
 <p>where
 <span class="math notranslate nohighlight">\(|y''''(t)|\leq M \)</span> for <span class="math notranslate nohighlight">\(t \in (0,4)\)</span> and <span class="math notranslate nohighlight">\(L\)</span> is the Lipschitz constant.
 Generally we do not have access to <span class="math notranslate nohighlight">\(M\)</span> or <span class="math notranslate nohighlight">\(L\)</span>, but as we have the exact solution we can find <span class="math notranslate nohighlight">\(M\)</span> and <span class="math notranslate nohighlight">\(L\)</span>.</p>
@@ -592,41 +588,41 @@ Generally we do not have access to <span class="math notranslate nohighlight">\(
 <h3>Local Error<a class="headerlink" href="#local-error" title="Permalink to this heading">#</a></h3>
 <p>The global error consistent of an exponential term and the local error.
 The local error for the 3rd order Taylor method is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e846187c-87b1-4504-affd-61fdbca3c858">
-<span class="eqno">(247)<a class="headerlink" href="#equation-e846187c-87b1-4504-affd-61fdbca3c858" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_1)-w_1|&lt;\tau=\frac{Mh^3}{24} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c3fc5728-2eda-41f6-ad16-ec94e18f992e">
+<span class="eqno">(182)<a class="headerlink" href="#equation-c3fc5728-2eda-41f6-ad16-ec94e18f992e" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_1)-w_1|&lt;\tau=\frac{Mh^3}{24} \end{equation}\]</div>
 <p>by differentiation the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4755fad8-a9fa-4cdb-8662-50b39fae2c92">
-<span class="eqno">(248)<a class="headerlink" href="#equation-4755fad8-a9fa-4cdb-8662-50b39fae2c92" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-28b1c77d-a176-40a4-88a7-cba86e109c54">
+<span class="eqno">(183)<a class="headerlink" href="#equation-28b1c77d-a176-40a4-88a7-cba86e109c54" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1\end{equation}\]</div>
 <p>four times</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cbccb064-e690-4920-93b1-ff989d0ab5f2">
-<span class="eqno">(249)<a class="headerlink" href="#equation-cbccb064-e690-4920-93b1-ff989d0ab5f2" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=-2e^{-t}+1,\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-05fad0b0-c1f7-4dbd-9790-7fc3da927631">
-<span class="eqno">(250)<a class="headerlink" href="#equation-05fad0b0-c1f7-4dbd-9790-7fc3da927631" title="Permalink to this equation">#</a></span>\[\begin{equation}y''=2e^{-t},\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6b5fb632-b6ba-4042-9b6c-188f8b2ed823">
-<span class="eqno">(251)<a class="headerlink" href="#equation-6b5fb632-b6ba-4042-9b6c-188f8b2ed823" title="Permalink to this equation">#</a></span>\[\begin{equation}y'''=-2e^{-t},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-836bf679-1f8f-470c-ae06-d15448df1553">
+<span class="eqno">(184)<a class="headerlink" href="#equation-836bf679-1f8f-470c-ae06-d15448df1553" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=-2e^{-t}+1,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-701254c6-6973-455b-83a5-d61f9f01d10b">
+<span class="eqno">(185)<a class="headerlink" href="#equation-701254c6-6973-455b-83a5-d61f9f01d10b" title="Permalink to this equation">#</a></span>\[\begin{equation}y''=2e^{-t},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-332b8758-2db2-445c-936a-2f2c7b798e53">
+<span class="eqno">(186)<a class="headerlink" href="#equation-332b8758-2db2-445c-936a-2f2c7b798e53" title="Permalink to this equation">#</a></span>\[\begin{equation}y'''=-2e^{-t},\end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06d6546d-39ad-48a8-86e7-721c5d233890">
-<span class="eqno">(252)<a class="headerlink" href="#equation-06d6546d-39ad-48a8-86e7-721c5d233890" title="Permalink to this equation">#</a></span>\[\begin{equation}y''''=2e^{-t}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f6f688b8-2339-4408-b0a4-4e864a9f7762">
+<span class="eqno">(187)<a class="headerlink" href="#equation-f6f688b8-2339-4408-b0a4-4e864a9f7762" title="Permalink to this equation">#</a></span>\[\begin{equation}y''''=2e^{-t}.\end{equation}\]</div>
 <p>Then we choose the largest possible value of <span class="math notranslate nohighlight">\(y'''\)</span> on the interval of interest <span class="math notranslate nohighlight">\((0,4)\)</span>, which gives,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35e06dce-7bb8-43be-b0f7-d10de851b499">
-<span class="eqno">(253)<a class="headerlink" href="#equation-35e06dce-7bb8-43be-b0f7-d10de851b499" title="Permalink to this equation">#</a></span>\[\begin{equation}|y''(t)|\leq |2e^{0}|=2, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7dbd7747-8324-41cf-b5eb-407951c2aa8b">
+<span class="eqno">(188)<a class="headerlink" href="#equation-7dbd7747-8324-41cf-b5eb-407951c2aa8b" title="Permalink to this equation">#</a></span>\[\begin{equation}|y''(t)|\leq |2e^{0}|=2, \end{equation}\]</div>
 <p>therefore</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ee4af335-fd82-4cb0-881d-89187bd3c501">
-<span class="eqno">(254)<a class="headerlink" href="#equation-ee4af335-fd82-4cb0-881d-89187bd3c501" title="Permalink to this equation">#</a></span>\[\begin{equation}M=2.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a4580f10-fe69-4372-ac95-d39888ab1173">
+<span class="eqno">(189)<a class="headerlink" href="#equation-a4580f10-fe69-4372-ac95-d39888ab1173" title="Permalink to this equation">#</a></span>\[\begin{equation}M=2.\end{equation}\]</div>
 <p>This gives the local error</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1ace9499-cf6c-4efe-b4ab-d4e459db8d5e">
-<span class="eqno">(255)<a class="headerlink" href="#equation-1ace9499-cf6c-4efe-b4ab-d4e459db8d5e" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_1)-w_1|&lt;\tau=\frac{Mh^3}{24}=\frac{2h^3}{24}=\frac{h^3}{12}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3b1f83a9-fd6b-4de4-b16e-624bdc663dbf">
+<span class="eqno">(190)<a class="headerlink" href="#equation-3b1f83a9-fd6b-4de4-b16e-624bdc663dbf" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_1)-w_1|&lt;\tau=\frac{Mh^3}{24}=\frac{2h^3}{24}=\frac{h^3}{12}.\end{equation}\]</div>
 </section>
 <section id="lipschitz-constant">
 <h3>Lipschitz constant<a class="headerlink" href="#lipschitz-constant" title="Permalink to this heading">#</a></h3>
 <p>The Lipschitz constant <span class="math notranslate nohighlight">\(L\)</span> is from the Lipschitz condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a60fec0-38f9-427a-b499-d8f32a35bd27">
-<span class="eqno">(256)<a class="headerlink" href="#equation-7a60fec0-38f9-427a-b499-d8f32a35bd27" title="Permalink to this equation">#</a></span>\[\begin{equation}\left| \frac{\partial f(t,y)}{\partial t}\right|\leq L. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-27b7278c-fb3a-46bd-a424-76e46f675a8f">
+<span class="eqno">(191)<a class="headerlink" href="#equation-27b7278c-fb3a-46bd-a424-76e46f675a8f" title="Permalink to this equation">#</a></span>\[\begin{equation}\left| \frac{\partial f(t,y)}{\partial t}\right|\leq L. \end{equation}\]</div>
 <p>The constant can be found by taking partical derivative of <span class="math notranslate nohighlight">\(f(t,y)=t-y\)</span> with respect to <span class="math notranslate nohighlight">\(y\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-aa78a99f-986d-47c0-9c00-a4c017fc66b6">
-<span class="eqno">(257)<a class="headerlink" href="#equation-aa78a99f-986d-47c0-9c00-a4c017fc66b6" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\partial f(t,y)}{\partial y}=-1\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-06a24c2c-794b-4d47-a6fc-f79a7ade9881">
-<span class="eqno">(258)<a class="headerlink" href="#equation-06a24c2c-794b-4d47-a6fc-f79a7ade9881" title="Permalink to this equation">#</a></span>\[\begin{equation}L=|-1|=1.$$
+<div class="amsmath math notranslate nohighlight" id="equation-da3b6284-1ee6-4fb6-9156-ae1be13701aa">
+<span class="eqno">(192)<a class="headerlink" href="#equation-da3b6284-1ee6-4fb6-9156-ae1be13701aa" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{\partial f(t,y)}{\partial y}=-1\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9a564cb5-97a0-450a-8515-7febcdfef976">
+<span class="eqno">(193)<a class="headerlink" href="#equation-9a564cb5-97a0-450a-8515-7febcdfef976" title="Permalink to this equation">#</a></span>\[\begin{equation}L=|-1|=1.$$
 
 ### Specific Global Upper Bound Formula
 Puting these values into the upper bound gives:
