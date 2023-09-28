@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Sheet 6 - Boundary Value Problems &#8212; Numerical and Machine Learning Methods</title>
+    <title>Problem Sheet 6 - Systems of Equations and Boundary Value Problems &#8212; Numerical and Machine Learning Methods</title>
   
   
   
@@ -36,6 +36,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,6 +61,25 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -64,7 +94,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Finite Difference Method" href="604_Boundary%20Value%20Problem%20Example%202.html" />
+    <link rel="next" title="Finite Difference Method" href="604_Boundary%20Value%20Problem%20Example%202.html" />
+    <link rel="prev" title="Finite Difference Method" href="603_Boundary%20Value%20Problem.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -165,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Problem 6 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -180,7 +212,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/205_Problem_Sheet.html">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/206_Problem_Sheet.html">Problem Sheet 2 Question 6 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/206_Problem_Sheet_Solution.html">Problem Sheet 2 Question 6 - 2nd Order Taylor Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -190,12 +223,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet.html">Problem Sheet 3 - Runge-Kutta</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/307b_Problem_Sheet.html">Problem Sheet 3 Question 7b</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/306_Problem_Blank.html">Problem Sheet 3 Question 6 Blank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2003%20-%20Runge%20Kutta/3_Problem_Sheet/306_Problem_Solution.html">Problem Sheet 3 Question 6 Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -221,7 +254,14 @@ const thebe_selector_output = ".output, .cell_output"
 
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/402a_Problem_Sheet.html">Problem Sheet Question 2a</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406b_Problem_Sheet.html">Problem Sheet Question 6b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406_Problem_Blank.html">Problem Sheet Question 6 Solution</a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2004%20-%20Multistep%20Methods/4_Problem_Sheet/406_Problem_Solution.html">Problem Sheet Question 6 Solution</a></li>
+
+
+
 </ul>
 </li>
 </ul>
@@ -231,10 +271,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/502_Convergent.html">Convergence of a Multistep Method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/503_Stability.html">Stability of a Multistep method</a></li>
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.html">Further Notes on Stability</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/5_Problem_Sheet.html">Problem Sheet 5 - Consistency, Convergence and Stability</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.html">Further Notes on Stability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/5_Problem_Sheet.html">Problem Sheet 5 - Consistency, Convergence and Stability</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Initial Value Problems Review Questions</span></p>
 <ul class="nav bd-sidenav">
@@ -242,11 +280,11 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary Value Problems</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="601_Linear%20Shooting%20Method.html">Linear Shooting Method</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="602_Non-Linear%20Shooting%20Method.html">Non-Linear Shooting Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="603_Boundary%20Value%20Problem.html">Finite Difference Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="601_Linear%20Shooting%20Method.html">Linear Shooting Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="602_Non-Linear%20Shooting%20Method.html">Non-Linear Shooting Method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="603_Boundary%20Value%20Problem.html">Finite Difference Method</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Problem Sheet 6 - Systems of Equations and Boundary Value Problems</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">Problem Sheet 6 - Boundary Value Problems</a></li>
 </ul>
 </li>
 </ul>
@@ -292,7 +330,7 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="article-header-buttons">
 
 
-<a href="https://github.com/john-s-butler-dit/Numerical-Methods-and-Machine-Learning-for-DE" target="_blank"
+<a href="https://github.com/john-s-butler-dit/NM_ML_DE" target="_blank"
    class="btn btn-sm btn-source-repository-button"
    title="Source repository"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -387,7 +425,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -398,11 +438,25 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Sheet 6 - Boundary Value Problems</h1>
+    <h1>Problem Sheet 6 - Systems of Equations and Boundary Value Problems</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question 7</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -412,19 +466,74 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-6-boundary-value-problems">
-<h1>Problem Sheet 6 - Boundary Value Problems<a class="headerlink" href="#problem-sheet-6-boundary-value-problems" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-6-systems-of-equations-and-boundary-value-problems">
+<h1>Problem Sheet 6 - Systems of Equations and Boundary Value Problems<a class="headerlink" href="#problem-sheet-6-systems-of-equations-and-boundary-value-problems" title="Permalink to this heading">#</a></h1>
+<section id="question-1">
+<h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
+<li><p>Apply the Euler method to estimate the solution of the system of equations</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-872b4ac0-0a43-46e7-9da2-3796c9f184a1">
+<span class="eqno">(810)<a class="headerlink" href="#equation-872b4ac0-0a43-46e7-9da2-3796c9f184a1" title="Permalink to this equation">#</a></span>\[\begin{align} \frac{dx}{dt}= x-0.2xy; &amp;\ \ x(1) = 10;\\
+\frac{dy}{dt}= y + 0.1xy; &amp;\ \  y(1) = 2;
+\end{align}\]</div>
+<p>using a stepsize h = 0.25, giving the approximate value of the solution at t = 2.0.</p>
+</section>
+<section id="question-2">
+<h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="2">
+<li><p>Use the  Euler method to estimate the solution of the Lorenz system of first order initial value problems,
+\begin{align} \frac{dx}{dt}=\sigma(y-x),&amp; \ \ \ x(0)=1,\
+\frac{dy}{dt}=x(\rho-z)-y, &amp;\ \ \ y(0)=1,\
+\frac{dz}{dt}=xy-\beta z,&amp; \ \ \ z(0)=1,\begin{end}
+where <span class="math notranslate nohighlight">\(\sigma=8\)</span>, <span class="math notranslate nohighlight">\(\rho=2\)</span> and <span class="math notranslate nohighlight">\(\beta=\frac{7}{3}\)</span>,  and
+using <span class="math notranslate nohighlight">\(h=0.25\)</span>, estimate the value of the solution at <span class="math notranslate nohighlight">\(t=1.0\)</span>.</p></li>
+</ol>
+</section>
+<section id="question-3">
+<h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="3">
 <li><p>Consider the boundary value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-f263da05-e2f3-48cd-95fc-ce88fd5a2c69">
-<span class="eqno">(763)<a class="headerlink" href="#equation-f263da05-e2f3-48cd-95fc-ce88fd5a2c69" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Apply the linear shooting method to transform this equation into two second order initial value problems
-and approximate the solution using the Euler method with stepsize $h=\frac{1}{3}.$
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
+<div class="amsmath math notranslate nohighlight" id="equation-3431a2db-7cd3-4ed1-b5cf-d92a9e38e18e">
+<span class="eqno">(811)<a class="headerlink" href="#equation-3431a2db-7cd3-4ed1-b5cf-d92a9e38e18e" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
+<p>Apply the linear shooting method to transform this equation into two second order initial value problems
+and approximate the solution using the Euler method with stepsize <span class="math notranslate nohighlight">\(h=\frac{1}{3}.\)</span></p>
+</section>
+<section id="question-4">
+<h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="4">
+<li><p>Describe in your own words how the linear shooting method is used to numerically approximate a boundary value problem as a system of initial value problems.</p></li>
+</ol>
+</section>
+<section id="question-5">
+<h2>Question 5<a class="headerlink" href="#question-5" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="5">
+<li><p>The Van der Pol oscillator is a non-conservative oscillator with non-linear damping is described by the differential non-linear second order differential equation,</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-f330d5e9-f80d-418e-b845-4a779408b65c">
+<span class="eqno">(812)<a class="headerlink" href="#equation-f330d5e9-f80d-418e-b845-4a779408b65c" title="Permalink to this equation">#</a></span>\[\begin{equation} u^{''}=-\epsilon(u^2-1)u^{'}-u.\end{equation}\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\epsilon=1.5\)</span>, and given the initial condition</p>
+<div class="amsmath math notranslate nohighlight" id="equation-95bcaeac-3073-44ec-a186-dd6172968712">
+<span class="eqno">(813)<a class="headerlink" href="#equation-95bcaeac-3073-44ec-a186-dd6172968712" title="Permalink to this equation">#</a></span>\[\begin{equation} u(0)=0.0, \text{ and, } u(1)=0. \end{equation}\]</div>
+<p>Apply the one iteration of the non-linear shooting method to approximate the solution from, <span class="math notranslate nohighlight">\(0\leq t \leq 1,\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.2.\)</span></p>
+</section>
+<section id="question-6">
+<h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="6">
+<li><p>a. Describe in your own words how the non-linear shooting method is used to numerically approximate a boundary value problem as a system of initial value problems.</p></li>
+</ol>
+</section>
+<section id="question-7">
+<h2>Question 7<a class="headerlink" href="#question-7" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple" start="7">
+<li><p>Consider the boundary value problem</p></li>
+</ol>
+<div class="amsmath math notranslate nohighlight" id="equation-775fd674-e738-4d38-a3a8-de68d8157c2f">
+<span class="eqno">(814)<a class="headerlink" href="#equation-775fd674-e738-4d38-a3a8-de68d8157c2f" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
+<p>Apply the finite difference method to approximate the solution using the Euler method with stepsize <span class="math notranslate nohighlight">\(h=\frac{1}{3}.\)</span></p>
+</section>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 
@@ -460,13 +569,22 @@ and approximate the solution using the Euler method with stepsize $h=\frac{1}{3}
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="604_Boundary%20Value%20Problem%20Example%202.html"
+       href="603_Boundary%20Value%20Problem.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Finite Difference Method</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="604_Boundary%20Value%20Problem%20Example%202.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Finite Difference Method</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
@@ -477,6 +595,26 @@ and approximate the solution using the Euler method with stepsize $h=\frac{1}{3}
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1">Question 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2">Question 2</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3">Question 3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-4">Question 4</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-5">Question 5</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-6">Question 6</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-7">Question 7</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
