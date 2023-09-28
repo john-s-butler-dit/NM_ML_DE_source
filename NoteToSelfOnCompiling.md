@@ -20,11 +20,11 @@ In order to build the book locally, you will need to do the following:
 
 3. First build of the book
 
-`jupyter-book build --all Numerical-and-Machine-Learning-Methods-for-Differential-Equations_orig/`
+`jupyter-book build --all NM_ML_DE_source/`
 
 4. Subsequent builds of the book
 
-`jupyter-book build Numerical-and-Machine-Learning-Methods-for-Differential-Equations_orig/`
+`jupyter-book build NM_ML_DE_source/`
 
 5. Now copy contents to webpage folder
 
@@ -48,6 +48,4 @@ Now enjoy:
 [https://john-s-butler-dit.github.io/Numerical-and-Machine-Learning-Methods-for-Differential-Equations/index.html]
 <!-- #endregion -->
 
-```python
 
-```

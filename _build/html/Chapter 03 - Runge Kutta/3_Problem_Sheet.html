@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Problem Sheet 3 - Runge Kutta &#8212; Numerical and Machine Learning Methods</title>
+    <title>Problem Sheet 3 - Runge-Kutta &#8212; Numerical and Machine Learning Methods</title>
   
   
   
@@ -36,6 +36,17 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/vendor/fontawesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
@@ -50,6 +61,25 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/documentation_options.js"></script>
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/copybutton_funcs.js"></script>
+    <script src="../_static/jquery-3.6.0.js"></script>
+    <script src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/underscore-1.12.0.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore-1.13.1.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script src="../_static/scripts/bootstrap.js"></script>
+    <script src="../_static/scripts/pydata-sphinx-theme.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -166,6 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -181,7 +212,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202a_Problem_Sheet.html">Problem Sheet 2 Question 2a - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/202b_Problem_Sheet.html">Problem Sheet 2 Question 2b - 3rd Order Taylor</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/203_Problem_Sheet.html">Problem Sheet 2 Question 3 - 2nd Order Taylor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/205_Problem_Sheet.html">Problem Sheet 2 Question 5 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/206_Problem_Sheet.html">Problem Sheet 2 Question 6 - 2nd Order Taylor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2002%20-%20Higher%20Order%20Methods/2_Problem_Sheet/206_Problem_Sheet_Solution.html">Problem Sheet 2 Question 6 - 2nd Order Taylor Solution</a></li>
 </ul>
 </li>
 </ul>
@@ -191,7 +223,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.html">Application of 2nd order Runge Kutta to Populations Equations</a></li>
 
 
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Problem Sheet 3 - Runge Kutta</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Problem Sheet 3 - Runge-Kutta</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="3_Problem_Sheet/302a_Problem_Sheet.html">Problem Sheet 3 Question 1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3_Problem_Sheet/302b_Problem_Sheet.html">Problem Sheet 3 Question 2b</a></li>
 
@@ -399,7 +431,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Problem Sheet 3 - Runge Kutta</h1>
+    <h1>Problem Sheet 3 - Runge-Kutta</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -415,63 +447,92 @@ document.write(`
                   
   <!-- #region -->
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-3-runge-kutta">
-<h1>Problem Sheet 3 - Runge Kutta<a class="headerlink" href="#problem-sheet-3-runge-kutta" title="Permalink to this heading">#</a></h1>
-<ol class="arabic simple">
-<li></li>
-</ol>
-<p>a. Apply the Midpoint Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c18d265a-9fc5-40df-b49f-5d7ce80b431e">
-<span class="eqno">(332)<a class="headerlink" href="#equation-c18d265a-9fc5-40df-b49f-5d7ce80b431e" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
+<h1>Problem Sheet 3 - Runge-Kutta<a class="headerlink" href="#problem-sheet-3-runge-kutta" title="Permalink to this heading">#</a></h1>
+<ol class="arabic">
+<li><p>a. Apply the Midpoint Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-9f3a7dc4-4359-4044-bcb5-6ea25fcd6312">
+<span class="eqno">(362)<a class="headerlink" href="#equation-9f3a7dc4-4359-4044-bcb5-6ea25fcd6312" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=1,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>,  with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d0ad60a6-f62b-4a3d-afce-408cea69a0ce">
-<span class="eqno">(333)<a class="headerlink" href="#equation-d0ad60a6-f62b-4a3d-afce-408cea69a0ce" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8fbdd592-9e13-49fc-a53b-b8aed8650f5b">
+<span class="eqno">(363)<a class="headerlink" href="#equation-8fbdd592-9e13-49fc-a53b-b8aed8650f5b" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
 <p>b. Apply the Midpoint Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-034dd1b9-c328-4c93-a197-d4d81c8ab54f">
-<span class="eqno">(334)<a class="headerlink" href="#equation-034dd1b9-c328-4c93-a197-d4d81c8ab54f" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-444fab04-1fbf-4c7c-b7ae-4c08d334026b">
+<span class="eqno">(364)<a class="headerlink" href="#equation-444fab04-1fbf-4c7c-b7ae-4c08d334026b" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6504e49b-3f8c-48ec-ab61-6256063026e0">
-<span class="eqno">(335)<a class="headerlink" href="#equation-6504e49b-3f8c-48ec-ab61-6256063026e0" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
-<p>a. Apply the 4th Order Runge Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4888c320-f5d9-4d40-aca4-ba09da85aec2">
-<span class="eqno">(336)<a class="headerlink" href="#equation-4888c320-f5d9-4d40-aca4-ba09da85aec2" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4bbec954-f86e-4084-af10-0d3b51039749">
+<span class="eqno">(365)<a class="headerlink" href="#equation-4bbec954-f86e-4084-af10-0d3b51039749" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
+</li>
+<li><p>a. Apply the 4th Order Runge-Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a7917634-041b-40e3-9786-6f3939ae981a">
+<span class="eqno">(366)<a class="headerlink" href="#equation-a7917634-041b-40e3-9786-6f3939ae981a" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=1,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a8925315-03ca-4ecd-8140-dd1103622a20">
-<span class="eqno">(337)<a class="headerlink" href="#equation-a8925315-03ca-4ecd-8140-dd1103622a20" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
-<p>b. Apply the 4th Order Runge Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fdabf65f-15bb-4c19-8738-430627b38a04">
-<span class="eqno">(338)<a class="headerlink" href="#equation-fdabf65f-15bb-4c19-8738-430627b38a04" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-842d0dc0-4bb8-4e53-bf3d-8d62da7287ae">
+<span class="eqno">(367)<a class="headerlink" href="#equation-842d0dc0-4bb8-4e53-bf3d-8d62da7287ae" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
+<p>b. Apply the 4th Order Runge-Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution</p>
+<div class="amsmath math notranslate nohighlight" id="equation-dd6fb2fd-9028-4e0e-bd68-3aebc3093818">
+<span class="eqno">(368)<a class="headerlink" href="#equation-dd6fb2fd-9028-4e0e-bd68-3aebc3093818" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2)\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span>
 <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6177355-9ee1-4856-a55a-f89d367a6563">
-<span class="eqno">(339)<a class="headerlink" href="#equation-a6177355-9ee1-4856-a55a-f89d367a6563" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
-<ol class="arabic simple" start="3">
-<li><p>Derive the difference equation for the Midpoint Runge Kutta method</p></li>
-</ol>
-<div class="amsmath math notranslate nohighlight" id="equation-ffd00a77-506e-470f-be92-b368e49338b5">
-<span class="eqno">(340)<a class="headerlink" href="#equation-ffd00a77-506e-470f-be92-b368e49338b5" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+k_2,\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-f7be5416-b82c-4b9b-a11e-7de9ef4adddf">
-<span class="eqno">(341)<a class="headerlink" href="#equation-f7be5416-b82c-4b9b-a11e-7de9ef4adddf" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=hf(t_n,w_n),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-19967873-d138-4ce0-8e4e-da53678b433f">
-<span class="eqno">(342)<a class="headerlink" href="#equation-19967873-d138-4ce0-8e4e-da53678b433f" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\frac{1}{2}h,w_n+\frac{1}{2}k_1),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d61c6618-85d6-4602-8540-86bd245ed023">
+<span class="eqno">(369)<a class="headerlink" href="#equation-d61c6618-85d6-4602-8540-86bd245ed023" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
+</li>
+<li><p>Derive the difference equation for the Midpoint Runge-Kutta method</p>
+<div class="amsmath math notranslate nohighlight" id="equation-a4f0f644-c96f-486b-a96e-b6755b8be9c4">
+<span class="eqno">(370)<a class="headerlink" href="#equation-a4f0f644-c96f-486b-a96e-b6755b8be9c4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+k_2,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d09860a4-25cb-42cb-9279-5452ee45a9e8">
+<span class="eqno">(371)<a class="headerlink" href="#equation-d09860a4-25cb-42cb-9279-5452ee45a9e8" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=hf(t_n,w_n),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fe5cf940-7510-448d-9937-0537019aa18c">
+<span class="eqno">(372)<a class="headerlink" href="#equation-fe5cf940-7510-448d-9937-0537019aa18c" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\frac{1}{2}h,w_n+\frac{1}{2}k_1),\end{equation}\]</div>
 <p>for solving the ordinary differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6a8bd33f-8e2d-4b5e-b4ba-02a4fc6d3b05">
-<span class="eqno">(343)<a class="headerlink" href="#equation-6a8bd33f-8e2d-4b5e-b4ba-02a4fc6d3b05" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7f16ac1a-5739-460d-82c1-60f3c3765c8e">
+<span class="eqno">(373)<a class="headerlink" href="#equation-7f16ac1a-5739-460d-82c1-60f3c3765c8e" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1a800c7d-8c8e-46b0-849c-894df6a83128">
-<span class="eqno">(344)<a class="headerlink" href="#equation-1a800c7d-8c8e-46b0-849c-894df6a83128" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t_0)=y_0, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c52fe2d4-2122-421b-a204-67b318240c68">
+<span class="eqno">(374)<a class="headerlink" href="#equation-c52fe2d4-2122-421b-a204-67b318240c68" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t_0)=y_0, \end{equation}\]</div>
 <p>by using a formula of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dc7128d3-793d-4d4d-81e6-c54130985986">
-<span class="eqno">(345)<a class="headerlink" href="#equation-dc7128d3-793d-4d4d-81e6-c54130985986" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+ak_1+bk_2, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3bcd3178-eaf0-4b1b-9e08-1b6b3ec0342b">
+<span class="eqno">(375)<a class="headerlink" href="#equation-3bcd3178-eaf0-4b1b-9e08-1b6b3ec0342b" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+ak_1+bk_2, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_1\)</span> is defined as above,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97e10655-13e1-4424-9614-f44047c576a2">
-<span class="eqno">(346)<a class="headerlink" href="#equation-97e10655-13e1-4424-9614-f44047c576a2" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1),\end{equation}\]</div>
-<p>and <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are constants are determined. Prove that <span class="math notranslate nohighlight">\(a+b=1\)</span> and <span class="math notranslate nohighlight">\(b\alpha=b\beta=\frac{1}{2}\)</span> and choose appropriate values to give the Midpoint Runge Kutta method.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-c6b9cb80-f714-414a-acca-65823348931c">
+<span class="eqno">(376)<a class="headerlink" href="#equation-c6b9cb80-f714-414a-acca-65823348931c" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1),\end{equation}\]</div>
+<p>and <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are constants are determined. Prove that <span class="math notranslate nohighlight">\(a+b=1\)</span> and <span class="math notranslate nohighlight">\(b\alpha=b\beta=\frac{1}{2}\)</span> and choose appropriate values to give the Midpoint Runge-Kutta method.</p>
+</li>
+<li><p>For the Runge-Kutta methods describe in your own words the concepts:</p>
+<p>a. Consistency;</p>
+<p>b. Convergence.</p>
+</li>
+<li><p>Describe in your own words the theorem below and its proof:
+Assume that the Runge-Kutta method satisfies the Lipschitz Condition. Then
+for the initial value problems</p>
+<div class="amsmath math notranslate nohighlight" id="equation-7a1336b3-d1cc-4a58-a4dc-0a892b1a9a8f">
+<span class="eqno">(377)<a class="headerlink" href="#equation-7a1336b3-d1cc-4a58-a4dc-0a892b1a9a8f" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(x,y),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-26b05ca9-2962-4f33-8ac5-271a7dd3252f">
+<span class="eqno">(378)<a class="headerlink" href="#equation-26b05ca9-2962-4f33-8ac5-271a7dd3252f" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_0)=y_0. \end{equation}\]</div>
+<p>The numerical solution <span class="math notranslate nohighlight">\(\{ w_n\}\)</span> satisfies</p>
+<div class="amsmath math notranslate nohighlight" id="equation-ea3ebb22-15a7-429b-a47f-6293203d92e6">
+<span class="eqno">(379)<a class="headerlink" href="#equation-ea3ebb22-15a7-429b-a47f-6293203d92e6" title="Permalink to this equation">#</a></span>\[\begin{equation} \max_{a\leq x\leq b}|y(x_n)-w_n| \leq e^{(b-a)L}|y_0-w_0|+\left[\frac{e^{(b-a)L}-1}{L} \right]\tau(h)\end{equation}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8ca6e1fc-0c21-4ff8-9f5d-d85c30d919fe">
+<span class="eqno">(380)<a class="headerlink" href="#equation-8ca6e1fc-0c21-4ff8-9f5d-d85c30d919fe" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau(h) = \max_{a\leq x\leq b}|\tau_n(h)|,\end{equation}\]</div>
+<p>If the consistency condition</p>
+<div class="amsmath math notranslate nohighlight" id="equation-e5f1ac8a-fe43-41f3-abde-8ade238a9bcb">
+<span class="eqno">(381)<a class="headerlink" href="#equation-e5f1ac8a-fe43-41f3-abde-8ade238a9bcb" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) \rightarrow 0 \mbox{ as  } h\rightarrow 0, \end{equation}\]</div>
+<p>where</p>
+<div class="amsmath math notranslate nohighlight" id="equation-fbd26e56-3e1d-456d-a42d-cd8dee53da0c">
+<span class="eqno">(382)<a class="headerlink" href="#equation-fbd26e56-3e1d-456d-a42d-cd8dee53da0c" title="Permalink to this equation">#</a></span>\[\begin{equation}\delta(h) = \max_{a \leq x \leq b}|f(x,y)-F(x,y;h;f)|. \end{equation}\]</div>
+</li>
+<li><p>Adapt the Python code for the Heun’s second order Runge-Kutta method provided to approximate solution of the integrate and fire differential equation:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-afdf9ef3-a075-4f13-a161-e13d07a8909e">
+<span class="eqno">(383)<a class="headerlink" href="#equation-afdf9ef3-a075-4f13-a161-e13d07a8909e" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
+<span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
+and the initial condition
+<span class="math notranslate nohighlight">\(V(-50) = -75\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
+</li>
+</ol>
 <div class="toctree-wrapper compound">
 </div>
 </section>

@@ -10,6 +10,7 @@ parts:
       - file: Chapter 01 - Euler Methods/1_Problem_Sheet/102a_Problem_Sheet
       - file: Chapter 01 - Euler Methods/1_Problem_Sheet/102b_Problem_Sheet
       - file: Chapter 01 - Euler Methods/1_Problem_Sheet/106_Problem_Sheet
+      - file: Chapter 01 - Euler Methods/1_Problem_Sheet/106_Problem_Sheet_Solution
   - caption: Taylor Method
     chapters:
     - file: Chapter 02 - Higher Order Methods/201_3rd Order Taylor_Population_growth
@@ -21,7 +22,8 @@ parts:
       - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/202a_Problem_Sheet
       - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/202b_Problem_Sheet
       - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/203_Problem_Sheet
-      - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/205_Problem_Sheet
+      - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/206_Problem_Sheet
+      - file: Chapter 02 - Higher Order Methods/2_Problem_Sheet/206_Problem_Sheet_Solution
   - caption: Runge Kutta
     chapters:
     - file: Chapter 03 - Runge Kutta/302_4th Order Runge Kutta

@@ -19,7 +19,7 @@ Numerical Analysis; Finite-differencing techniques; Stability analysis; Explicit
 Machine Learning: Non-linear shooting method, Newton Raphson method; Gradient Descent; Loss functions; Norms, Forward and Back Propagation; Neural Network, The Universal Approximation Theorem for Neural Networks.
 
 
-This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_ML_DE/)
+This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_ML_DE_source/)
 
 
 ## Part 1 Numerical Solutions to Ordinary Differential Equations 
