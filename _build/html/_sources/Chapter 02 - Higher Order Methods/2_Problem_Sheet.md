@@ -38,13 +38,13 @@
     \begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}
 
     Explain how that if $y \in C^{n+1}[a,b]$ the general local error for the Taylor Method is:
-    \[\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i))\tilda O(h^n), \]
+    \begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}
     where $n$ is the order of the method.
     
    b.  Describe in your own words the theorem below and its proof:
     Assume that the Taylor method satisfies the Lipschitz condition with constant
     L on $D=\{(t,y)|a\leq t \leq b, -\infty < y < \infty \}$ and that the local truncation error is of the form:
-    \[\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i))\tilda O(h^n), \]
+   \begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}
     where $n$ is the order of the method.
     Let $y(t)$ denote the unique solution of the Initial Value Problem
     

@@ -498,41 +498,41 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="formula">
 <h1>Formula<a class="headerlink" href="#formula" title="Permalink to this heading">#</a></h1>
 <p>The general 1 step Adams-Moulton method for the first order differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-33a20bb6-17b4-485f-9734-74b74e7aa441">
-<span class="eqno">(434)<a class="headerlink" href="#equation-33a20bb6-17b4-485f-9734-74b74e7aa441" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'} = f(t,y) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-51ac90d6-e1fa-4ec2-bb01-6a316bda267c">
+<span class="eqno">(436)<a class="headerlink" href="#equation-51ac90d6-e1fa-4ec2-bb01-6a316bda267c" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'} = f(t,y) \end{equation}\]</div>
 <p>numerical approximates <span class="math notranslate nohighlight">\(y\)</span> the at time point <span class="math notranslate nohighlight">\(t_i\)</span> as <span class="math notranslate nohighlight">\(w_i\)</span>
 with the  formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25157197-93eb-413a-87dd-79fb8cc38dca">
-<span class="eqno">(435)<a class="headerlink" href="#equation-25157197-93eb-413a-87dd-79fb8cc38dca" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[f(t_{i+1},w_{i+1})+f(t_{i},w_{i})\big],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d9cae312-af4a-4ee5-8555-d6f58a9396fc">
+<span class="eqno">(437)<a class="headerlink" href="#equation-d9cae312-af4a-4ee5-8555-d6f58a9396fc" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[f(t_{i+1},w_{i+1})+f(t_{i},w_{i})\big],\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,...,N-1\)</span>, where</p>
 <p>and <span class="math notranslate nohighlight">\(h\)</span> is the stepsize.</p>
 <p>To illustrate the method we will apply it to three intial value problems:</p>
 <section id="linear">
 <h2>1. Linear<a class="headerlink" href="#linear" title="Permalink to this heading">#</a></h2>
 <p>Consider the linear population Differential Equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd753359-3339-4aa9-acc6-90f289f49504">
-<span class="eqno">(436)<a class="headerlink" href="#equation-dd753359-3339-4aa9-acc6-90f289f49504" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.1y, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-10331024-5b1c-490a-9344-09bc47b998ac">
+<span class="eqno">(438)<a class="headerlink" href="#equation-10331024-5b1c-490a-9344-09bc47b998ac" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.1y, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
 <p>with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9596ffaa-7bcc-496a-aaad-1282e382b825">
-<span class="eqno">(437)<a class="headerlink" href="#equation-9596ffaa-7bcc-496a-aaad-1282e382b825" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1090036f-e48c-4163-b183-95b94ca5074b">
+<span class="eqno">(439)<a class="headerlink" href="#equation-1090036f-e48c-4163-b183-95b94ca5074b" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
 </section>
 <section id="non-linear-population-equation">
 <h2>2. Non-Linear Population Equation<a class="headerlink" href="#non-linear-population-equation" title="Permalink to this heading">#</a></h2>
 <p>Consider the non-linear population Differential Equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-75bb1fdd-0712-4b74-922b-0562a6e32aba">
-<span class="eqno">(438)<a class="headerlink" href="#equation-75bb1fdd-0712-4b74-922b-0562a6e32aba" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7c553b79-e179-431e-8318-221a04811d87">
+<span class="eqno">(440)<a class="headerlink" href="#equation-7c553b79-e179-431e-8318-221a04811d87" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
 <p>with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e29df18d-a926-44ce-b8ef-94365b9606e9">
-<span class="eqno">(439)<a class="headerlink" href="#equation-e29df18d-a926-44ce-b8ef-94365b9606e9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-68d57a38-7e19-449a-970c-a87fd80e4859">
+<span class="eqno">(441)<a class="headerlink" href="#equation-68d57a38-7e19-449a-970c-a87fd80e4859" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
 </section>
 <section id="non-linear-population-equation-with-an-oscillation">
 <h2>3. Non-Linear Population Equation with an oscillation<a class="headerlink" href="#non-linear-population-equation-with-an-oscillation" title="Permalink to this heading">#</a></h2>
 <p>Consider the non-linear population Differential Equation with an oscillation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-771068c4-0a0b-4a43-a4a3-9cdbe88b0b5e">
-<span class="eqno">(440)<a class="headerlink" href="#equation-771068c4-0a0b-4a43-a4a3-9cdbe88b0b5e" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5c2e9ef5-5e1f-46ef-997c-e97f49280e95">
+<span class="eqno">(442)<a class="headerlink" href="#equation-5c2e9ef5-5e1f-46ef-997c-e97f49280e95" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
 <p>with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ff73f09-123c-4bbb-91f3-dac39c84e72e">
-<span class="eqno">(441)<a class="headerlink" href="#equation-5ff73f09-123c-4bbb-91f3-dac39c84e72e" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5e2f614a-2df1-4763-a894-9dcd6d8f9342">
+<span class="eqno">(443)<a class="headerlink" href="#equation-5e2f614a-2df1-4763-a894-9dcd6d8f9342" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
 <section id="setting-up-libraries">
 <h3>Setting up Libraries<a class="headerlink" href="#setting-up-libraries" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
@@ -556,17 +556,17 @@ with the  formula:</p>
 <section id="discrete-interval">
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9e601739-8326-402b-b268-f5fd87924f8c">
-<span class="eqno">(442)<a class="headerlink" href="#equation-9e601739-8326-402b-b268-f5fd87924f8c" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{b-a}{N}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c38585ce-be00-4d61-9fb1-8b177581535d">
+<span class="eqno">(444)<a class="headerlink" href="#equation-c38585ce-be00-4d61-9fb1-8b177581535d" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{b-a}{N}.\end{equation}\]</div>
 <p>Here the interval is <span class="math notranslate nohighlight">\(2000\leq t \leq 2020,\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-31720a61-abfa-44b4-aa15-112d37675b7a">
-<span class="eqno">(443)<a class="headerlink" href="#equation-31720a61-abfa-44b4-aa15-112d37675b7a" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{2020-2000}{200}=0.1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4173dd34-dd3e-460c-bd0d-c983b5df2777">
+<span class="eqno">(445)<a class="headerlink" href="#equation-4173dd34-dd3e-460c-bd0d-c983b5df2777" title="Permalink to this equation">#</a></span>\[\begin{equation} h=\frac{2020-2000}{200}=0.1.\end{equation}\]</div>
 <p>This gives the 201 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4c92202e-e241-4606-b04f-0841239c4134">
-<span class="eqno">(444)<a class="headerlink" href="#equation-4c92202e-e241-4606-b04f-0841239c4134" title="Permalink to this equation">#</a></span>\[\begin{equation} t_0=2000, \ t_1=2000.1, \ ... t_{200}=2020. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-09918bff-5f9a-4219-983e-4310908b9cdd">
+<span class="eqno">(446)<a class="headerlink" href="#equation-09918bff-5f9a-4219-983e-4310908b9cdd" title="Permalink to this equation">#</a></span>\[\begin{equation} t_0=2000, \ t_1=2000.1, \ ... t_{200}=2020. \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f1be6cae-1557-4f39-b53d-56e783189b0a">
-<span class="eqno">(445)<a class="headerlink" href="#equation-f1be6cae-1557-4f39-b53d-56e783189b0a" title="Permalink to this equation">#</a></span>\[\begin{equation} t_i=2000+i0.1, \ \ \ i=0,1,...,200.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-914dc277-31f7-41ff-8a22-b1ed719d6659">
+<span class="eqno">(447)<a class="headerlink" href="#equation-914dc277-31f7-41ff-8a22-b1ed719d6659" title="Permalink to this equation">#</a></span>\[\begin{equation} t_i=2000+i0.1, \ \ \ i=0,1,...,200.\end{equation}\]</div>
 <p>The plot below shows the discrete time steps:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -600,23 +600,23 @@ with the  formula:</p>
 <section id="exact-solution">
 <h2>Exact Solution<a class="headerlink" href="#exact-solution" title="Permalink to this heading">#</a></h2>
 <p>The linear population equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c4e27ba5-742c-428a-86f4-3cce7ef39f2e">
-<span class="eqno">(446)<a class="headerlink" href="#equation-c4e27ba5-742c-428a-86f4-3cce7ef39f2e" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.1y, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cab6ea67-c897-4f18-84a7-6e256eced849">
+<span class="eqno">(448)<a class="headerlink" href="#equation-cab6ea67-c897-4f18-84a7-6e256eced849" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.1y, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
 <p>with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-331fbecf-fc27-49ef-b2a5-e3f5b9283ba7">
-<span class="eqno">(447)<a class="headerlink" href="#equation-331fbecf-fc27-49ef-b2a5-e3f5b9283ba7" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9de00a7a-031f-42c1-947a-159d15956300">
+<span class="eqno">(449)<a class="headerlink" href="#equation-9de00a7a-031f-42c1-947a-159d15956300" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
 <p>has a known exact (analytic) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea7d2e65-accf-4c88-bb3b-5f5f97fd0e7b">
-<span class="eqno">(448)<a class="headerlink" href="#equation-ea7d2e65-accf-4c88-bb3b-5f5f97fd0e7b" title="Permalink to this equation">#</a></span>\[\begin{equation} y(t)=6e^{0.1(t-2000)}. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-12a701b2-0ecf-4120-a3e4-c7e063ec1590">
+<span class="eqno">(450)<a class="headerlink" href="#equation-12a701b2-0ecf-4120-a3e4-c7e063ec1590" title="Permalink to this equation">#</a></span>\[\begin{equation} y(t)=6e^{0.1(t-2000)}. \end{equation}\]</div>
 </section>
 <section id="specific-1-step-adams-moulton">
 <h2>Specific 1 step Adams Moulton<a class="headerlink" href="#specific-1-step-adams-moulton" title="Permalink to this heading">#</a></h2>
 <p>The specific 1 step Adams Moulton for the linear population equation is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-81b060f8-eb15-43cc-a46d-d941867ef690">
-<span class="eqno">(449)<a class="headerlink" href="#equation-81b060f8-eb15-43cc-a46d-d941867ef690" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[0.1w_{i+1}+0.1w_i\big] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-28a9a3df-ae79-4999-a518-c85240a35546">
+<span class="eqno">(451)<a class="headerlink" href="#equation-28a9a3df-ae79-4999-a518-c85240a35546" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[0.1w_{i+1}+0.1w_i\big] \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40645c41-81d7-4024-9c54-408c2a49f4ef">
-<span class="eqno">(450)<a class="headerlink" href="#equation-40645c41-81d7-4024-9c54-408c2a49f4ef" title="Permalink to this equation">#</a></span>\[\begin{equation}f(t,y)=0.1y,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9f8c9b8a-f6d8-4010-a6c9-f11331735c1f">
+<span class="eqno">(452)<a class="headerlink" href="#equation-9f8c9b8a-f6d8-4010-a6c9-f11331735c1f" title="Permalink to this equation">#</a></span>\[\begin{equation}f(t,y)=0.1y,\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## THIS IS THE RIGHT HANDSIDE OF THE LINEAR POPULATION DIFFERENTIAL </span>
@@ -629,10 +629,10 @@ with the  formula:</p>
 </div>
 </div>
 <p>re-arranging,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d49477a9-f6d8-4e12-9878-4d06f29d0687">
-<span class="eqno">(451)<a class="headerlink" href="#equation-d49477a9-f6d8-4e12-9878-4d06f29d0687" title="Permalink to this equation">#</a></span>\[\begin{equation} \big(1-\frac{h}{2}(0.1)\big)w_{i+1}=w_i+\frac{h}{2}\big[0.1w_i\big], \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-1911d187-7e35-4556-a1cf-e67a529dff12">
-<span class="eqno">(452)<a class="headerlink" href="#equation-1911d187-7e35-4556-a1cf-e67a529dff12" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=\frac{w_i+\frac{h}{2}\big[0.1w_i\big]}{\big(1-\frac{h}{2}(0.1)\big)}. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-aeff367d-cec3-4cdb-8295-83a1f98d6afe">
+<span class="eqno">(453)<a class="headerlink" href="#equation-aeff367d-cec3-4cdb-8295-83a1f98d6afe" title="Permalink to this equation">#</a></span>\[\begin{equation} \big(1-\frac{h}{2}(0.1)\big)w_{i+1}=w_i+\frac{h}{2}\big[0.1w_i\big], \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-40f75b2a-f024-4d1c-bce4-f2a56d3179e3">
+<span class="eqno">(454)<a class="headerlink" href="#equation-40f75b2a-f024-4d1c-bce4-f2a56d3179e3" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=\frac{w_i+\frac{h}{2}\big[0.1w_i\big]}{\big(1-\frac{h}{2}(0.1)\big)}. \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSERT METHOD HERE</span>
@@ -811,34 +811,34 @@ with the  formula:</p>
 </section>
 <section id="id1">
 <h2>2. Non-Linear Population Equation<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-3630ebe5-83a1-41c2-ba44-a38651d42328">
-<span class="eqno">(453)<a class="headerlink" href="#equation-3630ebe5-83a1-41c2-ba44-a38651d42328" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7e0c9a5e-0615-4639-abce-d3a82f6303ed">
+<span class="eqno">(455)<a class="headerlink" href="#equation-7e0c9a5e-0615-4639-abce-d3a82f6303ed" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2, \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
 <p>with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0fb29458-494f-4d40-805e-9cffef755df0">
-<span class="eqno">(454)<a class="headerlink" href="#equation-0fb29458-494f-4d40-805e-9cffef755df0" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5b0ce0cc-5594-4536-b595-23fda5d4cbdb">
+<span class="eqno">(456)<a class="headerlink" href="#equation-5b0ce0cc-5594-4536-b595-23fda5d4cbdb" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
 </section>
 <section id="specific-1-step-adams-moutlon-method-for-the-non-linear-population-equation">
 <h2>Specific 1 step Adams-Moutlon method for the Non-Linear Population Equation<a class="headerlink" href="#specific-1-step-adams-moutlon-method-for-the-non-linear-population-equation" title="Permalink to this heading">#</a></h2>
 <p>The specific Adams-Moulton difference equation for the non-linear population equations is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4793203e-4278-46d1-89d4-b158fa6be7af">
-<span class="eqno">(455)<a class="headerlink" href="#equation-4793203e-4278-46d1-89d4-b158fa6be7af" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}-0.01 w_{i+1}^2 
+<div class="amsmath math notranslate nohighlight" id="equation-f466281e-5d00-4260-9960-8f8d02f33476">
+<span class="eqno">(457)<a class="headerlink" href="#equation-f466281e-5d00-4260-9960-8f8d02f33476" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}-0.01 w_{i+1}^2 
                                 + 0.2 w_i-0.01 w_i^2\big] \end{equation}\]</div>
 <p>re-arranging</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b910dcb1-f82c-426b-97d8-1de209db3675">
-<span class="eqno">(456)<a class="headerlink" href="#equation-b910dcb1-f82c-426b-97d8-1de209db3675" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}-\frac{h}{2}\big( 0.2 w_{i+1}-0.01 w_{i+1}^2 \big)=w_{i}+\frac{h}{2}
+<div class="amsmath math notranslate nohighlight" id="equation-adabb139-53de-4f2e-86b7-9575f9cd401d">
+<span class="eqno">(458)<a class="headerlink" href="#equation-adabb139-53de-4f2e-86b7-9575f9cd401d" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}-\frac{h}{2}\big( 0.2 w_{i+1}-0.01 w_{i+1}^2 \big)=w_{i}+\frac{h}{2}
                                 \big[ 0.2 w_i-0.01 w_i^2\big] \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,...,199\)</span>, where <span class="math notranslate nohighlight">\(w_i\)</span> is the numerical approximation of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>, with step size <span class="math notranslate nohighlight">\(h\)</span> and the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a164b38b-e3ab-415f-a6b8-d1734346f59d">
-<span class="eqno">(457)<a class="headerlink" href="#equation-a164b38b-e3ab-415f-a6b8-d1734346f59d" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2e60f3c8-d1c4-43b8-b056-1c53517af0d8">
+<span class="eqno">(459)<a class="headerlink" href="#equation-2e60f3c8-d1c4-43b8-b056-1c53517af0d8" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=6.\end{equation}\]</div>
 <p>PROBLEM WE CANNOT MOVE THE SQUARED (NON-LINEAR TERM) TO THE RIGHT HAND SIDE SO WE CAN SOLVE FOR w[i+1].
 For this reason we will use a predictor-corrector method,
 The predictor will be the 2-step Adams Bashforth</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b4dd07e0-029e-4a55-9e2d-80a5978b55bd">
-<span class="eqno">(458)<a class="headerlink" href="#equation-b4dd07e0-029e-4a55-9e2d-80a5978b55bd" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}^{p}=w_{i}+\frac{h}{2}\big[ 3(0.2 w_{i}-0.01 w_{i}^2) 
+<div class="amsmath math notranslate nohighlight" id="equation-e9a4f8ae-f206-4d3d-ba7a-34198829d1fa">
+<span class="eqno">(460)<a class="headerlink" href="#equation-e9a4f8ae-f206-4d3d-ba7a-34198829d1fa" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}^{p}=w_{i}+\frac{h}{2}\big[ 3(0.2 w_{i}-0.01 w_{i}^2) 
                                 - (0.2 w_{i-1}-0.01 w_{i-1}^2) \big], \end{equation}\]</div>
 <p>with the corrector being the 1-step Adams Moulton,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-095a53f1-1cea-4028-bfe1-a97e43e5042b">
-<span class="eqno">(459)<a class="headerlink" href="#equation-095a53f1-1cea-4028-bfe1-a97e43e5042b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}^p-0.01 (w^p_{i+1})^2 
+<div class="amsmath math notranslate nohighlight" id="equation-43fc97cb-2f03-4276-b3e0-840e75a2fa93">
+<span class="eqno">(461)<a class="headerlink" href="#equation-43fc97cb-2f03-4276-b3e0-840e75a2fa93" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}^p-0.01 (w^p_{i+1})^2 
                                 + 0.2 w_i-0.01 w_i^2\big], \end{equation}\]</div>
 <p>for i=1,…200.</p>
 <div class="cell docutils container">
@@ -1049,33 +1049,33 @@ The predictor will be the 2-step Adams Bashforth</p>
 </section>
 <section id="non-linear-population-equation-with-an-oscilation">
 <h2>3. Non-Linear Population Equation with an oscilation<a class="headerlink" href="#non-linear-population-equation-with-an-oscilation" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-00865ee8-3da9-4a89-8dd7-686f70b6c576">
-<span class="eqno">(460)<a class="headerlink" href="#equation-00865ee8-3da9-4a89-8dd7-686f70b6c576" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-42ddf1d3-db12-4c06-9ad5-9e6489af4dd0">
+<span class="eqno">(462)<a class="headerlink" href="#equation-42ddf1d3-db12-4c06-9ad5-9e6489af4dd0" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=0.2y-0.01y^2+\sin(2\pi t), \ \ (2000 \leq t \leq 2020), \end{equation}\]</div>
 <p>with the initial condition,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-83585674-b89f-42eb-8419-85e583939921">
-<span class="eqno">(461)<a class="headerlink" href="#equation-83585674-b89f-42eb-8419-85e583939921" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e8f5bb48-a134-4d42-8531-922ce7db652d">
+<span class="eqno">(463)<a class="headerlink" href="#equation-e8f5bb48-a134-4d42-8531-922ce7db652d" title="Permalink to this equation">#</a></span>\[\begin{equation}y(2000)=6.\end{equation}\]</div>
 </section>
 <section id="specific-2-step-adams-moulton-for-the-non-linear-population-equation-with-an-oscilation">
 <h2>Specific 2 Step Adams Moulton for the Non-Linear Population Equation with an oscilation<a class="headerlink" href="#specific-2-step-adams-moulton-for-the-non-linear-population-equation-with-an-oscilation" title="Permalink to this heading">#</a></h2>
 <p>The specific Adams-Moulton difference equation for the non-linear population equations is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-321a56cd-3bb3-4cbc-ab0f-2e771fe2a313">
-<span class="eqno">(462)<a class="headerlink" href="#equation-321a56cd-3bb3-4cbc-ab0f-2e771fe2a313" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}-0.01 w_{i+1}^2 +\sin(2\pi t_{i+1})
+<div class="amsmath math notranslate nohighlight" id="equation-352933ef-1f5f-4e86-b84d-f01542e0c178">
+<span class="eqno">(464)<a class="headerlink" href="#equation-352933ef-1f5f-4e86-b84d-f01542e0c178" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}-0.01 w_{i+1}^2 +\sin(2\pi t_{i+1})
                                 + 0.2 w_i-0.01 w_i^2+\sin(2\pi t_{i})\big] \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=1,...,199\)</span>, where <span class="math notranslate nohighlight">\(w_i\)</span> is the numerical approximation of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>, with step size <span class="math notranslate nohighlight">\(h\)</span> and the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2a4e8858-cb71-4d3a-a1dc-4a9d01a5c349">
-<span class="eqno">(463)<a class="headerlink" href="#equation-2a4e8858-cb71-4d3a-a1dc-4a9d01a5c349" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=6.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f59c38f3-ec87-4488-bac1-34aff5849b2b">
+<span class="eqno">(465)<a class="headerlink" href="#equation-f59c38f3-ec87-4488-bac1-34aff5849b2b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=6.\end{equation}\]</div>
 <p>As <span class="math notranslate nohighlight">\(w_1\)</span> is required for the method but unknown we will use the numerical solution of a one step method to approximate the value. Here, we use the 2nd order Runge Kutta approximation (see <a class="reference external" href="https://github.com/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2003%20-%20Runge%20Kutta/01_2nd%20Order%20Runge%20Kutta%20Population%20Equations.ipynb">Runge Kutta notebook</a> )</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f601f4e5-60f4-4c69-9256-344af6c576b3">
-<span class="eqno">(464)<a class="headerlink" href="#equation-f601f4e5-60f4-4c69-9256-344af6c576b3" title="Permalink to this equation">#</a></span>\[\begin{equation}w_1=6.11.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c60b8d4c-621d-4f05-a3f5-e8d1dceada63">
+<span class="eqno">(466)<a class="headerlink" href="#equation-c60b8d4c-621d-4f05-a3f5-e8d1dceada63" title="Permalink to this equation">#</a></span>\[\begin{equation}w_1=6.11.\end{equation}\]</div>
 <p>PROBLEM WE CANNOT MOVE THE SQUARED (NON-LINEAR TERM) TO THE RIGHT HAND SIDE SO WE CAN SOLVE FOR w[i+1].
 For this reason we will use a predictor-corrector method,
 The predictor will be the 2-step Adams Bashforth</p>
-<div class="amsmath math notranslate nohighlight" id="equation-83f3a2c2-ba43-4a4a-955e-b05e0b682d67">
-<span class="eqno">(465)<a class="headerlink" href="#equation-83f3a2c2-ba43-4a4a-955e-b05e0b682d67" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}^{p}=w_{i}+\frac{h}{2}\big[ 3(0.2 w_{i}-0.01 w_{i}^2+\sin(2\pi t_{i}) 
+<div class="amsmath math notranslate nohighlight" id="equation-1126fd7d-484f-4c75-8467-a382fadaf3fb">
+<span class="eqno">(467)<a class="headerlink" href="#equation-1126fd7d-484f-4c75-8467-a382fadaf3fb" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}^{p}=w_{i}+\frac{h}{2}\big[ 3(0.2 w_{i}-0.01 w_{i}^2+\sin(2\pi t_{i}) 
                                 - (0.2 w_{i-1}-0.01 w_{i-1}^2+\sin(2\pi t_{i-1}) \big] \end{equation}\]</div>
 <p>with the corrector being the 1-step Adams Moulton,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e5fc41f6-f933-4321-a10f-b6ab21936c09">
-<span class="eqno">(466)<a class="headerlink" href="#equation-e5fc41f6-f933-4321-a10f-b6ab21936c09" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}^p-0.01 (w^p_{i+1})^2 +\sin(2\pi t_{i+1}
+<div class="amsmath math notranslate nohighlight" id="equation-6382527b-abdd-466b-a283-e703c96f0293">
+<span class="eqno">(468)<a class="headerlink" href="#equation-6382527b-abdd-466b-a283-e703c96f0293" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+\frac{h}{2}\big[ 0.2 w_{i+1}^p-0.01 (w^p_{i+1})^2 +\sin(2\pi t_{i+1}
                                 + 0.2 w_i-0.01 w_i^2+\sin(2\pi t_{i}\big], \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

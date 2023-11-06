@@ -500,33 +500,33 @@ document.write(`
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>To numerically approximate the Boundary Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f90467fc-1c4a-4690-b6e8-27c802c3c441">
-<span class="eqno">(661)<a class="headerlink" href="#equation-f90467fc-1c4a-4690-b6e8-27c802c3c441" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-3c17925c-bd18-4104-be60-afcfa4faa2ab">
+<span class="eqno">(663)<a class="headerlink" href="#equation-3c17925c-bd18-4104-be60-afcfa4faa2ab" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{''}=p(x)y^{'}+q(x)y+r(x) \ \ \ a &lt; x &lt; b \end{equation}\]</div>
 <p>with the left and right boundary conditions:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-44f732cf-003f-49c9-8f25-a9b25b543f60">
-<span class="eqno">(662)<a class="headerlink" href="#equation-44f732cf-003f-49c9-8f25-a9b25b543f60" title="Permalink to this equation">#</a></span>\[\begin{equation}y(a)=\alpha, \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9329865d-9166-4688-b0a5-1f0baa4fdcb9">
-<span class="eqno">(663)<a class="headerlink" href="#equation-9329865d-9166-4688-b0a5-1f0baa4fdcb9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-dec2969e-daf2-40da-8476-37f48c625b21">
+<span class="eqno">(664)<a class="headerlink" href="#equation-dec2969e-daf2-40da-8476-37f48c625b21" title="Permalink to this equation">#</a></span>\[\begin{equation}y(a)=\alpha, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-310e891c-0ec8-4675-8f14-3e58edc33e6d">
+<span class="eqno">(665)<a class="headerlink" href="#equation-310e891c-0ec8-4675-8f14-3e58edc33e6d" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta. \end{equation}\]</div>
 <p>The Boundary Value Problem is divided into two
 Initial Value Problems:</p>
 <ol class="arabic simple">
 <li><p>The first 2nd order Initial Value Problem is the same as the original Boundary Value Problem with an extra initial condtion <span class="math notranslate nohighlight">\(y_1^{'}(a)=0\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-5e4b6fd6-e559-4514-a537-7c3cdf1202df">
-<span class="eqno">(664)<a class="headerlink" href="#equation-5e4b6fd6-e559-4514-a537-7c3cdf1202df" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8d9dd537-1bd7-4cd4-8c21-61e5b7603be8">
+<span class="eqno">(666)<a class="headerlink" href="#equation-8d9dd537-1bd7-4cd4-8c21-61e5b7603be8" title="Permalink to this equation">#</a></span>\[\begin{equation}
  y^{''}_1=p(x)y^{'}_1+q(x)y_1+r(x), \ \    y_1(a)=\alpha, \ \ \color{green}{y^{'}_1(a)=0},\\
 \end{equation}\]</div>
 <ol class="arabic simple" start="2">
 <li><p>The second 2nd order Initial Value Problem is the homogenous form of the original Boundary Value Problem, by removing <span class="math notranslate nohighlight">\(r(x)\)</span>, with the initial condtions <span class="math notranslate nohighlight">\(y_2(a)=0\)</span> and <span class="math notranslate nohighlight">\(y_2^{'}(a)=1\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-0b7b21c1-4512-42fc-9660-6384eb23f43c">
-<span class="eqno">(665)<a class="headerlink" href="#equation-0b7b21c1-4512-42fc-9660-6384eb23f43c" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-9efd4d4b-8dd5-47c8-8d53-7951f4d7a345">
+<span class="eqno">(667)<a class="headerlink" href="#equation-9efd4d4b-8dd5-47c8-8d53-7951f4d7a345" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{''}_2=p(x)y^{'}_2+q(x)y_2, \ \ \color{green}{y_2(a)=0, \ \ y^{'}_2(a)=1}.
 \end{equation}\]</div>
 <p>combining these intial values problems together to get the unique solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00c498a2-9aa1-4518-a09d-08086e5a8faf">
-<span class="eqno">(666)<a class="headerlink" href="#equation-00c498a2-9aa1-4518-a09d-08086e5a8faf" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-ba1d7aa5-9d33-4d49-8b31-9fdd64266341">
+<span class="eqno">(668)<a class="headerlink" href="#equation-ba1d7aa5-9d33-4d49-8b31-9fdd64266341" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y(x)=y_1(x)+\frac{\beta-y_1(b)}{y_2(b)}y_2(x),
 \end{equation}\]</div>
 <p>provided that <span class="math notranslate nohighlight">\(y_2(b)\not=0\)</span>.</p>
@@ -549,34 +549,34 @@ $<span class="math notranslate nohighlight">\( |y_i - y(x_i)| \leq K h^n\left|1+
 <section id="example-boundary-value-problem">
 <h2>Example Boundary Value Problem<a class="headerlink" href="#example-boundary-value-problem" title="Permalink to this heading">#</a></h2>
 <p>To illustrate the shooting method we shall apply it to the Boundary Value Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-961b5722-8462-4a10-bc8f-b191ef9557da">
-<span class="eqno">(667)<a class="headerlink" href="#equation-961b5722-8462-4a10-bc8f-b191ef9557da" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{''}=2y^{'}+3y-6,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-09d2dded-a83a-42b9-b7fb-f11d26616f0c">
+<span class="eqno">(669)<a class="headerlink" href="#equation-09d2dded-a83a-42b9-b7fb-f11d26616f0c" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{''}=2y^{'}+3y-6,  \end{equation}\]</div>
 <p>with boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70fa6127-27f0-43ad-a72b-7c74fe45aa76">
-<span class="eqno">(668)<a class="headerlink" href="#equation-70fa6127-27f0-43ad-a72b-7c74fe45aa76" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0) = 3,  \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-019899be-b707-4f60-a5fe-3600133df4a8">
-<span class="eqno">(669)<a class="headerlink" href="#equation-019899be-b707-4f60-a5fe-3600133df4a8" title="Permalink to this equation">#</a></span>\[\begin{equation}y(1) = e^3+2,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8ad5f8e2-77be-40a2-9d8e-5ce339722e13">
+<span class="eqno">(670)<a class="headerlink" href="#equation-8ad5f8e2-77be-40a2-9d8e-5ce339722e13" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0) = 3,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-57f41646-3743-4a8d-b3b8-113cbd62ec9d">
+<span class="eqno">(671)<a class="headerlink" href="#equation-57f41646-3743-4a8d-b3b8-113cbd62ec9d" title="Permalink to this equation">#</a></span>\[\begin{equation}y(1) = e^3+2,  \end{equation}\]</div>
 <p>with the exact solution is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b9287718-9ff3-4217-8c4b-7aabf95952da">
-<span class="eqno">(670)<a class="headerlink" href="#equation-b9287718-9ff3-4217-8c4b-7aabf95952da" title="Permalink to this equation">#</a></span>\[\begin{equation}y=e^{3x}+2.  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-66b67cbf-1913-4b57-a3bb-e2dbcbc9246d">
+<span class="eqno">(672)<a class="headerlink" href="#equation-66b67cbf-1913-4b57-a3bb-e2dbcbc9246d" title="Permalink to this equation">#</a></span>\[\begin{equation}y=e^{3x}+2.  \end{equation}\]</div>
 <p>The <strong>boundary value problem</strong> is broken into two second order <strong>Initial Value Problems:</strong></p>
 <ol class="arabic simple">
 <li><p>The first 2nd order Intial Value Problem is the same as the original Boundary Value Problem with an extra initial condtion <span class="math notranslate nohighlight">\(u^{'}(0)=0\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-e4a4e84e-0f87-4494-b8be-6514524a77e1">
-<span class="eqno">(671)<a class="headerlink" href="#equation-e4a4e84e-0f87-4494-b8be-6514524a77e1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-14aa6d1d-96ab-423c-a97d-c7c4982c33c9">
+<span class="eqno">(673)<a class="headerlink" href="#equation-14aa6d1d-96ab-423c-a97d-c7c4982c33c9" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u^{''} =2u'+3u-6, \ \ \ \ u(0)=3, \ \ \ \color{green}{u^{'}(0)=0}
 \end{equation}\]</div>
 <ol class="arabic simple" start="2">
 <li><p>The second 2nd order Intial Value Problem is the homogenous form of the original Boundary Value Problem with the initial condtions <span class="math notranslate nohighlight">\(w^{'}(0)=0\)</span> and <span class="math notranslate nohighlight">\(w^{'}(0)=1\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-988fcbe7-360a-4932-b458-bd7679bd75d3">
-<span class="eqno">(672)<a class="headerlink" href="#equation-988fcbe7-360a-4932-b458-bd7679bd75d3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1caa54fc-5f9a-4e9d-b7ac-0b70206360f8">
+<span class="eqno">(674)<a class="headerlink" href="#equation-1caa54fc-5f9a-4e9d-b7ac-0b70206360f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w^{''} =2w^{'}+3w, \ \ \ \ \color{green}{w(0)=0}, \ \ \ \color{green}{w^{'}(0)=1}
 \end{equation}\]</div>
 <p>combining these results of these two intial value problems as a linear sum</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9027e13a-675c-4b51-9bcd-a58cc25be59a">
-<span class="eqno">(673)<a class="headerlink" href="#equation-9027e13a-675c-4b51-9bcd-a58cc25be59a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f3132e3f-0971-4ff2-a117-3a3a1ac755ed">
+<span class="eqno">(675)<a class="headerlink" href="#equation-f3132e3f-0971-4ff2-a117-3a3a1ac755ed" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y(x)=u(x)+\frac{e^{3x}+2-u(1)}{w(1)}w(x)
 \end{equation}\]</div>
 <p>gives the solution of the Boundary Value Problem.</p>
@@ -584,14 +584,14 @@ y(x)=u(x)+\frac{e^{3x}+2-u(1)}{w(1)}w(x)
 <section id="discrete-axis">
 <h2>Discrete Axis<a class="headerlink" href="#discrete-axis" title="Permalink to this heading">#</a></h2>
 <p>The stepsize is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-86349ebd-1e7e-455a-b47a-d122c6125b64">
-<span class="eqno">(674)<a class="headerlink" href="#equation-86349ebd-1e7e-455a-b47a-d122c6125b64" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ed7ba226-bb36-4af9-8f8b-547418841e79">
+<span class="eqno">(676)<a class="headerlink" href="#equation-ed7ba226-bb36-4af9-8f8b-547418841e79" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}, \end{equation}\]</div>
 <p>here it is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1919569a-882d-47ff-88ba-bb3660fd3172">
-<span class="eqno">(675)<a class="headerlink" href="#equation-1919569a-882d-47ff-88ba-bb3660fd3172" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b6fd980e-6cee-4dda-992a-32cd0070d780">
+<span class="eqno">(677)<a class="headerlink" href="#equation-b6fd980e-6cee-4dda-992a-32cd0070d780" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}, \end{equation}\]</div>
 <p>giving</p>
-<div class="amsmath math notranslate nohighlight" id="equation-75c511b0-9184-4b2b-8dd5-89c21035c3c9">
-<span class="eqno">(676)<a class="headerlink" href="#equation-75c511b0-9184-4b2b-8dd5-89c21035c3c9" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-06a3adb7-0bc3-436e-8c6a-56dcd84ab710">
+<span class="eqno">(678)<a class="headerlink" href="#equation-06a3adb7-0bc3-436e-8c6a-56dcd84ab710" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i, \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,...10.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,19 +643,19 @@ $<span class="math notranslate nohighlight">\( u_1[0]=3\)</span><span class="mat
 <section id="inhomogenous-approximation">
 <h3>1. Inhomogenous Approximation<a class="headerlink" href="#inhomogenous-approximation" title="Permalink to this heading">#</a></h3>
 <p>The plot below shows the numerical approximation for the two first order Intial Value Problems</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a84346c5-7a8a-454a-a9c3-7013aa7ac5f4">
-<span class="eqno">(677)<a class="headerlink" href="#equation-a84346c5-7a8a-454a-a9c3-7013aa7ac5f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cd7e1282-d290-44a3-98b3-aef917f188f4">
+<span class="eqno">(679)<a class="headerlink" href="#equation-cd7e1282-d290-44a3-98b3-aef917f188f4" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u_1^{'} =u_2, \ \ \ \ u_1(0)=3,
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a4dab705-1dac-4a29-b59b-aeba2f24a497">
-<span class="eqno">(678)<a class="headerlink" href="#equation-a4dab705-1dac-4a29-b59b-aeba2f24a497" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8363e63c-c220-443b-86de-f13c8329b14e">
+<span class="eqno">(680)<a class="headerlink" href="#equation-8363e63c-c220-443b-86de-f13c8329b14e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u_2^{'} =2u_2+3u_1-6, \ \ \ \color{green}{u_2(0)=0},
 \end{equation}\]</div>
 <p>that Euler approximate of the inhomogeneous two Initial Value Problems is :</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2ad3947c-6a9d-434d-8455-055cae9d1c78">
-<span class="eqno">(679)<a class="headerlink" href="#equation-2ad3947c-6a9d-434d-8455-055cae9d1c78" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{1}[i+1]=u_{1}[i] + h u_{2}[i] \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b5eb0fd1-9830-4398-81d8-9ccb949f4a99">
-<span class="eqno">(680)<a class="headerlink" href="#equation-b5eb0fd1-9830-4398-81d8-9ccb949f4a99" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{2}[i+1]=u_{2}[i] + h (2u_{2}[i]+3u_{1}[i] -6) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1a634651-bbfe-4d4a-b1c5-502bb687c5c0">
+<span class="eqno">(681)<a class="headerlink" href="#equation-1a634651-bbfe-4d4a-b1c5-502bb687c5c0" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{1}[i+1]=u_{1}[i] + h u_{2}[i] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9366167a-fea2-472a-a900-6df1dc5023c5">
+<span class="eqno">(682)<a class="headerlink" href="#equation-9366167a-fea2-472a-a900-6df1dc5023c5" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{2}[i+1]=u_{2}[i] + h (2u_{2}[i]+3u_{1}[i] -6) \end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(u_1[0]=3\)</span> and <span class="math notranslate nohighlight">\(\color{green}{u_2[0]=0}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -695,19 +695,19 @@ u_2^{'} =2u_2+3u_1-6, \ \ \ \color{green}{u_2(0)=0},
 <section id="homogenous-approximation">
 <h3>2. Homogenous Approximation<a class="headerlink" href="#homogenous-approximation" title="Permalink to this heading">#</a></h3>
 <p>The homogeneous Bounday Value Problem is divided into two first order Intial Value Problems</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c3177f53-6b5a-44b8-8aa9-52164b6bf9ee">
-<span class="eqno">(681)<a class="headerlink" href="#equation-c3177f53-6b5a-44b8-8aa9-52164b6bf9ee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8f920413-f04c-49f7-affd-2cb77571c3fd">
+<span class="eqno">(683)<a class="headerlink" href="#equation-8f920413-f04c-49f7-affd-2cb77571c3fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_1^{'} =w_2, \ \ \ \ \color{green}{w_1(1)=0}
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b08c1c82-9990-4068-b8ed-4e9f6075ed92">
-<span class="eqno">(682)<a class="headerlink" href="#equation-b08c1c82-9990-4068-b8ed-4e9f6075ed92" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-356542de-2b4d-4c74-a5da-196a0602d41b">
+<span class="eqno">(684)<a class="headerlink" href="#equation-356542de-2b4d-4c74-a5da-196a0602d41b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_2^{'} =2w_2+3w_1,  \ \ \ \color{green}{w_2(1)=1}
 \end{equation}\]</div>
 <p>The Euler approximation of the homogeneous of the two Initial Value Problem is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-081a11db-196c-4d82-bdb2-735b6771a5a6">
-<span class="eqno">(683)<a class="headerlink" href="#equation-081a11db-196c-4d82-bdb2-735b6771a5a6" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{1}[i+1]=w_{1}[i] + h w_{2}[i] \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a34246b4-ffe8-4b7a-b5ec-881288a3fc7c">
-<span class="eqno">(684)<a class="headerlink" href="#equation-a34246b4-ffe8-4b7a-b5ec-881288a3fc7c" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{2}[i+1]=w_{2}[i] + h (2w_{2}[i]+3w_{1}[i]) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1f17ea8e-1804-4c33-8e31-7a6e113de795">
+<span class="eqno">(685)<a class="headerlink" href="#equation-1f17ea8e-1804-4c33-8e31-7a6e113de795" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{1}[i+1]=w_{1}[i] + h w_{2}[i] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-69556b40-5e49-4036-a78f-3f302ae6675b">
+<span class="eqno">(686)<a class="headerlink" href="#equation-69556b40-5e49-4036-a78f-3f302ae6675b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{2}[i+1]=w_{2}[i] + h (2w_{2}[i]+3w_{1}[i]) \end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(\color{green}{w_1[0]=0}\)</span> and <span class="math notranslate nohighlight">\(\color{green}{w_2[1]=1}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -755,12 +755,12 @@ w_2^{'} =2w_2+3w_1,  \ \ \ \color{green}{w_2(1)=1}
 <section id="approximate-solution">
 <h2>Approximate Solution<a class="headerlink" href="#approximate-solution" title="Permalink to this heading">#</a></h2>
 <p>Combining together the numerical approximation of <span class="math notranslate nohighlight">\(u_1\)</span> and <span class="math notranslate nohighlight">\(w_1\)</span> as a weighted sum</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0289e43c-03ea-4749-97ab-30fce402846f">
-<span class="eqno">(685)<a class="headerlink" href="#equation-0289e43c-03ea-4749-97ab-30fce402846f" title="Permalink to this equation">#</a></span>\[\begin{equation}y(x[i])\approx u_{1}[i] + \frac{e^3+2-u_{1}[N]}{w_1[N]}w_{1}[i] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e4e4199e-9267-4729-a50c-778876fbe116">
+<span class="eqno">(687)<a class="headerlink" href="#equation-e4e4199e-9267-4729-a50c-778876fbe116" title="Permalink to this equation">#</a></span>\[\begin{equation}y(x[i])\approx u_{1}[i] + \frac{e^3+2-u_{1}[N]}{w_1[N]}w_{1}[i] \end{equation}\]</div>
 <p>gives the approximate solution of the Boundary Value Problem.</p>
 <p>The truncation error for the shooting method using the Euler method is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cdc58cc2-9ccd-4fc4-aa20-2ce5cf8e8e95">
-<span class="eqno">(686)<a class="headerlink" href="#equation-cdc58cc2-9ccd-4fc4-aa20-2ce5cf8e8e95" title="Permalink to this equation">#</a></span>\[\begin{equation} |y_i - y(x[i])| \leq K h\left|1+\frac{w_{1}[i]}{u_{1}[i]}\right|  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-25e248fe-1582-4ac0-aee9-30564f759596">
+<span class="eqno">(688)<a class="headerlink" href="#equation-25e248fe-1582-4ac0-aee9-30564f759596" title="Permalink to this equation">#</a></span>\[\begin{equation} |y_i - y(x[i])| \leq K h\left|1+\frac{w_{1}[i]}{u_{1}[i]}\right|  \end{equation}\]</div>
 <p><span class="math notranslate nohighlight">\(O(h)\)</span> is the order of the method.</p>
 <p>The plot below shows the approximate solution of the Boundary Value Problem (left), the exact solution (middle) and the error (right)</p>
 <div class="cell docutils container">

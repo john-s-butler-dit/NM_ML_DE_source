@@ -486,8 +486,8 @@ document.write(`
 <ol class="arabic simple" start="3">
 <li><p>Apply the 2nd Order Taylor method using <span class="math notranslate nohighlight">\(N=4\)</span> steps to approximate the solution of initial value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-c10a623f-5b55-4da4-8075-5368963551dd">
-<span class="eqno">(107)<a class="headerlink" href="#equation-c10a623f-5b55-4da4-8075-5368963551dd" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-225eb558-1e1e-4ac6-9b52-039c9b2aa167">
+<span class="eqno">(107)<a class="headerlink" href="#equation-225eb558-1e1e-4ac6-9b52-039c9b2aa167" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
@@ -503,23 +503,25 @@ document.write(`
 <ol class="arabic" start="5">
 <li><p>a.  Describe in your own words the statement below and its proof:
 Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71ecf5e2-e074-4815-a0ab-bbdfd69af3a3">
-<span class="eqno">(108)<a class="headerlink" href="#equation-71ecf5e2-e074-4815-a0ab-bbdfd69af3a3" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
-<p>Explain how that if <span class="math notranslate nohighlight">\(y \in C^{n+1}[a,b]\)</span> the general local error for the Taylor Method is:
-[\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i))\tilda O(h^n), ]
-where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2c3f3e0e-0452-4b7f-9bbc-21a55cecdb5e">
+<span class="eqno">(108)<a class="headerlink" href="#equation-2c3f3e0e-0452-4b7f-9bbc-21a55cecdb5e" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
+<p>Explain how that if <span class="math notranslate nohighlight">\(y \in C^{n+1}[a,b]\)</span> the general local error for the Taylor Method is:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b72c8160-b636-4fb6-92e1-8fc20bd4f5a8">
+<span class="eqno">(109)<a class="headerlink" href="#equation-b72c8160-b636-4fb6-92e1-8fc20bd4f5a8" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.</p>
 <p>b.  Describe in your own words the theorem below and its proof:
 Assume that the Taylor method satisfies the Lipschitz condition with constant
-L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that the local truncation error is of the form:
-[\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i))\tilda O(h^n), ]
-where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.
+L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that the local truncation error is of the form:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-300ce13f-c0b0-430f-868c-cf7c7de67735">
+<span class="eqno">(110)<a class="headerlink" href="#equation-300ce13f-c0b0-430f-868c-cf7c7de67735" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
+<p>where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.
 Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d53883f2-14df-4709-afef-85ee5db9d14c">
-<span class="eqno">(109)<a class="headerlink" href="#equation-d53883f2-14df-4709-afef-85ee5db9d14c" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7e9529ff-9969-4ca7-a968-d3e2b619b927">
+<span class="eqno">(111)<a class="headerlink" href="#equation-7e9529ff-9969-4ca7-a968-d3e2b619b927" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Taylor methods for some
 positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-1acaf40a-5a89-4c6c-b26f-24735d145d8b">
-<span class="eqno">(110)<a class="headerlink" href="#equation-1acaf40a-5a89-4c6c-b26f-24735d145d8b" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-67251ab7-05fc-4931-8660-c0af8ed5ecf4">
+<span class="eqno">(112)<a class="headerlink" href="#equation-67251ab7-05fc-4931-8660-c0af8ed5ecf4" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant.</p>
 </li>
 </ol>
@@ -528,8 +530,8 @@ positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then 
 <h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="6">
 <li><p>Adapt the Python code for the 2nd Order Taylor method provided to approximate solution of the integrate and fire differential equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e42088c4-45be-4136-bb06-c6d296b1c312">
-<span class="eqno">(111)<a class="headerlink" href="#equation-e42088c4-45be-4136-bb06-c6d296b1c312" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e45c98e9-0d2e-4320-8cee-47f508c51025">
+<span class="eqno">(113)<a class="headerlink" href="#equation-e45c98e9-0d2e-4320-8cee-47f508c51025" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition

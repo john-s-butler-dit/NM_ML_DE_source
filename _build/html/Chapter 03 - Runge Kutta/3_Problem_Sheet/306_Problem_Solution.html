@@ -465,21 +465,21 @@ document.write(`
 <section id="heuns-second-order-runge-kutta-method">
 <h2>Heun’s second order Runge-Kutta method<a class="headerlink" href="#heuns-second-order-runge-kutta-method" title="Permalink to this heading">#</a></h2>
 <p>Thus Heun’s second order Runge-Kutta for the initial value problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a7f25de-8c04-484c-aaaf-d2cfc1d999e9">
-<span class="eqno">(353)<a class="headerlink" href="#equation-8a7f25de-8c04-484c-aaaf-d2cfc1d999e9" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=f(t,y)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9876c471-4a23-4811-ba41-04f4415856c9">
+<span class="eqno">(355)<a class="headerlink" href="#equation-9876c471-4a23-4811-ba41-04f4415856c9" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=f(t,y)\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(t_0)=\alpha\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a4aee41-99bb-45c3-8a1b-6581595b49a9">
-<span class="eqno">(354)<a class="headerlink" href="#equation-5a4aee41-99bb-45c3-8a1b-6581595b49a9" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=\alpha, \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-999b48ea-4c8d-4d68-9896-6353704e71b6">
-<span class="eqno">(355)<a class="headerlink" href="#equation-999b48ea-4c8d-4d68-9896-6353704e71b6" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[f(t_i,w_i)+f(t_i+h,y_i+hf(t_i,w_i))] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f95a064d-b8e2-40fc-bf82-b7aacc713085">
+<span class="eqno">(356)<a class="headerlink" href="#equation-f95a064d-b8e2-40fc-bf82-b7aacc713085" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=\alpha, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4e91fc07-7c71-47fe-b96c-43341a3542a4">
+<span class="eqno">(357)<a class="headerlink" href="#equation-4e91fc07-7c71-47fe-b96c-43341a3542a4" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[f(t_i,w_i)+f(t_i+h,y_i+hf(t_i,w_i))] \end{equation}\]</div>
 <p>with an error of order <span class="math notranslate nohighlight">\(O(h^2)\)</span>.</p>
 <p>For ease of calculation this can be rewritten as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-19c35159-9fb3-4059-945c-268b5856d876">
-<span class="eqno">(356)<a class="headerlink" href="#equation-19c35159-9fb3-4059-945c-268b5856d876" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t_i,w_i),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-649551f5-d555-4f0b-b61e-bc9a22a994e3">
-<span class="eqno">(357)<a class="headerlink" href="#equation-649551f5-d555-4f0b-b61e-bc9a22a994e3" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t_i+h,w_i+hk_1),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-34008872-7198-468c-8408-ca2e14a937d5">
-<span class="eqno">(358)<a class="headerlink" href="#equation-34008872-7198-468c-8408-ca2e14a937d5" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[k_1+k_2]. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4f2bc8d5-3372-452c-8526-0b490bc3e5bc">
+<span class="eqno">(358)<a class="headerlink" href="#equation-4f2bc8d5-3372-452c-8526-0b490bc3e5bc" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t_i,w_i),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b83b4ea4-07be-4be1-b96b-0891b82c3e40">
+<span class="eqno">(359)<a class="headerlink" href="#equation-b83b4ea4-07be-4be1-b96b-0891b82c3e40" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t_i+h,w_i+hk_1),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1c840064-5b09-4aad-8e32-a8b8af0c6bfc">
+<span class="eqno">(360)<a class="headerlink" href="#equation-1c840064-5b09-4aad-8e32-a8b8af0c6bfc" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[k_1+k_2]. \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Library</span>
@@ -500,8 +500,8 @@ document.write(`
 </section>
 <section id="the-equation">
 <h2>The Equation<a class="headerlink" href="#the-equation" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-c9cdbf13-f580-40fd-bedd-4fea6fc4fbe6">
-<span class="eqno">(359)<a class="headerlink" href="#equation-c9cdbf13-f580-40fd-bedd-4fea6fc4fbe6" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-81761280-b967-46a0-95c6-4b1241e599c1">
+<span class="eqno">(361)<a class="headerlink" href="#equation-81761280-b967-46a0-95c6-4b1241e599c1" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
@@ -510,23 +510,23 @@ and the initial condition
 <section id="discrete-interval">
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised with stepsize <span class="math notranslate nohighlight">\(h=0.5\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-130d0714-cdd2-4403-ad07-f9aa5d9302f0">
-<span class="eqno">(360)<a class="headerlink" href="#equation-130d0714-cdd2-4403-ad07-f9aa5d9302f0" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-980ef6f4-1f90-4dac-b31d-52282658dece">
+<span class="eqno">(362)<a class="headerlink" href="#equation-980ef6f4-1f90-4dac-b31d-52282658dece" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 N=\frac{b-a}{h}.
 \end{equation}\]</div>
 <p>Here the N is <span class="math notranslate nohighlight">\(-50\leq t \leq 400\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-305c586c-56a5-4e70-820c-bbb52ebb1a5a">
-<span class="eqno">(361)<a class="headerlink" href="#equation-305c586c-56a5-4e70-820c-bbb52ebb1a5a" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c280c610-8697-4c2e-874f-a9485567dcd7">
+<span class="eqno">(363)<a class="headerlink" href="#equation-c280c610-8697-4c2e-874f-a9485567dcd7" title="Permalink to this equation">#</a></span>\[\begin{equation}
  N=\frac{400--50}{0.5}=900,
 \end{equation}\]</div>
 <p>this gives the 901 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cbd8ebfd-57e2-4a48-a5b1-ac347f690de1">
-<span class="eqno">(362)<a class="headerlink" href="#equation-cbd8ebfd-57e2-4a48-a5b1-ac347f690de1" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-b9e9a1af-fc13-4e07-bb6f-958851d1359e">
+<span class="eqno">(364)<a class="headerlink" href="#equation-b9e9a1af-fc13-4e07-bb6f-958851d1359e" title="Permalink to this equation">#</a></span>\[\begin{equation}
  t_0=-400, \ t_1=-399.5, \ ... t_{900}=400. 
 \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cca07082-ff9d-47e6-b87c-59253175b62d">
-<span class="eqno">(363)<a class="headerlink" href="#equation-cca07082-ff9d-47e6-b87c-59253175b62d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1a36583d-6610-415b-9848-79f21d351c0a">
+<span class="eqno">(365)<a class="headerlink" href="#equation-1a36583d-6610-415b-9848-79f21d351c0a" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 \end{equation}\]</div>
 <p>The plot below shows the discrete time steps.</p>
@@ -556,28 +556,28 @@ t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 <section id="specific-huen-method">
 <h2>Specific Huen Method<a class="headerlink" href="#specific-huen-method" title="Permalink to this heading">#</a></h2>
 <p>The 2nd method is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6dedc03a-d78b-4d7a-a00e-07d75e92c879">
-<span class="eqno">(364)<a class="headerlink" href="#equation-6dedc03a-d78b-4d7a-a00e-07d75e92c879" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[f(t_i,w_i)+f(t_i+h,y_i+hf(t_i,w_i))] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fd2ed262-5f57-4bc1-bdcb-e7509fb6c7ea">
+<span class="eqno">(366)<a class="headerlink" href="#equation-fd2ed262-5f57-4bc1-bdcb-e7509fb6c7ea" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[f(t_i,w_i)+f(t_i+h,y_i+hf(t_i,w_i))] \end{equation}\]</div>
 <p>with an error of order <span class="math notranslate nohighlight">\(O(h^2)\)</span>.</p>
 <p>For ease of calculation this can be rewritten as:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-03327862-86ca-409c-b700-73dbb7f81fe8">
-<span class="eqno">(365)<a class="headerlink" href="#equation-03327862-86ca-409c-b700-73dbb7f81fe8" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t_i,w_i)=\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m},\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-716d664d-bb8c-442f-91e5-014b79ca75ac">
-<span class="eqno">(366)<a class="headerlink" href="#equation-716d664d-bb8c-442f-91e5-014b79ca75ac" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t_i+h,w_i+hk_1)=\frac{-(w_i+hk_1-E_L) + R_mI(t_i+h)}{\tau_m},\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8bf24db1-613d-4728-bf19-a9591c7da164">
-<span class="eqno">(367)<a class="headerlink" href="#equation-8bf24db1-613d-4728-bf19-a9591c7da164" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[k_1+k_2]. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fda32c2c-8206-4755-9590-de5f6855214e">
+<span class="eqno">(367)<a class="headerlink" href="#equation-fda32c2c-8206-4755-9590-de5f6855214e" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t_i,w_i)=\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1036a0e8-9728-44e8-b3c9-a826eb1a5f85">
+<span class="eqno">(368)<a class="headerlink" href="#equation-1036a0e8-9728-44e8-b3c9-a826eb1a5f85" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t_i+h,w_i+hk_1)=\frac{-(w_i+hk_1-E_L) + R_mI(t_i+h)}{\tau_m},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ebdc8c0b-e7c4-4967-ba7d-16cb39246ac7">
+<span class="eqno">(369)<a class="headerlink" href="#equation-ebdc8c0b-e7c4-4967-ba7d-16cb39246ac7" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[k_1+k_2]. \end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,...,899\)</span> and
 where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t_i)=0.01t_i\)</span>
 and the initial condition
 <span class="math notranslate nohighlight">\(V(t_0=-50) = -75\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.5\)</span>.
 Putting in the values the difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b7c8752-e1f5-429c-8986-6a9c53d79f52">
-<span class="eqno">(368)<a class="headerlink" href="#equation-1b7c8752-e1f5-429c-8986-6a9c53d79f52" title="Permalink to this equation">#</a></span>\[\begin{equation}k1=\frac{-(w[i]+75) + 0.1*time[i]}{10},\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8c349472-990d-4ead-a2e1-543c396ae28f">
-<span class="eqno">(369)<a class="headerlink" href="#equation-8c349472-990d-4ead-a2e1-543c396ae28f" title="Permalink to this equation">#</a></span>\[\begin{equation}k2=f(t_i+h,w_i+hk_1)=\frac{-(w[i]+0.5*k1+75) + 0.1*(time[i]+0.5)}{10},\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b553df7a-e9bf-4205-9399-dd8e6ee5b6af">
-<span class="eqno">(370)<a class="headerlink" href="#equation-b553df7a-e9bf-4205-9399-dd8e6ee5b6af" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[k_1+k_2]. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f6e700e5-129a-4ea8-a849-660f2758af58">
+<span class="eqno">(370)<a class="headerlink" href="#equation-f6e700e5-129a-4ea8-a849-660f2758af58" title="Permalink to this equation">#</a></span>\[\begin{equation}k1=\frac{-(w[i]+75) + 0.1*time[i]}{10},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4fd6dd36-ca49-48a8-8cc4-6f3cb0efef28">
+<span class="eqno">(371)<a class="headerlink" href="#equation-4fd6dd36-ca49-48a8-8cc4-6f3cb0efef28" title="Permalink to this equation">#</a></span>\[\begin{equation}k2=f(t_i+h,w_i+hk_1)=\frac{-(w[i]+0.5*k1+75) + 0.1*(time[i]+0.5)}{10},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-37c47176-5495-4d02-abff-07117e0aafbe">
+<span class="eqno">(372)<a class="headerlink" href="#equation-37c47176-5495-4d02-abff-07117e0aafbe" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_i+\frac{h}{2}[k_1+k_2]. \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">myfun_f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">V</span><span class="p">):</span>
