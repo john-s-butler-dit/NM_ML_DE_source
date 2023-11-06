@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -515,24 +519,24 @@ document.write(`
 <section id="definition-characteristic-equation">
 <h3>Definition: Characteristic Equation<a class="headerlink" href="#definition-characteristic-equation" title="Permalink to this heading">#</a></h3>
 <p>Associated with the difference equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e54f45b1-49f4-422d-b291-30f93561f52a">
-<span class="eqno">(677)<a class="headerlink" href="#equation-e54f45b1-49f4-422d-b291-30f93561f52a" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-f13d2534-4fd8-4e14-a049-34a8ac932590">
-<span class="eqno">(678)<a class="headerlink" href="#equation-f13d2534-4fd8-4e14-a049-34a8ac932590" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-35a60595-bb3b-48af-9ad1-2690af0846f4">
+<span class="eqno">(677)<a class="headerlink" href="#equation-35a60595-bb3b-48af-9ad1-2690af0846f4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-21d8ff46-4490-4e46-9d11-e9aa2a2bff48">
+<span class="eqno">(678)<a class="headerlink" href="#equation-21d8ff46-4490-4e46-9d11-e9aa2a2bff48" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
 <p>is the <strong>characteristic equation</strong> given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c1075fc0-b1b8-4270-b7c9-8860394e0bbc">
-<span class="eqno">(679)<a class="headerlink" href="#equation-c1075fc0-b1b8-4270-b7c9-8860394e0bbc" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ea140798-e4b4-461f-8faa-a86af74bd9de">
+<span class="eqno">(679)<a class="headerlink" href="#equation-ea140798-e4b4-461f-8faa-a86af74bd9de" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0. \end{equation}\]</div>
 </section>
 <section id="definition-root-condition">
 <h3>Definition: Root Condition<a class="headerlink" href="#definition-root-condition" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(\lambda_1,...,\lambda_m\)</span> denote the roots of the that characteristic equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4669467c-1e79-43af-94a0-a719add92457">
-<span class="eqno">(680)<a class="headerlink" href="#equation-4669467c-1e79-43af-94a0-a719add92457" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-97ce7c9a-98ef-4067-9d45-13100f44aba9">
+<span class="eqno">(680)<a class="headerlink" href="#equation-97ce7c9a-98ef-4067-9d45-13100f44aba9" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0 \end{equation}\]</div>
 <p>associated with the multi-step difference method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bc2a8206-34b4-41d4-850b-1cea91f3dfd4">
-<span class="eqno">(681)<a class="headerlink" href="#equation-bc2a8206-34b4-41d4-850b-1cea91f3dfd4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d91e7577-9ebe-41de-a33f-127eca46547c">
-<span class="eqno">(682)<a class="headerlink" href="#equation-d91e7577-9ebe-41de-a33f-127eca46547c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9dadbcda-b3ae-43ee-acc3-78c79b617550">
+<span class="eqno">(681)<a class="headerlink" href="#equation-9dadbcda-b3ae-43ee-acc3-78c79b617550" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cb514c03-3e8f-43de-b1bb-e5bf9c7081a6">
+<span class="eqno">(682)<a class="headerlink" href="#equation-cb514c03-3e8f-43de-b1bb-e5bf9c7081a6" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
 <p>If <span class="math notranslate nohighlight">\(|\lambda_{i}|\leq 1\)</span> for each <span class="math notranslate nohighlight">\(i=1,...,m\)</span> and all roots with absolute value 1
 are simple roots then the difference equation is said to satisfy the <strong>root condition</strong>.</p>
 </section>
@@ -567,11 +571,11 @@ with magnitude one are called <strong>weakly stable</strong>;</p></li>
 <section id="initial-value-problem">
 <h2>Initial Value Problem<a class="headerlink" href="#initial-value-problem" title="Permalink to this heading">#</a></h2>
 <p>To illustrate stability of a method we will use the given the non-linear Initial Value Problem,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-780dba72-9da6-486f-aa2f-0dcbc992c91a">
-<span class="eqno">(683)<a class="headerlink" href="#equation-780dba72-9da6-486f-aa2f-0dcbc992c91a" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=-0.5y^2, \ \ y(0)=3, \ \ \  0\leq t \leq 10.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-faecf4c1-d83b-4bc3-b7dd-7d6ee2bd1f3d">
+<span class="eqno">(683)<a class="headerlink" href="#equation-faecf4c1-d83b-4bc3-b7dd-7d6ee2bd1f3d" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=-0.5y^2, \ \ y(0)=3, \ \ \  0\leq t \leq 10.\end{equation}\]</div>
 <p>For the methods we will use <span class="math notranslate nohighlight">\(N=100\)</span>, which give <span class="math notranslate nohighlight">\(h=\frac{1}{10}\)</span> and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e6e7453d-8b5f-4c84-b633-072c54ad00cf">
-<span class="eqno">(684)<a class="headerlink" href="#equation-e6e7453d-8b5f-4c84-b633-072c54ad00cf" title="Permalink to this equation">#</a></span>\[\begin{equation}t_i=0+0.1 i,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b2699709-8e4c-43ee-89a2-685895f0948d">
+<span class="eqno">(684)<a class="headerlink" href="#equation-b2699709-8e4c-43ee-89a2-685895f0948d" title="Permalink to this equation">#</a></span>\[\begin{equation}t_i=0+0.1 i,\end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(i=0,...100.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -592,39 +596,39 @@ with magnitude one are called <strong>weakly stable</strong>;</p></li>
 <ol class="arabic simple">
 <li><p>A stable method,</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-193b3872-17dc-4239-b26e-46a670b3cc59">
-<span class="eqno">(685)<a class="headerlink" href="#equation-193b3872-17dc-4239-b26e-46a670b3cc59" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+\frac{h}{2}[3(-0.5w^2_{i})-(-0.5w^2_{i-1})], \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-454d07c5-081e-4546-ba0e-1e41ce380ea3">
+<span class="eqno">(685)<a class="headerlink" href="#equation-454d07c5-081e-4546-ba0e-1e41ce380ea3" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+\frac{h}{2}[3(-0.5w^2_{i})-(-0.5w^2_{i-1})], \end{equation}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with the characteristic equation
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-a0f50537-c347-468c-a5e7-6dbf1c227fe5">
-<span class="eqno">(686)<a class="headerlink" href="#equation-a0f50537-c347-468c-a5e7-6dbf1c227fe5" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^2=\lambda,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ec478745-935e-480c-8cfa-a98a59ca025f">
+<span class="eqno">(686)<a class="headerlink" href="#equation-ec478745-935e-480c-8cfa-a98a59ca025f" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^2=\lambda,\end{equation}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>which satisfies the root condition $\lambda=1$ and $\lambda=0$, hence it is strongly stable.
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>A weakly stable method</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-0ecfa743-3362-4c84-a587-8aae396a40e4">
-<span class="eqno">(687)<a class="headerlink" href="#equation-0ecfa743-3362-4c84-a587-8aae396a40e4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=1.0w_{i-2}+h[3(-0.5w^2_{i})-(-0.5w^2_{i-1})], \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c5aec2a1-3177-43f8-b842-ff05fbe3fe3b">
+<span class="eqno">(687)<a class="headerlink" href="#equation-c5aec2a1-3177-43f8-b842-ff05fbe3fe3b" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=1.0w_{i-2}+h[3(-0.5w^2_{i})-(-0.5w^2_{i-1})], \end{equation}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with the characteristic equation
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-7bfd550f-f9ec-416a-a222-de0688094c98">
-<span class="eqno">(688)<a class="headerlink" href="#equation-7bfd550f-f9ec-416a-a222-de0688094c98" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^4=1,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d386a263-df25-4903-8ac2-8e828aa7c43c">
+<span class="eqno">(688)<a class="headerlink" href="#equation-d386a263-df25-4903-8ac2-8e828aa7c43c" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^4=1,\end{equation}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>which does  satisfies the root condition  with roots $\lambda=\pm1$ and $\lambda=\pm \sqrt{-1}$ but as it has more than one root $|\lambda|=1$ it is weakly stable.
 </pre></div>
 </div>
 <ol class="arabic simple" start="3">
 <li><p>An unstable method</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-43491417-ae78-4a80-a927-8765a4b464cf">
-<span class="eqno">(689)<a class="headerlink" href="#equation-43491417-ae78-4a80-a927-8765a4b464cf" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=1.01w_{i}+\frac{h}{2}[3(-0.5w^2_{i})-(-0.5w^2_{i-1})] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b7bbd0ed-121e-41fb-84c4-641bcb654e01">
+<span class="eqno">(689)<a class="headerlink" href="#equation-b7bbd0ed-121e-41fb-84c4-641bcb654e01" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=1.01w_{i}+\frac{h}{2}[3(-0.5w^2_{i})-(-0.5w^2_{i-1})] \end{equation}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>with the characteristic equation
 </pre></div>
 </div>
-<div class="amsmath math notranslate nohighlight" id="equation-c073153c-23ae-42d4-807a-c5eaf3a48107">
-<span class="eqno">(690)<a class="headerlink" href="#equation-c073153c-23ae-42d4-807a-c5eaf3a48107" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^2=1.01\lambda,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-51292d83-197d-4c3c-acc7-d9f569c2f2ee">
+<span class="eqno">(690)<a class="headerlink" href="#equation-51292d83-197d-4c3c-acc7-d9f569c2f2ee" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^2=1.01\lambda,\end{equation}\]</div>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>which does not satisfies the root condition, as it has the roots $\lambda=1.01$ and $\lambda=0$, hence it is unstable.
 </pre></div>
 </div>

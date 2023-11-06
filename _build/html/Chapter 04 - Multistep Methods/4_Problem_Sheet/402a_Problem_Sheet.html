@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -489,29 +493,29 @@ document.write(`
 <section id="problem-sheet-question-2a">
 <h1>Problem Sheet Question 2a<a class="headerlink" href="#problem-sheet-question-2a" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce0577cd-4cb5-4fb8-8e5d-eac369a5d842">
-<span class="eqno">(581)<a class="headerlink" href="#equation-ce0577cd-4cb5-4fb8-8e5d-eac369a5d842" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-943e0cba-f78c-417b-8700-184d475deba0">
+<span class="eqno">(581)<a class="headerlink" href="#equation-943e0cba-f78c-417b-8700-184d475deba0" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e8ec341f-0fc4-4d19-801a-b20ed9ad34f0">
-<span class="eqno">(582)<a class="headerlink" href="#equation-e8ec341f-0fc4-4d19-801a-b20ed9ad34f0" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-22de8335-8cb1-4e89-b8bb-56c580210bd1">
+<span class="eqno">(582)<a class="headerlink" href="#equation-22de8335-8cb1-4e89-b8bb-56c580210bd1" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2.\end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-200f9f34-77a8-4ec6-9a76-cc1e715f9180">
-<span class="eqno">(583)<a class="headerlink" href="#equation-200f9f34-77a8-4ec6-9a76-cc1e715f9180" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3e289a4c-0e20-490a-80cf-40cf1c808ff8">
+<span class="eqno">(583)<a class="headerlink" href="#equation-3e289a4c-0e20-490a-80cf-40cf1c808ff8" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="step-adams-moulton">
 <h1>2-step Adams Moulton<a class="headerlink" href="#step-adams-moulton" title="Permalink to this heading">#</a></h1>
 <p>The 3-step Adams Bashforth difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c13558b-4f58-4fc5-bfbc-a2a68f362b42">
-<span class="eqno">(584)<a class="headerlink" href="#equation-8c13558b-4f58-4fc5-bfbc-a2a68f362b42" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(5f(t_{i+1},w_{i+1})+8f(t_i,w_i)-f(t_{i-1},w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f1df953d-4ee2-4ee1-955c-2642a499d16d">
+<span class="eqno">(584)<a class="headerlink" href="#equation-f1df953d-4ee2-4ee1-955c-2642a499d16d" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(5f(t_{i+1},w_{i+1})+8f(t_i,w_i)-f(t_{i-1},w_{i-1})) \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b903394f-0fac-4cc1-b1ef-f417cd87db44">
-<span class="eqno">(585)<a class="headerlink" href="#equation-b903394f-0fac-4cc1-b1ef-f417cd87db44" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(5(w_{i+1}-t_{i+1})+8(w_i-t_i)-(w_{i-1}-t_{i-1})). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-27d91801-d008-4d90-921f-52d0f732d528">
+<span class="eqno">(585)<a class="headerlink" href="#equation-27d91801-d008-4d90-921f-52d0f732d528" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{h}{12}(5(w_{i+1}-t_{i+1})+8(w_i-t_i)-(w_{i-1}-t_{i-1})). \end{equation}\]</div>
 <p>Re-arranging</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad25f270-197e-4be7-a801-0f8df86291f4">
-<span class="eqno">(586)<a class="headerlink" href="#equation-ad25f270-197e-4be7-a801-0f8df86291f4" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}-\frac{5h}{12}w_{i+1} = w_{i} + \frac{h}{12}(5(-t_{i+1})+8(w_i-t_i)-(w_{i-1}-t_{i-1})). \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-f7081975-2f35-4961-a2e7-a75b10c4baa5">
-<span class="eqno">(587)<a class="headerlink" href="#equation-f7081975-2f35-4961-a2e7-a75b10c4baa5" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} =\frac{ w_{i} + \frac{h}{12}(5(-t_{i+1})+8(w_i-t_i)-(w_{i-1}-t_{i-1}))}{1-\frac{5h}{12}}. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-86e0c146-a478-495d-94ce-02362e7d76a6">
+<span class="eqno">(586)<a class="headerlink" href="#equation-86e0c146-a478-495d-94ce-02362e7d76a6" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}-\frac{5h}{12}w_{i+1} = w_{i} + \frac{h}{12}(5(-t_{i+1})+8(w_i-t_i)-(w_{i-1}-t_{i-1})). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-02e47a48-d890-4a67-b1f4-45181d75a70b">
+<span class="eqno">(587)<a class="headerlink" href="#equation-02e47a48-d890-4a67-b1f4-45181d75a70b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} =\frac{ w_{i} + \frac{h}{12}(5(-t_{i+1})+8(w_i-t_i)-(w_{i-1}-t_{i-1}))}{1-\frac{5h}{12}}. \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

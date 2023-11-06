@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -513,8 +517,8 @@ document.write(`
 <ol class="arabic simple" start="3">
 <li><p>Apply the 2nd Order Taylor method using <span class="math notranslate nohighlight">\(N=4\)</span> steps to approximate the solution of initial value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-71d37d57-27a3-4236-96fc-147eec480198">
-<span class="eqno">(172)<a class="headerlink" href="#equation-71d37d57-27a3-4236-96fc-147eec480198" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6e52762d-6939-43a6-a9ac-644432337e80">
+<span class="eqno">(172)<a class="headerlink" href="#equation-6e52762d-6939-43a6-a9ac-644432337e80" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
@@ -530,25 +534,25 @@ document.write(`
 <ol class="arabic" start="5">
 <li><p>a.  Describe in your own words the statement below and its proof:
 Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5beab47a-c1b8-4a9e-8f37-60c53971ece0">
-<span class="eqno">(173)<a class="headerlink" href="#equation-5beab47a-c1b8-4a9e-8f37-60c53971ece0" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-00d9c7ad-2cc9-444b-822c-c17ac18c13d4">
+<span class="eqno">(173)<a class="headerlink" href="#equation-00d9c7ad-2cc9-444b-822c-c17ac18c13d4" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
 <p>Explain how that if <span class="math notranslate nohighlight">\(y \in C^{n+1}[a,b]\)</span> the general local error for the Taylor Method is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-39471ab9-4781-40ec-91c9-6cf61f54b9f0">
-<span class="eqno">(174)<a class="headerlink" href="#equation-39471ab9-4781-40ec-91c9-6cf61f54b9f0" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5ae7dec9-f4d2-406d-aad1-18faf9a8cd14">
+<span class="eqno">(174)<a class="headerlink" href="#equation-5ae7dec9-f4d2-406d-aad1-18faf9a8cd14" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.</p>
 <p>b.  Describe in your own words the theorem below and its proof:
 Assume that the Taylor method satisfies the Lipschitz condition with constant
 L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that the local truncation error is of the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d64bbf5e-8710-453c-a495-c8ebca02ca92">
-<span class="eqno">(175)<a class="headerlink" href="#equation-d64bbf5e-8710-453c-a495-c8ebca02ca92" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c151fdb8-2bfb-4834-ad8d-166546b89a90">
+<span class="eqno">(175)<a class="headerlink" href="#equation-c151fdb8-2bfb-4834-ad8d-166546b89a90" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.
 Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-af602366-863b-4bf7-b161-9964f211c7c2">
-<span class="eqno">(176)<a class="headerlink" href="#equation-af602366-863b-4bf7-b161-9964f211c7c2" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4e7e2286-b61a-4128-b75f-cd29528b6df9">
+<span class="eqno">(176)<a class="headerlink" href="#equation-4e7e2286-b61a-4128-b75f-cd29528b6df9" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Taylor methods for some
 positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-516741bb-d5e7-4c64-8275-57fdfb8146ac">
-<span class="eqno">(177)<a class="headerlink" href="#equation-516741bb-d5e7-4c64-8275-57fdfb8146ac" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4ac1b3f6-9e4c-42a6-b894-46098e5deb0a">
+<span class="eqno">(177)<a class="headerlink" href="#equation-4ac1b3f6-9e4c-42a6-b894-46098e5deb0a" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant.</p>
 </li>
 </ol>
@@ -557,8 +561,8 @@ positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then 
 <h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="6">
 <li><p>Adapt the Python code for the 2nd Order Taylor method provided to approximate solution of the integrate and fire differential equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8724a7c2-da72-4738-8c0c-6fd8f561c866">
-<span class="eqno">(178)<a class="headerlink" href="#equation-8724a7c2-da72-4738-8c0c-6fd8f561c866" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-693a4c3a-9eb0-4805-8bea-c160392f5d52">
+<span class="eqno">(178)<a class="headerlink" href="#equation-693a4c3a-9eb0-4805-8bea-c160392f5d52" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition

@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -492,11 +496,11 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-3-question-1">
 <h1>Problem Sheet 3 Question 1<a class="headerlink" href="#problem-sheet-3-question-1" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3a392d8f-53c1-45d6-bbf2-6c581ed46231">
-<span class="eqno">(386)<a class="headerlink" href="#equation-3a392d8f-53c1-45d6-bbf2-6c581ed46231" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-110bf1c6-f958-4774-8f94-5095d4a9af0e">
+<span class="eqno">(386)<a class="headerlink" href="#equation-110bf1c6-f958-4774-8f94-5095d4a9af0e" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8caf4384-f3d8-4570-8bda-fffb8e0b41ec">
-<span class="eqno">(387)<a class="headerlink" href="#equation-8caf4384-f3d8-4570-8bda-fffb8e0b41ec" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-906be29d-157c-41b9-8176-aca744c44754">
+<span class="eqno">(387)<a class="headerlink" href="#equation-906be29d-157c-41b9-8176-aca744c44754" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1,\end{equation}\]</div>
 <p>Has the exact soulation. \begin{equation} y= 2e^{-t}+t-1\end{equation}</p>
 <section id="setting-up-libraries">
 <h2>Setting up Libraries<a class="headerlink" href="#setting-up-libraries" title="Permalink to this heading">#</a></h2>
@@ -531,11 +535,11 @@ document.write(`
 <section id="initial-setup">
 <h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this heading">#</a></h2>
 <p>Defining the step size <span class="math notranslate nohighlight">\(h\)</span> from the interval range <span class="math notranslate nohighlight">\(a\leq t \leq b\)</span> and number of steps <span class="math notranslate nohighlight">\(N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e3f277a-2618-4bea-a1c9-c7c19d17bb70">
-<span class="eqno">(388)<a class="headerlink" href="#equation-8e3f277a-2618-4bea-a1c9-c7c19d17bb70" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{h}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-25bcc568-13cb-4318-98a7-e241e41ebfc0">
+<span class="eqno">(388)<a class="headerlink" href="#equation-25bcc568-13cb-4318-98a7-e241e41ebfc0" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{h}.\end{equation}\]</div>
 <p>This gives the discrete time steps,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-249134c2-53b6-4758-84ab-81c39b9d838c">
-<span class="eqno">(389)<a class="headerlink" href="#equation-249134c2-53b6-4758-84ab-81c39b9d838c" title="Permalink to this equation">#</a></span>\[\begin{equation}t_{i}=t_0+ih,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a38cdc8e-d517-4e32-8ec8-a4e792178acd">
+<span class="eqno">(389)<a class="headerlink" href="#equation-a38cdc8e-d517-4e32-8ec8-a4e792178acd" title="Permalink to this equation">#</a></span>\[\begin{equation}t_{i}=t_0+ih,\end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_0=a\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -553,8 +557,8 @@ document.write(`
 </section>
 <section id="setting-up-the-initial-conditions-of-the-equation">
 <h2>Setting up the initial conditions of the equation<a class="headerlink" href="#setting-up-the-initial-conditions-of-the-equation" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-7602cba5-316e-4070-bddd-a345fa0c963c">
-<span class="eqno">(390)<a class="headerlink" href="#equation-7602cba5-316e-4070-bddd-a345fa0c963c" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=IC\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d7f2aa6e-0bc7-4554-82ce-5b6a93160989">
+<span class="eqno">(390)<a class="headerlink" href="#equation-d7f2aa6e-0bc7-4554-82ce-5b6a93160989" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=IC\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial Condition</span>
@@ -569,12 +573,12 @@ document.write(`
 </section>
 <section id="nd-order-runge-kutta-mid-method">
 <h2>2nd Order Runge Kutta (Mid-method)<a class="headerlink" href="#nd-order-runge-kutta-mid-method" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-cc5d228a-2107-45af-9f34-01fe8d1c86df">
-<span class="eqno">(391)<a class="headerlink" href="#equation-cc5d228a-2107-45af-9f34-01fe8d1c86df" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t,y),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-912360ec-6683-4ab7-be51-26596047b65d">
-<span class="eqno">(392)<a class="headerlink" href="#equation-912360ec-6683-4ab7-be51-26596047b65d" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t+\frac{h}{2},y+\frac{h}{2}k_2),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d93c1204-b648-4b07-a873-c681a5c08855">
-<span class="eqno">(393)<a class="headerlink" href="#equation-d93c1204-b648-4b07-a873-c681a5c08855" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+h(k_2).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6167acd9-d43e-4b1d-8afc-4e18a42390ae">
+<span class="eqno">(391)<a class="headerlink" href="#equation-6167acd9-d43e-4b1d-8afc-4e18a42390ae" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t,y),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-218c8601-b98c-46c4-9033-c623fb41890d">
+<span class="eqno">(392)<a class="headerlink" href="#equation-218c8601-b98c-46c4-9033-c623fb41890d" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t+\frac{h}{2},y+\frac{h}{2}k_2),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-29d081d6-362f-45af-98a1-88e9f0feb6e1">
+<span class="eqno">(393)<a class="headerlink" href="#equation-29d081d6-362f-45af-98a1-88e9f0feb6e1" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+h(k_2).\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>

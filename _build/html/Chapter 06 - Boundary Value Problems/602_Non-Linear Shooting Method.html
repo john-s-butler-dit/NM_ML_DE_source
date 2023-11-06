@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -520,39 +524,39 @@ The video below walks through the code.</p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>To numerically approximate the non-linear Boundary Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40e8acaf-f9f4-49ab-8d3c-6c12504daece">
-<span class="eqno">(757)<a class="headerlink" href="#equation-40e8acaf-f9f4-49ab-8d3c-6c12504daece" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-470d8f0d-19b9-4b9f-879d-5a4f47bf6b70">
+<span class="eqno">(757)<a class="headerlink" href="#equation-470d8f0d-19b9-4b9f-879d-5a4f47bf6b70" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{''}=f(x,y,y^{'}), \ \ \ a &lt; x &lt; b, \end{equation}\]</div>
 <p>with the boundary conditions \begin{equation} y(a)=\alpha,\end{equation} and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-91ff66e7-0653-4c00-8221-79ccf72555eb">
-<span class="eqno">(758)<a class="headerlink" href="#equation-91ff66e7-0653-4c00-8221-79ccf72555eb" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c09ec838-4a77-4e28-b246-ac01536f7237">
+<span class="eqno">(758)<a class="headerlink" href="#equation-c09ec838-4a77-4e28-b246-ac01536f7237" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta,\end{equation}\]</div>
 <p>using the non-linear shooting method, the Boundary Value Problem is divided into two Initial Value Problems:</p>
 <ol class="arabic simple">
 <li><p>The first 2nd order non-linear Initial Value Problem is the same as the original Boundary Value Problem with an extra initial condtion <span class="math notranslate nohighlight">\(y_1^{'}(a)=\lambda_0\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-4725cdb0-bafe-43d3-8d2d-62c0a304a6c3">
-<span class="eqno">(759)<a class="headerlink" href="#equation-4725cdb0-bafe-43d3-8d2d-62c0a304a6c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-98c71c99-912f-46c7-ac94-b85c926e6517">
+<span class="eqno">(759)<a class="headerlink" href="#equation-98c71c99-912f-46c7-ac94-b85c926e6517" title="Permalink to this equation">#</a></span>\[\begin{equation}
  y^{''}_1=f(x,y,y^{'}), \ \    y_1(a)=\alpha, \ \ \color{red}{y^{'}_1(a)=\lambda_0},\\
 \end{equation}\]</div>
 <ol class="arabic simple" start="2">
 <li><p>The second 2nd order Initial Value Problem is with respect to <span class="math notranslate nohighlight">\(z=\frac{\partial y}{\partial \lambda}\)</span>  with the initial condtions <span class="math notranslate nohighlight">\(z(a)=0\)</span> and <span class="math notranslate nohighlight">\(z^{'}(a)=1\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-fa51ceca-4232-4f06-8c0c-6d6437e9b4fd">
-<span class="eqno">(760)<a class="headerlink" href="#equation-fa51ceca-4232-4f06-8c0c-6d6437e9b4fd" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-c692181e-7e68-4cca-a93a-c360c4a5a7bb">
+<span class="eqno">(760)<a class="headerlink" href="#equation-c692181e-7e68-4cca-a93a-c360c4a5a7bb" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z^{''}=\frac{\partial f}{\partial y^{'}}z^{'}(x,\lambda)+\frac{\partial f}{\partial y}z(x,\lambda), \ \ \color{green}{z(a)=0, \ \ z^{'}(a)=1}.
 \end{equation}\]</div>
 <p>combining these results together to get the unique solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a14dfff6-5c03-49a7-a663-20d7b31994e7">
-<span class="eqno">(761)<a class="headerlink" href="#equation-a14dfff6-5c03-49a7-a663-20d7b31994e7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-08f2840f-5d00-4728-94c9-b034347d3d86">
+<span class="eqno">(761)<a class="headerlink" href="#equation-08f2840f-5d00-4728-94c9-b034347d3d86" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y(x)=y_1(x).
 \end{equation}\]</div>
 <p>Unlike the linear method, the non-linear shooting method is iterative to get the value of <span class="math notranslate nohighlight">\(\lambda\)</span> that results in the same solution as the Boundary Value Problem.</p>
 <p>The first choice of <span class="math notranslate nohighlight">\(\lambda_0\)</span> is a guess, then after the first iteration a Newton Raphson method is used to update <span class="math notranslate nohighlight">\(\lambda,\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-7ed2a60a-f9ed-4e4f-86a6-b153a86bd9b7">
-<span class="eqno">(762)<a class="headerlink" href="#equation-7ed2a60a-f9ed-4e4f-86a6-b153a86bd9b7" title="Permalink to this equation">#</a></span>\[\begin{equation} \lambda_k=\lambda_{k-1}-\frac{y_1(b,\lambda_{k-1})-\beta}{\frac{dy}{d \lambda}(b,\lambda_{k-1})},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2696b6f5-daa1-499a-be58-fd49bb2b9403">
+<span class="eqno">(762)<a class="headerlink" href="#equation-2696b6f5-daa1-499a-be58-fd49bb2b9403" title="Permalink to this equation">#</a></span>\[\begin{equation} \lambda_k=\lambda_{k-1}-\frac{y_1(b,\lambda_{k-1})-\beta}{\frac{dy}{d \lambda}(b,\lambda_{k-1})},\end{equation}\]</div>
 <p>which can be re-written as,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e6c794e-a51e-4ab9-a73b-81a38c10e7ec">
-<span class="eqno">(763)<a class="headerlink" href="#equation-3e6c794e-a51e-4ab9-a73b-81a38c10e7ec" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{y_1(b,\lambda_{k-1})-\beta}{z(b,\lambda_{k-1})},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-52bb17d2-9604-44d0-b5dd-aae02238ed86">
+<span class="eqno">(763)<a class="headerlink" href="#equation-52bb17d2-9604-44d0-b5dd-aae02238ed86" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{y_1(b,\lambda_{k-1})-\beta}{z(b,\lambda_{k-1})},\end{equation}\]</div>
 <p>until <span class="math notranslate nohighlight">\(|\lambda_{k}-\lambda_{k-1}|&lt;tol\)</span>.</p>
 <p>The introduction of <span class="math notranslate nohighlight">\(\lambda\)</span> is the introduction of a new variable that motivates the second 2nd order Initial Value Problem.</p>
 <div class="cell docutils container">
@@ -570,62 +574,62 @@ y(x)=y_1(x).
 <section id="example-non-linear-boundary-value-problem">
 <h2>Example Non-linear Boundary Value Problem<a class="headerlink" href="#example-non-linear-boundary-value-problem" title="Permalink to this heading">#</a></h2>
 <p>To illustrate the shooting method we shall apply it to the non-linear Boundary Value Problem:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-50328460-5fdd-42a4-8f80-2ac07d6326cb">
-<span class="eqno">(764)<a class="headerlink" href="#equation-50328460-5fdd-42a4-8f80-2ac07d6326cb" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{''}=-2yy^{'}, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-82f7f56c-69f2-47cb-895c-a0e066985c6b">
+<span class="eqno">(764)<a class="headerlink" href="#equation-82f7f56c-69f2-47cb-895c-a0e066985c6b" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{''}=-2yy^{'}, \end{equation}\]</div>
 <p>with boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cb1c4a60-fee7-40b1-a1b4-f82e08f9978b">
-<span class="eqno">(765)<a class="headerlink" href="#equation-cb1c4a60-fee7-40b1-a1b4-f82e08f9978b" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0) = -2.5, \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8c59d8c7-7757-4d27-a2a7-0d72185470e5">
-<span class="eqno">(766)<a class="headerlink" href="#equation-8c59d8c7-7757-4d27-a2a7-0d72185470e5" title="Permalink to this equation">#</a></span>\[\begin{equation}y(1) = 3. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7f83c88d-81f9-42c5-90bc-e645e7698a34">
+<span class="eqno">(765)<a class="headerlink" href="#equation-7f83c88d-81f9-42c5-90bc-e645e7698a34" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0) = -2.5, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0856a695-5f96-461c-9cff-0d34a37c8df9">
+<span class="eqno">(766)<a class="headerlink" href="#equation-0856a695-5f96-461c-9cff-0d34a37c8df9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(1) = 3. \end{equation}\]</div>
 <p>The <strong>boundary value problem</strong> is broken into two second order <strong>Initial Value Problems:</strong></p>
 <ol class="arabic simple">
 <li><p>The first 2nd order Initial Value Problem is the same as the original Boundary Value Problem with an extra initial condtion <span class="math notranslate nohighlight">\(y^{'}(0)=\lambda_0\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-1a65129a-7711-454a-ba88-56637e2e4a7d">
-<span class="eqno">(767)<a class="headerlink" href="#equation-1a65129a-7711-454a-ba88-56637e2e4a7d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-31333634-5535-4e4e-a779-2c2feea8b9fc">
+<span class="eqno">(767)<a class="headerlink" href="#equation-31333634-5535-4e4e-a779-2c2feea8b9fc" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u^{''} =-2uu', \ \ \ \ u(0)=-2.5, \ \ \ \color{green}{u^{'}(0)=\lambda_0},
 \end{equation}\]</div>
 <p>which can be written a two first order initial value problems</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7aed9d6a-d04a-40a7-b821-bc3f78dc9956">
-<span class="eqno">(768)<a class="headerlink" href="#equation-7aed9d6a-d04a-40a7-b821-bc3f78dc9956" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-f2b85aa7-9db6-4f6d-9d6a-736d9ce23892">
+<span class="eqno">(768)<a class="headerlink" href="#equation-f2b85aa7-9db6-4f6d-9d6a-736d9ce23892" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u_1^{'} =u_2, \ \ \ \ u_1(0)=-2.5,
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-63fb7080-4fec-4eb7-942f-2a3582caaf52">
-<span class="eqno">(769)<a class="headerlink" href="#equation-63fb7080-4fec-4eb7-942f-2a3582caaf52" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-689fb5cd-dacb-4ab7-9e03-a61ca90b5fa0">
+<span class="eqno">(769)<a class="headerlink" href="#equation-689fb5cd-dacb-4ab7-9e03-a61ca90b5fa0" title="Permalink to this equation">#</a></span>\[\begin{equation}
 u_2^{'} =-2u_1u_2, \ \ \ \ \color{green}{u_2^{'}(0)=\lambda_0}.
 \end{equation}\]</div>
 <ol class="arabic simple" start="2">
 <li><p>The second 2nd order Initial Value Problem  <span class="math notranslate nohighlight">\(z=\frac{\partial y}{\partial \lambda}\)</span>  with the initial condtions <span class="math notranslate nohighlight">\(z(a)=0\)</span> and <span class="math notranslate nohighlight">\(z^{'}(a)=1\)</span>.with the initial condtions <span class="math notranslate nohighlight">\(z^{'}(0)=0\)</span> and <span class="math notranslate nohighlight">\(z^{'}(0)=1\)</span>.</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-0bb954c6-a658-4ec8-8e59-f1a28673d25b">
-<span class="eqno">(770)<a class="headerlink" href="#equation-0bb954c6-a658-4ec8-8e59-f1a28673d25b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cdd99293-92ee-4619-8482-2fa6813a1c6b">
+<span class="eqno">(770)<a class="headerlink" href="#equation-cdd99293-92ee-4619-8482-2fa6813a1c6b" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z^{''} =-2y^{'}z-2yz^{'}, \ \ \ \ \color{green}{z(0)=0}, \ \ \ \color{green}{z^{'}(0)=1}
 \end{equation}\]</div>
 <p>which can be written a two first order initial value problems</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da8fd833-1365-4816-8fe7-609174c02da7">
-<span class="eqno">(771)<a class="headerlink" href="#equation-da8fd833-1365-4816-8fe7-609174c02da7" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-dc2244ec-087f-4df8-ad84-18b8b9f64b09">
+<span class="eqno">(771)<a class="headerlink" href="#equation-dc2244ec-087f-4df8-ad84-18b8b9f64b09" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_1^{'} =z_2, \ \ \ \ z_1(0)=0,
 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-267ae75a-5b77-48a9-b2b8-b51ef3619c61">
-<span class="eqno">(772)<a class="headerlink" href="#equation-267ae75a-5b77-48a9-b2b8-b51ef3619c61" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b4c94ec-0019-4c4e-813e-cea8467d4f05">
+<span class="eqno">(772)<a class="headerlink" href="#equation-1b4c94ec-0019-4c4e-813e-cea8467d4f05" title="Permalink to this equation">#</a></span>\[\begin{equation}
 z_2^{'} =-2u_2z_1-2u_1z_2, \ \ \ \ \color{green}{z_2^{'}(0)=1}.
 \end{equation}\]</div>
 <p>The first choice of <span class="math notranslate nohighlight">\(\lambda\)</span> we guess <span class="math notranslate nohighlight">\(\lambda_0=0.2\)</span>. Then after the first iteration a Newton Raphson method is used to update <span class="math notranslate nohighlight">\(\lambda\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-33ea3f29-f527-48a0-a1ab-27aeb466a64e">
-<span class="eqno">(773)<a class="headerlink" href="#equation-33ea3f29-f527-48a0-a1ab-27aeb466a64e" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{u_1(1,\lambda_{k-1})-3}{z_1(1,\lambda_{k-1})}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-86bde205-a68e-4686-b09e-63c079d28130">
+<span class="eqno">(773)<a class="headerlink" href="#equation-86bde205-a68e-4686-b09e-63c079d28130" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{u_1(1,\lambda_{k-1})-3}{z_1(1,\lambda_{k-1})}\end{equation}\]</div>
 <p>until <span class="math notranslate nohighlight">\(\lambda_{k}-\lambda_{k-1}&lt;0.001\)</span>.</p>
 </section>
 <section id="discrete-axis">
 <h2>Discrete Axis<a class="headerlink" href="#discrete-axis" title="Permalink to this heading">#</a></h2>
 <p>The stepsize is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d80557b0-e917-499f-bc47-b4da243557b7">
-<span class="eqno">(774)<a class="headerlink" href="#equation-d80557b0-e917-499f-bc47-b4da243557b7" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f72ecd4e-cc73-47c1-a059-3873320489d1">
+<span class="eqno">(774)<a class="headerlink" href="#equation-f72ecd4e-cc73-47c1-a059-3873320489d1" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}\end{equation}\]</div>
 <p>here it is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-010e074a-885e-4f79-9d7c-31604bcac25d">
-<span class="eqno">(775)<a class="headerlink" href="#equation-010e074a-885e-4f79-9d7c-31604bcac25d" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-201553bd-2004-49d6-b41d-405da2ce466c">
+<span class="eqno">(775)<a class="headerlink" href="#equation-201553bd-2004-49d6-b41d-405da2ce466c" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}\end{equation}\]</div>
 <p>giving</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ec9c1b21-df55-4734-a897-1533893a3140">
-<span class="eqno">(776)<a class="headerlink" href="#equation-ec9c1b21-df55-4734-a897-1533893a3140" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-037def59-8ac2-419c-b291-fd386d84ed3b">
+<span class="eqno">(776)<a class="headerlink" href="#equation-037def59-8ac2-419c-b291-fd386d84ed3b" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,...10.\)</span>
 The plot shows the discrete time intervals.</p>
 <div class="cell docutils container">
@@ -651,16 +655,16 @@ The plot shows the discrete time intervals.</p>
 <section id="initial-conditions">
 <h2>Initial conditions<a class="headerlink" href="#initial-conditions" title="Permalink to this heading">#</a></h2>
 <p>The initial conditions for the discrete equations are:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6b789401-fcf0-49e8-9aab-a173973aa293">
-<span class="eqno">(777)<a class="headerlink" href="#equation-6b789401-fcf0-49e8-9aab-a173973aa293" title="Permalink to this equation">#</a></span>\[\begin{equation} u_1[0]=-2.5\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-a2f365bb-f7b1-4ac8-b879-b0e4add66709">
-<span class="eqno">(778)<a class="headerlink" href="#equation-a2f365bb-f7b1-4ac8-b879-b0e4add66709" title="Permalink to this equation">#</a></span>\[\begin{equation} u_2[0]=\lambda_0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-4034f7cb-1426-4634-9924-9122c567675c">
-<span class="eqno">(779)<a class="headerlink" href="#equation-4034f7cb-1426-4634-9924-9122c567675c" title="Permalink to this equation">#</a></span>\[\begin{equation} z_1[0]=0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-795ca40e-bd25-4b28-bfa3-4ef48f845dae">
-<span class="eqno">(780)<a class="headerlink" href="#equation-795ca40e-bd25-4b28-bfa3-4ef48f845dae" title="Permalink to this equation">#</a></span>\[\begin{equation} z_2[0]=1\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-afcdc8c5-b2e0-45b0-a4ee-d7d3f523de7d">
-<span class="eqno">(781)<a class="headerlink" href="#equation-afcdc8c5-b2e0-45b0-a4ee-d7d3f523de7d" title="Permalink to this equation">#</a></span>\[\begin{equation}\beta=3\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e547823b-a20c-4832-a999-88eb8d16352a">
+<span class="eqno">(777)<a class="headerlink" href="#equation-e547823b-a20c-4832-a999-88eb8d16352a" title="Permalink to this equation">#</a></span>\[\begin{equation} u_1[0]=-2.5\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5afb8086-a933-4a01-a2f3-a08b41094c47">
+<span class="eqno">(778)<a class="headerlink" href="#equation-5afb8086-a933-4a01-a2f3-a08b41094c47" title="Permalink to this equation">#</a></span>\[\begin{equation} u_2[0]=\lambda_0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f92e5ab2-6117-41c4-a872-b773558fc7ef">
+<span class="eqno">(779)<a class="headerlink" href="#equation-f92e5ab2-6117-41c4-a872-b773558fc7ef" title="Permalink to this equation">#</a></span>\[\begin{equation} z_1[0]=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fca86549-6f4d-414c-a57b-d11825a0e76b">
+<span class="eqno">(780)<a class="headerlink" href="#equation-fca86549-6f4d-414c-a57b-d11825a0e76b" title="Permalink to this equation">#</a></span>\[\begin{equation} z_2[0]=1\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3c4a146b-8b10-44d6-bb34-372e3cc65209">
+<span class="eqno">(781)<a class="headerlink" href="#equation-3c4a146b-8b10-44d6-bb34-372e3cc65209" title="Permalink to this equation">#</a></span>\[\begin{equation}\beta=3\end{equation}\]</div>
 <p>Let <span class="math notranslate nohighlight">\(\lambda_0=0.2\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -687,29 +691,29 @@ The plot shows the discrete time intervals.</p>
 <ol class="arabic simple">
 <li><p>Discrete form of Equation 1</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-52189d2c-0697-468b-99a4-210b116793d9">
-<span class="eqno">(782)<a class="headerlink" href="#equation-52189d2c-0697-468b-99a4-210b116793d9" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{1 }[i+1]=u_{1}[i] + h u_{2 }[i]\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-386010f8-b3e4-4518-9779-ab3b43d7eaeb">
-<span class="eqno">(783)<a class="headerlink" href="#equation-386010f8-b3e4-4518-9779-ab3b43d7eaeb" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{2 }[i+1]=u_{2 }[i] + h (-2u_{1}[i]u_{2 }[i])\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d177a105-7933-43d6-b969-55e0de32db6b">
+<span class="eqno">(782)<a class="headerlink" href="#equation-d177a105-7933-43d6-b969-55e0de32db6b" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{1 }[i+1]=u_{1}[i] + h u_{2 }[i]\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6ed0537b-9b2b-448c-bed4-31efe3604ef9">
+<span class="eqno">(783)<a class="headerlink" href="#equation-6ed0537b-9b2b-448c-bed4-31efe3604ef9" title="Permalink to this equation">#</a></span>\[\begin{equation}u_{2 }[i+1]=u_{2 }[i] + h (-2u_{1}[i]u_{2 }[i])\end{equation}\]</div>
 <p>with the initial conditions <span class="math notranslate nohighlight">\(u_{1}[0]=-2.5\)</span> and <span class="math notranslate nohighlight">\(u_{2}[0]=\lambda_0.\)</span></p>
 <ol class="arabic simple" start="2">
 <li><p>Discrete form of Equation 2</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-aa3e18e1-3527-4d86-aa8b-50633d0b545e">
-<span class="eqno">(784)<a class="headerlink" href="#equation-aa3e18e1-3527-4d86-aa8b-50633d0b545e" title="Permalink to this equation">#</a></span>\[\begin{equation}z_{1}[i+1]=z_{1 }[i] + h z_{2 }[i]\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7cf7ad2e-2097-44f2-ab26-22aa3d76c705">
-<span class="eqno">(785)<a class="headerlink" href="#equation-7cf7ad2e-2097-44f2-ab26-22aa3d76c705" title="Permalink to this equation">#</a></span>\[\begin{equation}z_{2}[i+1]=z_{2 }[i] + h (-2z_{2}[i]y_{1 }[i]-2z_{1 }[i] y_{2 }[i])\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1c1b0be6-fbf5-4cde-a249-3e7710c92718">
+<span class="eqno">(784)<a class="headerlink" href="#equation-1c1b0be6-fbf5-4cde-a249-3e7710c92718" title="Permalink to this equation">#</a></span>\[\begin{equation}z_{1}[i+1]=z_{1 }[i] + h z_{2 }[i]\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-971e0ad2-1aea-4b74-aabb-ae0ff77d9c11">
+<span class="eqno">(785)<a class="headerlink" href="#equation-971e0ad2-1aea-4b74-aabb-ae0ff77d9c11" title="Permalink to this equation">#</a></span>\[\begin{equation}z_{2}[i+1]=z_{2 }[i] + h (-2z_{2}[i]y_{1 }[i]-2z_{1 }[i] y_{2 }[i])\end{equation}\]</div>
 <p>with the initial conditions <span class="math notranslate nohighlight">\(z_{1}[0]=0\)</span> and <span class="math notranslate nohighlight">\(z_{2}[0]=1\)</span>.</p>
 <p>At the end of each iteration</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1949681e-a4f9-4ac2-a2e5-94d074548ad9">
-<span class="eqno">(786)<a class="headerlink" href="#equation-1949681e-a4f9-4ac2-a2e5-94d074548ad9" title="Permalink to this equation">#</a></span>\[\begin{equation} u_1[i] \approx y(x_i).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e7d0843a-2301-41ce-89c3-d2e8a2bd05bb">
+<span class="eqno">(786)<a class="headerlink" href="#equation-e7d0843a-2301-41ce-89c3-d2e8a2bd05bb" title="Permalink to this equation">#</a></span>\[\begin{equation} u_1[i] \approx y(x_i).\end{equation}\]</div>
 <p>The initial choice of <span class="math notranslate nohighlight">\(\lambda_0=0.2\)</span> is up to the user then for each iteration of the system <span class="math notranslate nohighlight">\(\lambda\)</span> is updated using the formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3483b3ac-eee5-4898-83e4-17ce987419b1">
-<span class="eqno">(787)<a class="headerlink" href="#equation-3483b3ac-eee5-4898-83e4-17ce987419b1" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{u_1[10]-3}{z_1[10]}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9982e3f5-1bb0-457d-ba15-48febebc1b4c">
+<span class="eqno">(787)<a class="headerlink" href="#equation-9982e3f5-1bb0-457d-ba15-48febebc1b4c" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda_k=\lambda_{k-1}-\frac{u_1[10]-3}{z_1[10]}.\end{equation}\]</div>
 <p>The plot below shows the numerical approximation of the solution to the non-linear Boundary Value Problem for each iteration.</p>
 <p>The stopping criteria for the iterative process is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3429c4d8-3cba-4231-bc1e-7a504a3ea7bc">
-<span class="eqno">(788)<a class="headerlink" href="#equation-3429c4d8-3cba-4231-bc1e-7a504a3ea7bc" title="Permalink to this equation">#</a></span>\[\begin{equation}|\lambda_k-\lambda_{k-1}|&lt;tol,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7f461b88-bb8c-41df-909b-bd9f27e47555">
+<span class="eqno">(788)<a class="headerlink" href="#equation-7f461b88-bb8c-41df-909b-bd9f27e47555" title="Permalink to this equation">#</a></span>\[\begin{equation}|\lambda_k-\lambda_{k-1}|&lt;tol,\end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(tol=0.0001.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

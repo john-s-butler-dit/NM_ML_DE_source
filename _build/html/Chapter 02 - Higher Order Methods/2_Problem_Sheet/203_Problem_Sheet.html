@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -489,11 +493,11 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-2-question-3-2nd-order-taylor">
 <h1>Problem Sheet 2 Question 3 - 2nd Order Taylor<a class="headerlink" href="#problem-sheet-2-question-3-2nd-order-taylor" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c7c0abd7-bc81-400d-84dc-ea4b8e958216">
-<span class="eqno">(285)<a class="headerlink" href="#equation-c7c0abd7-bc81-400d-84dc-ea4b8e958216" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=ty-ty^2, \ \ (0 \leq t \leq 2)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4952ff8e-1132-445f-b557-307834659235">
+<span class="eqno">(285)<a class="headerlink" href="#equation-4952ff8e-1132-445f-b557-307834659235" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=ty-ty^2, \ \ (0 \leq t \leq 2)\end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-66c59072-129f-43be-a515-f2b8cc6498cd">
-<span class="eqno">(286)<a class="headerlink" href="#equation-66c59072-129f-43be-a515-f2b8cc6498cd" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=\frac{1}{2}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ce71e070-0c53-475c-bd86-048074b8686c">
+<span class="eqno">(286)<a class="headerlink" href="#equation-ce71e070-0c53-475c-bd86-048074b8686c" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=\frac{1}{2}.\end{equation}\]</div>
 <p>Apply <strong>2nd Order Taylor</strong> to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution, and compare the actual error with the theoretical error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -515,20 +519,20 @@ document.write(`
 <section id="general-discrete-interval">
 <h2>General Discrete Interval<a class="headerlink" href="#general-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-01488d4f-2211-41f7-874d-ffbe802f1185">
-<span class="eqno">(287)<a class="headerlink" href="#equation-01488d4f-2211-41f7-874d-ffbe802f1185" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{b-a}{N}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-88682c2f-3c6d-4001-8d20-bc27f330a1a2">
+<span class="eqno">(287)<a class="headerlink" href="#equation-88682c2f-3c6d-4001-8d20-bc27f330a1a2" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{b-a}{N}.\end{equation}\]</div>
 </section>
 <section id="specific-discrete-interval">
 <h2>Specific Discrete Interval<a class="headerlink" href="#specific-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span> with <span class="math notranslate nohighlight">\(N=4\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-734c30d8-6c4a-45ba-a73b-be95acb672c2">
-<span class="eqno">(288)<a class="headerlink" href="#equation-734c30d8-6c4a-45ba-a73b-be95acb672c2" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{2-0}{4}=0.5.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-afbb170d-8e79-4c36-86f4-a7d09cab719e">
+<span class="eqno">(288)<a class="headerlink" href="#equation-afbb170d-8e79-4c36-86f4-a7d09cab719e" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{2-0}{4}=0.5.\end{equation}\]</div>
 <p>This gives the 5 discrete points with stepsize h=0.5:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-199c152f-c26a-4d97-a97b-b57133d72d39">
-<span class="eqno">(289)<a class="headerlink" href="#equation-199c152f-c26a-4d97-a97b-b57133d72d39" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_0=0, \ t_1=0.5, \ ... t_{4}=2. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2e8b5b73-b845-422d-8a86-74afdc90a488">
+<span class="eqno">(289)<a class="headerlink" href="#equation-2e8b5b73-b845-422d-8a86-74afdc90a488" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_0=0, \ t_1=0.5, \ ... t_{4}=2. \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-257531ca-d47d-452b-a517-2a48f7058049">
-<span class="eqno">(290)<a class="headerlink" href="#equation-257531ca-d47d-452b-a517-2a48f7058049" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_i=0+i0.5, \ \ \ i=0,1,...,4.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-02af5d9b-9187-423d-97ff-77ad2534c6b5">
+<span class="eqno">(290)<a class="headerlink" href="#equation-02af5d9b-9187-423d-97ff-77ad2534c6b5" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_i=0+i0.5, \ \ \ i=0,1,...,4.\end{equation}\]</div>
 <p>The plot below illustrates the discrete time steps from 0 to 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -556,17 +560,17 @@ document.write(`
 <section id="nd-order-taylor-solution">
 <h2>2nd Order Taylor Solution<a class="headerlink" href="#nd-order-taylor-solution" title="Permalink to this heading">#</a></h2>
 <p>The 2nd Order Taylor difference equation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d9291e05-68bd-42fe-b751-8f515bee8769">
-<span class="eqno">(291)<a class="headerlink" href="#equation-d9291e05-68bd-42fe-b751-8f515bee8769" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4f3fbc60-b75e-4b63-b973-7268bb1c2c6a">
+<span class="eqno">(291)<a class="headerlink" href="#equation-4f3fbc60-b75e-4b63-b973-7268bb1c2c6a" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f57c6bec-c301-46f4-9126-ed7b55857dda">
-<span class="eqno">(292)<a class="headerlink" href="#equation-f57c6bec-c301-46f4-9126-ed7b55857dda" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=t_iw_i-t_iw_i^2,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-35214fcf-dbed-4acb-8f60-b39293d032f2">
+<span class="eqno">(292)<a class="headerlink" href="#equation-35214fcf-dbed-4acb-8f60-b39293d032f2" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=t_iw_i-t_iw_i^2,\end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2383b615-1ea7-45c5-b140-b8626f6abc0f">
-<span class="eqno">(293)<a class="headerlink" href="#equation-2383b615-1ea7-45c5-b140-b8626f6abc0f" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2)),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-00c78124-7196-4db1-bf98-a6a2eacb09ef">
+<span class="eqno">(293)<a class="headerlink" href="#equation-00c78124-7196-4db1-bf98-a6a2eacb09ef" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2)),\end{equation}\]</div>
 <p>which gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7fc83dc6-7ddc-4268-a096-3ccaa0640575">
-<span class="eqno">(294)<a class="headerlink" href="#equation-7fc83dc6-7ddc-4268-a096-3ccaa0640575" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_iw_i-t_iw_i^2)+\frac{h^2}{2}(w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2))),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5a187525-7451-4a3c-b44a-62a9b9eac06c">
+<span class="eqno">(294)<a class="headerlink" href="#equation-5a187525-7451-4a3c-b44a-62a9b9eac06c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_iw_i-t_iw_i^2)+\frac{h^2}{2}(w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2))),\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,2,3\)</span>
 with
 <span class="math notranslate nohighlight">\(w_0=0.5\)</span></p>
@@ -616,7 +620,7 @@ with
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_60498</span><span class="o">/</span><span class="mf">869357318.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61458</span><span class="o">/</span><span class="mf">869357318.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>    <span class="s1">&#39;Euler (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">,</span>    <span class="s1">&#39;Taylor (w_i) &#39;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span>    <span class="s1">&#39;Exact Error( |y_i-w_i|) &#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">w</span><span class="p">)}</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span>

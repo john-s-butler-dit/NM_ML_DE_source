@@ -68,6 +68,9 @@ parts:
     - file: Chapter 06 - Boundary Value Problems/6_Problem_Sheet
       sections:
       - file: Chapter 06 - Boundary Value Problems/604_Boundary Value Problem Example 2
+  - caption: Integrate and Fire Example
+    chapters:
+    - file: Chapter 07 Question 6 Integrate and Fire/Question 6 Integrate and Fire
   - caption: Introduction to Artificial Neural Networks
     chapters:
     - file: Chapter 08 - Intro to ANN/8_Problem_Sheet

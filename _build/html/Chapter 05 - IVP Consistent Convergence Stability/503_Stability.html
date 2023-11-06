@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -524,11 +528,11 @@ document.write(`
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>A one-step or multistep method is used to approximate the solution of an initial value problem of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-458dae58-b719-47ea-a955-c2c611ec3374">
-<span class="eqno">(648)<a class="headerlink" href="#equation-458dae58-b719-47ea-a955-c2c611ec3374" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-93485f4e-f4b9-4ca3-a032-ec4ffad6b892">
+<span class="eqno">(648)<a class="headerlink" href="#equation-93485f4e-f4b9-4ca3-a032-ec4ffad6b892" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y),\end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-23a964f5-7109-48d7-9df1-983c9c5af52d">
-<span class="eqno">(649)<a class="headerlink" href="#equation-23a964f5-7109-48d7-9df1-983c9c5af52d" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=\alpha.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-af399b44-f83e-47c2-94ec-eccf53c24c45">
+<span class="eqno">(649)<a class="headerlink" href="#equation-af399b44-f83e-47c2-94ec-eccf53c24c45" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=\alpha.\end{equation}\]</div>
 <p>The method should only be used if it satisfies the three criteria:</p>
 <ol class="arabic simple">
 <li><p>that difference equation is consistent with the differential equation;</p></li>
@@ -555,18 +559,18 @@ document.write(`
 <section id="introduction-to-unstable">
 <h2>Introduction to unstable<a class="headerlink" href="#introduction-to-unstable" title="Permalink to this heading">#</a></h2>
 <p>This notebook illustrates an unstable multistep method for numerically approximating an initial value problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4eaac33-3acd-4067-8c19-5d4c0724d4f7">
-<span class="eqno">(650)<a class="headerlink" href="#equation-a4eaac33-3acd-4067-8c19-5d4c0724d4f7" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-10ad00e3-a84f-42d8-a23f-64b1174c7991">
+<span class="eqno">(650)<a class="headerlink" href="#equation-10ad00e3-a84f-42d8-a23f-64b1174c7991" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e3b10b7f-1ca2-4eb4-9d30-39f53df1f621">
-<span class="eqno">(651)<a class="headerlink" href="#equation-e3b10b7f-1ca2-4eb4-9d30-39f53df1f621" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=\alpha,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1370b1d8-e6a8-4468-98c4-9b8c1c58fa18">
+<span class="eqno">(651)<a class="headerlink" href="#equation-1370b1d8-e6a8-4468-98c4-9b8c1c58fa18" title="Permalink to this equation">#</a></span>\[\begin{equation} y(a)=\alpha,\end{equation}\]</div>
 <p>using the Modified Abysmal Kramer-Butler method. The method is named after the great <a class="reference external" href="https://en.wikipedia.org/wiki/Cosmo_Kramer">Cosmo Kramer</a> and myself <a class="reference external" href="https://johnsbutler.netlify.com">John Butler</a>.</p>
 </section>
 <section id="step-abysmal-kramer-butler-method">
 <h2>2-step Abysmal Kramer-Butler Method<a class="headerlink" href="#step-abysmal-kramer-butler-method" title="Permalink to this heading">#</a></h2>
 <p>The 2-step Abysmal Kramer-Butler difference equation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55b23442-daad-4464-be87-39bf8a403bb7">
-<span class="eqno">(652)<a class="headerlink" href="#equation-55b23442-daad-4464-be87-39bf8a403bb7" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i-1} + h(4f(t_i,w_i)-2f(t_{i-1},w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1a06dd36-4f2d-49f9-bb21-09d65a87de2c">
+<span class="eqno">(652)<a class="headerlink" href="#equation-1a06dd36-4f2d-49f9-bb21-09d65a87de2c" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i-1} + h(4f(t_i,w_i)-2f(t_{i-1},w_{i-1})) \end{equation}\]</div>
 <p>by changing <span class="math notranslate nohighlight">\(F\)</span>, the Modified Abysmal Butler Method (see convergent and consistent notebooks), the Abysmal Kramer-Butler method is consistent with the differential equation and convergent with the exact solution (see below for proof).
 But the most important thing is that method is weakly stable, it fluctuates widely around the exact answer, just like it’s name sake Kramer (for examples see any Seinfeld episode).</p>
 </section>
@@ -577,24 +581,24 @@ But the most important thing is that method is weakly stable, it fluctuates wide
 <section id="definition-characteristic-equation">
 <h3>Definition: Characteristic Equation<a class="headerlink" href="#definition-characteristic-equation" title="Permalink to this heading">#</a></h3>
 <p>Associated with the difference equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7b9b234-35c2-4c08-aefa-bb46f123702a">
-<span class="eqno">(653)<a class="headerlink" href="#equation-a7b9b234-35c2-4c08-aefa-bb46f123702a" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-87239448-ae5d-4b52-bd22-7cb4bffcf1c6">
-<span class="eqno">(654)<a class="headerlink" href="#equation-87239448-ae5d-4b52-bd22-7cb4bffcf1c6" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8952c249-c376-4d61-ba97-66175db66737">
+<span class="eqno">(653)<a class="headerlink" href="#equation-8952c249-c376-4d61-ba97-66175db66737" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e0f1a51e-5a3a-429b-a778-a6ad5ea55824">
+<span class="eqno">(654)<a class="headerlink" href="#equation-e0f1a51e-5a3a-429b-a778-a6ad5ea55824" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
 <p>is the <strong>characteristic equation</strong> given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e1121350-2dee-480f-be23-8117fe2bebcc">
-<span class="eqno">(655)<a class="headerlink" href="#equation-e1121350-2dee-480f-be23-8117fe2bebcc" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-142d3e7b-ca09-4c0e-8a07-3bccc8ef75e2">
+<span class="eqno">(655)<a class="headerlink" href="#equation-142d3e7b-ca09-4c0e-8a07-3bccc8ef75e2" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0. \end{equation}\]</div>
 </section>
 <section id="definition-root-condition">
 <h3>Definition: Root Condition<a class="headerlink" href="#definition-root-condition" title="Permalink to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(\lambda_1,...,\lambda_m\)</span> denote the roots of the that characteristic equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3628d312-5ced-46b0-917b-dbf729197e27">
-<span class="eqno">(656)<a class="headerlink" href="#equation-3628d312-5ced-46b0-917b-dbf729197e27" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9cb7b6f6-621a-427d-9f2d-4ed8c923fe27">
+<span class="eqno">(656)<a class="headerlink" href="#equation-9cb7b6f6-621a-427d-9f2d-4ed8c923fe27" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^{m} - a_{m-1}\lambda^{m-1}-a_{m-2}\lambda^{m-2}-...-a_{0} =0 \end{equation}\]</div>
 <p>associated with the multi-step difference method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6052b071-e31a-45df-a885-3ea5c39c7569">
-<span class="eqno">(657)<a class="headerlink" href="#equation-6052b071-e31a-45df-a885-3ea5c39c7569" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b721d6e4-6f88-47de-997b-498ecdd7f34c">
-<span class="eqno">(658)<a class="headerlink" href="#equation-b721d6e4-6f88-47de-997b-498ecdd7f34c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f7ba4731-e1b4-48b5-8a8a-9242c8cbce2c">
+<span class="eqno">(657)<a class="headerlink" href="#equation-f7ba4731-e1b4-48b5-8a8a-9242c8cbce2c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_0=\alpha \ \ \ w_1=\alpha_1 \ \ \ ... \ \ \ w_{m-1}=\alpha_{m-1} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d96aad17-fc4b-4987-a4b2-51e3988d9401">
+<span class="eqno">(658)<a class="headerlink" href="#equation-d96aad17-fc4b-4987-a4b2-51e3988d9401" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1} = a_{m-1}w_{i}+a_{m-2}w_{i-1}+...+a_{0}w_{i+1-m} +hF(t_i,h,w_{i+1},...,w_{i+1-m}),\end{equation}\]</div>
 <p>If <span class="math notranslate nohighlight">\(|\lambda_{i}|\leq 1\)</span> for each <span class="math notranslate nohighlight">\(i=1,...,m\)</span> and all roots with absolute value 1
 are simple roots then the difference equation is said to satisfy the <strong>root condition</strong>.</p>
 </section>
@@ -613,14 +617,14 @@ with magnitude one are called <strong>weakly stable</strong>;</p></li>
 <section id="intial-value-problem">
 <h2>Intial Value Problem<a class="headerlink" href="#intial-value-problem" title="Permalink to this heading">#</a></h2>
 <p>To illustrate stability we will apply the method to a linear intial value problem given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a398ee62-edbb-4d67-aa68-4920073edef0">
-<span class="eqno">(659)<a class="headerlink" href="#equation-a398ee62-edbb-4d67-aa68-4920073edef0" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=t-y, \ \ (0 \leq t \leq 2), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-dd96f694-8467-49e4-9aea-b57db646d0e3">
+<span class="eqno">(659)<a class="headerlink" href="#equation-dd96f694-8467-49e4-9aea-b57db646d0e3" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=t-y, \ \ (0 \leq t \leq 2), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d1f8a1f9-c676-4026-a756-18b499af3b3a">
-<span class="eqno">(660)<a class="headerlink" href="#equation-d1f8a1f9-c676-4026-a756-18b499af3b3a" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7d42325d-8433-4152-b002-855e017e50f9">
+<span class="eqno">(660)<a class="headerlink" href="#equation-7d42325d-8433-4152-b002-855e017e50f9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1,\end{equation}\]</div>
 <p>with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b71d7462-c1da-4093-9180-9779912d5360">
-<span class="eqno">(661)<a class="headerlink" href="#equation-b71d7462-c1da-4093-9180-9779912d5360" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)= 2e^{-t}+t-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4762f906-7f0c-483f-9a3c-5c378531c9e1">
+<span class="eqno">(661)<a class="headerlink" href="#equation-4762f906-7f0c-483f-9a3c-5c378531c9e1" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)= 2e^{-t}+t-1.\end{equation}\]</div>
 </section>
 <section id="python-libraries">
 <h2>Python Libraries<a class="headerlink" href="#python-libraries" title="Permalink to this heading">#</a></h2>
@@ -656,11 +660,11 @@ with magnitude one are called <strong>weakly stable</strong>;</p></li>
 <section id="discrete-interval">
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>Defining the step size  <span class="math notranslate nohighlight">\(h\)</span>  from the interval range  <span class="math notranslate nohighlight">\(a \leq t \leq b\)</span>  and number of steps  <span class="math notranslate nohighlight">\(N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-954f3115-40db-47f3-ac4e-cf1efeda7434">
-<span class="eqno">(662)<a class="headerlink" href="#equation-954f3115-40db-47f3-ac4e-cf1efeda7434" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1c32b79f-4800-4e11-a298-4c43cb7f9dbd">
+<span class="eqno">(662)<a class="headerlink" href="#equation-1c32b79f-4800-4e11-a298-4c43cb7f9dbd" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}.\end{equation}\]</div>
 <p>This gives the discrete time steps,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5d8fed02-d9ce-4264-a289-31e737393825">
-<span class="eqno">(663)<a class="headerlink" href="#equation-5d8fed02-d9ce-4264-a289-31e737393825" title="Permalink to this equation">#</a></span>\[\begin{equation}t_i=t_0+ih,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c24e3910-9fb0-4752-8d85-65c7e6db3571">
+<span class="eqno">(663)<a class="headerlink" href="#equation-c24e3910-9fb0-4752-8d85-65c7e6db3571" title="Permalink to this equation">#</a></span>\[\begin{equation}t_i=t_0+ih,\end{equation}\]</div>
 <p>where  <span class="math notranslate nohighlight">\(t_0=a.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -690,19 +694,19 @@ with magnitude one are called <strong>weakly stable</strong>;</p></li>
 <section id="id1">
 <h2>2-step  Abysmal Kramer-Butler Method<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 <p>For this initial value problem 2-step Abysmal Kramer-Butler difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cfca0d16-587c-4999-a5f3-35c492206ac2">
-<span class="eqno">(664)<a class="headerlink" href="#equation-cfca0d16-587c-4999-a5f3-35c492206ac2" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i-1} + h(4(t_i- w_i)-2(t_{i-1}-w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d9ae1444-66c2-43e2-9b59-eccaa441ae4b">
+<span class="eqno">(664)<a class="headerlink" href="#equation-d9ae1444-66c2-43e2-9b59-eccaa441ae4b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i-1} + h(4(t_i- w_i)-2(t_{i-1}-w_{i-1})) \end{equation}\]</div>
 <p>by changing <span class="math notranslate nohighlight">\(F\)</span>, the Modified Abysmal Butler Method, is consistent and convergent.</p>
 <p>For <span class="math notranslate nohighlight">\(i=0\)</span> the system of difference equation is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de1003f5-4fe7-4a2e-9a9b-971591d5a5f0">
-<span class="eqno">(665)<a class="headerlink" href="#equation-de1003f5-4fe7-4a2e-9a9b-971591d5a5f0" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{1} = w_{-1} + h(4(t_0-w_0)-2(t_{-1}-w_{-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-19b2241d-49e0-4b5a-80b8-235a023e7244">
+<span class="eqno">(665)<a class="headerlink" href="#equation-19b2241d-49e0-4b5a-80b8-235a023e7244" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{1} = w_{-1} + h(4(t_0-w_0)-2(t_{-1}-w_{-1})) \end{equation}\]</div>
 <p>this is not solvable as <font color='red'> <span class="math notranslate nohighlight">\(w_{-1}\)</span> </font> is unknown.</p>
 <p>For <span class="math notranslate nohighlight">\(i=1\)</span> the difference equation is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-deccd054-f55f-4c11-aff2-7b25f6698038">
-<span class="eqno">(666)<a class="headerlink" href="#equation-deccd054-f55f-4c11-aff2-7b25f6698038" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{2} = w_{0} + h(4(t_1-w_1)-2(t_{0}-w_{0})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8c09fb9b-a083-4078-a693-7bd94cb1eefd">
+<span class="eqno">(666)<a class="headerlink" href="#equation-8c09fb9b-a083-4078-a693-7bd94cb1eefd" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{2} = w_{0} + h(4(t_1-w_1)-2(t_{0}-w_{0})) \end{equation}\]</div>
 <p>this is not solvable as <font color='red'> <span class="math notranslate nohighlight">\(w_{1}\)</span>  </font> is unknown. <span class="math notranslate nohighlight">\(w_1\)</span> can be  approximated using a one step method. Here, as the exact solution is known,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db502e6a-e8c4-4a30-b293-01eb815d8af3">
-<span class="eqno">(667)<a class="headerlink" href="#equation-db502e6a-e8c4-4a30-b293-01eb815d8af3" title="Permalink to this equation">#</a></span>\[\begin{equation}w_1=2e^{-t_1}+t_1-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d1a81aa9-0787-42ea-956b-ba5c85a597e8">
+<span class="eqno">(667)<a class="headerlink" href="#equation-d1a81aa9-0787-42ea-956b-ba5c85a597e8" title="Permalink to this equation">#</a></span>\[\begin{equation}w_1=2e^{-t_1}+t_1-1.\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Initial conditions</span>
@@ -874,40 +878,40 @@ with magnitude one are called <strong>weakly stable</strong>;</p></li>
 <section id="consistent">
 <h2>Consistent<a class="headerlink" href="#consistent" title="Permalink to this heading">#</a></h2>
 <p>The Abysmal Kramer-Butler method does satisfy the consistency condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-881fc194-8fc7-432c-ade0-b4ed1b9fb173">
-<span class="eqno">(668)<a class="headerlink" href="#equation-881fc194-8fc7-432c-ade0-b4ed1b9fb173" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i}(h)=\frac{y_{i+1}-y_{i-1}}{2h}-\frac{1}{2}[4(f(t_i,y_i)-2f(t_{i-1},y_{i-1})] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9d665aee-591c-4896-af08-bb20267f1f47">
+<span class="eqno">(668)<a class="headerlink" href="#equation-9d665aee-591c-4896-af08-bb20267f1f47" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i}(h)=\frac{y_{i+1}-y_{i-1}}{2h}-\frac{1}{2}[4(f(t_i,y_i)-2f(t_{i-1},y_{i-1})] \end{equation}\]</div>
 <p>As <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f3b6e3d-c85b-4552-aa4c-71f337d25433">
-<span class="eqno">(669)<a class="headerlink" href="#equation-4f3b6e3d-c85b-4552-aa4c-71f337d25433" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{1}{2}[4(f(t_i,y_i)-2f(t_{i-1},y_{i-1})] \rightarrow f(t_i,y_i).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-efa353c3-81c1-402a-b608-c5da448f5b0e">
+<span class="eqno">(669)<a class="headerlink" href="#equation-efa353c3-81c1-402a-b608-c5da448f5b0e" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{1}{2}[4(f(t_i,y_i)-2f(t_{i-1},y_{i-1})] \rightarrow f(t_i,y_i).\end{equation}\]</div>
 <p>While as <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-f535d6a6-09dc-4536-a5e4-ae8018469990">
-<span class="eqno">(670)<a class="headerlink" href="#equation-f535d6a6-09dc-4536-a5e4-ae8018469990" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{y_{i+1}-y_{i-1}}{2h} \rightarrow \frac{y^{'}}{1}=\frac{f(t_i,y_i)}{1}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f57e2ccc-4924-47fd-b0e6-91944ac70ac3">
+<span class="eqno">(670)<a class="headerlink" href="#equation-f57e2ccc-4924-47fd-b0e6-91944ac70ac3" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{y_{i+1}-y_{i-1}}{2h} \rightarrow \frac{y^{'}}{1}=\frac{f(t_i,y_i)}{1}.\end{equation}\]</div>
 <p>Hence as <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span> $$\frac{y_{i+1}-y_{i}}{h}-\frac{1}{2}[4(f(t_i,y_i)-2f(t_{i-1},y_{i-1})]\rightarrow f(t_i,y_i)-f(t_i,y_i)=0,\end{equation}
 which means it is consistent.</p>
 </section>
 <section id="convergent">
 <h2>Convergent<a class="headerlink" href="#convergent" title="Permalink to this heading">#</a></h2>
 <p>The Abysmal Kramer-Butler method does satisfy the Lipschitz condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-542d4b02-696b-4994-8fa1-332ca3e58971">
-<span class="eqno">(671)<a class="headerlink" href="#equation-542d4b02-696b-4994-8fa1-332ca3e58971" title="Permalink to this equation">#</a></span>\[\begin{equation}F(t,w:h)-F(t,\hat{w}:h)=\frac{4}{2}f(t,w_i)-\frac{2}{2}f(t-h,w_{i-1}))-(\frac{4}{2}f(t,\hat{w}_{i})-\frac{2}{2}f(t-h,\hat{w}_{i-1}))),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ee3f1bc5-49e6-4a6b-be8e-5f3d535346cd">
-<span class="eqno">(672)<a class="headerlink" href="#equation-ee3f1bc5-49e6-4a6b-be8e-5f3d535346cd" title="Permalink to this equation">#</a></span>\[\begin{equation}F(t,w:h)-F(t,\hat{w}:h)=\frac{4}{2}(f(t,w_i)-f(t,\hat{w}_i))-\frac{2}{2}(f(t-h,w_{i-1}))-f(t-h,\hat{w}_{i-1}))),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-64f3ed67-c396-48eb-96a4-9468a7d5a8c5">
-<span class="eqno">(673)<a class="headerlink" href="#equation-64f3ed67-c396-48eb-96a4-9468a7d5a8c5" title="Permalink to this equation">#</a></span>\[\begin{equation}F(t,w:h)-F(t,\hat{w}:h)\leq\frac{4}{2}L|w_i-\hat{w_i}|+\frac{2}{2}L|w-\hat{w}|\leq \frac{6}{2} L|w_i-\hat{w_i}|,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-86f0a14a-02a1-4ca0-9ae3-614cbca97817">
+<span class="eqno">(671)<a class="headerlink" href="#equation-86f0a14a-02a1-4ca0-9ae3-614cbca97817" title="Permalink to this equation">#</a></span>\[\begin{equation}F(t,w:h)-F(t,\hat{w}:h)=\frac{4}{2}f(t,w_i)-\frac{2}{2}f(t-h,w_{i-1}))-(\frac{4}{2}f(t,\hat{w}_{i})-\frac{2}{2}f(t-h,\hat{w}_{i-1}))),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5a68f46e-33f3-4190-98e2-4abcc87ffe5c">
+<span class="eqno">(672)<a class="headerlink" href="#equation-5a68f46e-33f3-4190-98e2-4abcc87ffe5c" title="Permalink to this equation">#</a></span>\[\begin{equation}F(t,w:h)-F(t,\hat{w}:h)=\frac{4}{2}(f(t,w_i)-f(t,\hat{w}_i))-\frac{2}{2}(f(t-h,w_{i-1}))-f(t-h,\hat{w}_{i-1}))),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-21869e77-859f-4d75-b59b-32b4aafaa6d5">
+<span class="eqno">(673)<a class="headerlink" href="#equation-21869e77-859f-4d75-b59b-32b4aafaa6d5" title="Permalink to this equation">#</a></span>\[\begin{equation}F(t,w:h)-F(t,\hat{w}:h)\leq\frac{4}{2}L|w_i-\hat{w_i}|+\frac{2}{2}L|w-\hat{w}|\leq \frac{6}{2} L|w_i-\hat{w_i}|,\end{equation}\]</div>
 <p>This means it is internally convergent,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c0c1c08e-016c-44df-8a0b-b2d40cb482f8">
-<span class="eqno">(674)<a class="headerlink" href="#equation-c0c1c08e-016c-44df-8a0b-b2d40cb482f8" title="Permalink to this equation">#</a></span>\[\begin{equation}|w_i-\hat{w_i}|\rightarrow 0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-88116f16-51ce-4b08-8485-74665b22d999">
+<span class="eqno">(674)<a class="headerlink" href="#equation-88116f16-51ce-4b08-8485-74665b22d999" title="Permalink to this equation">#</a></span>\[\begin{equation}|w_i-\hat{w_i}|\rightarrow 0\end{equation}\]</div>
 <p>as <span class="math notranslate nohighlight">\(h \rightarrow 0\)</span>.</p>
 </section>
 <section id="stability">
 <h2>Stability<a class="headerlink" href="#stability" title="Permalink to this heading">#</a></h2>
 <p>The Abysmal Kramer-Butler method does <strong>not</strong> satisfy the stability condition.
 The characteristic equation of the</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1b327ca1-9ec7-4fe3-87c1-318b4286ce72">
-<span class="eqno">(675)<a class="headerlink" href="#equation-1b327ca1-9ec7-4fe3-87c1-318b4286ce72" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i-1} + h(4f(t_i,w_i)-2f(t_{i-1},w_{i-1})) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f739c603-85b9-428e-bf10-50b296933f32">
+<span class="eqno">(675)<a class="headerlink" href="#equation-f739c603-85b9-428e-bf10-50b296933f32" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i-1} + h(4f(t_i,w_i)-2f(t_{i-1},w_{i-1})) \end{equation}\]</div>
 <p>is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-324e8ec7-7a4d-4a6e-b5a1-8efb4b479932">
-<span class="eqno">(676)<a class="headerlink" href="#equation-324e8ec7-7a4d-4a6e-b5a1-8efb4b479932" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^2 = 1, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4257761c-4309-445c-a280-f004c8689120">
+<span class="eqno">(676)<a class="headerlink" href="#equation-4257761c-4309-445c-a280-f004c8689120" title="Permalink to this equation">#</a></span>\[\begin{equation}\lambda^2 = 1, \end{equation}\]</div>
 <p>This has two roots <span class="math notranslate nohighlight">\(\lambda=1\)</span> and   <span class="math notranslate nohighlight">\(\lambda=-1\)</span>, hence the method is weakly stable.</p>
 </section>
 </section>

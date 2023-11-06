@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -489,30 +493,30 @@ document.write(`
 <section id="problem-sheet-3-question-2b">
 <h1>Problem Sheet 3 Question 2b<a class="headerlink" href="#problem-sheet-3-question-2b" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6e53ede9-6463-41de-8b1a-3da09badbec8">
-<span class="eqno">(394)<a class="headerlink" href="#equation-6e53ede9-6463-41de-8b1a-3da09badbec8" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b39f67f8-2a30-4830-92a5-b2522959924d">
+<span class="eqno">(394)<a class="headerlink" href="#equation-b39f67f8-2a30-4830-92a5-b2522959924d" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4182c166-2132-43ad-b003-ff3e97c13dc2">
-<span class="eqno">(395)<a class="headerlink" href="#equation-4182c166-2132-43ad-b003-ff3e97c13dc2" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6ce7a55d-b18f-4b61-bd19-b5c92040a410">
+<span class="eqno">(395)<a class="headerlink" href="#equation-6ce7a55d-b18f-4b61-bd19-b5c92040a410" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2\end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-070ccdfa-505c-4cf4-8513-c920951aa6f6">
-<span class="eqno">(396)<a class="headerlink" href="#equation-070ccdfa-505c-4cf4-8513-c920951aa6f6" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-819e0f51-3157-4283-af87-275a2fc1c88e">
+<span class="eqno">(396)<a class="headerlink" href="#equation-819e0f51-3157-4283-af87-275a2fc1c88e" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="runge-kutta-solution">
 <h1>Runge Kutta Solution<a class="headerlink" href="#runge-kutta-solution" title="Permalink to this heading">#</a></h1>
 <p>The Runge Kutta difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-db0e237c-44cf-4596-aba4-e467a470d837">
-<span class="eqno">(397)<a class="headerlink" href="#equation-db0e237c-44cf-4596-aba4-e467a470d837" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{1}{6}(k_1+2k_2+2k_3+k_4) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e41ea5e3-80d1-4084-8cc2-7182180a59f7">
+<span class="eqno">(397)<a class="headerlink" href="#equation-e41ea5e3-80d1-4084-8cc2-7182180a59f7" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{1}{6}(k_1+2k_2+2k_3+k_4) \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce581135-2d01-40ae-a30b-34e15b0b8cbc">
-<span class="eqno">(398)<a class="headerlink" href="#equation-ce581135-2d01-40ae-a30b-34e15b0b8cbc" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=h(w_i-t_i)\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e53a7ad4-811a-435a-aec8-4bdd93ae6379">
-<span class="eqno">(399)<a class="headerlink" href="#equation-e53a7ad4-811a-435a-aec8-4bdd93ae6379" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=h((w_i+\frac{1}{2}k_1)-(t_i+\frac{h}{2}))\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-42229bc7-2d2b-4a10-af29-890846b6df9c">
-<span class="eqno">(400)<a class="headerlink" href="#equation-42229bc7-2d2b-4a10-af29-890846b6df9c" title="Permalink to this equation">#</a></span>\[\begin{equation}k_3=h((w_i+\frac{1}{2}k_2)-(t_i+\frac{h}{2}))\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8a68746d-225b-443b-9349-88bd45c83c49">
-<span class="eqno">(401)<a class="headerlink" href="#equation-8a68746d-225b-443b-9349-88bd45c83c49" title="Permalink to this equation">#</a></span>\[\begin{equation}k_4=h((w_i+k_3)-(t_i+h))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ea2642a2-86dc-4334-ac6f-bb987f6d68e6">
+<span class="eqno">(398)<a class="headerlink" href="#equation-ea2642a2-86dc-4334-ac6f-bb987f6d68e6" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=h(w_i-t_i)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9c425ed8-86e1-40ff-929e-a72e96358b62">
+<span class="eqno">(399)<a class="headerlink" href="#equation-9c425ed8-86e1-40ff-929e-a72e96358b62" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=h((w_i+\frac{1}{2}k_1)-(t_i+\frac{h}{2}))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-02157a10-11b6-4e35-b2fc-408fe99806b9">
+<span class="eqno">(400)<a class="headerlink" href="#equation-02157a10-11b6-4e35-b2fc-408fe99806b9" title="Permalink to this equation">#</a></span>\[\begin{equation}k_3=h((w_i+\frac{1}{2}k_2)-(t_i+\frac{h}{2}))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7af62ec0-1b94-4a38-83e3-d6513986fe17">
+<span class="eqno">(401)<a class="headerlink" href="#equation-7af62ec0-1b94-4a38-83e3-d6513986fe17" title="Permalink to this equation">#</a></span>\[\begin{equation}k_4=h((w_i+k_3)-(t_i+h))\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

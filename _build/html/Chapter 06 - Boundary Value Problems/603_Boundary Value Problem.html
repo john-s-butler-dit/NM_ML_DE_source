@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -522,34 +526,34 @@ The video below walks through the code.</p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
 <p>To numerically approximate a linear Boundary Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b3427fb1-3f04-4c20-8d34-bdd7f8d82170">
-<span class="eqno">(789)<a class="headerlink" href="#equation-b3427fb1-3f04-4c20-8d34-bdd7f8d82170" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1afc4a88-00f0-411e-9f6d-f44b1f209d4e">
+<span class="eqno">(789)<a class="headerlink" href="#equation-1afc4a88-00f0-411e-9f6d-f44b1f209d4e" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{''}=f(x,y,y^{'}), \ \ \ a &lt; x &lt; b, \end{equation}\]</div>
 <p>with the boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e26e85d6-7065-4039-962b-f0621aba4d0e">
-<span class="eqno">(790)<a class="headerlink" href="#equation-e26e85d6-7065-4039-962b-f0621aba4d0e" title="Permalink to this equation">#</a></span>\[\begin{equation}y(a)=\alpha,\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-adc83550-99d3-4a7d-b0a2-f8d4ed3d16a9">
-<span class="eqno">(791)<a class="headerlink" href="#equation-adc83550-99d3-4a7d-b0a2-f8d4ed3d16a9" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-12200348-3a77-4f3a-805c-21bfef842aa0">
+<span class="eqno">(790)<a class="headerlink" href="#equation-12200348-3a77-4f3a-805c-21bfef842aa0" title="Permalink to this equation">#</a></span>\[\begin{equation}y(a)=\alpha,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e01cba9b-48d6-4a05-bea1-0f83685e6898">
+<span class="eqno">(791)<a class="headerlink" href="#equation-e01cba9b-48d6-4a05-bea1-0f83685e6898" title="Permalink to this equation">#</a></span>\[\begin{equation}y(b) =\beta,\end{equation}\]</div>
 <p>is dicretised to a system of difference equations.
 the first derivative can be approximated by the difference operators:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9302d9c-6821-4c26-93c7-da4773af6a60">
-<span class="eqno">(792)<a class="headerlink" href="#equation-e9302d9c-6821-4c26-93c7-da4773af6a60" title="Permalink to this equation">#</a></span>\[\begin{equation} D^{+}U_{i}=\frac{U_{i+1}-U_{i}}{h_{i+1}} \ \ \ \mbox{ Forward,} \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8c90ff5e-ec00-400d-a511-d006dbd55750">
-<span class="eqno">(793)<a class="headerlink" href="#equation-8c90ff5e-ec00-400d-a511-d006dbd55750" title="Permalink to this equation">#</a></span>\[\begin{equation} D^{-}U_{i}=\frac{U_{i}-U_{i-1}}{h_i} \ \ \ \mbox{ Backward,} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e695e5e6-c717-43d4-ace2-00216ed79e08">
+<span class="eqno">(792)<a class="headerlink" href="#equation-e695e5e6-c717-43d4-ace2-00216ed79e08" title="Permalink to this equation">#</a></span>\[\begin{equation} D^{+}U_{i}=\frac{U_{i+1}-U_{i}}{h_{i+1}} \ \ \ \mbox{ Forward,} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7d5dc60b-22ef-4b20-bea4-d71fd4117f12">
+<span class="eqno">(793)<a class="headerlink" href="#equation-7d5dc60b-22ef-4b20-bea4-d71fd4117f12" title="Permalink to this equation">#</a></span>\[\begin{equation} D^{-}U_{i}=\frac{U_{i}-U_{i-1}}{h_i} \ \ \ \mbox{ Backward,} \end{equation}\]</div>
 <p>or</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e128056-a17d-4d44-94d5-6896d753e491">
-<span class="eqno">(794)<a class="headerlink" href="#equation-4e128056-a17d-4d44-94d5-6896d753e491" title="Permalink to this equation">#</a></span>\[\begin{equation}D^{0}U_{i}=\frac{U_{i+1}-U_{i-1}}{x_{i+1}-x_{i-1}}=\frac{U_{i+1}-U_{i-1}}{2h} \ \ \ \mbox{ Centered.} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f6cdbdd5-05f7-493b-841b-a3b17d5bcaff">
+<span class="eqno">(794)<a class="headerlink" href="#equation-f6cdbdd5-05f7-493b-841b-a3b17d5bcaff" title="Permalink to this equation">#</a></span>\[\begin{equation}D^{0}U_{i}=\frac{U_{i+1}-U_{i-1}}{x_{i+1}-x_{i-1}}=\frac{U_{i+1}-U_{i-1}}{2h} \ \ \ \mbox{ Centered.} \end{equation}\]</div>
 <p>The second derivative can be approximated by:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fcd40c0-fb12-4c38-a13d-8a717f931954">
-<span class="eqno">(795)<a class="headerlink" href="#equation-9fcd40c0-fb12-4c38-a13d-8a717f931954" title="Permalink to this equation">#</a></span>\[\begin{equation}\delta_x^{2}U_{i}=\frac{2}{x_{i+1}-x_{i-1}}\left(\frac{U_{i+1}-U_{i}}{x_{i+1}-x_{i}}-\frac{U_{i}-U_{i-1}}{x_{i}-x_{i-1}}\right)=\frac{U_{i+1}-2U_{2}+U_{i-1}}{h^2} \ \ \ \mbox{ Centered in $x$ direction}. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-eb6ecc7a-bd09-4b1e-b440-89445e882061">
+<span class="eqno">(795)<a class="headerlink" href="#equation-eb6ecc7a-bd09-4b1e-b440-89445e882061" title="Permalink to this equation">#</a></span>\[\begin{equation}\delta_x^{2}U_{i}=\frac{2}{x_{i+1}-x_{i-1}}\left(\frac{U_{i+1}-U_{i}}{x_{i+1}-x_{i}}-\frac{U_{i}-U_{i-1}}{x_{i}-x_{i-1}}\right)=\frac{U_{i+1}-2U_{2}+U_{i-1}}{h^2} \ \ \ \mbox{ Centered in $x$ direction}. \end{equation}\]</div>
 <section id="example-boundary-value-problem">
 <h3>Example Boundary Value Problem<a class="headerlink" href="#example-boundary-value-problem" title="Permalink to this heading">#</a></h3>
 <p>To illustrate the method we will apply the finite difference method to the this boundary value problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd9c1adc-7380-4752-9c7d-e92a382766da">
-<span class="eqno">(796)<a class="headerlink" href="#equation-dd9c1adc-7380-4752-9c7d-e92a382766da" title="Permalink to this equation">#</a></span>\[\begin{equation}  \frac{d^2 y}{dx^2} = 4y,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a03375b5-1a93-4736-89b9-86f0a41ba6cd">
+<span class="eqno">(796)<a class="headerlink" href="#equation-a03375b5-1a93-4736-89b9-86f0a41ba6cd" title="Permalink to this equation">#</a></span>\[\begin{equation}  \frac{d^2 y}{dx^2} = 4y,\end{equation}\]</div>
 <p>with the boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5e485292-0f3e-420e-a433-a99d70baa5a3">
-<span class="eqno">(797)<a class="headerlink" href="#equation-5e485292-0f3e-420e-a433-a99d70baa5a3" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=1.1752,  y(1)=10.0179. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-73ec6bcb-31f6-499e-b10b-73920d07734c">
+<span class="eqno">(797)<a class="headerlink" href="#equation-73ec6bcb-31f6-499e-b10b-73920d07734c" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=1.1752,  y(1)=10.0179. \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -566,14 +570,14 @@ the first derivative can be approximated by the difference operators:</p>
 <section id="discrete-axis">
 <h2>Discrete Axis<a class="headerlink" href="#discrete-axis" title="Permalink to this heading">#</a></h2>
 <p>The stepsize is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-def17b24-6c4f-4577-a855-d96a2610c1bc">
-<span class="eqno">(798)<a class="headerlink" href="#equation-def17b24-6c4f-4577-a855-d96a2610c1bc" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-992fda3b-3b59-439c-9b69-fe133baf8c10">
+<span class="eqno">(798)<a class="headerlink" href="#equation-992fda3b-3b59-439c-9b69-fe133baf8c10" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{N}\end{equation}\]</div>
 <p>here it is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8d59b3b0-1cc9-469a-951a-1e0589a08346">
-<span class="eqno">(799)<a class="headerlink" href="#equation-8d59b3b0-1cc9-469a-951a-1e0589a08346" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9192f8dc-adaf-48f2-8f97-f543c01ed19c">
+<span class="eqno">(799)<a class="headerlink" href="#equation-9192f8dc-adaf-48f2-8f97-f543c01ed19c" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{1-0}{10}\end{equation}\]</div>
 <p>giving</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4b825892-a139-424d-8943-c0b49fa1eabf">
-<span class="eqno">(800)<a class="headerlink" href="#equation-4b825892-a139-424d-8943-c0b49fa1eabf" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b92a7656-b3a3-44e6-9659-8fedb3ec7eb5">
+<span class="eqno">(800)<a class="headerlink" href="#equation-b92a7656-b3a3-44e6-9659-8fedb3ec7eb5" title="Permalink to this equation">#</a></span>\[\begin{equation}x_i=0+0.1 i\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,...10.\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,38 +607,38 @@ the first derivative can be approximated by the difference operators:</p>
 <h2>The Difference Equation<a class="headerlink" href="#the-difference-equation" title="Permalink to this heading">#</a></h2>
 <p>To convert the boundary problem into a difference equation we use 1st and 2nd order difference operators.
 The general difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f0b1797-3152-49f4-80fa-040f4ae698ed">
-<span class="eqno">(801)<a class="headerlink" href="#equation-2f0b1797-3152-49f4-80fa-040f4ae698ed" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{1}{h^2}\left(y_{i-1}-2y_i+y_{i+1}\right)=4y_i \ \ \ i=1,..,N-1. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-adfb9e85-d0a4-40ac-bac0-81049eece4f1">
+<span class="eqno">(801)<a class="headerlink" href="#equation-adfb9e85-d0a4-40ac-bac0-81049eece4f1" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{1}{h^2}\left(y_{i-1}-2y_i+y_{i+1}\right)=4y_i \ \ \ i=1,..,N-1. \end{equation}\]</div>
 <p>Rearranging the equation we have the system of N-1 equations</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0095bdec-dfc6-4041-abce-08db9935b7e5">
-<span class="eqno">(802)<a class="headerlink" href="#equation-0095bdec-dfc6-4041-abce-08db9935b7e5" title="Permalink to this equation">#</a></span>\[\begin{equation}i=1: \frac{1}{0.1^2}\color{green}{y_{0}} -\left(\frac{2}{0.1^2}+4\right)y_1 +\frac{1}{0.1^2} y_{2}=0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b3cdb6f0-81c4-444b-9bc8-077b804b0bcb">
-<span class="eqno">(803)<a class="headerlink" href="#equation-b3cdb6f0-81c4-444b-9bc8-077b804b0bcb" title="Permalink to this equation">#</a></span>\[\begin{equation}i=2: \frac{1}{0.1^2}y_{1} -\left(\frac{2}{0.1^2}+4\right)y_2 +\frac{1}{0.1^2} y_{3}=0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-087f1ad2-05cb-483e-80a8-7b18d2aa8e13">
-<span class="eqno">(804)<a class="headerlink" href="#equation-087f1ad2-05cb-483e-80a8-7b18d2aa8e13" title="Permalink to this equation">#</a></span>\[\begin{equation} ...\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-9a5256b7-3bcd-4171-9f40-1160719ab1a4">
-<span class="eqno">(805)<a class="headerlink" href="#equation-9a5256b7-3bcd-4171-9f40-1160719ab1a4" title="Permalink to this equation">#</a></span>\[\begin{equation}i=8: \frac{1}{0.1^2}y_{7} -\left(\frac{2}{0.1^2}+4\right)y_8 +\frac{1}{0.1^2} y_{9}=0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7a0e3635-c47e-45a3-aa4f-8fb96d6263d3">
-<span class="eqno">(806)<a class="headerlink" href="#equation-7a0e3635-c47e-45a3-aa4f-8fb96d6263d3" title="Permalink to this equation">#</a></span>\[\begin{equation}i=9: \frac{1}{0.1^2}y_{8} -\left(\frac{2}{0.1^2}+4\right)y_9 +\frac{1}{0.1^2} \color{green}{y_{10}}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5f65fa5a-1a8e-45c0-8709-5d9c4ab6510d">
+<span class="eqno">(802)<a class="headerlink" href="#equation-5f65fa5a-1a8e-45c0-8709-5d9c4ab6510d" title="Permalink to this equation">#</a></span>\[\begin{equation}i=1: \frac{1}{0.1^2}\color{green}{y_{0}} -\left(\frac{2}{0.1^2}+4\right)y_1 +\frac{1}{0.1^2} y_{2}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-90be53f2-7574-4811-b55e-2655a5b6940e">
+<span class="eqno">(803)<a class="headerlink" href="#equation-90be53f2-7574-4811-b55e-2655a5b6940e" title="Permalink to this equation">#</a></span>\[\begin{equation}i=2: \frac{1}{0.1^2}y_{1} -\left(\frac{2}{0.1^2}+4\right)y_2 +\frac{1}{0.1^2} y_{3}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-18687e8e-9e93-4763-b0af-73d2e83d2a70">
+<span class="eqno">(804)<a class="headerlink" href="#equation-18687e8e-9e93-4763-b0af-73d2e83d2a70" title="Permalink to this equation">#</a></span>\[\begin{equation} ...\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a849f71c-589a-4d63-899c-3860548d66c4">
+<span class="eqno">(805)<a class="headerlink" href="#equation-a849f71c-589a-4d63-899c-3860548d66c4" title="Permalink to this equation">#</a></span>\[\begin{equation}i=8: \frac{1}{0.1^2}y_{7} -\left(\frac{2}{0.1^2}+4\right)y_8 +\frac{1}{0.1^2} y_{9}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8bb40657-d18a-4a3c-857a-0ea4d502de7d">
+<span class="eqno">(806)<a class="headerlink" href="#equation-8bb40657-d18a-4a3c-857a-0ea4d502de7d" title="Permalink to this equation">#</a></span>\[\begin{equation}i=9: \frac{1}{0.1^2}y_{8} -\left(\frac{2}{0.1^2}+4\right)y_9 +\frac{1}{0.1^2} \color{green}{y_{10}}=0\end{equation}\]</div>
 <p>where the green terms are the known boundary conditions.</p>
 <p>Rearranging the equation we have the system of 9 equations</p>
-<div class="amsmath math notranslate nohighlight" id="equation-64ef8931-c2a3-466a-8b09-6df5b16d1c6c">
-<span class="eqno">(807)<a class="headerlink" href="#equation-64ef8931-c2a3-466a-8b09-6df5b16d1c6c" title="Permalink to this equation">#</a></span>\[\begin{equation}i=1:  -\left(\frac{2}{0.1^2}+4\right)y_1 +\frac{1}{0.1^2} y_{2}=-\frac{1}{0.1^2}\color{green}{y_{0}}\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-e6bd07ee-23b1-4be0-86b3-2bc3bb3de52c">
-<span class="eqno">(808)<a class="headerlink" href="#equation-e6bd07ee-23b1-4be0-86b3-2bc3bb3de52c" title="Permalink to this equation">#</a></span>\[\begin{equation}i=2: \frac{1}{0.1^2}y_{1} -\left(\frac{2}{0.1^2}+4\right)y_2 +\frac{1}{0.1^2} y_{3}=0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-8b220757-85bc-4fb5-a5f4-97dd189d895a">
-<span class="eqno">(809)<a class="headerlink" href="#equation-8b220757-85bc-4fb5-a5f4-97dd189d895a" title="Permalink to this equation">#</a></span>\[\begin{equation} ...\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-858c425a-f592-4e4b-9a24-e1df98e3a522">
-<span class="eqno">(810)<a class="headerlink" href="#equation-858c425a-f592-4e4b-9a24-e1df98e3a522" title="Permalink to this equation">#</a></span>\[\begin{equation}i=8: \frac{1}{0.1^2}y_{7} -\left(\frac{2}{0.1^2}+4\right)y_8 +\frac{1}{0.1^2} y_{9}=0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-6366b043-a6ee-4ce6-bead-aa3aebaae133">
-<span class="eqno">(811)<a class="headerlink" href="#equation-6366b043-a6ee-4ce6-bead-aa3aebaae133" title="Permalink to this equation">#</a></span>\[\begin{equation}i=9: \frac{1}{0.1^2}y_{8} -\left(\frac{2}{0.1^2}+4\right)y_9 =-\frac{1}{0.1^2} \color{green}{y_{10}}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fd331c06-d637-4867-83dd-48117d8269fe">
+<span class="eqno">(807)<a class="headerlink" href="#equation-fd331c06-d637-4867-83dd-48117d8269fe" title="Permalink to this equation">#</a></span>\[\begin{equation}i=1:  -\left(\frac{2}{0.1^2}+4\right)y_1 +\frac{1}{0.1^2} y_{2}=-\frac{1}{0.1^2}\color{green}{y_{0}}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-941cc85d-c428-4a4e-959d-a92d567fa68f">
+<span class="eqno">(808)<a class="headerlink" href="#equation-941cc85d-c428-4a4e-959d-a92d567fa68f" title="Permalink to this equation">#</a></span>\[\begin{equation}i=2: \frac{1}{0.1^2}y_{1} -\left(\frac{2}{0.1^2}+4\right)y_2 +\frac{1}{0.1^2} y_{3}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-dc0aba97-b90d-483b-af91-dad4bc74fde1">
+<span class="eqno">(809)<a class="headerlink" href="#equation-dc0aba97-b90d-483b-af91-dad4bc74fde1" title="Permalink to this equation">#</a></span>\[\begin{equation} ...\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-da0349ad-47dc-4317-ae2d-6a588a10bf9b">
+<span class="eqno">(810)<a class="headerlink" href="#equation-da0349ad-47dc-4317-ae2d-6a588a10bf9b" title="Permalink to this equation">#</a></span>\[\begin{equation}i=8: \frac{1}{0.1^2}y_{7} -\left(\frac{2}{0.1^2}+4\right)y_8 +\frac{1}{0.1^2} y_{9}=0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fe942d80-b1b6-49e7-acdb-3be11e5342b0">
+<span class="eqno">(811)<a class="headerlink" href="#equation-fe942d80-b1b6-49e7-acdb-3be11e5342b0" title="Permalink to this equation">#</a></span>\[\begin{equation}i=9: \frac{1}{0.1^2}y_{8} -\left(\frac{2}{0.1^2}+4\right)y_9 =-\frac{1}{0.1^2} \color{green}{y_{10}}\end{equation}\]</div>
 <p>where the green terms are the known boundary conditions.
 This is system can be put into matrix form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0a33be87-dfc1-4957-9428-60ab594db423">
-<span class="eqno">(812)<a class="headerlink" href="#equation-0a33be87-dfc1-4957-9428-60ab594db423" title="Permalink to this equation">#</a></span>\[\begin{equation}  A\color{red}{\mathbf{y}}=\mathbf{b} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-151bfd88-ca58-473f-8a9c-5f2d2bb21890">
+<span class="eqno">(812)<a class="headerlink" href="#equation-151bfd88-ca58-473f-8a9c-5f2d2bb21890" title="Permalink to this equation">#</a></span>\[\begin{equation}  A\color{red}{\mathbf{y}}=\mathbf{b} \end{equation}\]</div>
 <p>Where A is a <span class="math notranslate nohighlight">\(9\times 9 \)</span> matrix of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-29a68061-6ccd-44ea-95cf-3452767ee890">
-<span class="eqno">(813)<a class="headerlink" href="#equation-29a68061-6ccd-44ea-95cf-3452767ee890" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-95420d8d-6d1a-4a67-b46d-e714e5ed2882">
+<span class="eqno">(813)<a class="headerlink" href="#equation-95420d8d-6d1a-4a67-b46d-e714e5ed2882" title="Permalink to this equation">#</a></span>\[\begin{equation}
 A=\left(\begin{array}{ccc ccc ccc} 
 -204&amp;100&amp;0&amp; 0&amp;0&amp;0&amp; 0&amp;0&amp;0\\
 100&amp;-204&amp;100 &amp;0&amp;0&amp;0&amp; 0&amp;0&amp;0\\
@@ -698,8 +702,8 @@ y_9
 </div>
 </div>
 <p>and the known right hand side is a known <span class="math notranslate nohighlight">\(9\times 1\)</span> vector with the boundary conditions</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9fcc5b3b-f730-49e6-872b-2d6ef68cdaee">
-<span class="eqno">(814)<a class="headerlink" href="#equation-9fcc5b3b-f730-49e6-872b-2d6ef68cdaee" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-6dd4761c-4e42-43b3-a1c4-1e7b9db3c496">
+<span class="eqno">(814)<a class="headerlink" href="#equation-6dd4761c-4e42-43b3-a1c4-1e7b9db3c496" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \mathbf{b}=\left(\begin{array}{c}-117.52\\
 0\\
 0\\
@@ -723,10 +727,10 @@ y_9
 <section id="solving-the-system">
 <h2>Solving the system<a class="headerlink" href="#solving-the-system" title="Permalink to this heading">#</a></h2>
 <p>To solve invert the matrix <span class="math notranslate nohighlight">\(A\)</span> such that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7b6bd7c8-fe5f-4c9c-bd44-edffeaca2b35">
-<span class="eqno">(815)<a class="headerlink" href="#equation-7b6bd7c8-fe5f-4c9c-bd44-edffeaca2b35" title="Permalink to this equation">#</a></span>\[\begin{equation}A^{-1}Ay=A^{-1}b\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-7b9991cb-8de7-4e65-ace2-4544c7141e7b">
-<span class="eqno">(816)<a class="headerlink" href="#equation-7b9991cb-8de7-4e65-ace2-4544c7141e7b" title="Permalink to this equation">#</a></span>\[\begin{equation}y=A^{-1}b\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-533d41f1-ded7-4d44-b549-04a8fd6c4f1d">
+<span class="eqno">(815)<a class="headerlink" href="#equation-533d41f1-ded7-4d44-b549-04a8fd6c4f1d" title="Permalink to this equation">#</a></span>\[\begin{equation}A^{-1}Ay=A^{-1}b\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4d11c969-c1ac-47f1-b927-ae1f6deb50f9">
+<span class="eqno">(816)<a class="headerlink" href="#equation-4d11c969-c1ac-47f1-b927-ae1f6deb50f9" title="Permalink to this equation">#</a></span>\[\begin{equation}y=A^{-1}b\end{equation}\]</div>
 <p>The plot below shows the graphical representation of <span class="math notranslate nohighlight">\(A^{-1}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

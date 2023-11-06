@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -489,8 +493,8 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="blank-euler-method">
 <h1>Blank Euler Method<a class="headerlink" href="#blank-euler-method" title="Permalink to this heading">#</a></h1>
 <p>The more general form of a first order Ordinary Differential Equation is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-560cf220-31be-4840-8ae7-0a61d3028b60">
-<span class="eqno">(116)<a class="headerlink" href="#equation-560cf220-31be-4840-8ae7-0a61d3028b60" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-d8d96991-9b11-4eff-a9a3-91e64a796a14">
+<span class="eqno">(116)<a class="headerlink" href="#equation-d8d96991-9b11-4eff-a9a3-91e64a796a14" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'}=f(t,y).
 \end{equation}\]</div>
 <p>This can be solved analytically by integrating both sides but this is not straight forward for most problems.
@@ -499,24 +503,24 @@ Numerical methods can be used to approximate the solution at discrete points.</p
 <h2>Euler method<a class="headerlink" href="#euler-method" title="Permalink to this heading">#</a></h2>
 <p>The simplest one step numerical method is the Euler Method named after the most prolific of mathematicians <a class="reference external" href="https://en.wikipedia.org/wiki/Leonhard_Euler">Leonhard Euler</a> (15 April 1707 – 18 September 1783) .</p>
 <p>The general Euler formula for the first order differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1939710d-9c61-4b30-85c9-382bd3c79de6">
-<span class="eqno">(117)<a class="headerlink" href="#equation-1939710d-9c61-4b30-85c9-382bd3c79de6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-93172f42-81c4-437a-b793-f07808c3ada8">
+<span class="eqno">(117)<a class="headerlink" href="#equation-93172f42-81c4-437a-b793-f07808c3ada8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'} = f(t,y), 
 \end{equation}\]</div>
 <p>approximates the derivative at time point <span class="math notranslate nohighlight">\(t_i\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-70d63133-06c0-4a5a-a7c6-0d5ddb7cae9b">
-<span class="eqno">(118)<a class="headerlink" href="#equation-70d63133-06c0-4a5a-a7c6-0d5ddb7cae9b" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a3a8e616-9544-47cf-a8cb-189d8282f6f8">
+<span class="eqno">(118)<a class="headerlink" href="#equation-a3a8e616-9544-47cf-a8cb-189d8282f6f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y^{'}(t_i) \approx \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}},
 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(w_i\)</span> is the approximate solution of <span class="math notranslate nohighlight">\(y\)</span> at time <span class="math notranslate nohighlight">\(t_i\)</span>.</p>
 <p>This substitution changes the differential equation  into a <strong>difference</strong> equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ca0b923-2aa4-42f9-b46c-ceb88ced64ca">
-<span class="eqno">(119)<a class="headerlink" href="#equation-6ca0b923-2aa4-42f9-b46c-ceb88ced64ca" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-cd9e7959-4e59-4ab7-ac58-4b7a60c40d67">
+<span class="eqno">(119)<a class="headerlink" href="#equation-cd9e7959-4e59-4ab7-ac58-4b7a60c40d67" title="Permalink to this equation">#</a></span>\[\begin{equation}
 \frac{w_{i+1}-w_i}{t_{i+1}-t_{i}}=f(t_i,w_i). 
 \end{equation}\]</div>
 <p>Assuming uniform stepsize <span class="math notranslate nohighlight">\(t_{i+1}-t_{i}\)</span> is replaced by <span class="math notranslate nohighlight">\(h\)</span>, re-arranging the equation gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-032b690c-1514-43f7-a171-dfe72b99fd71">
-<span class="eqno">(120)<a class="headerlink" href="#equation-032b690c-1514-43f7-a171-dfe72b99fd71" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-a00e9267-c7ed-4cf5-af55-dbfdffd885c5">
+<span class="eqno">(120)<a class="headerlink" href="#equation-a00e9267-c7ed-4cf5-af55-dbfdffd885c5" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 w_{i+1}=w_i+hf(t_i,w_i).
 \end{equation}\]</div>
 <p>This can be read as the future <span class="math notranslate nohighlight">\(w_{i+1}\)</span> can be approximated by the present <span class="math notranslate nohighlight">\(w_i\)</span> and the addition of the input to the system <span class="math notranslate nohighlight">\(f(t,y)\)</span> times the time step.</p>
@@ -541,23 +545,23 @@ w_{i+1}=w_i+hf(t_i,w_i).
 <h2>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>T## Discrete Interval
 The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised with stepsize <span class="math notranslate nohighlight">\(h\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6bf0ef79-27c2-4c5c-b800-db8e46e3e2d4">
-<span class="eqno">(121)<a class="headerlink" href="#equation-6bf0ef79-27c2-4c5c-b800-db8e46e3e2d4" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-37477a49-1f0b-4789-97a1-5023c88cde5d">
+<span class="eqno">(121)<a class="headerlink" href="#equation-37477a49-1f0b-4789-97a1-5023c88cde5d" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 N=\frac{b-a}{h}.
 \end{equation}\]</div>
 <p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span>  with stepsize <span class="math notranslate nohighlight">\(h=0.1\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-93b25a42-86ec-44b2-b161-463010e5057d">
-<span class="eqno">(122)<a class="headerlink" href="#equation-93b25a42-86ec-44b2-b161-463010e5057d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-237aa871-a8a8-4dd1-ab35-363e80bedf8e">
+<span class="eqno">(122)<a class="headerlink" href="#equation-237aa871-a8a8-4dd1-ab35-363e80bedf8e" title="Permalink to this equation">#</a></span>\[\begin{equation}
  N=\frac{2-0}{0.1}=20,
 \end{equation}\]</div>
 <p>this gives the 21 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0bade477-94f5-42d9-819e-3b92d47f92c3">
-<span class="eqno">(123)<a class="headerlink" href="#equation-0bade477-94f5-42d9-819e-3b92d47f92c3" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-134176a9-f6df-4655-9054-2cc37a427cb1">
+<span class="eqno">(123)<a class="headerlink" href="#equation-134176a9-f6df-4655-9054-2cc37a427cb1" title="Permalink to this equation">#</a></span>\[\begin{equation}
  t_0=0, \ t_1=0.1, \ ... t_{20}=2. 
 \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8a6759b5-5898-43ea-b8ec-b00440ff6039">
-<span class="eqno">(124)<a class="headerlink" href="#equation-8a6759b5-5898-43ea-b8ec-b00440ff6039" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-747aa438-2354-4e5d-a588-ab958929ad02">
+<span class="eqno">(124)<a class="headerlink" href="#equation-747aa438-2354-4e5d-a588-ab958929ad02" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t_i=0+i0.1, \ \ \ i=0,1,...,20.
 \end{equation}\]</div>
 <p>The plot below shows the discrete time steps.</p>
@@ -588,16 +592,16 @@ t_i=0+i0.1, \ \ \ i=0,1,...,20.
 <h2>Initial Condition<a class="headerlink" href="#initial-condition" title="Permalink to this heading">#</a></h2>
 <p>To get a specify solution to a first order initial value problem, an <strong>initial condition</strong> is required.</p>
 <p>The general initial condition is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e0fba3dc-56b9-4d7f-8c3e-42e66c4c96b0">
-<span class="eqno">(125)<a class="headerlink" href="#equation-e0fba3dc-56b9-4d7f-8c3e-42e66c4c96b0" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-98601f91-c6ef-4b06-9a3a-35526c92f8db">
+<span class="eqno">(125)<a class="headerlink" href="#equation-98601f91-c6ef-4b06-9a3a-35526c92f8db" title="Permalink to this equation">#</a></span>\[\begin{equation}
 y(a)=A.
 \end{equation}\]</div>
 </section>
 <section id="numerical-approximation-of-an-initial-value-problem">
 <h2>Numerical approximation of an Initial Value Problem<a class="headerlink" href="#numerical-approximation-of-an-initial-value-problem" title="Permalink to this heading">#</a></h2>
 <p>The differential equation is transformed using the Euler method into a difference equation of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-72cfed59-9e96-4fc1-a6f5-e7758ca58e42">
-<span class="eqno">(126)<a class="headerlink" href="#equation-72cfed59-9e96-4fc1-a6f5-e7758ca58e42" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h f(t_i,w_i). \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5f5bafc3-f85f-4c83-b6bf-08ed8de52f08">
+<span class="eqno">(126)<a class="headerlink" href="#equation-5f5bafc3-f85f-4c83-b6bf-08ed8de52f08" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_{i}+h f(t_i,w_i). \end{equation}\]</div>
 <p>This approximates a series of of values <span class="math notranslate nohighlight">\(w_0, \ w_1, \ ..., w_{N}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -616,7 +620,7 @@ y(a)=A.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/1r/rb8x65yn57q68x042jv2vgx80000gn/T/ipykernel_60444/1060597621.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;/var/folders/1r/rb8x65yn57q68x042jv2vgx80000gn/T/ipykernel_61399/1060597621.py&quot;</span><span class="gt">, line </span><span class="mi">3</span>
     <span class="c1">## w[i+1]=w[i]+h</span>
                     <span class="o">^</span>
 <span class="ne">SyntaxError</span>: unexpected EOF while parsing

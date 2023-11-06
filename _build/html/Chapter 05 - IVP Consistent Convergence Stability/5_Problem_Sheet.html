@@ -288,6 +288,10 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 </li>
 </ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
@@ -494,26 +498,26 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Determine whether the 2-step Adams-Bashforth Method is consistent, convergent and stable</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-27c7dfc9-ded5-493f-a867-6678fb1aff89">
-<span class="eqno">(691)<a class="headerlink" href="#equation-27c7dfc9-ded5-493f-a867-6678fb1aff89" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b7dea098-c6e4-4850-ba95-654f474f5fbf">
+<span class="eqno">(691)<a class="headerlink" href="#equation-b7dea098-c6e4-4850-ba95-654f474f5fbf" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})).\end{equation}\]</div>
 </section>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="2">
 <li><p>Determine whether the 2-step Adams-Moulton Method is  consistent, convergent and stable</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b35318fb-05a2-477d-a4ab-004f22931375">
-<span class="eqno">(692)<a class="headerlink" href="#equation-b35318fb-05a2-477d-a4ab-004f22931375" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{n+1}=w_n+\frac{5}{12}hf(t_{n+1},w_{n+1})+\frac{8}{12}hf(t_{n},w_{n})-\frac{1}{12}hf(t_{n-1},w_{n-1}).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-765b5943-00c1-49a3-8f90-1affbf736d58">
+<span class="eqno">(692)<a class="headerlink" href="#equation-765b5943-00c1-49a3-8f90-1affbf736d58" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{n+1}=w_n+\frac{5}{12}hf(t_{n+1},w_{n+1})+\frac{8}{12}hf(t_{n},w_{n})-\frac{1}{12}hf(t_{n-1},w_{n-1}).\end{equation}\]</div>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="3">
 <li><p>Determine whether the linear multistep following methods are consistent, convergent and stable:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b4d9eede-74f6-49b2-b662-e109743ffd68">
-<span class="eqno">(693)<a class="headerlink" href="#equation-b4d9eede-74f6-49b2-b662-e109743ffd68" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_{n-1}+\frac{1}{3}h[f(t_{n+1},w_{n+1})+4f(t_n,w_n)+f(t_{n-1},w_{n-1})].\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d3914461-1ed2-45d9-9cfe-69cd9e0fd6a3">
-<span class="eqno">(694)<a class="headerlink" href="#equation-d3914461-1ed2-45d9-9cfe-69cd9e0fd6a3" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=\frac{4}{3}w_{n}-\frac{1}{3}w_{n-1}+\frac{2}{3}h[f(t_{n+1},w_{n+1})]. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-80c152ed-8acb-4eda-a946-fca7be3f2c55">
+<span class="eqno">(693)<a class="headerlink" href="#equation-80c152ed-8acb-4eda-a946-fca7be3f2c55" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_{n-1}+\frac{1}{3}h[f(t_{n+1},w_{n+1})+4f(t_n,w_n)+f(t_{n-1},w_{n-1})].\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-49c09a04-5269-4796-ab46-0432f2a8a59e">
+<span class="eqno">(694)<a class="headerlink" href="#equation-49c09a04-5269-4796-ab46-0432f2a8a59e" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=\frac{4}{3}w_{n}-\frac{1}{3}w_{n-1}+\frac{2}{3}h[f(t_{n+1},w_{n+1})]. \end{equation}\]</div>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
