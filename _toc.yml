@@ -68,7 +68,30 @@ parts:
     - file: Chapter 06 - Boundary Value Problems/6_Problem_Sheet
       sections:
       - file: Chapter 06 - Boundary Value Problems/604_Boundary Value Problem Example 2
-    
+  - caption: Integrate and Fire Example
+    chapters:
+    - file: Chapter 07 Question 6 Integrate and Fire/Question 6 Integrate and Fire
+  - caption: Introduction to Artificial Neural Networks
+    chapters:
+    - file: Chapter 08 - Intro to ANN/8_Problem_Sheet
+    - file: Chapter 08 - Intro to ANN/801_Newton_Raphson
+      sections:
+      - file: Chapter 08 - Intro to ANN/802_Two_Variable_Newton_Raphson
+      - file: Chapter 08 - Intro to ANN/802b_Two_Variable_Newton_Raphson
+    - file: Chapter 08 - Intro to ANN/803_McCulloch-Pitts_Neuron
+      sections:
+      - file: Chapter 08 - Intro to ANN/804_Perceptron
+      - file: Chapter 08 - Intro to ANN/805_Activation_Functions
+      - file: Chapter 08 - Intro to ANN/805b_3_Layers_Feed_Forward
+      - file: Chapter 08 - Intro to ANN/805c_General_Feed_Forward
+    - file: Chapter 08 - Intro to ANN/806_Introduction to Gradient Descent
+      sections:
+      - file: Chapter 08 - Intro to ANN/806b_Convergence_of_Gradient_Descent
+      - file: Chapter 08 - Intro to ANN/806c_Two_Variable_Gradient_Descent
+      - file: Chapter 08 - Intro to ANN/806d_Three_Variable_Gradient_Descent
+    - file: Chapter 08 - Intro to ANN/807_Cost_Functions
+      
+
 
 
       

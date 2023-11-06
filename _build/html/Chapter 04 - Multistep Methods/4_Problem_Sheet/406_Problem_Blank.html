@@ -196,7 +196,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Problem 6 Solution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -287,6 +287,33 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrate and Fire Example</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2007%20Question%206%20Integrate%20and%20Fire/Question%206%20Integrate%20and%20Fire.html">Question 6 Integrate and Fire</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/804_Perceptron.html">The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/805_Activation_Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
 </ul>
 
     </div>
@@ -468,12 +495,12 @@ document.write(`
 <section id="problem-sheet-question-6-blank">
 <h1>Problem Sheet Question 6 Blank<a class="headerlink" href="#problem-sheet-question-6-blank" title="Permalink to this heading">#</a></h1>
 <p>The general 2 step Adams-Bashforth method for the first order differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5f4e8072-03d0-4d1a-a08f-7e4d64e1bb03">
-<span class="eqno">(584)<a class="headerlink" href="#equation-5f4e8072-03d0-4d1a-a08f-7e4d64e1bb03" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'} = f(t,y), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-034683b4-3e44-4265-93f8-3918f2460f80">
+<span class="eqno">(588)<a class="headerlink" href="#equation-034683b4-3e44-4265-93f8-3918f2460f80" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'} = f(t,y), \end{equation}\]</div>
 <p>numerical approximates <span class="math notranslate nohighlight">\(y\)</span> the at time point <span class="math notranslate nohighlight">\(t_i\)</span> as <span class="math notranslate nohighlight">\(w_i\)</span>
 with the  formula:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9edf428f-6fbd-414c-bc74-9b17e18bd898">
-<span class="eqno">(585)<a class="headerlink" href="#equation-9edf428f-6fbd-414c-bc74-9b17e18bd898" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[3f(t_i,w_i)-f(t_{i-1},w_{i-1})\big],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7e845408-a6d8-430a-bb4e-751c37ce5851">
+<span class="eqno">(589)<a class="headerlink" href="#equation-7e845408-a6d8-430a-bb4e-751c37ce5851" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[3f(t_i,w_i)-f(t_{i-1},w_{i-1})\big],\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,...,N-1\)</span>, where</p>
 <p>and <span class="math notranslate nohighlight">\(h\)</span> is the stepsize.</p>
 <div class="cell docutils container">
@@ -496,8 +523,8 @@ with the  formula:</p>
 </section>
 <section id="the-equation">
 <h1>The Equation<a class="headerlink" href="#the-equation" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-7d24a7be-9f8a-41f0-97b7-2080729c3da5">
-<span class="eqno">(586)<a class="headerlink" href="#equation-7d24a7be-9f8a-41f0-97b7-2080729c3da5" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3c334fdf-951d-4acd-82ab-f7192db18816">
+<span class="eqno">(590)<a class="headerlink" href="#equation-3c334fdf-951d-4acd-82ab-f7192db18816" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
@@ -506,23 +533,23 @@ and the initial condition
 <section id="discrete-interval">
 <h1>Discrete Interval<a class="headerlink" href="#discrete-interval" title="Permalink to this heading">#</a></h1>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised with stepsize <span class="math notranslate nohighlight">\(h=0.5\)</span> gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3de9210e-48da-48b1-ab09-6cac790f5bf5">
-<span class="eqno">(587)<a class="headerlink" href="#equation-3de9210e-48da-48b1-ab09-6cac790f5bf5" title="Permalink to this equation">#</a></span>\[\begin{equation} 
+<div class="amsmath math notranslate nohighlight" id="equation-eeb1c14c-f495-4d43-ad53-067f83cc0a91">
+<span class="eqno">(591)<a class="headerlink" href="#equation-eeb1c14c-f495-4d43-ad53-067f83cc0a91" title="Permalink to this equation">#</a></span>\[\begin{equation} 
 N=\frac{b-a}{h}.
 \end{equation}\]</div>
 <p>Here the N is <span class="math notranslate nohighlight">\(-50\leq t \leq 400\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e7fbb67-4ea6-45b8-870e-78aee3d442e5">
-<span class="eqno">(588)<a class="headerlink" href="#equation-4e7fbb67-4ea6-45b8-870e-78aee3d442e5" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e7d58107-c6b5-4406-b93f-7b918f99c9f8">
+<span class="eqno">(592)<a class="headerlink" href="#equation-e7d58107-c6b5-4406-b93f-7b918f99c9f8" title="Permalink to this equation">#</a></span>\[\begin{equation}
  N=\frac{400--50}{0.5}=900,
 \end{equation}\]</div>
 <p>this gives the 901 discrete points:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-daefae61-ad69-4750-8387-69cc61cd30f6">
-<span class="eqno">(589)<a class="headerlink" href="#equation-daefae61-ad69-4750-8387-69cc61cd30f6" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-66fa59fb-9a0b-4ba5-a81b-78ed5ec15c05">
+<span class="eqno">(593)<a class="headerlink" href="#equation-66fa59fb-9a0b-4ba5-a81b-78ed5ec15c05" title="Permalink to this equation">#</a></span>\[\begin{equation}
  t_0=-400, \ t_1=-399.5, \ ... t_{900}=400. 
 \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-da9f1124-f8e6-44e4-a4f6-44e056b79b45">
-<span class="eqno">(590)<a class="headerlink" href="#equation-da9f1124-f8e6-44e4-a4f6-44e056b79b45" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-5208e694-8147-4568-b999-83ae374efe55">
+<span class="eqno">(594)<a class="headerlink" href="#equation-5208e694-8147-4568-b999-83ae374efe55" title="Permalink to this equation">#</a></span>\[\begin{equation}
 t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 \end{equation}\]</div>
 <p>The plot below shows the discrete time steps.</p>
@@ -551,12 +578,12 @@ t_i=-50+i0.1, \ \ \ i=0,1,...,900.
 </section>
 <section id="difference-equation">
 <h1>Difference Equation<a class="headerlink" href="#difference-equation" title="Permalink to this heading">#</a></h1>
-<div class="amsmath math notranslate nohighlight" id="equation-d52f9b8b-84d3-4ce3-aa00-a4d2ca5cf997">
-<span class="eqno">(591)<a class="headerlink" href="#equation-d52f9b8b-84d3-4ce3-aa00-a4d2ca5cf997" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[3f(t_i,w_i)-f(t_{i-1},w_{i-1})\big],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-19fa98bc-a9c3-42f2-9449-0bf174d7b0fd">
+<span class="eqno">(595)<a class="headerlink" href="#equation-19fa98bc-a9c3-42f2-9449-0bf174d7b0fd" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+\frac{h}{2}\big[3f(t_i,w_i)-f(t_{i-1},w_{i-1})\big],\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,...,N-1\)</span>, where
 where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6f46c712-2d5d-497f-8d0e-488146f73930">
-<span class="eqno">(592)<a class="headerlink" href="#equation-6f46c712-2d5d-497f-8d0e-488146f73930" title="Permalink to this equation">#</a></span>\[\begin{equation}f(t_i,w_i)=\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m},\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-070d4216-5b5c-44af-9c27-e01ee67d4960">
+<span class="eqno">(596)<a class="headerlink" href="#equation-070d4216-5b5c-44af-9c27-e01ee67d4960" title="Permalink to this equation">#</a></span>\[\begin{equation}f(t_i,w_i)=\frac{-(w_i-E_L) + R_mI(t_i)}{\tau_m},\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=1,...,899\)</span> and where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t_i)=0.01t_i\)</span>
 and the initial condition
