@@ -192,7 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +287,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/804_Perceptron.html">The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805_Activation_Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
 </ul>
 
     </div>
@@ -467,26 +494,26 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Determine whether the 2-step Adams-Bashforth Method is consistent, convergent and stable</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-c95e42d7-24ec-4655-abce-6fd808f75cf3">
-<span class="eqno">(624)<a class="headerlink" href="#equation-c95e42d7-24ec-4655-abce-6fd808f75cf3" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-27c7dfc9-ded5-493f-a867-6678fb1aff89">
+<span class="eqno">(691)<a class="headerlink" href="#equation-27c7dfc9-ded5-493f-a867-6678fb1aff89" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})).\end{equation}\]</div>
 </section>
 <section id="question-2">
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="2">
 <li><p>Determine whether the 2-step Adams-Moulton Method is  consistent, convergent and stable</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-827ad8c9-cc17-458d-bcbe-a10d9a124c55">
-<span class="eqno">(625)<a class="headerlink" href="#equation-827ad8c9-cc17-458d-bcbe-a10d9a124c55" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{n+1}=w_n+\frac{5}{12}hf(t_{n+1},w_{n+1})+\frac{8}{12}hf(t_{n},w_{n})-\frac{1}{12}hf(t_{n-1},w_{n-1}).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b35318fb-05a2-477d-a4ab-004f22931375">
+<span class="eqno">(692)<a class="headerlink" href="#equation-b35318fb-05a2-477d-a4ab-004f22931375" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{n+1}=w_n+\frac{5}{12}hf(t_{n+1},w_{n+1})+\frac{8}{12}hf(t_{n},w_{n})-\frac{1}{12}hf(t_{n-1},w_{n-1}).\end{equation}\]</div>
 </section>
 <section id="question-3">
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple" start="3">
 <li><p>Determine whether the linear multistep following methods are consistent, convergent and stable:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-73984874-3024-4a3a-9547-110be3079411">
-<span class="eqno">(626)<a class="headerlink" href="#equation-73984874-3024-4a3a-9547-110be3079411" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_{n-1}+\frac{1}{3}h[f(t_{n+1},w_{n+1})+4f(t_n,w_n)+f(t_{n-1},w_{n-1})].\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-56c42fad-0ad3-42d0-9d0f-ff97d87c71b9">
-<span class="eqno">(627)<a class="headerlink" href="#equation-56c42fad-0ad3-42d0-9d0f-ff97d87c71b9" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=\frac{4}{3}w_{n}-\frac{1}{3}w_{n-1}+\frac{2}{3}h[f(t_{n+1},w_{n+1})]. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b4d9eede-74f6-49b2-b662-e109743ffd68">
+<span class="eqno">(693)<a class="headerlink" href="#equation-b4d9eede-74f6-49b2-b662-e109743ffd68" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_{n-1}+\frac{1}{3}h[f(t_{n+1},w_{n+1})+4f(t_n,w_n)+f(t_{n-1},w_{n-1})].\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d3914461-1ed2-45d9-9cfe-69cd9e0fd6a3">
+<span class="eqno">(694)<a class="headerlink" href="#equation-d3914461-1ed2-45d9-9cfe-69cd9e0fd6a3" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=\frac{4}{3}w_{n}-\frac{1}{3}w_{n-1}+\frac{2}{3}h[f(t_{n+1},w_{n+1})]. \end{equation}\]</div>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>

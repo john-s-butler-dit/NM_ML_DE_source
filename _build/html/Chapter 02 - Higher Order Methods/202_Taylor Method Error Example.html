@@ -192,7 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +287,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/804_Perceptron.html">The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805_Activation_Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
 </ul>
 
     </div>
@@ -463,37 +490,37 @@ document.write(`
 <section id="intial-value-poblem">
 <h2>Intial Value Poblem<a class="headerlink" href="#intial-value-poblem" title="Permalink to this heading">#</a></h2>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e63cb03-3ef2-4a7f-b779-8842ea84c601">
-<span class="eqno">(114)<a class="headerlink" href="#equation-4e63cb03-3ef2-4a7f-b779-8842ea84c601" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8838bc6d-7265-4755-a1ca-eb89c89a2069">
+<span class="eqno">(179)<a class="headerlink" href="#equation-8838bc6d-7265-4755-a1ca-eb89c89a2069" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e8ad80d-8ccb-4eec-b7c7-6161e219286d">
-<span class="eqno">(115)<a class="headerlink" href="#equation-8e8ad80d-8ccb-4eec-b7c7-6161e219286d" title="Permalink to this equation">#</a></span>\[\begin{equation}x(0)=1, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4d0db098-6f2c-401f-827e-4e0a6987aeca">
+<span class="eqno">(180)<a class="headerlink" href="#equation-4d0db098-6f2c-401f-827e-4e0a6987aeca" title="Permalink to this equation">#</a></span>\[\begin{equation}x(0)=1, \end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9d8595c6-2b8b-474e-a286-3c07e39ef11e">
-<span class="eqno">(116)<a class="headerlink" href="#equation-9d8595c6-2b8b-474e-a286-3c07e39ef11e" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f44832a8-1444-44e7-95f9-14d9c9d902b2">
+<span class="eqno">(181)<a class="headerlink" href="#equation-f44832a8-1444-44e7-95f9-14d9c9d902b2" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1. \end{equation}\]</div>
 </section>
 <section id="taylor-solution">
 <h2>Taylor Solution<a class="headerlink" href="#taylor-solution" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-cb22036a-d8cb-4221-be2c-07e1f4630ec2">
-<span class="eqno">(117)<a class="headerlink" href="#equation-cb22036a-d8cb-4221-be2c-07e1f4630ec2" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t,y)=t-y,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7f4d2c96-21a3-4b8e-92cc-bd6a2b89a8ff">
+<span class="eqno">(182)<a class="headerlink" href="#equation-7f4d2c96-21a3-4b8e-92cc-bd6a2b89a8ff" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t,y)=t-y,  \end{equation}\]</div>
 <p>differentiate with respect to <span class="math notranslate nohighlight">\(t\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-490a92a4-84bb-4472-98fd-b017fd179a97">
-<span class="eqno">(118)<a class="headerlink" href="#equation-490a92a4-84bb-4472-98fd-b017fd179a97" title="Permalink to this equation">#</a></span>\[\begin{equation} f'(t,y)=1-y'=1-t+y,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8157e2a6-38f4-40a2-8d9c-4e70fbe37e99">
+<span class="eqno">(183)<a class="headerlink" href="#equation-8157e2a6-38f4-40a2-8d9c-4e70fbe37e99" title="Permalink to this equation">#</a></span>\[\begin{equation} f'(t,y)=1-y'=1-t+y,  \end{equation}\]</div>
 <p>This gives the first order Taylor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-700668ba-21a9-4236-a5b2-05247aa9a442">
-<span class="eqno">(119)<a class="headerlink" href="#equation-700668ba-21a9-4236-a5b2-05247aa9a442" title="Permalink to this equation">#</a></span>\[\begin{equation}T^1(t_i,w,i)=f(t_i,w_i)=t_i-w_i, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-02b4b592-72d6-49c9-8275-840a14c2f827">
+<span class="eqno">(184)<a class="headerlink" href="#equation-02b4b592-72d6-49c9-8275-840a14c2f827" title="Permalink to this equation">#</a></span>\[\begin{equation}T^1(t_i,w,i)=f(t_i,w_i)=t_i-w_i, \end{equation}\]</div>
 <p>and the second order Taylor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-dd085265-0478-4ace-894f-559c4d0ae5d2">
-<span class="eqno">(120)<a class="headerlink" href="#equation-dd085265-0478-4ace-894f-559c4d0ae5d2" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-e6d2dee6-4d93-4121-9927-c31f4c1340f2">
+<span class="eqno">(185)<a class="headerlink" href="#equation-e6d2dee6-4d93-4121-9927-c31f4c1340f2" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^2(t_i,w,i)=f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)=t_i-w_i+\frac{h}{2}(1-t_i+w_i).\end{equation}\]</div>
 <p>The first order Taylor difference equation, which is identical to the Euler method, is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35cfdbff-797b-4f61-ba30-6f4030c02036">
-<span class="eqno">(121)<a class="headerlink" href="#equation-35cfdbff-797b-4f61-ba30-6f4030c02036" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-1b115e0e-150a-449d-9281-bc10b7e7fb40">
+<span class="eqno">(186)<a class="headerlink" href="#equation-1b115e0e-150a-449d-9281-bc10b7e7fb40" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(t_i-w_i).  \end{equation}\]</div>
 <p>The second order Taylor difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cabbb65b-f038-41b0-bc51-6d19fe23d19d">
-<span class="eqno">(122)<a class="headerlink" href="#equation-cabbb65b-f038-41b0-bc51-6d19fe23d19d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-8ce31243-a94e-4295-9b17-d38189d5eea8">
+<span class="eqno">(187)<a class="headerlink" href="#equation-8ce31243-a94e-4295-9b17-d38189d5eea8" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(t_i-w_i+\frac{h}{2}(1-t_i+w_i)).  \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

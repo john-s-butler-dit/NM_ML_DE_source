@@ -192,7 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +287,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/804_Perceptron.html">The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805_Activation_Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
 </ul>
 
     </div>
@@ -469,40 +496,40 @@ document.write(`
 <ol class="arabic simple">
 <li><p>a) Derive the Euler approximation show it has a local truncation error of <span class="math notranslate nohighlight">\(O(h)\)</span> of the Ordinary Differential Equation</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-77970074-d4af-4e90-99ea-576b73f67310">
-<span class="eqno">(628)<a class="headerlink" href="#equation-77970074-d4af-4e90-99ea-576b73f67310" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}(x)=f(x,y), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-83be679e-2182-4548-b0cc-308921f4efbd">
+<span class="eqno">(695)<a class="headerlink" href="#equation-83be679e-2182-4548-b0cc-308921f4efbd" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}(x)=f(x,y), \end{equation}\]</div>
 <p>with initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-45670ce4-e0d2-43b5-8069-deb533a72831">
-<span class="eqno">(629)<a class="headerlink" href="#equation-45670ce4-e0d2-43b5-8069-deb533a72831" title="Permalink to this equation">#</a></span>\[\begin{equation}y(a)=\alpha. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a7ae1b1f-c325-4af5-a0fe-d61bf52a0d0c">
+<span class="eqno">(696)<a class="headerlink" href="#equation-a7ae1b1f-c325-4af5-a0fe-d61bf52a0d0c" title="Permalink to this equation">#</a></span>\[\begin{equation}y(a)=\alpha. \end{equation}\]</div>
 <p>[8 marks]</p>
 <ol class="arabic simple">
 <li><p>b) Suppose <span class="math notranslate nohighlight">\(f\)</span> is a continuous and satisfies a Lipschitz condition with constant
 L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that a constant M
 exists with the property that</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-94ff91d7-be83-457b-95db-412cb38ed76c">
-<span class="eqno">(630)<a class="headerlink" href="#equation-94ff91d7-be83-457b-95db-412cb38ed76c" title="Permalink to this equation">#</a></span>\[\begin{equation} |y^{''}(t)|\leq M. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c22751b3-b7ce-4dee-b7e0-ed8f44ad04e3">
+<span class="eqno">(697)<a class="headerlink" href="#equation-c22751b3-b7ce-4dee-b7e0-ed8f44ad04e3" title="Permalink to this equation">#</a></span>\[\begin{equation} |y^{''}(t)|\leq M. \end{equation}\]</div>
 <p>Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the IVP</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2e969f4-918f-43cc-abf4-206b9c5cc981">
-<span class="eqno">(631)<a class="headerlink" href="#equation-c2e969f4-918f-43cc-abf4-206b9c5cc981" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=f(t,y) \ \ \ a\leq t \leq b \ \ \ y(a)=\alpha \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-69ec9e26-965b-4f0c-9ddd-12360d864cd8">
+<span class="eqno">(698)<a class="headerlink" href="#equation-69ec9e26-965b-4f0c-9ddd-12360d864cd8" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=f(t,y) \ \ \ a\leq t \leq b \ \ \ y(a)=\alpha \end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Euler method for some
 positive integer N.  Then show for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-552b390f-9650-4042-998f-eb09f506d20a">
-<span class="eqno">(632)<a class="headerlink" href="#equation-552b390f-9650-4042-998f-eb09f506d20a" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Mh}{2L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-272664c5-063d-4069-8e2b-2d79c9d53489">
+<span class="eqno">(699)<a class="headerlink" href="#equation-272664c5-063d-4069-8e2b-2d79c9d53489" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Mh}{2L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
 <p>You may assume the two lemmas:\
 If s and t are positive real numbers <span class="math notranslate nohighlight">\(\{a_i\}_{i=0}^{N}\)</span> is a sequence satisfying <span class="math notranslate nohighlight">\(a_0 \geq \frac{-t}{s}\)</span> and <span class="math notranslate nohighlight">\(a_{i+1} \leq (1+s)a_i +t \)</span>
 then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f46a88fa-3a7c-4328-8579-30afbaba1f0d">
-<span class="eqno">(633)<a class="headerlink" href="#equation-f46a88fa-3a7c-4328-8579-30afbaba1f0d" title="Permalink to this equation">#</a></span>\[\begin{equation}a_{i+1} \leq e^{(i+1)s}\left(a_0+\frac{t}{s}\right)-\frac{t}{s} \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e4f09fdf-85f6-45cb-8df5-4ba85264e56a">
+<span class="eqno">(700)<a class="headerlink" href="#equation-e4f09fdf-85f6-45cb-8df5-4ba85264e56a" title="Permalink to this equation">#</a></span>\[\begin{equation}a_{i+1} \leq e^{(i+1)s}\left(a_0+\frac{t}{s}\right)-\frac{t}{s} \end{equation}\]</div>
 <p>For all <span class="math notranslate nohighlight">\( x \geq 0.1\)</span> and any positive m we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e4bd40e3-cddd-40d2-8f18-fafc0b71b360">
-<span class="eqno">(634)<a class="headerlink" href="#equation-e4bd40e3-cddd-40d2-8f18-fafc0b71b360" title="Permalink to this equation">#</a></span>\[\begin{equation}0\leq (1+x)^m \leq e^{mx}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-22c3c7d5-5a51-4d89-ab08-867d185393f9">
+<span class="eqno">(701)<a class="headerlink" href="#equation-22c3c7d5-5a51-4d89-ab08-867d185393f9" title="Permalink to this equation">#</a></span>\[\begin{equation}0\leq (1+x)^m \leq e^{mx}\end{equation}\]</div>
 <p>[17 marks]</p>
 <ol class="arabic simple">
 <li><p>c) Use Euler’s method to estimate the solution of</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-361ad03b-e616-47ec-809c-ad9741aa101f">
-<span class="eqno">(635)<a class="headerlink" href="#equation-361ad03b-e616-47ec-809c-ad9741aa101f" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=(1-x)y^2-y; \ \ \ y(0)=1 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d442f162-5157-430e-9a41-67ca66f50411">
+<span class="eqno">(702)<a class="headerlink" href="#equation-d442f162-5157-430e-9a41-67ca66f50411" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=(1-x)y^2-y; \ \ \ y(0)=1 \end{equation}\]</div>
 <p>at x=1, using <span class="math notranslate nohighlight">\(h=0.25\)</span>.</p>
 <p>[8 marks]</p>
 </section>
@@ -511,23 +538,23 @@ then</p>
 <ol class="arabic simple" start="2">
 <li><p>a) Derive the difference equation for the Midpoint Runge-Kutta method\</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-b30ac12d-d781-4d17-b638-1e8007535c30">
-<span class="eqno">(636)<a class="headerlink" href="#equation-b30ac12d-d781-4d17-b638-1e8007535c30" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+k_2\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-902c2bff-f129-4000-966c-302693c07e39">
-<span class="eqno">(637)<a class="headerlink" href="#equation-902c2bff-f129-4000-966c-302693c07e39" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=hf(t_n,w_n)\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ef5419e6-1684-4a55-9941-420bae75cd6a">
-<span class="eqno">(638)<a class="headerlink" href="#equation-ef5419e6-1684-4a55-9941-420bae75cd6a" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\frac{1}{2}h,w_n+\frac{1}{2}k_1)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9dd30a16-2680-4114-930d-957df4366192">
+<span class="eqno">(703)<a class="headerlink" href="#equation-9dd30a16-2680-4114-930d-957df4366192" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+k_2\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-eb63417d-0bb0-4de6-9e23-2acee0d3cba6">
+<span class="eqno">(704)<a class="headerlink" href="#equation-eb63417d-0bb0-4de6-9e23-2acee0d3cba6" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=hf(t_n,w_n)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-21d4d806-1083-4fce-a247-3829433d6e38">
+<span class="eqno">(705)<a class="headerlink" href="#equation-21d4d806-1083-4fce-a247-3829433d6e38" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\frac{1}{2}h,w_n+\frac{1}{2}k_1)\end{equation}\]</div>
 <p>for solving the ordinary differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8cded012-6162-4231-82e2-0f1b0f8c7c20">
-<span class="eqno">(639)<a class="headerlink" href="#equation-8cded012-6162-4231-82e2-0f1b0f8c7c20" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{dy}{dt}=f(t,y)\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-dcff524c-6106-4979-8920-a7634f94adcf">
-<span class="eqno">(640)<a class="headerlink" href="#equation-dcff524c-6106-4979-8920-a7634f94adcf" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t_0)=y_0 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9db35554-2e2e-4650-8536-ce66879f4569">
+<span class="eqno">(706)<a class="headerlink" href="#equation-9db35554-2e2e-4650-8536-ce66879f4569" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{dy}{dt}=f(t,y)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2907e93a-828a-4e65-a103-1722b45023cb">
+<span class="eqno">(707)<a class="headerlink" href="#equation-2907e93a-828a-4e65-a103-1722b45023cb" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t_0)=y_0 \end{equation}\]</div>
 <p>by using a formula of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-383bcae9-d26c-411e-89d6-591d6b2d20ae">
-<span class="eqno">(641)<a class="headerlink" href="#equation-383bcae9-d26c-411e-89d6-591d6b2d20ae" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{n+1}=w_n+ak_1+bk_2 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6897d35a-bb7a-4dc0-a428-c23e618a0c2b">
+<span class="eqno">(708)<a class="headerlink" href="#equation-6897d35a-bb7a-4dc0-a428-c23e618a0c2b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{n+1}=w_n+ak_1+bk_2 \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_1\)</span> is defined as above,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1f031c02-9ba0-4822-b746-ada323f5a873">
-<span class="eqno">(642)<a class="headerlink" href="#equation-1f031c02-9ba0-4822-b746-ada323f5a873" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-703bbe35-e7ca-4f8a-8475-df0899e16978">
+<span class="eqno">(709)<a class="headerlink" href="#equation-703bbe35-e7ca-4f8a-8475-df0899e16978" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1)\end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are constants are deteremined. Prove that <span class="math notranslate nohighlight">\(a+b=1\)</span> and <span class="math notranslate nohighlight">\(b\alpha=b\beta=\frac{1}{2}\)</span> and choose appropriate values to give the Midpoint Runge-Kutta method.</p>
 <p>[18 marks]</p>
 <ol class="arabic simple" start="2">
@@ -539,8 +566,8 @@ Show that the midpoint Runge-Kutta method is stable.</p></li>
 <li><p>c)Use the Runge-Kutta method to approximate the solutions to the following initial
 value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-8bfab579-66d8-457a-a92a-bda3b6bec520">
-<span class="eqno">(643)<a class="headerlink" href="#equation-8bfab579-66d8-457a-a92a-bda3b6bec520" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=1+(t-y)^2, \ \ 2\leq t \leq 3, \ \ y(2)=1,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9761c0b2-fd57-43fe-b371-9d09752a3c84">
+<span class="eqno">(710)<a class="headerlink" href="#equation-9761c0b2-fd57-43fe-b371-9d09752a3c84" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=1+(t-y)^2, \ \ 2\leq t \leq 3, \ \ y(2)=1,\end{equation}\]</div>
 <p>with <span class="math notranslate nohighlight">\(h=0.2\)</span> with the exact solution <span class="math notranslate nohighlight">\(y(t)=t +\frac{1}{1-t}\)</span>.</p>
 <p>[10 marks]</p>
 </section>
@@ -549,17 +576,17 @@ value problem</p></li>
 <ol class="arabic simple" start="3">
 <li><p>a) Derive the two step Adams-Bashforth method:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-6e516628-e112-4d9c-af34-0c9a60320235">
-<span class="eqno">(644)<a class="headerlink" href="#equation-6e516628-e112-4d9c-af34-0c9a60320235" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-aa9d9981-61eb-4ab4-a653-10c539fa75d4">
+<span class="eqno">(711)<a class="headerlink" href="#equation-aa9d9981-61eb-4ab4-a653-10c539fa75d4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})),\end{equation}\]</div>
 <p>and the local truncation error</p>
-<div class="amsmath math notranslate nohighlight" id="equation-147a4d47-24c7-4e2e-a3c1-b80ee8c2b535">
-<span class="eqno">(645)<a class="headerlink" href="#equation-147a4d47-24c7-4e2e-a3c1-b80ee8c2b535" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=-\frac{5h^2}{12}y^{3}(\mu_n).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b1ed69c6-90a4-46e1-a65e-991c46df9262">
+<span class="eqno">(712)<a class="headerlink" href="#equation-b1ed69c6-90a4-46e1-a65e-991c46df9262" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=-\frac{5h^2}{12}y^{3}(\mu_n).\end{equation}\]</div>
 <p>[18 marks]</p>
 <ol class="arabic simple" start="3">
 <li><p>b) Apply the two step Adams-Bashforth method to approximate the soluion of the initial value problem:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-993b663a-ab4e-456b-abc4-249d7098e9f5">
-<span class="eqno">(646)<a class="headerlink" href="#equation-993b663a-ab4e-456b-abc4-249d7098e9f5" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty-y, \ \ (0\leq t \leq 2) \ \ \ y(0)=1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f1008d1f-fbcc-4137-99fe-857bbfabfbaf">
+<span class="eqno">(713)<a class="headerlink" href="#equation-f1008d1f-fbcc-4137-99fe-857bbfabfbaf" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty-y, \ \ (0\leq t \leq 2) \ \ \ y(0)=1.\end{equation}\]</div>
 <p>Using <span class="math notranslate nohighlight">\(N=4\)</span> steps, given that <span class="math notranslate nohighlight">\(y_1=0.6872\)</span>.</p>
 <p>[15 marks]</p>
 </section>
@@ -569,13 +596,13 @@ value problem</p></li>
 <li><p>a)
 Derive the Adams-Moulton two step method and its truncation error which is of the form</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-72b7dff7-21db-4d18-a120-30044cd0b4aa">
-<span class="eqno">(647)<a class="headerlink" href="#equation-72b7dff7-21db-4d18-a120-30044cd0b4aa" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=\alpha_0 \ \ \ w_1=\alpha_1 \end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-3b5460c9-0eda-4e32-84f4-b068de2a93b8">
-<span class="eqno">(648)<a class="headerlink" href="#equation-3b5460c9-0eda-4e32-84f4-b068de2a93b8" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{n+1}=w_n + \frac{h}{12}[5f(t_{n+1},w_{n+1})+8f(t_{n},w_{n1})-f(t_{n-2},w_{n-2})] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b9366362-1963-4328-bafd-2e632b41798b">
+<span class="eqno">(714)<a class="headerlink" href="#equation-b9366362-1963-4328-bafd-2e632b41798b" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=\alpha_0 \ \ \ w_1=\alpha_1 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d9562af2-80eb-4f62-8fe2-4891a323b6a1">
+<span class="eqno">(715)<a class="headerlink" href="#equation-d9562af2-80eb-4f62-8fe2-4891a323b6a1" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{n+1}=w_n + \frac{h}{12}[5f(t_{n+1},w_{n+1})+8f(t_{n},w_{n1})-f(t_{n-2},w_{n-2})] \end{equation}\]</div>
 <p>and the local truncation error</p>
-<div class="amsmath math notranslate nohighlight" id="equation-131ffc87-2488-40ce-b21d-ae8ba90f81ab">
-<span class="eqno">(649)<a class="headerlink" href="#equation-131ffc87-2488-40ce-b21d-ae8ba90f81ab" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=-\frac{h^3}{24}y^{4}(\mu_n)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a6fd6da5-ac9f-4dce-b222-7b9a5e7c9431">
+<span class="eqno">(716)<a class="headerlink" href="#equation-a6fd6da5-ac9f-4dce-b222-7b9a5e7c9431" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=-\frac{h^3}{24}y^{4}(\mu_n)\end{equation}\]</div>
 <p>[23 marks]</p>
 <ol class="arabic simple" start="4">
 <li><p>b) Define the terms strongly stable, weakly stable and unstable with respect to the characteristic equation.</p></li>
@@ -588,8 +615,8 @@ Derive the Adams-Moulton two step method and its truncation error which is of th
 <ol class="arabic simple" start="5">
 <li><p>a) Given the initial value problem:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-3546f6c6-5c74-4c0b-bdf9-3867b7c4ab3a">
-<span class="eqno">(650)<a class="headerlink" href="#equation-3546f6c6-5c74-4c0b-bdf9-3867b7c4ab3a" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=f(t,y), \ \ \ \  y(t_0)=y_0 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-daaeedf2-6a39-4c88-967f-9c543aec86f4">
+<span class="eqno">(717)<a class="headerlink" href="#equation-daaeedf2-6a39-4c88-967f-9c543aec86f4" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=f(t,y), \ \ \ \  y(t_0)=y_0 \end{equation}\]</div>
 <p>and a numerical method which generates a numerical solution <span class="math notranslate nohighlight">\((w_n)_{n=0}^{N}\)</span>, explain what it means for the method to be convergent.</p>
 <p>[5 marks]</p>
 </section>
@@ -598,14 +625,14 @@ Derive the Adams-Moulton two step method and its truncation error which is of th
 <ol class="arabic simple" start="5">
 <li><p>b) Using the 2-step Adams-Bashforth method:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-768ee6ba-89f4-4766-8f02-ec2dbb466ca3">
-<span class="eqno">(651)<a class="headerlink" href="#equation-768ee6ba-89f4-4766-8f02-ec2dbb466ca3" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+\frac{3}{2}hf(t_n,w_n)-\frac{1}{2}hf(t_{n-1},w_{n-1})\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7c387025-bc74-48c9-ac04-c9c54f0be07a">
+<span class="eqno">(718)<a class="headerlink" href="#equation-7c387025-bc74-48c9-ac04-c9c54f0be07a" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+\frac{3}{2}hf(t_n,w_n)-\frac{1}{2}hf(t_{n-1},w_{n-1})\end{equation}\]</div>
 <p>as a predictor, and the 2-step Adams-Moulton method:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c3147b2-f528-41af-a5c7-2d7d16508ff5">
-<span class="eqno">(652)<a class="headerlink" href="#equation-8c3147b2-f528-41af-a5c7-2d7d16508ff5" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{n+1}=w_n + \frac{h}{12}[5f(t_{n+1},w_{n+1})+8f(t_{n},w_{n1})-f(t_{n-2},w_{n-2})] \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f010dd17-b4a8-4733-a37b-a782cd27cf0c">
+<span class="eqno">(719)<a class="headerlink" href="#equation-f010dd17-b4a8-4733-a37b-a782cd27cf0c" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{n+1}=w_n + \frac{h}{12}[5f(t_{n+1},w_{n+1})+8f(t_{n},w_{n1})-f(t_{n-2},w_{n-2})] \end{equation}\]</div>
 <p>as a corrector, apply the 2-step Adams predicitor-corrector method to approximate the solution of the initial value problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06de8809-3837-451a-a124-e21dfd4e1f35">
-<span class="eqno">(653)<a class="headerlink" href="#equation-06de8809-3837-451a-a124-e21dfd4e1f35" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=ty^3-y, \ \ \ \  (0\leq t \leq 2), \ \ y(0)=1 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-eb7f2761-a27c-4d47-b2e9-1b9753df4161">
+<span class="eqno">(720)<a class="headerlink" href="#equation-eb7f2761-a27c-4d47-b2e9-1b9753df4161" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=ty^3-y, \ \ \ \  (0\leq t \leq 2), \ \ y(0)=1 \end{equation}\]</div>
 <p>using N=4 steps, given <span class="math notranslate nohighlight">\(y_1=0.5\)</span>.</p>
 <p>[18 marks]</p>
 <ol class="arabic simple" start="5">
@@ -618,35 +645,35 @@ Derive the Adams-Moulton two step method and its truncation error which is of th
 <ol class="arabic simple" start="6">
 <li><p>a) Given the  Midpoint point (Runge-Kutta) method</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-83fb8a06-2b5a-486b-af2f-936ad9ce9097">
-<span class="eqno">(654)<a class="headerlink" href="#equation-83fb8a06-2b5a-486b-af2f-936ad9ce9097" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=y_0\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d386e958-a7c0-4e2f-bcd4-ef07037ef9af">
-<span class="eqno">(655)<a class="headerlink" href="#equation-d386e958-a7c0-4e2f-bcd4-ef07037ef9af" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+hf(x_i+\frac{h}{2},w_i+\frac{h}{2}f(x_i,w_i) ) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8752b520-9ecc-4ff1-b6e8-f14de9531c71">
+<span class="eqno">(721)<a class="headerlink" href="#equation-8752b520-9ecc-4ff1-b6e8-f14de9531c71" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=y_0\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8e4cf806-5fe2-4994-9df5-088e2598a189">
+<span class="eqno">(722)<a class="headerlink" href="#equation-8e4cf806-5fe2-4994-9df5-088e2598a189" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+hf(x_i+\frac{h}{2},w_i+\frac{h}{2}f(x_i,w_i) ) \end{equation}\]</div>
 <p>Assume that the Runge-Kutta method satisfies the Lipschitz condition. Then
 for the initial value problems</p>
-<div class="amsmath math notranslate nohighlight" id="equation-68c4450d-2fb5-499b-b002-ced8fa2f9acf">
-<span class="eqno">(656)<a class="headerlink" href="#equation-68c4450d-2fb5-499b-b002-ced8fa2f9acf" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=f(x,y)\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-b9f62537-e676-492b-9151-fb14942b01c7">
-<span class="eqno">(657)<a class="headerlink" href="#equation-b9f62537-e676-492b-9151-fb14942b01c7" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_0)=Y_0 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-46d91d94-99a0-422d-a28e-7f22bfac9b9a">
+<span class="eqno">(723)<a class="headerlink" href="#equation-46d91d94-99a0-422d-a28e-7f22bfac9b9a" title="Permalink to this equation">#</a></span>\[\begin{equation}y^{'}=f(x,y)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d44754a7-8f66-4248-91ff-f814e05cbdc8">
+<span class="eqno">(724)<a class="headerlink" href="#equation-d44754a7-8f66-4248-91ff-f814e05cbdc8" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_0)=Y_0 \end{equation}\]</div>
 <p>Show that the numerical solution <span class="math notranslate nohighlight">\(\{ w_n\}\)</span> satisfies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-74f68d4d-5d9a-4d6a-8faa-da4d42f5c860">
-<span class="eqno">(658)<a class="headerlink" href="#equation-74f68d4d-5d9a-4d6a-8faa-da4d42f5c860" title="Permalink to this equation">#</a></span>\[\begin{equation} \max_{a\leq x\leq b}|y(x_n)-w_n| \leq e^{(b-a)L}|y_0-w_0|+\left[\frac{e^{(b-a)L}-1}{L} \right]\tau(h)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-a8f17530-7682-4b1e-8bea-8ea1c84ed6ec">
+<span class="eqno">(725)<a class="headerlink" href="#equation-a8f17530-7682-4b1e-8bea-8ea1c84ed6ec" title="Permalink to this equation">#</a></span>\[\begin{equation} \max_{a\leq x\leq b}|y(x_n)-w_n| \leq e^{(b-a)L}|y_0-w_0|+\left[\frac{e^{(b-a)L}-1}{L} \right]\tau(h)\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-38de82fc-881f-4fe1-b412-050a14f0f224">
-<span class="eqno">(659)<a class="headerlink" href="#equation-38de82fc-881f-4fe1-b412-050a14f0f224" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau(h) = \max_{a\leq x\leq b}|\tau_n(y)|\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-0e175753-d9ac-4ec2-a1e5-c1f4c91f4e75">
+<span class="eqno">(726)<a class="headerlink" href="#equation-0e175753-d9ac-4ec2-a1e5-c1f4c91f4e75" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau(h) = \max_{a\leq x\leq b}|\tau_n(y)|\end{equation}\]</div>
 <p>If the consistency condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-18fd5256-6c1a-43e7-86aa-66f56164b8e0">
-<span class="eqno">(660)<a class="headerlink" href="#equation-18fd5256-6c1a-43e7-86aa-66f56164b8e0" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) \rightarrow 0 \mbox{ as  } h\rightarrow 0 \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-24a586cb-89ad-4dde-91cb-9d0e10fe14aa">
+<span class="eqno">(727)<a class="headerlink" href="#equation-24a586cb-89ad-4dde-91cb-9d0e10fe14aa" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) \rightarrow 0 \mbox{ as  } h\rightarrow 0 \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9ad5baf4-77a4-45fd-8e27-2ac90785965d">
-<span class="eqno">(661)<a class="headerlink" href="#equation-9ad5baf4-77a4-45fd-8e27-2ac90785965d" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) = \max_{a \leq x \leq b}|f(x,y)-F(x,y;h;f)| \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f8582efb-cf5f-46e1-82eb-aa069797422a">
+<span class="eqno">(728)<a class="headerlink" href="#equation-f8582efb-cf5f-46e1-82eb-aa069797422a" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) = \max_{a \leq x \leq b}|f(x,y)-F(x,y;h;f)| \end{equation}\]</div>
 <p>is satisfied then the numerical solution <span class="math notranslate nohighlight">\(w_n\)</span> converges to <span class="math notranslate nohighlight">\(Y(x_n)\)</span>.</p>
 <p>[18 marks]</p>
 <ol class="arabic simple" start="6">
 <li><p>b) Consider the differential equation</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-1d7777c0-ab69-4735-8e75-38d9ea7ae984">
-<span class="eqno">(662)<a class="headerlink" href="#equation-1d7777c0-ab69-4735-8e75-38d9ea7ae984" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}-y+x-2=0, \ \ 0\leq x \leq 1, \ \ y(0)=0.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d2f83c60-3492-4686-8ed5-a69665e309c2">
+<span class="eqno">(729)<a class="headerlink" href="#equation-d2f83c60-3492-4686-8ed5-a69665e309c2" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}-y+x-2=0, \ \ 0\leq x \leq 1, \ \ y(0)=0.\end{equation}\]</div>
 <p>Apply the midpoint method to approximate the solution at <span class="math notranslate nohighlight">\(y(0.4)\)</span> using <span class="math notranslate nohighlight">\(h=0.2.\)</span>\</p>
 <p>[11 marks]</p>
 <ol class="arabic simple" start="6">

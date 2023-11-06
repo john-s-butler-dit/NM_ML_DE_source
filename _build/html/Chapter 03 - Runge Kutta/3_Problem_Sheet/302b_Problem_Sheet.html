@@ -192,7 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +287,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/804_Perceptron.html">The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/805_Activation_Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
 </ul>
 
     </div>
@@ -462,30 +489,30 @@ document.write(`
 <section id="problem-sheet-3-question-2b">
 <h1>Problem Sheet 3 Question 2b<a class="headerlink" href="#problem-sheet-3-question-2b" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-606854bf-c28d-4877-ae94-c5b7354d9182">
-<span class="eqno">(329)<a class="headerlink" href="#equation-606854bf-c28d-4877-ae94-c5b7354d9182" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6e53ede9-6463-41de-8b1a-3da09badbec8">
+<span class="eqno">(394)<a class="headerlink" href="#equation-6e53ede9-6463-41de-8b1a-3da09badbec8" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=y-t, \ \ (0 \leq t \leq 2) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-55b7edb2-0d8b-416d-88d9-ca883496e3c3">
-<span class="eqno">(330)<a class="headerlink" href="#equation-55b7edb2-0d8b-416d-88d9-ca883496e3c3" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4182c166-2132-43ad-b003-ff3e97c13dc2">
+<span class="eqno">(395)<a class="headerlink" href="#equation-4182c166-2132-43ad-b003-ff3e97c13dc2" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=2\end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-64024f03-4bf5-41ca-b5c9-b0d96a11337d">
-<span class="eqno">(331)<a class="headerlink" href="#equation-64024f03-4bf5-41ca-b5c9-b0d96a11337d" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-070ccdfa-505c-4cf4-8513-c920951aa6f6">
+<span class="eqno">(396)<a class="headerlink" href="#equation-070ccdfa-505c-4cf4-8513-c920951aa6f6" title="Permalink to this equation">#</a></span>\[\begin{equation} y= e^{t}+t+1.\end{equation}\]</div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="runge-kutta-solution">
 <h1>Runge Kutta Solution<a class="headerlink" href="#runge-kutta-solution" title="Permalink to this heading">#</a></h1>
 <p>The Runge Kutta difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-1e0ead61-0d5a-408e-bb6e-7757b087b270">
-<span class="eqno">(332)<a class="headerlink" href="#equation-1e0ead61-0d5a-408e-bb6e-7757b087b270" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{1}{6}(k_1+2k_2+2k_3+k_4) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-db0e237c-44cf-4596-aba4-e467a470d837">
+<span class="eqno">(397)<a class="headerlink" href="#equation-db0e237c-44cf-4596-aba4-e467a470d837" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1} = w_{i} + \frac{1}{6}(k_1+2k_2+2k_3+k_4) \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8e0a4915-7fce-445a-a062-f0b3bd685751">
-<span class="eqno">(333)<a class="headerlink" href="#equation-8e0a4915-7fce-445a-a062-f0b3bd685751" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=h(w_i-t_i)\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-d7930834-2693-4624-88b1-61971dfbf723">
-<span class="eqno">(334)<a class="headerlink" href="#equation-d7930834-2693-4624-88b1-61971dfbf723" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=h((w_i+\frac{1}{2}k_1)-(t_i+\frac{h}{2}))\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-de2b6fdb-4590-4782-a359-97d53369889d">
-<span class="eqno">(335)<a class="headerlink" href="#equation-de2b6fdb-4590-4782-a359-97d53369889d" title="Permalink to this equation">#</a></span>\[\begin{equation}k_3=h((w_i+\frac{1}{2}k_2)-(t_i+\frac{h}{2}))\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-ae56a679-3e5f-4bfc-b4dc-c4f904778b64">
-<span class="eqno">(336)<a class="headerlink" href="#equation-ae56a679-3e5f-4bfc-b4dc-c4f904778b64" title="Permalink to this equation">#</a></span>\[\begin{equation}k_4=h((w_i+k_3)-(t_i+h))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ce581135-2d01-40ae-a30b-34e15b0b8cbc">
+<span class="eqno">(398)<a class="headerlink" href="#equation-ce581135-2d01-40ae-a30b-34e15b0b8cbc" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=h(w_i-t_i)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e53a7ad4-811a-435a-aec8-4bdd93ae6379">
+<span class="eqno">(399)<a class="headerlink" href="#equation-e53a7ad4-811a-435a-aec8-4bdd93ae6379" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=h((w_i+\frac{1}{2}k_1)-(t_i+\frac{h}{2}))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-42229bc7-2d2b-4a10-af29-890846b6df9c">
+<span class="eqno">(400)<a class="headerlink" href="#equation-42229bc7-2d2b-4a10-af29-890846b6df9c" title="Permalink to this equation">#</a></span>\[\begin{equation}k_3=h((w_i+\frac{1}{2}k_2)-(t_i+\frac{h}{2}))\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8a68746d-225b-443b-9349-88bd45c83c49">
+<span class="eqno">(401)<a class="headerlink" href="#equation-8a68746d-225b-443b-9349-88bd45c83c49" title="Permalink to this equation">#</a></span>\[\begin{equation}k_4=h((w_i+k_3)-(t_i+h))\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>

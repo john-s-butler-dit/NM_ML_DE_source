@@ -192,7 +192,11 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.html">Euler Method with Theorems Applied to Non-Linear Population Equations</a></li>
 
 
-<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet.html">Problem Sheet 1</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102a_Problem_Sheet.html">Problem Sheet 1 Question 2a</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/102b_Problem_Sheet.html">Problem Sheet 1 Question 2b</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet.html">Blank Euler Method</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2001%20-%20Euler%20Methods/1_Problem_Sheet/106_Problem_Sheet_Solution.html">Blank Euler Method</a></li>
 </ul>
 </li>
 </ul>
@@ -283,6 +287,29 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2006%20-%20Boundary%20Value%20Problems/604_Boundary%20Value%20Problem%20Example%202.html">Finite Difference Method</a></li>
 </ul>
 </li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction to Artificial Neural Networks</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/804_Perceptron.html">The Perceptron</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805_Activation_Functions.html">Activation Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
 </ul>
 
     </div>
@@ -471,19 +498,19 @@ document.write(`
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>a. Apply the 3-step Adams-Bashforth to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ea795cb3-c1a3-4818-9724-365e517b2749">
-<span class="eqno">(489)<a class="headerlink" href="#equation-ea795cb3-c1a3-4818-9724-365e517b2749" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7c0d6d44-610f-41bf-8c24-892277833d07">
+<span class="eqno">(554)<a class="headerlink" href="#equation-7c0d6d44-610f-41bf-8c24-892277833d07" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=1,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>,  with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5beb114d-8b98-4811-86bc-a7f60f769a34">
-<span class="eqno">(490)<a class="headerlink" href="#equation-5beb114d-8b98-4811-86bc-a7f60f769a34" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d4e2e3b1-3755-4f50-8d7c-d17471e03c35">
+<span class="eqno">(555)<a class="headerlink" href="#equation-d4e2e3b1-3755-4f50-8d7c-d17471e03c35" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
 <p>b. Apply the 3-step Adams-Bashforth to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5eea067-afa8-40a6-ad75-3d3334437972">
-<span class="eqno">(491)<a class="headerlink" href="#equation-f5eea067-afa8-40a6-ad75-3d3334437972" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6167639d-1f9c-4103-bcbb-9a485bad6932">
+<span class="eqno">(556)<a class="headerlink" href="#equation-6167639d-1f9c-4103-bcbb-9a485bad6932" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e84443c9-de67-412e-82f0-93a71c2a3c08">
-<span class="eqno">(492)<a class="headerlink" href="#equation-e84443c9-de67-412e-82f0-93a71c2a3c08" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1c737ab1-c1c0-4a08-8695-a5975cac4177">
+<span class="eqno">(557)<a class="headerlink" href="#equation-1c737ab1-c1c0-4a08-8695-a5975cac4177" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
 </li>
 </ol>
 </section>
@@ -491,19 +518,19 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="2">
 <li><p>a. Apply the 2-step Adams-Moulton Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed8ed3a0-5280-4b1e-8fc9-21c6445eee39">
-<span class="eqno">(493)<a class="headerlink" href="#equation-ed8ed3a0-5280-4b1e-8fc9-21c6445eee39" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-872904ce-5a18-4e59-a100-e715e6af1511">
+<span class="eqno">(558)<a class="headerlink" href="#equation-872904ce-5a18-4e59-a100-e715e6af1511" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=1,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>,  with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f65b0b14-2ee2-45f6-ad1e-4a8df88ce790">
-<span class="eqno">(494)<a class="headerlink" href="#equation-f65b0b14-2ee2-45f6-ad1e-4a8df88ce790" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-00b20aff-4eb2-471c-a81c-6a7d9c856321">
+<span class="eqno">(559)<a class="headerlink" href="#equation-00b20aff-4eb2-471c-a81c-6a7d9c856321" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
 <p>b. Apply the 3-step Adams-Moulton Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c2f29fc2-6d66-403a-84ac-1977b28fd780">
-<span class="eqno">(495)<a class="headerlink" href="#equation-c2f29fc2-6d66-403a-84ac-1977b28fd780" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-8d19f710-b480-4518-9390-3121a5399754">
+<span class="eqno">(560)<a class="headerlink" href="#equation-8d19f710-b480-4518-9390-3121a5399754" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c476c592-edbb-4dcf-992b-d3e45a63e297">
-<span class="eqno">(496)<a class="headerlink" href="#equation-c476c592-edbb-4dcf-992b-d3e45a63e297" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-e82c1afe-ffa0-49f7-8897-be22ec702a5d">
+<span class="eqno">(561)<a class="headerlink" href="#equation-e82c1afe-ffa0-49f7-8897-be22ec702a5d" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
 </li>
 </ol>
 </section>
@@ -512,11 +539,11 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <ol class="arabic simple" start="3">
 <li><p>Derive the difference equation for the 1-step Adams-Bashforth method:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-8933cb6a-0775-4bfd-9cfe-fae3f4dbf27c">
-<span class="eqno">(497)<a class="headerlink" href="#equation-8933cb6a-0775-4bfd-9cfe-fae3f4dbf27c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+hf(t_{n},w_{n}),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2ee01581-2c58-43b6-9584-0795ed8dd8da">
+<span class="eqno">(562)<a class="headerlink" href="#equation-2ee01581-2c58-43b6-9584-0795ed8dd8da" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+hf(t_{n},w_{n}),\end{equation}\]</div>
 <p>with the local truncation error</p>
-<div class="amsmath math notranslate nohighlight" id="equation-06a92693-a2a0-4209-99c9-1b168f4a8657">
-<span class="eqno">(498)<a class="headerlink" href="#equation-06a92693-a2a0-4209-99c9-1b168f4a8657" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=\frac{h}{2}y^{2}(\mu_n),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d7144479-dce6-4068-8b11-b5872d6eff3f">
+<span class="eqno">(563)<a class="headerlink" href="#equation-d7144479-dce6-4068-8b11-b5872d6eff3f" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=\frac{h}{2}y^{2}(\mu_n),\end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu_n \in (t_{n},t_{n+1})\)</span>.</p>
 </section>
 <section id="question-4">
@@ -524,11 +551,11 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <ol class="arabic simple" start="4">
 <li><p>Derive the difference equation for the 2-step Adams-Bashforth method:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-dccf54bf-5442-4292-8d4f-ef34e2a8924a">
-<span class="eqno">(499)<a class="headerlink" href="#equation-dccf54bf-5442-4292-8d4f-ef34e2a8924a" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d958b62c-7bc4-4599-a41a-699810ae54a6">
+<span class="eqno">(564)<a class="headerlink" href="#equation-d958b62c-7bc4-4599-a41a-699810ae54a6" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+(\frac{3}{2}hf(t_{n},w_{n})-\frac{1}{2}hf(t_{n-1},w_{n-1})),\end{equation}\]</div>
 <p>with the local truncation error</p>
-<div class="amsmath math notranslate nohighlight" id="equation-cbddba4f-72f7-44de-aa78-f416d7cd37b6">
-<span class="eqno">(500)<a class="headerlink" href="#equation-cbddba4f-72f7-44de-aa78-f416d7cd37b6" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=\frac{5h^2}{12}y^{3}(\mu_n),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1c8dd710-c841-48cb-93eb-c65812a3255e">
+<span class="eqno">(565)<a class="headerlink" href="#equation-1c8dd710-c841-48cb-93eb-c65812a3255e" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_{n+1}(h)=\frac{5h^2}{12}y^{3}(\mu_n),\end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu_n \in (t_{n-1},t_{n+1})\)</span>.</p>
 </section>
 <section id="question-5">
@@ -536,19 +563,19 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <ol class="arabic simple" start="5">
 <li><p>Derive the difference equation for the 2-step Adams-Moulton method:</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-dafbadbb-4770-44c9-acfc-3bb6f2eb743f">
-<span class="eqno">(501)<a class="headerlink" href="#equation-dafbadbb-4770-44c9-acfc-3bb6f2eb743f" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+hf(t_{n+1},w_{n+1}),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6bea3071-a716-4cf9-b6e9-c8c78ca4c10f">
+<span class="eqno">(566)<a class="headerlink" href="#equation-6bea3071-a716-4cf9-b6e9-c8c78ca4c10f" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+hf(t_{n+1},w_{n+1}),\end{equation}\]</div>
 <p>with the local truncation error</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ca2a5571-443b-4ea7-8ab4-4667474d7fc7">
-<span class="eqno">(502)<a class="headerlink" href="#equation-ca2a5571-443b-4ea7-8ab4-4667474d7fc7" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{n+1}(h)=-\frac{h}{2}y^{2}(\mu_n),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-16bdd8b4-f4f0-4cbe-b765-63aae50b9fae">
+<span class="eqno">(567)<a class="headerlink" href="#equation-16bdd8b4-f4f0-4cbe-b765-63aae50b9fae" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{n+1}(h)=-\frac{h}{2}y^{2}(\mu_n),\end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\mu_n \in (t_{n-2},t_{n+1})\)</span>.</p>
 </section>
 <section id="question-6">
 <h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="6">
 <li><p>Adapt the Python code for the 2-step Adams-Bashforth method provided to approximate solution of the integrate and fire differential equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-557889de-dc80-4745-8f94-fefe5c16cad5">
-<span class="eqno">(503)<a class="headerlink" href="#equation-557889de-dc80-4745-8f94-fefe5c16cad5" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-42afd599-635b-4230-99f3-107c24cc2740">
+<span class="eqno">(568)<a class="headerlink" href="#equation-42afd599-635b-4230-99f3-107c24cc2740" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
@@ -569,11 +596,11 @@ and the initial condition
 <ol class="arabic simple" start="8">
 <li><p>Apply the Predictor-Corrector method to numerically approximate the solution at <span class="math notranslate nohighlight">\(x=1.0\)</span> of the Initial Value Problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-a290ad86-ed9c-4c89-abf6-b2fbe5a2a4ef">
-<span class="eqno">(504)<a class="headerlink" href="#equation-a290ad86-ed9c-4c89-abf6-b2fbe5a2a4ef" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{dy}{dx}=-y+x^2, \ \  0\leq x \leq 1,  \ \ \ y(0) = 1, \ \ \ y(0.25)=0.65, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5f6e000f-5f8b-4377-a06a-4f8b1d2ebdf7">
+<span class="eqno">(569)<a class="headerlink" href="#equation-5f6e000f-5f8b-4377-a06a-4f8b1d2ebdf7" title="Permalink to this equation">#</a></span>\[\begin{equation}\frac{dy}{dx}=-y+x^2, \ \  0\leq x \leq 1,  \ \ \ y(0) = 1, \ \ \ y(0.25)=0.65, \end{equation}\]</div>
 <p>using the two step Adams-Bashforth method and the one step Adams-Moulton method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fcd43bca-5da0-4bc6-b386-fb4f5d4f77c4">
-<span class="eqno">(505)<a class="headerlink" href="#equation-fcd43bca-5da0-4bc6-b386-fb4f5d4f77c4" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i + \frac{h}{2}[f(x_{i+1},w_{i+1})+f(x_{i},w_{i})], \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6ec40b6c-ec0b-41f9-a8a3-0b59bced443e">
+<span class="eqno">(570)<a class="headerlink" href="#equation-6ec40b6c-ec0b-41f9-a8a3-0b59bced443e" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i + \frac{h}{2}[f(x_{i+1},w_{i+1})+f(x_{i},w_{i})], \end{equation}\]</div>
 <p>with a step size of <span class="math notranslate nohighlight">\(h=0.25\)</span>.</p>
 </section>
 <section id="question-9">
