@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -311,9 +311,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901_Simple%20Back%20Propagation%20ReLU.html">One Node Back Propagation ReLU</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901b_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901c_Back%20Progagation%20ReLU%20three%20inputs.html">Back Progagation ReLU three inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901e_Gradient%20Descent%20Neural%20Network%20sigmoid.html">Gradient Descent Neural Network sigmoid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902_Universal_Approximation_Theorem.html">The Universal Approximation Theorem (UAT)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902b_Universal_Approximation_Theorem_in_action.html">Universal Approximation Theorem in Action</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903_BackProp_VectorForm.html">Vector Form of Back Propagation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903b_General-BackProp.html">General Back Propagation for a Deep ANN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903c_Back_Str_Weak_Pitfalls.html">Backpropagation Strengths, Weaknesses and Pitfalls</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -499,19 +515,19 @@ document.write(`
 <h2>Question 1<a class="headerlink" href="#question-1" title="Permalink to this heading">#</a></h2>
 <ol class="arabic">
 <li><p>a. Apply the Midpoint Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7dd8e966-e043-4c1a-bd71-12dfa63920ba">
-<span class="eqno">(364)<a class="headerlink" href="#equation-7dd8e966-e043-4c1a-bd71-12dfa63920ba" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-bdddc329-1270-4c71-9043-4960ac4a8bde">
+<span class="eqno">(364)<a class="headerlink" href="#equation-bdddc329-1270-4c71-9043-4960ac4a8bde" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=1,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>,  with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-264e6d2b-aafb-4c8b-9a46-066f31c5d092">
-<span class="eqno">(365)<a class="headerlink" href="#equation-264e6d2b-aafb-4c8b-9a46-066f31c5d092" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b12c9292-32f5-4d8f-8cb9-341aa39c4c4e">
+<span class="eqno">(365)<a class="headerlink" href="#equation-b12c9292-32f5-4d8f-8cb9-341aa39c4c4e" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
 <p>b. Apply the Midpoint Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-de3f25ca-4825-440a-b81a-59991638acf0">
-<span class="eqno">(366)<a class="headerlink" href="#equation-de3f25ca-4825-440a-b81a-59991638acf0" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7be57922-7f29-4ec2-829b-f0f07ec7f42c">
+<span class="eqno">(366)<a class="headerlink" href="#equation-7be57922-7f29-4ec2-829b-f0f07ec7f42c" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e829348d-e7bb-42fd-b6c8-1b0eae791778">
-<span class="eqno">(367)<a class="headerlink" href="#equation-e829348d-e7bb-42fd-b6c8-1b0eae791778" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-22a4c82f-bc26-4b50-aa21-eababf686fa3">
+<span class="eqno">(367)<a class="headerlink" href="#equation-22a4c82f-bc26-4b50-aa21-eababf686fa3" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
 </li>
 </ol>
 </section>
@@ -519,19 +535,19 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <h2>Question 2<a class="headerlink" href="#question-2" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="2">
 <li><p>a. Apply the 4th Order Runge-Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6ae17b97-2e7f-4119-aeee-964e029a3b29">
-<span class="eqno">(368)<a class="headerlink" href="#equation-6ae17b97-2e7f-4119-aeee-964e029a3b29" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-24205ae6-3e67-4f20-b662-fbdad90951a2">
+<span class="eqno">(368)<a class="headerlink" href="#equation-24205ae6-3e67-4f20-b662-fbdad90951a2" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=t-y, \ \ (0\leq t \leq 4),\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=1,\)</span>
 Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7c49480a-9366-4366-98c8-c31f75eba6ed">
-<span class="eqno">(369)<a class="headerlink" href="#equation-7c49480a-9366-4366-98c8-c31f75eba6ed" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-edaba6a3-414b-4d50-bbd0-3514f496831e">
+<span class="eqno">(369)<a class="headerlink" href="#equation-edaba6a3-414b-4d50-bbd0-3514f496831e" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=2e^{-t}+t-1.\end{equation}\]</div>
 <p>b. Apply the 4th Order Runge-Kutta Method to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2f06567e-5073-4303-81b8-a1bef5b713d4">
-<span class="eqno">(370)<a class="headerlink" href="#equation-2f06567e-5073-4303-81b8-a1bef5b713d4" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-330a73d3-4fb3-48d9-b70b-e21fca7f40d4">
+<span class="eqno">(370)<a class="headerlink" href="#equation-330a73d3-4fb3-48d9-b70b-e21fca7f40d4" title="Permalink to this equation">#</a></span>\[\begin{equation}y'=y-t, \ \ (0\leq t \leq 2)\end{equation}\]</div>
 <p>with the initial condition <span class="math notranslate nohighlight">\(y(0)=2,\)</span>
 <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a7808186-de19-4104-b3f4-25164d4d5566">
-<span class="eqno">(371)<a class="headerlink" href="#equation-a7808186-de19-4104-b3f4-25164d4d5566" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c2ab750a-4d22-48a8-9e85-3c9a9fc54086">
+<span class="eqno">(371)<a class="headerlink" href="#equation-c2ab750a-4d22-48a8-9e85-3c9a9fc54086" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t)=e^{t}+t+1.\end{equation}\]</div>
 </li>
 </ol>
 </section>
@@ -539,24 +555,24 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <h2>Question 3<a class="headerlink" href="#question-3" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="3">
 <li><p>Derive the difference equation for the Midpoint Runge-Kutta method</p>
-<div class="amsmath math notranslate nohighlight" id="equation-815df32a-a0a1-425d-9962-1374f28fb4ae">
-<span class="eqno">(372)<a class="headerlink" href="#equation-815df32a-a0a1-425d-9962-1374f28fb4ae" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+k_2,\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-76dcb3b7-36dc-47af-a891-0e705b15fca7">
-<span class="eqno">(373)<a class="headerlink" href="#equation-76dcb3b7-36dc-47af-a891-0e705b15fca7" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=hf(t_n,w_n),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-cfda9d5f-689d-4a6c-bcf8-932cfb2ba9de">
-<span class="eqno">(374)<a class="headerlink" href="#equation-cfda9d5f-689d-4a6c-bcf8-932cfb2ba9de" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\frac{1}{2}h,w_n+\frac{1}{2}k_1),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-29a3e477-b39d-4843-a0bc-4a805a6ca449">
+<span class="eqno">(372)<a class="headerlink" href="#equation-29a3e477-b39d-4843-a0bc-4a805a6ca449" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+k_2,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fa5fbd85-b6b9-4172-82f9-1e828977612a">
+<span class="eqno">(373)<a class="headerlink" href="#equation-fa5fbd85-b6b9-4172-82f9-1e828977612a" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=hf(t_n,w_n),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-ab1804bb-483a-434a-91c9-ecda03220f07">
+<span class="eqno">(374)<a class="headerlink" href="#equation-ab1804bb-483a-434a-91c9-ecda03220f07" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\frac{1}{2}h,w_n+\frac{1}{2}k_1),\end{equation}\]</div>
 <p>for solving the ordinary differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0651757b-556c-4abc-9f11-3aa19eaef24c">
-<span class="eqno">(375)<a class="headerlink" href="#equation-0651757b-556c-4abc-9f11-3aa19eaef24c" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-fbdddd69-dd11-44e8-af42-69a5a883fc7d">
+<span class="eqno">(375)<a class="headerlink" href="#equation-fbdddd69-dd11-44e8-af42-69a5a883fc7d" title="Permalink to this equation">#</a></span>\[\begin{equation} \frac{dy}{dt}=f(t,y), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3ea5ea71-fb46-423c-a3a1-da4a75aab712">
-<span class="eqno">(376)<a class="headerlink" href="#equation-3ea5ea71-fb46-423c-a3a1-da4a75aab712" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t_0)=y_0, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c9d927a5-d254-4ad9-83b8-69cb4482f553">
+<span class="eqno">(376)<a class="headerlink" href="#equation-c9d927a5-d254-4ad9-83b8-69cb4482f553" title="Permalink to this equation">#</a></span>\[\begin{equation}y(t_0)=y_0, \end{equation}\]</div>
 <p>by using a formula of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-330a818d-fe6b-4807-9286-15932af6dc2d">
-<span class="eqno">(377)<a class="headerlink" href="#equation-330a818d-fe6b-4807-9286-15932af6dc2d" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+ak_1+bk_2, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-90252485-0f14-44dd-b5ae-771b067e9b97">
+<span class="eqno">(377)<a class="headerlink" href="#equation-90252485-0f14-44dd-b5ae-771b067e9b97" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{n+1}=w_n+ak_1+bk_2, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(k_1\)</span> is defined as above,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4a5251b8-d2f3-4e6d-b9a0-7cf04897623b">
-<span class="eqno">(378)<a class="headerlink" href="#equation-4a5251b8-d2f3-4e6d-b9a0-7cf04897623b" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-43c14f79-e4b5-4d4e-9ac1-0f38c937c0ec">
+<span class="eqno">(378)<a class="headerlink" href="#equation-43c14f79-e4b5-4d4e-9ac1-0f38c937c0ec" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=hf(t_n+\alpha h,w_n+\beta k_1),\end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>, <span class="math notranslate nohighlight">\(\alpha\)</span> and <span class="math notranslate nohighlight">\(\beta\)</span> are constants are determined. Prove that <span class="math notranslate nohighlight">\(a+b=1\)</span> and <span class="math notranslate nohighlight">\(b\alpha=b\beta=\frac{1}{2}\)</span> and choose appropriate values to give the Midpoint Runge-Kutta method.</p>
 </li>
 </ol>
@@ -576,22 +592,22 @@ Let <span class="math notranslate nohighlight">\(N=4\)</span>, with the exact so
 <li><p>Describe in your own words the theorem below and its proof:
 Assume that the Runge-Kutta method satisfies the Lipschitz Condition. Then
 for the initial value problems</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d495e888-bc7d-4c78-9d01-7d3836683c5f">
-<span class="eqno">(379)<a class="headerlink" href="#equation-d495e888-bc7d-4c78-9d01-7d3836683c5f" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(x,y),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-caf4eae0-d093-40fe-b949-99c0da20b0fa">
-<span class="eqno">(380)<a class="headerlink" href="#equation-caf4eae0-d093-40fe-b949-99c0da20b0fa" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_0)=y_0. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-f645c900-7db7-4b9e-875c-6b5529e26205">
+<span class="eqno">(379)<a class="headerlink" href="#equation-f645c900-7db7-4b9e-875c-6b5529e26205" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(x,y),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-041a0e01-5447-431e-b617-9dc64ed9886e">
+<span class="eqno">(380)<a class="headerlink" href="#equation-041a0e01-5447-431e-b617-9dc64ed9886e" title="Permalink to this equation">#</a></span>\[\begin{equation} y(x_0)=y_0. \end{equation}\]</div>
 <p>The numerical solution <span class="math notranslate nohighlight">\(\{ w_n\}\)</span> satisfies</p>
-<div class="amsmath math notranslate nohighlight" id="equation-745f5ee3-922c-4a49-83cd-a90059c71180">
-<span class="eqno">(381)<a class="headerlink" href="#equation-745f5ee3-922c-4a49-83cd-a90059c71180" title="Permalink to this equation">#</a></span>\[\begin{equation} \max_{a\leq x\leq b}|y(x_n)-w_n| \leq e^{(b-a)L}|y_0-w_0|+\left[\frac{e^{(b-a)L}-1}{L} \right]\tau(h)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2948e2ff-0ff9-4b8c-94f4-44a912f3afd3">
+<span class="eqno">(381)<a class="headerlink" href="#equation-2948e2ff-0ff9-4b8c-94f4-44a912f3afd3" title="Permalink to this equation">#</a></span>\[\begin{equation} \max_{a\leq x\leq b}|y(x_n)-w_n| \leq e^{(b-a)L}|y_0-w_0|+\left[\frac{e^{(b-a)L}-1}{L} \right]\tau(h)\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-fa4f112b-bd21-4b8e-ba1a-e8dd9bfe9883">
-<span class="eqno">(382)<a class="headerlink" href="#equation-fa4f112b-bd21-4b8e-ba1a-e8dd9bfe9883" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau(h) = \max_{a\leq x\leq b}|\tau_n(h)|,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4b0c69f4-b32d-4169-a650-76846b6c78d8">
+<span class="eqno">(382)<a class="headerlink" href="#equation-4b0c69f4-b32d-4169-a650-76846b6c78d8" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau(h) = \max_{a\leq x\leq b}|\tau_n(h)|,\end{equation}\]</div>
 <p>If the consistency condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d8747bbe-185b-4db0-83ed-1192e1aeedcd">
-<span class="eqno">(383)<a class="headerlink" href="#equation-d8747bbe-185b-4db0-83ed-1192e1aeedcd" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) \rightarrow 0 \mbox{ as  } h\rightarrow 0, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-da4bedb3-6bc4-468c-9f18-9dfb514bb4ca">
+<span class="eqno">(383)<a class="headerlink" href="#equation-da4bedb3-6bc4-468c-9f18-9dfb514bb4ca" title="Permalink to this equation">#</a></span>\[\begin{equation} \delta(h) \rightarrow 0 \mbox{ as  } h\rightarrow 0, \end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8c384dc2-8e80-4684-98e6-cda325bf9202">
-<span class="eqno">(384)<a class="headerlink" href="#equation-8c384dc2-8e80-4684-98e6-cda325bf9202" title="Permalink to this equation">#</a></span>\[\begin{equation}\delta(h) = \max_{a \leq x \leq b}|f(x,y)-F(x,y;h;f)|. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2d200035-468e-4bc1-a74c-d01be31a598a">
+<span class="eqno">(384)<a class="headerlink" href="#equation-2d200035-468e-4bc1-a74c-d01be31a598a" title="Permalink to this equation">#</a></span>\[\begin{equation}\delta(h) = \max_{a \leq x \leq b}|f(x,y)-F(x,y;h;f)|. \end{equation}\]</div>
 </li>
 </ol>
 </section>
@@ -599,8 +615,8 @@ for the initial value problems</p>
 <h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="6">
 <li><p>Adapt the Python code for the Heun’s second order Runge-Kutta method provided to approximate solution of the integrate and fire differential equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a3a88f40-b45f-4ad1-aa84-6a72ad03da72">
-<span class="eqno">(385)<a class="headerlink" href="#equation-a3a88f40-b45f-4ad1-aa84-6a72ad03da72" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-790bef37-98fd-46b3-81bf-c32d0302c0bc">
+<span class="eqno">(385)<a class="headerlink" href="#equation-790bef37-98fd-46b3-81bf-c32d0302c0bc" title="Permalink to this equation">#</a></span>\[\begin{equation}   \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t), \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition

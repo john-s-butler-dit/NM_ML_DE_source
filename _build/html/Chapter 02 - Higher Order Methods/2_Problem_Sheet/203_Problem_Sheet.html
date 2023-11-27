@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -311,9 +311,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901_Simple%20Back%20Propagation%20ReLU.html">One Node Back Propagation ReLU</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901b_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901c_Back%20Progagation%20ReLU%20three%20inputs.html">Back Progagation ReLU three inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901e_Gradient%20Descent%20Neural%20Network%20sigmoid.html">Gradient Descent Neural Network sigmoid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/902_Universal_Approximation_Theorem.html">The Universal Approximation Theorem (UAT)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/902b_Universal_Approximation_Theorem_in_action.html">Universal Approximation Theorem in Action</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/903_BackProp_VectorForm.html">Vector Form of Back Propagation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/903b_General-BackProp.html">General Back Propagation for a Deep ANN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/903c_Back_Str_Weak_Pitfalls.html">Backpropagation Strengths, Weaknesses and Pitfalls</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -493,11 +509,11 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-2-question-3-2nd-order-taylor">
 <h1>Problem Sheet 2 Question 3 - 2nd Order Taylor<a class="headerlink" href="#problem-sheet-2-question-3-2nd-order-taylor" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4952ff8e-1132-445f-b557-307834659235">
-<span class="eqno">(285)<a class="headerlink" href="#equation-4952ff8e-1132-445f-b557-307834659235" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=ty-ty^2, \ \ (0 \leq t \leq 2)\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-d4ea006b-b5cd-45a1-bef2-fce2084c3d55">
+<span class="eqno">(285)<a class="headerlink" href="#equation-d4ea006b-b5cd-45a1-bef2-fce2084c3d55" title="Permalink to this equation">#</a></span>\[\begin{equation}  y^{'}=ty-ty^2, \ \ (0 \leq t \leq 2)\end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ce71e070-0c53-475c-bd86-048074b8686c">
-<span class="eqno">(286)<a class="headerlink" href="#equation-ce71e070-0c53-475c-bd86-048074b8686c" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=\frac{1}{2}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1f77eac3-57fe-4932-adca-9ed87ea5ff85">
+<span class="eqno">(286)<a class="headerlink" href="#equation-1f77eac3-57fe-4932-adca-9ed87ea5ff85" title="Permalink to this equation">#</a></span>\[\begin{equation} y(0)=\frac{1}{2}.\end{equation}\]</div>
 <p>Apply <strong>2nd Order Taylor</strong> to approximate the solution of the given initial value problems using the indicated number of time steps. Compare the approximate solution with the given exact solution, and compare the actual error with the theoretical error.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -519,20 +535,20 @@ document.write(`
 <section id="general-discrete-interval">
 <h2>General Discrete Interval<a class="headerlink" href="#general-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>The continuous time <span class="math notranslate nohighlight">\(a\leq t \leq b \)</span> is discretised into <span class="math notranslate nohighlight">\(N\)</span> points seperated by a constant stepsize</p>
-<div class="amsmath math notranslate nohighlight" id="equation-88682c2f-3c6d-4001-8d20-bc27f330a1a2">
-<span class="eqno">(287)<a class="headerlink" href="#equation-88682c2f-3c6d-4001-8d20-bc27f330a1a2" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{b-a}{N}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-92a9ef32-7ff7-4094-9bfd-4b6ce21ec5df">
+<span class="eqno">(287)<a class="headerlink" href="#equation-92a9ef32-7ff7-4094-9bfd-4b6ce21ec5df" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{b-a}{N}.\end{equation}\]</div>
 </section>
 <section id="specific-discrete-interval">
 <h2>Specific Discrete Interval<a class="headerlink" href="#specific-discrete-interval" title="Permalink to this heading">#</a></h2>
 <p>Here the interval is <span class="math notranslate nohighlight">\(0\leq t \leq 2\)</span> with <span class="math notranslate nohighlight">\(N=4\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-afbb170d-8e79-4c36-86f4-a7d09cab719e">
-<span class="eqno">(288)<a class="headerlink" href="#equation-afbb170d-8e79-4c36-86f4-a7d09cab719e" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{2-0}{4}=0.5.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-269831a4-e0d5-4e58-a9c1-30decb65fb94">
+<span class="eqno">(288)<a class="headerlink" href="#equation-269831a4-e0d5-4e58-a9c1-30decb65fb94" title="Permalink to this equation">#</a></span>\[\begin{equation}  h=\frac{2-0}{4}=0.5.\end{equation}\]</div>
 <p>This gives the 5 discrete points with stepsize h=0.5:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-2e8b5b73-b845-422d-8a86-74afdc90a488">
-<span class="eqno">(289)<a class="headerlink" href="#equation-2e8b5b73-b845-422d-8a86-74afdc90a488" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_0=0, \ t_1=0.5, \ ... t_{4}=2. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cb432b08-b0a0-47fd-b623-d345a4091a3a">
+<span class="eqno">(289)<a class="headerlink" href="#equation-cb432b08-b0a0-47fd-b623-d345a4091a3a" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_0=0, \ t_1=0.5, \ ... t_{4}=2. \end{equation}\]</div>
 <p>This is generalised to</p>
-<div class="amsmath math notranslate nohighlight" id="equation-02af5d9b-9187-423d-97ff-77ad2534c6b5">
-<span class="eqno">(290)<a class="headerlink" href="#equation-02af5d9b-9187-423d-97ff-77ad2534c6b5" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_i=0+i0.5, \ \ \ i=0,1,...,4.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5d60c97b-0494-49bb-bc2b-e584df8e94d8">
+<span class="eqno">(290)<a class="headerlink" href="#equation-5d60c97b-0494-49bb-bc2b-e584df8e94d8" title="Permalink to this equation">#</a></span>\[\begin{equation}  t_i=0+i0.5, \ \ \ i=0,1,...,4.\end{equation}\]</div>
 <p>The plot below illustrates the discrete time steps from 0 to 2.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -560,17 +576,17 @@ document.write(`
 <section id="nd-order-taylor-solution">
 <h2>2nd Order Taylor Solution<a class="headerlink" href="#nd-order-taylor-solution" title="Permalink to this heading">#</a></h2>
 <p>The 2nd Order Taylor difference equation is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4f3fbc60-b75e-4b63-b973-7268bb1c2c6a">
-<span class="eqno">(291)<a class="headerlink" href="#equation-4f3fbc60-b75e-4b63-b973-7268bb1c2c6a" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-5e1e83f9-4e8a-4fc8-ba1e-c40835d12d86">
+<span class="eqno">(291)<a class="headerlink" href="#equation-5e1e83f9-4e8a-4fc8-ba1e-c40835d12d86" title="Permalink to this equation">#</a></span>\[\begin{equation}  w_{i+1}=w_i+h\left[f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)\right],\end{equation}\]</div>
 <p>where</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35214fcf-dbed-4acb-8f60-b39293d032f2">
-<span class="eqno">(292)<a class="headerlink" href="#equation-35214fcf-dbed-4acb-8f60-b39293d032f2" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=t_iw_i-t_iw_i^2,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-07a3493b-2ea4-423c-8da5-90410cebf790">
+<span class="eqno">(292)<a class="headerlink" href="#equation-07a3493b-2ea4-423c-8da5-90410cebf790" title="Permalink to this equation">#</a></span>\[\begin{equation}  f(t_i,w_i)=t_iw_i-t_iw_i^2,\end{equation}\]</div>
 <p>and</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00c78124-7196-4db1-bf98-a6a2eacb09ef">
-<span class="eqno">(293)<a class="headerlink" href="#equation-00c78124-7196-4db1-bf98-a6a2eacb09ef" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2)),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-6bfbbf7b-24fb-4f63-99fd-59dd93c260ba">
+<span class="eqno">(293)<a class="headerlink" href="#equation-6bfbbf7b-24fb-4f63-99fd-59dd93c260ba" title="Permalink to this equation">#</a></span>\[\begin{equation}  f'(t_i,w_i)=w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2)),\end{equation}\]</div>
 <p>which gives</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a187525-7451-4a3c-b44a-62a9b9eac06c">
-<span class="eqno">(294)<a class="headerlink" href="#equation-5a187525-7451-4a3c-b44a-62a9b9eac06c" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_iw_i-t_iw_i^2)+\frac{h^2}{2}(w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2))),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4a986d71-e8b8-4daf-9117-8221f095f76e">
+<span class="eqno">(294)<a class="headerlink" href="#equation-4a986d71-e8b8-4daf-9117-8221f095f76e" title="Permalink to this equation">#</a></span>\[\begin{equation} w_{i+1}=w_i+h(t_iw_i-t_iw_i^2)+\frac{h^2}{2}(w_i+t_i(t_iw_i-t_iw_i^2)-w_i^2-t_i(2w_i(t_iw_i-t_iw_i^2))),\end{equation}\]</div>
 <p>for <span class="math notranslate nohighlight">\(i=0,1,2,3\)</span>
 with
 <span class="math notranslate nohighlight">\(w_0=0.5\)</span></p>
@@ -620,7 +636,7 @@ with
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61458</span><span class="o">/</span><span class="mf">869357318.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="mi">1</span><span class="n">r</span><span class="o">/</span><span class="n">rb8x65yn57q68x042jv2vgx80000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_52959</span><span class="o">/</span><span class="mf">869357318.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;time t_i&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span>    <span class="s1">&#39;Euler (w_i) &#39;</span><span class="p">:</span><span class="n">w</span><span class="p">,</span>    <span class="s1">&#39;Taylor (w_i) &#39;</span><span class="p">:</span><span class="n">y</span><span class="p">,</span>    <span class="s1">&#39;Exact Error( |y_i-w_i|) &#39;</span><span class="p">:</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">w</span><span class="p">)}</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">d</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span>

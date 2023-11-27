@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -311,9 +311,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901_Simple%20Back%20Propagation%20ReLU.html">One Node Back Propagation ReLU</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901b_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901c_Back%20Progagation%20ReLU%20three%20inputs.html">Back Progagation ReLU three inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901e_Gradient%20Descent%20Neural%20Network%20sigmoid.html">Gradient Descent Neural Network sigmoid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902_Universal_Approximation_Theorem.html">The Universal Approximation Theorem (UAT)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902b_Universal_Approximation_Theorem_in_action.html">Universal Approximation Theorem in Action</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903_BackProp_VectorForm.html">Vector Form of Back Propagation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903b_General-BackProp.html">General Back Propagation for a Deep ANN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903c_Back_Str_Weak_Pitfalls.html">Backpropagation Strengths, Weaknesses and Pitfalls</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -500,8 +516,8 @@ document.write(`
 <ol class="arabic simple">
 <li><p>Apply the Euler method to estimate the solution of the system of equations</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-5e8cfa99-aacb-4d1d-acf2-9da44baa0a4e">
-<span class="eqno">(817)<a class="headerlink" href="#equation-5e8cfa99-aacb-4d1d-acf2-9da44baa0a4e" title="Permalink to this equation">#</a></span>\[\begin{align} \frac{dx}{dt}= x-0.2xy; &amp;\ \ x(1) = 10;\\
+<div class="amsmath math notranslate nohighlight" id="equation-bc348200-e6e1-40c9-bb55-c500fcec24b2">
+<span class="eqno">(817)<a class="headerlink" href="#equation-bc348200-e6e1-40c9-bb55-c500fcec24b2" title="Permalink to this equation">#</a></span>\[\begin{align} \frac{dx}{dt}= x-0.2xy; &amp;\ \ x(1) = 10;\\
 \frac{dy}{dt}= y + 0.1xy; &amp;\ \  y(1) = 2;
 \end{align}\]</div>
 <p>using a stepsize h = 0.25, giving the approximate value of the solution at t = 2.0.</p>
@@ -511,8 +527,8 @@ document.write(`
 <ol class="arabic simple" start="2">
 <li><p>Use the  Euler method to estimate the solution of the Lorenz system of first order initial value problems,</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-597ad453-4eaa-4434-af7c-f7c48f293c62">
-<span class="eqno">(818)<a class="headerlink" href="#equation-597ad453-4eaa-4434-af7c-f7c48f293c62" title="Permalink to this equation">#</a></span>\[\begin{align} \frac{dx}{dt}=\sigma(y-x),&amp; \ \ \ x(0)=1,\\
+<div class="amsmath math notranslate nohighlight" id="equation-3a8e12d2-275b-4555-bf34-77773e18f8cd">
+<span class="eqno">(818)<a class="headerlink" href="#equation-3a8e12d2-275b-4555-bf34-77773e18f8cd" title="Permalink to this equation">#</a></span>\[\begin{align} \frac{dx}{dt}=\sigma(y-x),&amp; \ \ \ x(0)=1,\\
  \frac{dy}{dt}=x(\rho-z)-y, &amp;\ \ \ y(0)=1,\\
  \frac{dz}{dt}=xy-\beta z,&amp; \ \ \ z(0)=1,\end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\sigma=8\)</span>, <span class="math notranslate nohighlight">\(\rho=2\)</span> and <span class="math notranslate nohighlight">\(\beta=\frac{7}{3}\)</span>,  and
@@ -523,8 +539,8 @@ using <span class="math notranslate nohighlight">\(h=0.25\)</span>, estimate the
 <ol class="arabic simple" start="3">
 <li><p>Consider the boundary value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-333efe23-e7d8-4269-9c34-07f3026a1247">
-<span class="eqno">(819)<a class="headerlink" href="#equation-333efe23-e7d8-4269-9c34-07f3026a1247" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-cdd299e0-b296-42f9-b315-1b984ea8416d">
+<span class="eqno">(819)<a class="headerlink" href="#equation-cdd299e0-b296-42f9-b315-1b984ea8416d" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
 <p>Apply the linear shooting method to transform this equation into two second order initial value problems
 and approximate the solution using the Euler method with stepsize <span class="math notranslate nohighlight">\(h=\frac{1}{3}.\)</span></p>
 </section>
@@ -539,11 +555,11 @@ and approximate the solution using the Euler method with stepsize <span class="m
 <ol class="arabic simple" start="5">
 <li><p>The Van der Pol oscillator is a non-conservative oscillator with non-linear damping is described by the differential non-linear second order differential equation,</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-2a66efa8-86da-445d-b43f-33dd4bc0936b">
-<span class="eqno">(820)<a class="headerlink" href="#equation-2a66efa8-86da-445d-b43f-33dd4bc0936b" title="Permalink to this equation">#</a></span>\[\begin{equation} u^{''}=-\epsilon(u^2-1)u^{'}-u.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-99511499-b5c7-4c67-aa76-5f669f2bec3b">
+<span class="eqno">(820)<a class="headerlink" href="#equation-99511499-b5c7-4c67-aa76-5f669f2bec3b" title="Permalink to this equation">#</a></span>\[\begin{equation} u^{''}=-\epsilon(u^2-1)u^{'}-u.\end{equation}\]</div>
 <p>Let <span class="math notranslate nohighlight">\(\epsilon=1.5\)</span>, and given the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-bf6c6cbe-073b-4483-893d-a11e26e6781e">
-<span class="eqno">(821)<a class="headerlink" href="#equation-bf6c6cbe-073b-4483-893d-a11e26e6781e" title="Permalink to this equation">#</a></span>\[\begin{equation} u(0)=0.0, \text{ and, } u(1)=0. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3b68eca7-2920-4fb9-b52a-2fc9c8ead977">
+<span class="eqno">(821)<a class="headerlink" href="#equation-3b68eca7-2920-4fb9-b52a-2fc9c8ead977" title="Permalink to this equation">#</a></span>\[\begin{equation} u(0)=0.0, \text{ and, } u(1)=0. \end{equation}\]</div>
 <p>Apply the one iteration of the non-linear shooting method to approximate the solution from, <span class="math notranslate nohighlight">\(0\leq t \leq 1,\)</span> using a stepsize of <span class="math notranslate nohighlight">\(h=0.2.\)</span></p>
 </section>
 <section id="question-6">
@@ -557,8 +573,8 @@ and approximate the solution using the Euler method with stepsize <span class="m
 <ol class="arabic simple" start="7">
 <li><p>Consider the boundary value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-78c5441d-bbde-4fbd-8177-17c7932131e2">
-<span class="eqno">(822)<a class="headerlink" href="#equation-78c5441d-bbde-4fbd-8177-17c7932131e2" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b4f4f6fb-68c5-4b89-a443-b44295fdc4ca">
+<span class="eqno">(822)<a class="headerlink" href="#equation-b4f4f6fb-68c5-4b89-a443-b44295fdc4ca" title="Permalink to this equation">#</a></span>\[\begin{equation} y''=3xy'-4y+x^2, \ \ 1\leq x \leq 2, \ \ y(1)=2,\ \ \ y(2)=-1.\end{equation}\]</div>
 <p>Apply the finite difference method to approximate the solution using the Euler method with stepsize <span class="math notranslate nohighlight">\(h=\frac{1}{3}.\)</span></p>
 </section>
 <div class="toctree-wrapper compound">

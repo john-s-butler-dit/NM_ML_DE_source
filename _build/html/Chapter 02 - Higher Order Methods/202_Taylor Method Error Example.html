@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -311,9 +311,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901_Simple%20Back%20Propagation%20ReLU.html">One Node Back Propagation ReLU</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901b_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901c_Back%20Progagation%20ReLU%20three%20inputs.html">Back Progagation ReLU three inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901e_Gradient%20Descent%20Neural%20Network%20sigmoid.html">Gradient Descent Neural Network sigmoid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902_Universal_Approximation_Theorem.html">The Universal Approximation Theorem (UAT)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902b_Universal_Approximation_Theorem_in_action.html">Universal Approximation Theorem in Action</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903_BackProp_VectorForm.html">Vector Form of Back Propagation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903b_General-BackProp.html">General Back Propagation for a Deep ANN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903c_Back_Str_Weak_Pitfalls.html">Backpropagation Strengths, Weaknesses and Pitfalls</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -494,37 +510,37 @@ document.write(`
 <section id="intial-value-poblem">
 <h2>Intial Value Poblem<a class="headerlink" href="#intial-value-poblem" title="Permalink to this heading">#</a></h2>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b527321b-4110-45cd-a22f-35d9f86041e5">
-<span class="eqno">(179)<a class="headerlink" href="#equation-b527321b-4110-45cd-a22f-35d9f86041e5" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-9323ad66-1962-4953-b30d-f3ba68f1c5ed">
+<span class="eqno">(179)<a class="headerlink" href="#equation-9323ad66-1962-4953-b30d-f3ba68f1c5ed" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4), \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-97d1fe16-bfbc-412d-9cbc-f257e5018d71">
-<span class="eqno">(180)<a class="headerlink" href="#equation-97d1fe16-bfbc-412d-9cbc-f257e5018d71" title="Permalink to this equation">#</a></span>\[\begin{equation}x(0)=1, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-b752f747-8db9-41be-9c83-7d984460d984">
+<span class="eqno">(180)<a class="headerlink" href="#equation-b752f747-8db9-41be-9c83-7d984460d984" title="Permalink to this equation">#</a></span>\[\begin{equation}x(0)=1, \end{equation}\]</div>
 <p>For N=4
 with the analytic (exact) solution</p>
-<div class="amsmath math notranslate nohighlight" id="equation-08152309-cb47-449a-a503-0f410f64684b">
-<span class="eqno">(181)<a class="headerlink" href="#equation-08152309-cb47-449a-a503-0f410f64684b" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-003cabe8-8d5b-40ff-9a33-b3a0887e18e3">
+<span class="eqno">(181)<a class="headerlink" href="#equation-003cabe8-8d5b-40ff-9a33-b3a0887e18e3" title="Permalink to this equation">#</a></span>\[\begin{equation} y= 2e^{-t}+t+1. \end{equation}\]</div>
 </section>
 <section id="taylor-solution">
 <h2>Taylor Solution<a class="headerlink" href="#taylor-solution" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-6bfa8f84-2c42-4a47-8d5e-aa6c479a6071">
-<span class="eqno">(182)<a class="headerlink" href="#equation-6bfa8f84-2c42-4a47-8d5e-aa6c479a6071" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t,y)=t-y,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-850a8d9c-b167-4799-8171-559b07c0d139">
+<span class="eqno">(182)<a class="headerlink" href="#equation-850a8d9c-b167-4799-8171-559b07c0d139" title="Permalink to this equation">#</a></span>\[\begin{equation} f(t,y)=t-y,  \end{equation}\]</div>
 <p>differentiate with respect to <span class="math notranslate nohighlight">\(t\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e81b6af2-783a-4318-a88d-4e870eea8db5">
-<span class="eqno">(183)<a class="headerlink" href="#equation-e81b6af2-783a-4318-a88d-4e870eea8db5" title="Permalink to this equation">#</a></span>\[\begin{equation} f'(t,y)=1-y'=1-t+y,  \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-bb8a4897-7ca0-4850-a769-53db3ecffc58">
+<span class="eqno">(183)<a class="headerlink" href="#equation-bb8a4897-7ca0-4850-a769-53db3ecffc58" title="Permalink to this equation">#</a></span>\[\begin{equation} f'(t,y)=1-y'=1-t+y,  \end{equation}\]</div>
 <p>This gives the first order Taylor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a6f037d5-55d0-434f-9765-a60642241b36">
-<span class="eqno">(184)<a class="headerlink" href="#equation-a6f037d5-55d0-434f-9765-a60642241b36" title="Permalink to this equation">#</a></span>\[\begin{equation}T^1(t_i,w,i)=f(t_i,w_i)=t_i-w_i, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4024433e-7026-4ca2-9061-697a0fad099b">
+<span class="eqno">(184)<a class="headerlink" href="#equation-4024433e-7026-4ca2-9061-697a0fad099b" title="Permalink to this equation">#</a></span>\[\begin{equation}T^1(t_i,w,i)=f(t_i,w_i)=t_i-w_i, \end{equation}\]</div>
 <p>and the second order Taylor,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ad81fa5e-62a3-4f9c-8069-a6fec6e89a9f">
-<span class="eqno">(185)<a class="headerlink" href="#equation-ad81fa5e-62a3-4f9c-8069-a6fec6e89a9f" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-2dcf795d-0c82-4102-8d3b-18a3bc415393">
+<span class="eqno">(185)<a class="headerlink" href="#equation-2dcf795d-0c82-4102-8d3b-18a3bc415393" title="Permalink to this equation">#</a></span>\[\begin{equation}
 T^2(t_i,w,i)=f(t_i,w_i)+\frac{h}{2}f'(t_i,w_i)=t_i-w_i+\frac{h}{2}(1-t_i+w_i).\end{equation}\]</div>
 <p>The first order Taylor difference equation, which is identical to the Euler method, is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-eb691e03-fa51-4766-84a9-f28133053cfa">
-<span class="eqno">(186)<a class="headerlink" href="#equation-eb691e03-fa51-4766-84a9-f28133053cfa" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-039cfb6e-c2e7-46aa-801a-ec4a04920445">
+<span class="eqno">(186)<a class="headerlink" href="#equation-039cfb6e-c2e7-46aa-801a-ec4a04920445" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(t_i-w_i).  \end{equation}\]</div>
 <p>The second order Taylor difference equation is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-69d00b88-a2c2-4f9d-94d6-018b1929fa5d">
-<span class="eqno">(187)<a class="headerlink" href="#equation-69d00b88-a2c2-4f9d-94d6-018b1929fa5d" title="Permalink to this equation">#</a></span>\[\begin{equation}
+<div class="amsmath math notranslate nohighlight" id="equation-a9dc956a-23fe-495a-815e-3a1b36fc7c61">
+<span class="eqno">(187)<a class="headerlink" href="#equation-a9dc956a-23fe-495a-815e-3a1b36fc7c61" title="Permalink to this equation">#</a></span>\[\begin{equation}
 w_{i+1}=w_i+h(t_i-w_i+\frac{h}{2}(1-t_i+w_i)).  \end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -311,9 +311,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901_Simple%20Back%20Propagation%20ReLU.html">One Node Back Propagation ReLU</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901b_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901c_Back%20Progagation%20ReLU%20three%20inputs.html">Back Progagation ReLU three inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/901e_Gradient%20Descent%20Neural%20Network%20sigmoid.html">Gradient Descent Neural Network sigmoid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/902_Universal_Approximation_Theorem.html">The Universal Approximation Theorem (UAT)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/902b_Universal_Approximation_Theorem_in_action.html">Universal Approximation Theorem in Action</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/903_BackProp_VectorForm.html">Vector Form of Back Propagation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/903b_General-BackProp.html">General Back Propagation for a Deep ANN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../Chapter%2009%20-%20UAT/903c_Back_Str_Weak_Pitfalls.html">Backpropagation Strengths, Weaknesses and Pitfalls</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -496,11 +512,11 @@ document.write(`
 <section class="tex2jax_ignore mathjax_ignore" id="problem-sheet-3-question-1">
 <h1>Problem Sheet 3 Question 1<a class="headerlink" href="#problem-sheet-3-question-1" title="Permalink to this heading">#</a></h1>
 <p>The general form of the population growth differential equation</p>
-<div class="amsmath math notranslate nohighlight" id="equation-110bf1c6-f958-4774-8f94-5095d4a9af0e">
-<span class="eqno">(386)<a class="headerlink" href="#equation-110bf1c6-f958-4774-8f94-5095d4a9af0e" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4) \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-330a14fe-7935-4e1c-910b-6c7bfbc29383">
+<span class="eqno">(386)<a class="headerlink" href="#equation-330a14fe-7935-4e1c-910b-6c7bfbc29383" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=t-y, \ \ (0 \leq t \leq 4) \end{equation}\]</div>
 <p>with the initial condition</p>
-<div class="amsmath math notranslate nohighlight" id="equation-906be29d-157c-41b9-8176-aca744c44754">
-<span class="eqno">(387)<a class="headerlink" href="#equation-906be29d-157c-41b9-8176-aca744c44754" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-2d0e65ff-71da-4d94-8f49-c7816940c22d">
+<span class="eqno">(387)<a class="headerlink" href="#equation-2d0e65ff-71da-4d94-8f49-c7816940c22d" title="Permalink to this equation">#</a></span>\[\begin{equation}y(0)=1,\end{equation}\]</div>
 <p>Has the exact soulation. \begin{equation} y= 2e^{-t}+t-1\end{equation}</p>
 <section id="setting-up-libraries">
 <h2>Setting up Libraries<a class="headerlink" href="#setting-up-libraries" title="Permalink to this heading">#</a></h2>
@@ -535,11 +551,11 @@ document.write(`
 <section id="initial-setup">
 <h2>Initial Setup<a class="headerlink" href="#initial-setup" title="Permalink to this heading">#</a></h2>
 <p>Defining the step size <span class="math notranslate nohighlight">\(h\)</span> from the interval range <span class="math notranslate nohighlight">\(a\leq t \leq b\)</span> and number of steps <span class="math notranslate nohighlight">\(N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-25bcc568-13cb-4318-98a7-e241e41ebfc0">
-<span class="eqno">(388)<a class="headerlink" href="#equation-25bcc568-13cb-4318-98a7-e241e41ebfc0" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{h}.\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-c0bce164-6b2b-46b3-a6de-d69b7645864c">
+<span class="eqno">(388)<a class="headerlink" href="#equation-c0bce164-6b2b-46b3-a6de-d69b7645864c" title="Permalink to this equation">#</a></span>\[\begin{equation}h=\frac{b-a}{h}.\end{equation}\]</div>
 <p>This gives the discrete time steps,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a38cdc8e-d517-4e32-8ec8-a4e792178acd">
-<span class="eqno">(389)<a class="headerlink" href="#equation-a38cdc8e-d517-4e32-8ec8-a4e792178acd" title="Permalink to this equation">#</a></span>\[\begin{equation}t_{i}=t_0+ih,\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-3ff8dcba-0e16-4482-b7ec-02aa2b264ec7">
+<span class="eqno">(389)<a class="headerlink" href="#equation-3ff8dcba-0e16-4482-b7ec-02aa2b264ec7" title="Permalink to this equation">#</a></span>\[\begin{equation}t_{i}=t_0+ih,\end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(t_0=a\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -557,8 +573,8 @@ document.write(`
 </section>
 <section id="setting-up-the-initial-conditions-of-the-equation">
 <h2>Setting up the initial conditions of the equation<a class="headerlink" href="#setting-up-the-initial-conditions-of-the-equation" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-d7f2aa6e-0bc7-4554-82ce-5b6a93160989">
-<span class="eqno">(390)<a class="headerlink" href="#equation-d7f2aa6e-0bc7-4554-82ce-5b6a93160989" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=IC\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-1fc9eb51-29ad-4975-9b9b-04e3e99e116d">
+<span class="eqno">(390)<a class="headerlink" href="#equation-1fc9eb51-29ad-4975-9b9b-04e3e99e116d" title="Permalink to this equation">#</a></span>\[\begin{equation}w_0=IC\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Initial Condition</span>
@@ -573,12 +589,12 @@ document.write(`
 </section>
 <section id="nd-order-runge-kutta-mid-method">
 <h2>2nd Order Runge Kutta (Mid-method)<a class="headerlink" href="#nd-order-runge-kutta-mid-method" title="Permalink to this heading">#</a></h2>
-<div class="amsmath math notranslate nohighlight" id="equation-6167acd9-d43e-4b1d-8afc-4e18a42390ae">
-<span class="eqno">(391)<a class="headerlink" href="#equation-6167acd9-d43e-4b1d-8afc-4e18a42390ae" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t,y),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-218c8601-b98c-46c4-9033-c623fb41890d">
-<span class="eqno">(392)<a class="headerlink" href="#equation-218c8601-b98c-46c4-9033-c623fb41890d" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t+\frac{h}{2},y+\frac{h}{2}k_2),\end{equation}\]</div>
-<div class="amsmath math notranslate nohighlight" id="equation-29d081d6-362f-45af-98a1-88e9f0feb6e1">
-<span class="eqno">(393)<a class="headerlink" href="#equation-29d081d6-362f-45af-98a1-88e9f0feb6e1" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+h(k_2).\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-65e2b861-a229-4785-b08d-ce688f1ca9fb">
+<span class="eqno">(391)<a class="headerlink" href="#equation-65e2b861-a229-4785-b08d-ce688f1ca9fb" title="Permalink to this equation">#</a></span>\[\begin{equation}k_1=f(t,y),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-142ab5f9-d940-45d5-bf4e-7aeb97d07736">
+<span class="eqno">(392)<a class="headerlink" href="#equation-142ab5f9-d940-45d5-bf4e-7aeb97d07736" title="Permalink to this equation">#</a></span>\[\begin{equation}k_2=f(t+\frac{h}{2},y+\frac{h}{2}k_2),\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-15845c7c-1c04-45f4-8a4c-1365f4228cf0">
+<span class="eqno">(393)<a class="headerlink" href="#equation-15845c7c-1c04-45f4-8a4c-1365f4228cf0" title="Permalink to this equation">#</a></span>\[\begin{equation}w_{i+1}=w_{i}+h(k_2).\end{equation}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
