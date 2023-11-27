@@ -297,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -311,9 +311,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../Chapter%2008%20-%20Intro%20to%20ANN/807_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901_Simple%20Back%20Propagation%20ReLU.html">One Node Back Propagation ReLU</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901b_Cost_Functions.html">Cost Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901c_Back%20Progagation%20ReLU%20three%20inputs.html">Back Progagation ReLU three inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/901e_Gradient%20Descent%20Neural%20Network%20sigmoid.html">Gradient Descent Neural Network sigmoid</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902_Universal_Approximation_Theorem.html">The Universal Approximation Theorem (UAT)</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/902b_Universal_Approximation_Theorem_in_action.html">Universal Approximation Theorem in Action</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903_BackProp_VectorForm.html">Vector Form of Back Propagation</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903b_General-BackProp.html">General Back Propagation for a Deep ANN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter%2009%20-%20UAT/903c_Back_Str_Weak_Pitfalls.html">Backpropagation Strengths, Weaknesses and Pitfalls</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -517,8 +533,8 @@ document.write(`
 <ol class="arabic simple" start="3">
 <li><p>Apply the 2nd Order Taylor method using <span class="math notranslate nohighlight">\(N=4\)</span> steps to approximate the solution of initial value problem</p></li>
 </ol>
-<div class="amsmath math notranslate nohighlight" id="equation-6e52762d-6939-43a6-a9ac-644432337e80">
-<span class="eqno">(172)<a class="headerlink" href="#equation-6e52762d-6939-43a6-a9ac-644432337e80" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-005c5d99-2cb7-4b22-958a-266cf7ec9aef">
+<span class="eqno">(172)<a class="headerlink" href="#equation-005c5d99-2cb7-4b22-958a-266cf7ec9aef" title="Permalink to this equation">#</a></span>\[\begin{equation} y'=ty+ty^2, \ \ \ (0\leq t \leq 2), \ \ \ y(0)=\frac{1}{2}\end{equation}\]</div>
 </section>
 <section id="question-4">
 <h2>Question 4<a class="headerlink" href="#question-4" title="Permalink to this heading">#</a></h2>
@@ -534,25 +550,25 @@ document.write(`
 <ol class="arabic" start="5">
 <li><p>a.  Describe in your own words the statement below and its proof:
 Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-00d9c7ad-2cc9-444b-822c-c17ac18c13d4">
-<span class="eqno">(173)<a class="headerlink" href="#equation-00d9c7ad-2cc9-444b-822c-c17ac18c13d4" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-7bc7d61a-6cc0-4707-ac4c-fac9c7567c3c">
+<span class="eqno">(173)<a class="headerlink" href="#equation-7bc7d61a-6cc0-4707-ac4c-fac9c7567c3c" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha. \end{equation}\]</div>
 <p>Explain how that if <span class="math notranslate nohighlight">\(y \in C^{n+1}[a,b]\)</span> the general local error for the Taylor Method is:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5ae7dec9-f4d2-406d-aad1-18faf9a8cd14">
-<span class="eqno">(174)<a class="headerlink" href="#equation-5ae7dec9-f4d2-406d-aad1-18faf9a8cd14" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-00342f2e-0484-404f-893b-d5e9cb244df5">
+<span class="eqno">(174)<a class="headerlink" href="#equation-00342f2e-0484-404f-893b-d5e9cb244df5" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.</p>
 <p>b.  Describe in your own words the theorem below and its proof:
 Assume that the Taylor method satisfies the Lipschitz condition with constant
 L on <span class="math notranslate nohighlight">\(D=\{(t,y)|a\leq t \leq b, -\infty &lt; y &lt; \infty \}\)</span> and that the local truncation error is of the form:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-c151fdb8-2bfb-4834-ad8d-166546b89a90">
-<span class="eqno">(175)<a class="headerlink" href="#equation-c151fdb8-2bfb-4834-ad8d-166546b89a90" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-11d43c59-871e-4530-ae54-5c161041e345">
+<span class="eqno">(175)<a class="headerlink" href="#equation-11d43c59-871e-4530-ae54-5c161041e345" title="Permalink to this equation">#</a></span>\[\begin{equation}\tau_{i+1}(h)=\frac{h^n}{(n+1)!}f^{n}(\xi_i,y(\xi_i)) \approx O(h^n), \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(n\)</span> is the order of the method.
 Let <span class="math notranslate nohighlight">\(y(t)\)</span> denote the unique solution of the Initial Value Problem</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4e7e2286-b61a-4128-b75f-cd29528b6df9">
-<span class="eqno">(176)<a class="headerlink" href="#equation-4e7e2286-b61a-4128-b75f-cd29528b6df9" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-76627241-1cc0-4c1c-8b5b-378b284b7420">
+<span class="eqno">(176)<a class="headerlink" href="#equation-76627241-1cc0-4c1c-8b5b-378b284b7420" title="Permalink to this equation">#</a></span>\[\begin{equation} y^{'}=f(t,y), \ \ \ a\leq t \leq b, \ \ \ y(a)=\alpha, \end{equation}\]</div>
 <p>and <span class="math notranslate nohighlight">\(w_0,w_1,...,w_N\)</span> be the approx generated by the Taylor methods for some
 positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then for <span class="math notranslate nohighlight">\(i=0,1,...,N\)</span></p>
-<div class="amsmath math notranslate nohighlight" id="equation-4ac1b3f6-9e4c-42a6-b894-46098e5deb0a">
-<span class="eqno">(177)<a class="headerlink" href="#equation-4ac1b3f6-9e4c-42a6-b894-46098e5deb0a" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-11136a21-d6a1-40c6-bd88-f55adbd6ac68">
+<span class="eqno">(177)<a class="headerlink" href="#equation-11136a21-d6a1-40c6-bd88-f55adbd6ac68" title="Permalink to this equation">#</a></span>\[\begin{equation} |y(t_i)-w_i| \leq \frac{Ch^n}{L}|e^{L(t_i-a)}-1| \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(C\)</span> is a constant.</p>
 </li>
 </ol>
@@ -561,8 +577,8 @@ positive integer <span class="math notranslate nohighlight">\(N\)</span>.  Then 
 <h2>Question 6<a class="headerlink" href="#question-6" title="Permalink to this heading">#</a></h2>
 <ol class="arabic" start="6">
 <li><p>Adapt the Python code for the 2nd Order Taylor method provided to approximate solution of the integrate and fire differential equation:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-693a4c3a-9eb0-4805-8bea-c160392f5d52">
-<span class="eqno">(178)<a class="headerlink" href="#equation-693a4c3a-9eb0-4805-8bea-c160392f5d52" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
+<div class="amsmath math notranslate nohighlight" id="equation-4f964114-a482-478d-a102-2aeebcb245db">
+<span class="eqno">(178)<a class="headerlink" href="#equation-4f964114-a482-478d-a102-2aeebcb245db" title="Permalink to this equation">#</a></span>\[\begin{equation} \tau_m\frac{dV}{dt} = -(V-E_L) + R_mI(t),  \ \ -50\leq t \leq 400, \end{equation}\]</div>
 <p>where <span class="math notranslate nohighlight">\(E_L = -75\)</span>, <span class="math notranslate nohighlight">\(\tau_m = 10\)</span>,
 <span class="math notranslate nohighlight">\(R_m = 10\)</span> and <span class="math notranslate nohighlight">\(I(t)=0.01t\)</span>
 and the initial condition
