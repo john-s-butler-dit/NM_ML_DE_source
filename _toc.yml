@@ -77,7 +77,7 @@ parts:
     - file: Chapter 08 - Intro to ANN/801_Newton_Raphson
       sections:
       - file: Chapter 08 - Intro to ANN/802_Two_Variable_Newton_Raphson
-      - file: Chapter 08 - Intro to ANN/802b_Two_Variable_Newton_Raphson
+      - file: Chapter 08 - Intro to ANN/802b_Cost_Function_Newton_Raphson
     - file: Chapter 08 - Intro to ANN/803_McCulloch-Pitts_Neuron
       sections:
       - file: Chapter 08 - Intro to ANN/804_Perceptron
@@ -88,9 +88,25 @@ parts:
       sections:
       - file: Chapter 08 - Intro to ANN/806b_Convergence_of_Gradient_Descent
       - file: Chapter 08 - Intro to ANN/806c_Two_Variable_Gradient_Descent
-      - file: Chapter 08 - Intro to ANN/806d_Three_Variable_Gradient_Descent
-    - file: Chapter 08 - Intro to ANN/807_Cost_Functions
+      - file: Chapter 08 - Intro to ANN/806d_Three Variable Gradient Descent.ipynb
+      - file: Chapter 08 - Intro to ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls
+      - file: Chapter 08 - Intro to ANN/806f_Types_of_Gradient_Descent
+  - caption: Universal Approximation Theorem and Backpropagation
+    chapters:
+    - file: Chapter 09 - UAT/901_Simple Back Propagation ReLU
+      sections:
+      - file: Chapter 09 - UAT/901b_Cost_Functions
+      - file: Chapter 09 - UAT/901c_Back Progagation ReLU three inputs
+      - file: Chapter 09 - UAT/901e_Gradient Descent Neural Network sigmoid
+    - file: Chapter 09 - UAT/902_Universal_Approximation_Theorem
+      sections:
+      - file: Chapter 09 - UAT/902b_Universal_Approximation_Theorem_in_action
+    - file: Chapter 09 - UAT/903_BackProp_VectorForm
+      sections:
+      - file: Chapter 09 - UAT/903b_General-BackProp
+      - file: Chapter 09 - UAT/903c_Back_Str_Weak_Pitfalls
       
+  
 
 
 
