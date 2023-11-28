@@ -64,14 +64,31 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
 ## Part 3 Machine Learning methods for Differential Equations
 
 ### Chapter 7 Artifical Neural Networks
-- Perceptron
-- Feed Forward
-- Loss Functions
+- Newton Raphson
 - Gradient Descent
+- Convergance of Gradient Descent
+- Perceptron
+- Artifical Neural Networks
+- Feed Forward
 
-### Chapter 8 Universal Approximation Theorem
+### Chapter 8 Backpropagation
 
-### Chapter 9 ANNs and Differential Equations
+- Cost Function
+- Backpropagation Simple ReLU network
+- Backpropagation Sigmoid network
+- Backpropagation General ANN
+
+
+
+### Chapter 9 Universal Approximation Theorem
+-  Universal Approximation Theorem in action
+-  Universal Approximation Theorem Proof Outline
+
+### Chapter 10 ANNs and Differential Equations
+- Fitting Noisey Data
+- Estimating Differential Equation Parameters
+- Applications to Differential Equations
+
 
 ## Reading List
 
