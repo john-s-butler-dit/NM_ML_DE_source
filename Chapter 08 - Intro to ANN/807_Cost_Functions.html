@@ -94,7 +94,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Example Two Variable Gradient Descent" href="806c_Two_Variable_Gradient_Descent.html" />
+    <link rel="next" title="Neural Network Architecture:" href="808_Simple%20Back%20Propagation%20ReLU.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -296,7 +297,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="8_Problem_Sheet.html">Problem Sheet 8</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="801_Newton_Raphson.html">Introduction to Newton Raphson</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="802_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
-<li class="toctree-l2"><a class="reference internal" href="802b_Two_Variable_Newton_Raphson.html">Two Variable Newton Raphson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -310,9 +311,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Cost Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="808_Simple%20Back%20Propagation%20ReLU.html">Neural Network Architecture:</a></li>
+
+
+
 </ul>
 
     </div>
@@ -484,45 +490,53 @@ document.write(`
 <li><p>Used for regression tasks.</p></li>
 <li><p>Measures the average squared difference between predicted values and actual target values.</p></li>
 <li><p>Encourages the network to minimize the variance of its predictions.</p></li>
-<li><p>Mathematically, MSE is defined as:
-$<span class="math notranslate nohighlight">\(J(\theta) = \frac{1}{2N} \sum_{i=1}^{N} (y_i - y_{\text{target},i})^2\)</span>$</p></li>
+<li><p>Mathematically, MSE is defined as:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[J(\theta) = \frac{1}{2N} \sum_{i=1}^{N} (y_i - y_{\text{target},i})^2\]</div>
 <p><strong>2. Mean Absolute Error (MAE)</strong>:</p>
 <ul class="simple">
 <li><p>Another cost function for regression.</p></li>
 <li><p>Measures the average absolute difference between predicted values and actual target values.</p></li>
 <li><p>Less sensitive to outliers compared to MSE.</p></li>
-<li><p>Mathematically, MAE is defined as:
-$<span class="math notranslate nohighlight">\(J(\theta) = \frac{1}{N} \sum_{i=1}^{N} |y_i - y_{\text{target},i}|\)</span>$</p></li>
+<li><p>Mathematically, MAE is defined as:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[J(\theta) = \frac{1}{N} \sum_{i=1}^{N} |y_i - y_{\text{target},i}|\]</div>
 <p><strong>3. Cross-Entropy Loss (Log Loss)</strong>:</p>
 <ul class="simple">
 <li><p>Used for binary and multiclass classification tasks.</p></li>
 <li><p>Measures the dissimilarity between predicted class probabilities and true class labels.</p></li>
 <li><p>Commonly used with logistic and softmax activation functions in the output layer.</p></li>
-<li><p>For binary classification:
-$<span class="math notranslate nohighlight">\(J(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \left(y_{\text{target},i} \log(y_i) + (1 - y_{\text{target},i}) \log(1 - y_i)\right)\)</span>$</p></li>
-<li><p>For multiclass classification:
-$<span class="math notranslate nohighlight">\(J(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{\text{target},i,c} \log(y_i,c)\)</span>$</p></li>
+<li><p>For binary classification:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[J(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \left(y_{\text{target},i} \log(y_i) + (1 - y_{\text{target},i}) \log(1 - y_i)\right)\]</div>
+<ul class="simple">
+<li><p>For multiclass classification:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[J(\theta) = -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{\text{target},i,c} \log(y_i,c)\]</div>
 <p><strong>4. Hinge Loss (SVM Loss)</strong>:</p>
 <ul class="simple">
 <li><p>Used for support vector machine (SVM) and margin-based classification.</p></li>
 <li><p>Encourages correct classification with a margin between classes.</p></li>
-<li><p>Mathematically, hinge loss is defined as:
-$<span class="math notranslate nohighlight">\(J(\theta) = \frac{1}{N} \sum_{i=1}^{N} \max(0, 1 - y_{\text{target},i} \cdot y_i)\)</span>$</p></li>
+<li><p>Mathematically, hinge loss is defined as:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[J(\theta) = \frac{1}{N} \sum_{i=1}^{N} \max(0, 1 - y_{\text{target},i} \cdot y_i)\]</div>
 <p><strong>5. Huber Loss</strong>:</p>
 <ul class="simple">
 <li><p>Used for regression tasks.</p></li>
 <li><p>Combines the benefits of both MSE and MAE by having a quadratic loss for small errors and a linear loss for large errors.</p></li>
 <li><p>Less sensitive to outliers than MSE.</p></li>
-<li><p>Mathematically, Huber loss is defined as:
-$<span class="math notranslate nohighlight">\(J(\theta) = \frac{1}{N} \sum_{i=1}^{N} \begin{cases}
-\frac{1}{2}(y_i - y_{\text{target},i})^2 &amp; \text{if } |y_i - y_{\text{target},i}| \leq \delta \\
-\delta |y_i - y_{\text{target},i}| - \frac{1}{2}\delta^2 &amp; \text{otherwise}
-\end{cases}\)</span>$</p></li>
+<li><p>Mathematically, Huber loss is defined as:</p></li>
 </ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}J(\theta) = \frac{1}{N} \sum_{i=1}^{N} \begin{cases}
+  \frac{1}{2}(y_i - y_{\text{target},i})^2 &amp; \text{if } |y_i - y_{\text{target},i}| \leq \delta \\
+  \delta |y_i - y_{\text{target},i}| - \frac{1}{2}\delta^2 &amp; \text{otherwise}
+  \end{cases}\end{split}\]</div>
 <p>The choice of the cost function should align with the specific problem being solved, as different tasks (e.g., regression, binary classification, multiclass classification) require different loss functions.</p>
 </section>
 
@@ -558,13 +572,22 @@ $<span class="math notranslate nohighlight">\(J(\theta) = \frac{1}{N} \sum_{i=1}
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="806c_Two_Variable_Gradient_Descent.html"
+       href="806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example Two Variable Gradient Descent</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="808_Simple%20Back%20Propagation%20ReLU.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Neural Network Architecture:</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

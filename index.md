@@ -25,41 +25,39 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
 ## Part 1 Numerical Solutions to Ordinary Differential Equations 
 
 ### Chapter 1 Numerical Solutions to Initial Value Problems
-   -  Euler Method applied to Linear Population Equation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.ipynb)
-   -  Euler Method applied to Non-Linear Population Equation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.ipynb)
+   -  Euler Method applied to Linear Population Equation 
+   -  Euler Method applied to Non-Linear Population Equation 
 
 ### Chapter 2 Higher Order Methods 
-   -  Taylor Method applied to Non-Linear Population Equation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2002%20-%20Higher%20Order%20Methods/201_3rd%20Order%20Taylor_Population_growth.ipynb)
+   -  Taylor Method applied to Non-Linear Population Equation 
  
    
    
 ### Chapter 3 Runge–Kutta methods 
-   - [Runge Kutta](https://github.com/john-s-butler-dit/Numerical-Analysis-Python/tree/master/Chapter%2004%20-%20Multistep%20Methods)
-   -  Runge Kutta applied to Population Equations [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.ipynb)
+   - Runge Kutta Methods
+   -  Runge Kutta applied to Population Equations
 
 ### Chapter 4 Multi-step methods
 
-   - Adam-Bashforth Method (explicit) applied to Population Equations [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/402_Adams%20Bashforth%20Population%20Equations.ipynb)
+   - Adam-Bashforth Method (explicit) applied to Population Equations 
 
-   - Adams-Moulton Method (implicit) applied to Population Equations [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/404_Adams%20Moulton%20Population%20Equations.ipynb)
+   - Adams-Moulton Method (implicit) applied to Population Equations 
    - Predictor-Corrector Method
- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/405_Adams%20Predictor%20Corrector%20Example.ipynb)
+ 
 ### Chapter 5 Analsyis of Methods for Initial Value Problems
- - Consistency  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/501_Consistent.ipynb)
- - Convergence  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/502_Convergent.ipynb)
- - Stability [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/503_Stability.ipynb)
- - Further Notes on Consistency, Convergence and Stability [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.ipynb)
+ - Consistency  
+ - Convergence  
+ - Stability 
+ - Further Notes on Consistency, Convergence and Stability 
 
 
 ## Part 2 Numerical Solutions to Boundary Value Problems
 
 
 ### Chapter 6 Boundary Value Problems
-   - Linear Shooting Method [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/.ipynb_checkpoints/601_Linear%20Shooting%20Method.ipynb)
-   
-   - Non-Linear Shooting Method [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/.ipynb_checkpoints/602_Non-Linear%20Shooting%20Method.ipynb)
+   - Linear Shooting Method 
+   - Non-Linear Shooting Method 
    - Finite Difference Method
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/.ipynb_checkpoints/603_Boundary%20Value%20Problem.ipynb)
 
 ## Part 3 Machine Learning methods for Differential Equations
 

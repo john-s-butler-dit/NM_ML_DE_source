@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>McCulloch-Pitts Neuron &#8212; Numerical and Machine Learning Methods</title>
+    <title>Example Three Variable Gradient Descent &#8212; Numerical and Machine Learning Methods</title>
   
   
   
@@ -90,12 +90,12 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 08 - Intro to ANN/803_McCulloch-Pitts_Neuron';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Chapter 08 - Intro to ANN/806d_Three Variable Gradient Descent';</script>
     <link rel="shortcut icon" href="../_static/logo.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="The Perceptron" href="804_Perceptron.html" />
-    <link rel="prev" title="Cost Function Newton-Raphson" href="802b_Cost_Function_Newton_Raphson.html" />
+    <link rel="next" title="Gradient Descent Strengths, Weakness and Pitfalls" href="806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html" />
+    <link rel="prev" title="Example Two Variable Gradient Descent" href="806c_Two_Variable_Gradient_Descent.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -300,7 +300,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="802b_Cost_Function_Newton_Raphson.html">Cost Function  Newton-Raphson</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">McCulloch-Pitts Neuron</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="803_McCulloch-Pitts_Neuron.html">McCulloch-Pitts Neuron</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="804_Perceptron.html">The Perceptron</a></li>
 <li class="toctree-l2"><a class="reference internal" href="805_Activation_Functions.html">Activation Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="805b_3_Layers_Feed_Forward.html">Three Layer Feed Forward ANN</a></li>
@@ -308,10 +308,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="805c_General_Feed_Forward.html">General Feed Forward for an ANN</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="806_Introduction%20to%20Gradient%20Descent.html">Gradient Descent</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="806b_Convergence_of_Gradient_Descent.html">Theorem: Convergence of Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="806c_Two_Variable_Gradient_Descent.html">Example Two Variable Gradient Descent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="806d_Three%20Variable%20Gradient%20Descent.html">Example Three Variable Gradient Descent</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Example Three Variable Gradient Descent</a></li>
 <li class="toctree-l2"><a class="reference internal" href="806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html">Gradient Descent Strengths, Weakness and Pitfalls</a></li>
 <li class="toctree-l2"><a class="reference internal" href="806f_Types_of_Gradient_Descent.html">Types of Gradient Descent</a></li>
 </ul>
@@ -411,7 +411,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Chapter 08 - Intro to ANN/803_McCulloch-Pitts_Neuron.ipynb" target="_blank"
+      <li><a href="../_sources/Chapter 08 - Intro to ANN/806d_Three Variable Gradient Descent.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -491,7 +491,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>McCulloch-Pitts Neuron</h1>
+    <h1>Example Three Variable Gradient Descent</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -505,74 +505,177 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="mcculloch-pitts-neuron">
-<h1>McCulloch-Pitts Neuron<a class="headerlink" href="#mcculloch-pitts-neuron" title="Permalink to this heading">#</a></h1>
-<p>The McCulloch-Pitts neuron, developed by Warren McCulloch and Walter Pitts in the 1940s, is a simplified mathematical model of a biological neuron. It forms the basis for understanding the concept of artificial neurons and, eventually, artificial neural networks. Here’s a summary of the McCulloch-Pitts neuron with equations:</p>
-<p><strong>Structure</strong>:
-The McCulloch-Pitts neuron consists of several components:</p>
-<ol class="arabic simple">
-<li><p><strong>Input Weights</strong> (<span class="math notranslate nohighlight">\(w_1, w_2, \ldots, w_n\)</span>): Each input is associated with a weight that represents the strength of the connection to the neuron.</p></li>
-<li><p><strong>Input Values</strong> (<span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_n\)</span>): These are the values of the inputs to the neuron.</p></li>
-<li><p><strong>Threshold (<span class="math notranslate nohighlight">\(T\)</span>)</strong>: A threshold value that determines the neuron’s firing condition.</p></li>
-<li><p><strong>Activation Function</strong>: The McCulloch-Pitts neuron uses a simple threshold activation function, typically a step function, to make a binary decision about whether the neuron should fire.</p></li>
-</ol>
-<p><strong>Activation Function</strong>:
-The activation function of the McCulloch-Pitts neuron can be defined as follows:</p>
+  <section id="example-three-variable-gradient-descent">
+<h1>Example Three Variable Gradient Descent<a class="headerlink" href="#example-three-variable-gradient-descent" title="Permalink to this heading">#</a></h1>
+<p>Consider the cost function with three variables:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-f(\mathbf{x}; \mathbf{w}, T) =
-\begin{cases}
-1 &amp; \text{if } \sum_{i=1}^{n} w_i x_i \geq T \\
-0 &amp; \text{if } \sum_{i=1}^{n} w_i x_i &lt; T
-\end{cases}
-\end{split}\]</div>
-<p>Where:</p>
+\[J(\theta_1, \theta_2, \theta_3) = \theta_1^2 + 2\theta_2^2 + 3\theta_3^2\]</div>
+<p>To minimize this cost function using gradient descent. The gradient of this cost function is as follows:</p>
+<p><span class="math notranslate nohighlight">\(
+\nabla J(\theta_1, \theta_2, \theta_3) = \begin{bmatrix}
+2\theta_1 \\
+4\theta_2 \\
+6\theta_3
+\end{bmatrix}
+\)</span></p>
+<p><strong>Initialization</strong>:</p>
+<p>Given the inital conditions:</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f(\mathbf{x}; \mathbf{w}, T)\)</span> is the output of the neuron.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{x}\)</span> is the input vector.</p></li>
-<li><p><span class="math notranslate nohighlight">\(\mathbf{w}\)</span> is the weight vector.</p></li>
-<li><p><span class="math notranslate nohighlight">\(T\)</span> is the threshold.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_1 = 1.0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_2 = 2.0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\theta_3 = 3.0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha = 0.1\)</span></p></li>
 </ul>
-<p><strong>Operation</strong>:</p>
-<ol class="arabic simple">
-<li><p>The neuron receives input values <span class="math notranslate nohighlight">\(x_1, x_2, \ldots, x_n\)</span>.</p></li>
-<li><p>Each input value is associated with a weight <span class="math notranslate nohighlight">\(w_1, w_2, \ldots, w_n\)</span>.</p></li>
-<li><p>The weighted sum of the inputs is calculated: <span class="math notranslate nohighlight">\(\sum_{i=1}^{n} w_i x_i\)</span>.</p></li>
-<li><p>If the weighted sum is greater than or equal to the threshold (<span class="math notranslate nohighlight">\(T\)</span>), the neuron fires and outputs 1; otherwise, it remains inactive and outputs 0.</p></li>
+<p><strong>Iteration 1</strong>:</p>
+<ol class="arabic">
+<li><p>Calculate the gradient at the current parameters:</p>
+<p><span class="math notranslate nohighlight">\(\nabla J(\theta_1, \theta_2, \theta_3) = \begin{bmatrix}
+2 \cdot 1.0 \\
+4 \cdot 2.0 \\
+6 \cdot 3.0
+\end{bmatrix} = \begin{bmatrix}
+2 \\
+8 \\
+18
+\end{bmatrix}\)</span></p>
+</li>
+<li><p>Update the parameters:</p>
+<p><span class="math notranslate nohighlight">\(\theta_1 = \theta_1 - \alpha \cdot 2 = 1.0 - 0.1 \cdot 2 = 0.8\)</span></p>
+<p><span class="math notranslate nohighlight">\(\theta_2 = \theta_2 - \alpha \cdot 8 = 2.0 - 0.1 \cdot 8 = 1.2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\theta_3 = \theta_3 - \alpha \cdot 18 = 3.0 - 0.1 \cdot 18 = 1.2\)</span></p>
+</li>
 </ol>
-<p><strong>Summary</strong>:
-The McCulloch-Pitts neuron is a binary threshold unit that operates on weighted inputs. It makes a binary decision based on the sum of the weighted inputs compared to a threshold. This simple model laid the foundation for more complex artificial neural networks, where activation functions are continuous and often differentiable, allowing for more versatile and powerful computations. The McCulloch-Pitts neuron is a significant historical contribution to the field of neural network theory and artificial intelligence.</p>
+<p><strong>Iteration 2</strong>:</p>
+<ol class="arabic">
+<li><p>Calculate the gradient at the updated parameters:</p>
+<p><span class="math notranslate nohighlight">\(\nabla J(\theta_1, \theta_2, \theta_3) = \begin{bmatrix}
+2 \cdot 0.8 \\
+4 \cdot 1.2 \\
+6 \cdot 1.2
+\end{bmatrix} = \begin{bmatrix}
+1.6 \\
+4.8 \\
+7.2
+\end{bmatrix}\)</span></p>
+</li>
+<li><p>Update the parameters:</p>
+<p><span class="math notranslate nohighlight">\(\theta_1 = 0.8 - 0.1 \cdot 1.6 = 0.64\)</span></p>
+<p><span class="math notranslate nohighlight">\(\theta_2 = 1.2 - 0.1 \cdot 4.8 = 0.72\)</span></p>
+<p><span class="math notranslate nohighlight">\(\theta_3 = 1.2 - 0.1 \cdot 7.2 = 0.48\)</span></p>
+</li>
+</ol>
+<p><strong>Stopping Criteria</strong>:</p>
+<p>Choose the stopping criteria tol and max iteratinos such that the algorithms stops when the parameter converges to within a tolerance $<span class="math notranslate nohighlight">\(\Sigma_{j=0}^2|\theta_{ji+1}-\theta_{ji}|&lt;tol\)</span><span class="math notranslate nohighlight">\(
+   or the number of iterations reaches the max iterations. 
+There are many possible formula for the stopping criteria the one of the most strigent is the max norm:
+\)</span><span class="math notranslate nohighlight">\(\max_{j}|\theta_{ji+1}-\theta_{ji}|&lt;tol.\)</span>$</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># Define the cost function</span>
+<span class="k">def</span> <span class="nf">quadratic_cost_function</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
+<span class="c1"># Define the gradient</span>
+<span class="k">def</span> <span class="nf">gradient</span><span class="p">(</span><span class="n">theta</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">4</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">6</span><span class="o">*</span><span class="n">theta</span><span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="c1"># Gradient Descent parameters</span>
+<span class="n">learning_rate</span> <span class="o">=</span> <span class="mf">0.1</span>  <span class="c1"># Step size or learning rate</span>
+<span class="c1"># Initial guess</span>
+<span class="n">theta_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">gradient_descent</span><span class="p">(</span><span class="n">theta</span><span class="p">,</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+    <span class="n">theta_history</span> <span class="o">=</span> <span class="p">[</span><span class="n">theta</span><span class="p">]</span>
+    <span class="n">cost_history</span> <span class="o">=</span> <span class="p">[</span><span class="n">quadratic_cost_function</span><span class="p">(</span><span class="n">theta</span><span class="p">)]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">max_iter</span><span class="p">):</span>
+        <span class="c1"># Update x using the gradient and learning rate</span>
+        <span class="n">theta_new</span> <span class="o">=</span> <span class="n">theta</span> <span class="o">-</span> <span class="n">learning_rate</span> <span class="o">*</span> <span class="n">gradient</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
 
-<span class="c1"># Define the McCulloch-Pitts neuron</span>
-<span class="k">def</span> <span class="nf">mp_neuron</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">threshold</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">return</span> <span class="mi">0</span>
+        <span class="c1"># Append the updated values to the history lists</span>
+        <span class="n">theta_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">theta_new</span><span class="p">)</span>
+        <span class="n">cost_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">quadratic_cost_function</span><span class="p">(</span><span class="n">theta_new</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">((</span><span class="n">theta</span><span class="o">-</span><span class="n">theta_new</span><span class="p">)))</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">theta</span><span class="p">,</span><span class="n">theta_history</span><span class="p">,</span> <span class="n">cost_history</span><span class="p">,</span><span class="n">i</span>
+        <span class="n">theta</span><span class="o">=</span><span class="n">theta_new</span>
 
-<span class="c1"># Define the inputs, weights, and threshold</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">])</span>
-<span class="n">threshold</span> <span class="o">=</span> <span class="mf">0.5</span>
+    <span class="k">return</span> <span class="n">theta</span><span class="p">,</span><span class="n">theta_history</span><span class="p">,</span> <span class="n">cost_history</span><span class="p">,</span><span class="n">i</span>
 
-<span class="c1"># Compute the output of the McCulloch-Pitts neuron</span>
-<span class="n">output</span> <span class="o">=</span> <span class="n">mp_neuron</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
-
-<span class="c1"># Print the output</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The output of the McCulloch-Pitts neuron is:&#39;</span><span class="p">,</span> <span class="n">output</span><span class="p">)</span>
+<span class="n">tol</span><span class="o">=</span><span class="mf">0.001</span>
+<span class="n">max_iterations</span> <span class="o">=</span> <span class="mi">100</span>     <span class="c1"># Number of iterations</span>
+<span class="n">theta</span><span class="p">,</span> <span class="n">theta_history</span><span class="p">,</span> <span class="n">cost_history</span><span class="p">,</span><span class="n">I</span><span class="o">=</span><span class="n">gradient_descent</span><span class="p">(</span><span class="n">theta_0</span><span class="p">,</span><span class="n">learning_rate</span><span class="o">=</span><span class="n">learning_rate</span><span class="p">,</span><span class="n">tol</span><span class="o">=</span><span class="n">tol</span><span class="p">,</span><span class="n">max_iter</span><span class="o">=</span><span class="n">max_iterations</span><span class="p">)</span>
+<span class="c1"># Print the final result</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Optimal theta: </span><span class="si">{</span><span class="n">theta</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Minimum Cost value: </span><span class="si">{</span><span class="n">quadratic_cost_function</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Number of Interations I: </span><span class="si">{</span><span class="n">I</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The output of the McCulloch-Pitts neuron is: 0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Optimal theta: [4.72236648e-03 9.47676268e-06 8.44424930e-10]
+Minimum Cost value: 2.2300924816594426e-05
+Number of Interations I: 24
 </pre></div>
 </div>
 </div>
 </div>
-<div class="toctree-wrapper compound">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_hist_array</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">theta_history</span><span class="p">)</span>
+<span class="n">theta_hist_array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.00000000e+00, 2.00000000e+00, 3.00000000e+00],
+       [8.00000000e-01, 1.20000000e+00, 1.20000000e+00],
+       [6.40000000e-01, 7.20000000e-01, 4.80000000e-01],
+       [5.12000000e-01, 4.32000000e-01, 1.92000000e-01],
+       [4.09600000e-01, 2.59200000e-01, 7.68000000e-02],
+       [3.27680000e-01, 1.55520000e-01, 3.07200000e-02],
+       [2.62144000e-01, 9.33120000e-02, 1.22880000e-02],
+       [2.09715200e-01, 5.59872000e-02, 4.91520000e-03],
+       [1.67772160e-01, 3.35923200e-02, 1.96608000e-03],
+       [1.34217728e-01, 2.01553920e-02, 7.86432000e-04],
+       [1.07374182e-01, 1.20932352e-02, 3.14572800e-04],
+       [8.58993459e-02, 7.25594112e-03, 1.25829120e-04],
+       [6.87194767e-02, 4.35356467e-03, 5.03316480e-05],
+       [5.49755814e-02, 2.61213880e-03, 2.01326592e-05],
+       [4.39804651e-02, 1.56728328e-03, 8.05306368e-06],
+       [3.51843721e-02, 9.40369969e-04, 3.22122547e-06],
+       [2.81474977e-02, 5.64221981e-04, 1.28849019e-06],
+       [2.25179981e-02, 3.38533189e-04, 5.15396076e-07],
+       [1.80143985e-02, 2.03119913e-04, 2.06158430e-07],
+       [1.44115188e-02, 1.21871948e-04, 8.24633721e-08],
+       [1.15292150e-02, 7.31231688e-05, 3.29853488e-08],
+       [9.22337204e-03, 4.38739013e-05, 1.31941395e-08],
+       [7.37869763e-03, 2.63243408e-05, 5.27765581e-09],
+       [5.90295810e-03, 1.57946045e-05, 2.11106233e-09],
+       [4.72236648e-03, 9.47676268e-06, 8.44424930e-10],
+       [3.77789319e-03, 5.68605761e-06, 3.37769972e-10]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theta_hist_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Initial Guess&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theta_hist_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">theta_hist_array</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span>  <span class="n">c</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">I</span><span class="p">),</span><span class="n">theta_hist_array</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">I</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span><span class="s1">&#39;bo&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\theta_1$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">I</span><span class="p">),</span><span class="n">theta_hist_array</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">I</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span><span class="s1">&#39;ro&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\theta_2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">I</span><span class="p">),</span><span class="n">theta_hist_array</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="n">I</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span><span class="s1">&#39;yo&#39;</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$\theta_3$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$Interations (i)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\theta_i$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;Learning of $\theta$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/06778b379afe2b0c39035b9944f5e068c557dccf3b1f758d937a6b0c53bb8b20.png" src="../_images/06778b379afe2b0c39035b9944f5e068c557dccf3b1f758d937a6b0c53bb8b20.png" />
+</div>
 </div>
 </section>
 
@@ -608,20 +711,20 @@ The McCulloch-Pitts neuron is a binary threshold unit that operates on weighted 
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="802b_Cost_Function_Newton_Raphson.html"
+       href="806c_Two_Variable_Gradient_Descent.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cost Function  Newton-Raphson</p>
+        <p class="prev-next-title">Example Two Variable Gradient Descent</p>
       </div>
     </a>
     <a class="right-next"
-       href="804_Perceptron.html"
+       href="806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">The Perceptron</p>
+        <p class="prev-next-title">Gradient Descent Strengths, Weakness and Pitfalls</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
