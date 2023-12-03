@@ -1,5 +1,8 @@
 # Numerical Methods and Machine Learning for Differential Equations with Applications in Python
-This github consists of Python code corresponding to the TU Dublin module Numerical Methods and Machine Learning for Differential Equations.
+
+#### [John Butler](https://johnsbutler.netlify.app)
+
+This website consists of Python code corresponding to the TU Dublin School of Mathematics and Statistics Msc module Numerical Methods and Machine Learning for Differential Equations.
 The aim of this module is to equip the learner with the knowledge necessary to implement computational techniques related to finite-difference methods and machine learning method for differential equations. 
 
 During the first part of the module the learner will be introduced to the theory and practice of common techniques for the numerical integration of ordinary differential equations with initial conditions.
@@ -50,8 +53,7 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
  - Stability 
  - Further Notes on Consistency, Convergence and Stability 
 
-
-## Part 2 Numerical Solutions to Boundary Value Problems
+## Part 2 Boundary Value Problem 
 
 
 ### Chapter 6 Boundary Value Problems
@@ -59,9 +61,14 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
    - Non-Linear Shooting Method 
    - Finite Difference Method
 
+
+### Chapter 7 Integrate and Fire Example
+ - Application of different methods to the Integrate and Fire differential Equation
+
+
 ## Part 3 Machine Learning methods for Differential Equations
 
-### Chapter 7 Artifical Neural Networks
+### Chapter 8 Artifical Neural Networks
 - Newton Raphson
 - Gradient Descent
 - Convergance of Gradient Descent
@@ -69,26 +76,20 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
 - Artifical Neural Networks
 - Feed Forward
 
-### Chapter 8 Backpropagation
+### Chapter 9  Universal Approximation Theorem and Backpropagation
 
 - Cost Function
 - Backpropagation Simple ReLU network
 - Backpropagation Sigmoid network
 - Backpropagation General ANN
-
-
-
-### Chapter 9 Universal Approximation Theorem
--  Universal Approximation Theorem in action
--  Universal Approximation Theorem Proof Outline
+- Universal Approximation Theorem in action
+- Universal Approximation Theorem Proof Outline
 
 ### Chapter 10 ANNs and Differential Equations
 - Fitting Noisey Data
 - Estimating Differential Equation Parameters
 - Applications to Differential Equations
 
-
-## Reading List
 
 ### Essential Reading
 
@@ -132,6 +133,7 @@ Lusch, B., Kutz, J. N., & Brunton, S. L. (2018). Deep learning for universal lin
 
 Meade, A. J., & Fernandez, A. A. (1994). The numerical solution of linear ordinary differential equations by feedforward neural networks. Mathematical and Computer Modelling, 19(12), 1–25. https://doi.org/10.1016/0895-7177(94)90095-7
 
+Paszke, A., Gross, S., Massa, F., Lerer, A., Bradbury, J., Chanan, G., … Chintala, S. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library. In Advances in Neural Information Processing Systems 32 (pp. 8024–8035). Curran Associates, Inc. Retrieved from http://papers.neurips.cc/paper/9015-pytorch-an-imperative-style-high-performance-deep-learning-library.pdf
 
 ------
 ## Supplementary Video Lectures 

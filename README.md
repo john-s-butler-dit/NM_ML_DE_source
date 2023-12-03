@@ -1,5 +1,7 @@
 # Numerical Methods and Machine Learning for Differential Equations with Applications in Python
-This github consists of Python code corresponding to the TU Dublin module Numerical Methods and Machine Learning for Differential Equations.
+#### [John Butler](https://johnsbutler.netlify.app)
+
+This github consists of Python code corresponding to the TU Dublin School of Mathematics and Statistics MSc module Numerical Methods and Machine Learning for Differential Equations.
 The aim of this module is to equip the learner with the knowledge necessary to implement computational techniques related to finite-difference methods and machine learning method for differential equations. 
 
 During the first part of the module the learner will be introduced to the theory and practice of common techniques for the numerical integration of ordinary differential equations with initial conditions.
@@ -56,9 +58,14 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
    - Non-Linear Shooting Method 
    - Finite Difference Method
 
+
+### Chapter 7 Integrate and Fire Example
+ - Application of different methods to the Integrate and Fire differential Equation
+
+
 ## Part 3 Machine Learning methods for Differential Equations
 
-### Chapter 7 Artifical Neural Networks
+### Chapter 8 Artifical Neural Networks
 - Newton Raphson
 - Gradient Descent
 - Convergance of Gradient Descent
@@ -66,22 +73,19 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
 - Artifical Neural Networks
 - Feed Forward
 
-### Chapter 8 Backpropagation
+### Chapter 9  Universal Approximation Theorem and Backpropagation
 
 - Cost Function
 - Backpropagation Simple ReLU network
 - Backpropagation Sigmoid network
 - Backpropagation General ANN
-
-
-
-### Chapter 9 Universal Approximation Theorem
--  Universal Approximation Theorem in action
--  Universal Approximation Theorem Proof Outline
+- Universal Approximation Theorem in action
+- Universal Approximation Theorem Proof Outline
 
 ### Chapter 10 ANNs and Differential Equations
 - Fitting Noisey Data
 - Estimating Differential Equation Parameters
+- Applications to Differential Equations
 
 
 ## Reading List

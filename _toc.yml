@@ -73,7 +73,6 @@ parts:
     - file: Chapter 07 Question 6 Integrate and Fire/Question 6 Integrate and Fire
   - caption: Ch08- Introduction to Artificial Neural Networks
     chapters:
-    - file: Chapter 08 - Intro to ANN/8_Problem_Sheet
     - file: Chapter 08 - Intro to ANN/801_Newton_Raphson
       sections:
       - file: Chapter 08 - Intro to ANN/802_Two_Variable_Newton_Raphson
@@ -91,6 +90,7 @@ parts:
       - file: Chapter 08 - Intro to ANN/806d_Three Variable Gradient Descent.ipynb
       - file: Chapter 08 - Intro to ANN/806e_Gradient_Descent_Strengths_Weakness_and_Pitfalls
       - file: Chapter 08 - Intro to ANN/806f_Types_of_Gradient_Descent
+    - file: Chapter 08 - Intro to ANN/8_Problem_Sheet
   - caption: Ch09- Universal Approximation Theorem and Backpropagation
     chapters:
     - file: Chapter 09 - UAT/901_Simple Back Propagation ReLU
@@ -105,6 +105,7 @@ parts:
       sections:
       - file: Chapter 09 - UAT/903b_General-BackProp
       - file: Chapter 09 - UAT/903c_Back_Str_Weak_Pitfalls
+    - file: Chapter 09 - UAT/9_Problem_Sheet
   - caption: Ch10 - ANNs and Differential Equations
     chapters:
     - file: Chapter 10 - ODE ANN/1001_Neural_Net_ODE
@@ -112,9 +113,4 @@ parts:
       - file: Chapter 10 - ODE ANN/1001b_Neural_Network_test1
     - file: Chapter 10 - ODE ANN/1002_Parameter Estimation
     - file: Chapter 10 - ODE ANN/1004_Comparison_of_Numerical_Methods_and_ANNs
-
-
-      
-
-       
-
+    - file: Chapter 10 - ODE ANN/10_Problem_Sheet
