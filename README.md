@@ -1,5 +1,7 @@
 # Numerical Methods and Machine Learning for Differential Equations with Applications in Python
-This github consists of Python code corresponding to the TU Dublin module Numerical Methods and Machine Learning for Differential Equations.
+#### [John Butler](https://johnsbutler.netlify.app)
+
+This github consists of Python code corresponding to the TU Dublin School of Mathematics and Statistics MSc module Numerical Methods and Machine Learning for Differential Equations.
 The aim of this module is to equip the learner with the knowledge necessary to implement computational techniques related to finite-difference methods and machine learning method for differential equations. 
 
 During the first part of the module the learner will be introduced to the theory and practice of common techniques for the numerical integration of ordinary differential equations with initial conditions.
@@ -19,59 +21,72 @@ Numerical Analysis; Finite-differencing techniques; Stability analysis; Explicit
 Machine Learning: Non-linear shooting method, Newton Raphson method; Gradient Descent; Loss functions; Norms, Forward and Back Propagation; Neural Network, The Universal Approximation Theorem for Neural Networks.
 
 
-This is the old [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_ML_DE/)
+This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_ML_DE_source/)
 
 
 ## Part 1 Numerical Solutions to Ordinary Differential Equations 
 
 ### Chapter 1 Numerical Solutions to Initial Value Problems
-   -  Euler Method applied to Linear Population Equation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/101_Euler_method_with_Theorems_Growth_function.ipynb)
-   -  Euler Method applied to Non-Linear Population Equation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2001%20-%20Euler%20Methods/102_Euler_method_with_Theorems_nonlinear_Growth_function.ipynb)
+   -  Euler Method applied to Linear Population Equation 
+   -  Euler Method applied to Non-Linear Population Equation 
 
 ### Chapter 2 Higher Order Methods 
-   -  Taylor Method applied to Non-Linear Population Equation [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2002%20-%20Higher%20Order%20Methods/201_3rd%20Order%20Taylor_Population_growth.ipynb)
+   -  Taylor Method applied to Non-Linear Population Equation 
  
    
    
 ### Chapter 3 Runge–Kutta methods 
-   - [Runge Kutta](https://github.com/john-s-butler-dit/Numerical-Analysis-Python/tree/master/Chapter%2004%20-%20Multistep%20Methods)
-   -  Runge Kutta applied to Population Equations [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2003%20-%20Runge%20Kutta/301_2nd%20Order%20Runge%20Kutta%20Population%20Equations.ipynb)
+   - Runge Kutta Methods
+   -  Runge Kutta applied to Population Equations
 
 ### Chapter 4 Multi-step methods
 
-   - Adam-Bashforth Method (explicit) applied to Population Equations [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/402_Adams%20Bashforth%20Population%20Equations.ipynb)
+   - Adam-Bashforth Method (explicit) applied to Population Equations 
 
-   - Adams-Moulton Method (implicit) applied to Population Equations [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/404_Adams%20Moulton%20Population%20Equations.ipynb)
+   - Adams-Moulton Method (implicit) applied to Population Equations 
    - Predictor-Corrector Method
- [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2004%20-%20Multistep%20Methods/405_Adams%20Predictor%20Corrector%20Example.ipynb)
+ 
 ### Chapter 5 Analsyis of Methods for Initial Value Problems
- - Consistency  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/501_Consistent.ipynb)
- - Convergence  [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/502_Convergent.ipynb)
- - Stability [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/503_Stability.ipynb)
- - Further Notes on Consistency, Convergence and Stability [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2005%20-%20IVP%20Consistent%20Convergence%20Stability/504_Futher%20Notes%20on%20Stability.ipynb)
-
-
-## Part 2 Numerical Solutions to Boundary Value Problems
+ - Consistency  
+ - Convergence  
+ - Stability 
+ - Further Notes on Consistency, Convergence and Stability 
 
 
 ### Chapter 6 Boundary Value Problems
-   - Linear Shooting Method [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/.ipynb_checkpoints/601_Linear%20Shooting%20Method.ipynb)
-   
-   - Non-Linear Shooting Method [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/.ipynb_checkpoints/602_Non-Linear%20Shooting%20Method.ipynb)
+   - Linear Shooting Method 
+   - Non-Linear Shooting Method 
    - Finite Difference Method
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/john-s-butler-dit/Numerical-Analysis-Python/blob/master/Chapter%2006%20-%20Boundary%20Value%20Problems/.ipynb_checkpoints/603_Boundary%20Value%20Problem.ipynb)
+
+
+### Chapter 7 Integrate and Fire Example
+ - Application of different methods to the Integrate and Fire differential Equation
+
 
 ## Part 3 Machine Learning methods for Differential Equations
 
-### Chapter 7 Artifical Neural Networks
-- Perceptron
-- Feed Forward
-- Loss Functions
+### Chapter 8 Artifical Neural Networks
+- Newton Raphson
 - Gradient Descent
+- Convergance of Gradient Descent
+- Perceptron
+- Artifical Neural Networks
+- Feed Forward
 
-### Chapter 8 Universal Approximation Theorem
+### Chapter 9  Universal Approximation Theorem and Backpropagation
 
-### Chapter 9 ANNs and Differential Equations
+- Cost Function
+- Backpropagation Simple ReLU network
+- Backpropagation Sigmoid network
+- Backpropagation General ANN
+- Universal Approximation Theorem in action
+- Universal Approximation Theorem Proof Outline
+
+### Chapter 10 ANNs and Differential Equations
+- Fitting Noisey Data
+- Estimating Differential Equation Parameters
+- Applications to Differential Equations
+
 
 ## Reading List
 
