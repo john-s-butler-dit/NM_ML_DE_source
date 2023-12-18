@@ -87,6 +87,9 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
 - Estimating Differential Equation Parameters
 - Applications to Differential Equations
 
+## Citation
+
+Butler, J. (2023, December 14). Numerical Methods and Machine Learning for Differential Equations with Applications in Python. Zenodo. [https://doi.org/10.5281/zenodo.10376815]
 
 ## Reading List
 
