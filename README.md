@@ -46,7 +46,7 @@ This is the  [JupyterBook for the code](https://john-s-butler-dit.github.io/NM_M
    - Adams-Moulton Method (implicit) applied to Population Equations 
    - Predictor-Corrector Method
  
-### Chapter 5 Analsyis of Methods for Initial Value Problems
+### Chapter 5 Analysis of Methods for Initial Value Problems
  - Consistency  
  - Convergence  
  - Stability 
